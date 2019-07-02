@@ -1,0 +1,21 @@
+:cards:
+  fr:
+  - :name: Chemin des châteaux forts d'Alsace
+    :photo: wegelnburg.jpg
+    :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
+  - :name: Strasbourg
+    :photo: strasbourg.jpg
+    :description: bonjour
+  - :name: Le château du Schoeneck
+    :photo: schoeneck.jpg
+    :description: ozfregergze
+  en:
+  - :name: Chemin des châteaux forts d'Alsace
+    :photo: wegelnburg.jpg
+    :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
+  - :name: Strasbourg
+    :photo: strasbourg.jpg
+    :description: bonjour
+  - :name: Schoeneck Castle
+    :photo: schoeneck.jpg
+    :description: ozfregergze
