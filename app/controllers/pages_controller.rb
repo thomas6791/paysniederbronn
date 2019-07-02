@@ -6,6 +6,9 @@ class PagesController < ApplicationController
     @cards = YAML.load(File.read("config/cards.yml"))[:cards][locale.to_s]
   end
 
+  def holidayrentings
+  end
+
   def contact
   end
 
