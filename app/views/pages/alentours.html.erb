@@ -4,7 +4,7 @@
   <h1><%= t('alentours.title').capitalize %></h1>
 </header>
 <main id="alentours">
-  <section>
+  <section class="cards">
     <% @cards.each do |card| %>
       <div class="card">
         <%= image_tag "#{card[:photo]}" %>
