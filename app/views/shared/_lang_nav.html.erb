@@ -1,0 +1,9 @@
+<% if I18n.locale == :fr %>
+  <%= link_to url_for(locale: :en) do %>
+    <p>English</p>
+  <% end %>
+<% else %>
+  <%= link_to url_for(locale: :fr) do %>
+    <p>Français</p>
+  <% end %>
+<% end %>
