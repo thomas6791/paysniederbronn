@@ -1,3 +1,24 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Avenir';
+}
+body {
+  padding: 10px;
+}
+h1 { font-size: 2em; }
+#alentours {
+  min-height: 100vh;
+  section {
+    padding: 0px 0px;
+    //border: solid 1px red;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+  }
+}
