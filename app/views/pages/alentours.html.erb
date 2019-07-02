@@ -1,2 +1,23 @@
-<h1>Pages#alentours</h1>
-<p>Find me in app/views/pages/alentours.html.erb</p>
+<%= render "shared/lang_nav" %>
+
+<header>
+  <h1><%= t('alentours.title').capitalize %></h1>
+</header>
+<main id="alentours">
+  <section>
+    <% @cards.each do |card| %>
+      <div class="card">
+        <%= image_tag "#{card[:photo]}" %>
+        <div class="footer">
+          <h2><%= card[:name] %></h2>
+          <div class="hide-content">
+            <p class="more">En savoir plus</p>
+            <p class="content">
+              <%= card[:description] %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+</main>
