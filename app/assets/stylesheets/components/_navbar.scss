@@ -1,10 +1,19 @@
 @import "config/colors";
 
 nav {
-  height: 30px;
+  height: 2em;
   border: solid 1px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: $black;
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: white;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
 }
