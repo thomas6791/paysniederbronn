@@ -1,2 +1,2 @@
-import { navbar } from '../components/navbar';
-navbar();
+import { navBar } from '../components/navbar';
+navBar();
