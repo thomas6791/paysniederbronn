@@ -55,6 +55,7 @@ nav {
     justify-content: space-around;
     visibility: hidden;
     transition: 0.5s width ease;
+    a { font-size: 1.5em; }
     &.visible {
       width: 70%;
       visibility: visible;
