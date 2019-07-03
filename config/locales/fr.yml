@@ -1,4 +1,9 @@
 fr:
   hello: "Bonjour"
+  nav:
+    accueil: "Accueil"
+    se_loger: "Se loger"
+    alentours: "Aux alentours"
+    contact: "Contact"
   alentours:
     title: "Aux alentours"

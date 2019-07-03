@@ -1,0 +1,31 @@
+@import "config/colors";
+
+nav {
+  padding: 0px 10px;
+  height: 2.2em;
+  border: solid 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $black;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: white;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+  #langs {
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+    a { display: flex; }
+    .flag { width: 30px; height: auto; }
+  }
+}

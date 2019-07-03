@@ -31,5 +31,10 @@
 
 en:
   hello: "Hello world"
+  nav:
+    accueil: "Welcome"
+    se_loger: "Holiday rentings"
+    alentours: "In the surroundings"
+    contact: "Contact"
   alentours:
     title: "in the surroundings"

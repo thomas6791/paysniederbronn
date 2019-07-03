@@ -1,9 +1,24 @@
-<% if I18n.locale == :fr %>
-  <%= link_to url_for(locale: :en) do %>
-    <p>English</p>
+<div id="langs">
+  <% if I18n.locale == :fr %>
+    <%= link_to url_for(locale: :en) do %>
+      <%= image_tag "flags/united-kingdom-flag.png", class: "flag", data: { titi: "" } %>
+    <% end %>
+    <%= link_to url_for(locale: :de) do %>
+      <%= image_tag "flags/germany-flag.png", class: "flag", data: { titi: "" } %>
+    <% end %>
+  <% elsif I18n.locale == :en %>
+    <%= link_to url_for(locale: :fr) do %>
+      <%= image_tag "flags/france-flag.png", class: "flag", data: { titi: "" } %>
+    <% end %>
+    <%= link_to url_for(locale: :de) do %>
+      <%= image_tag "flags/germany-flag.png", class: "flag", data: { titi: "" } %>
+    <% end %>
+  <% elsif I18n.locale == :de %>
+    <%= link_to url_for(locale: :fr) do %>
+      <%= image_tag "flags/france-flag.png", class: "flag", data: { titi: "" } %>
+    <% end %>
+    <%= link_to url_for(locale: :en) do %>
+      <%= image_tag "flags/united-kingdom-flag.png", class: "flag", data: { titi: "" } %>
+    <% end %>
   <% end %>
-<% else %>
-  <%= link_to url_for(locale: :fr) do %>
-    <p>Français</p>
-  <% end %>
-<% end %>
+</div>

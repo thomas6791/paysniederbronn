@@ -1,0 +1,9 @@
+de:
+  hello: "Hello world"
+  nav:
+    accueil: "Guten Tag"
+    se_loger: "alld"
+    alentours: "In the surroundings"
+    contact: "Contact"
+  alentours:
+    title: "in the surroundings"
