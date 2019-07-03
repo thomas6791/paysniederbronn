@@ -13,6 +13,3 @@
  *= require_tree .
  *= require_self
  */
-@import "config/colors";
-@import "pages/index";
-@import "components/index";
