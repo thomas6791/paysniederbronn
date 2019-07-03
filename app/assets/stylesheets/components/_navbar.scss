@@ -54,6 +54,7 @@ nav {
     flex-direction: column;
     justify-content: space-around;
     visibility: hidden;
+    transition: 0.5s width ease;
     &.visible {
       width: 70%;
       visibility: visible;
