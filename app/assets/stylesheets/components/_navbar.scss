@@ -25,8 +25,9 @@ nav {
     padding: 0px 10px;
     display: flex;
     justify-content: space-between;
-    width: 70px;
-    a { display: flex; }
+    width: auto;
+    height: auto;
+    a { display: flex; margin: 0px 5px; }
     .flag { width: 30px; height: auto; }
   }
 }
