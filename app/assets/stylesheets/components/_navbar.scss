@@ -20,4 +20,8 @@ nav {
       text-decoration: none;
     }
   }
+  #langs {
+    a { display: flex; }
+    .flag { width: 30px; height: auto; }
+  }
 }
