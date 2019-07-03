@@ -1,6 +1,7 @@
 const navBar = () => {
   console.log('Bonjour');
-  let navButton = document.querySelector(".mobile-button");
+  const navButton = document.querySelector(".mobile-button");
+  let navMenu =  document.querySelector(".nav");
 
 }
 export { navBar };
