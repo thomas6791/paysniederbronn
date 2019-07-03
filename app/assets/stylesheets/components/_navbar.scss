@@ -30,13 +30,13 @@ nav {
     .flag { width: 30px; height: auto; }
   }
 }
-.mobile {
+#mobile {
   display: flex;
   justify-content: flex-end;
   padding: 10px 10px 0px 10px;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 2;
   background-color: white;
   .mobile-button {
     width: 50px;
@@ -57,6 +57,7 @@ nav {
     &.visible {
       width: 70%;
       visibility: visible;
+      z-index: 10;
     }
   }
 }
