@@ -12,6 +12,7 @@ nav {
   top: 0;
   z-index: 10;
   a {
+    font-size: 1em;
     color: white;
     text-decoration: none;
     &:hover {
@@ -28,4 +29,56 @@ nav {
     a { display: flex; }
     .flag { width: 30px; height: auto; }
   }
+}
+#mobile {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 10px 0px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+  .mobile-button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .nav {
+    width: 0px;
+    height: 100vh;
+    position: fixed;
+    padding: 0px;
+    flex-direction: column;
+    justify-content: space-around;
+    visibility: hidden;
+    transition: 0.5s width ease;
+    a { font-size: 1.5em; }
+    &.visible {
+      width: 70%;
+      visibility: visible;
+      z-index: 10;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #mobile { display: none; }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #mobile { display: none; }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  #mobile { display: none; }
 }
