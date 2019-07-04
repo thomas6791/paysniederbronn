@@ -11,14 +11,19 @@ nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  a {
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    a {
     font-size: 1em;
     color: white;
     text-decoration: none;
-    &:hover {
-      color: white;
-      opacity: 0.8;
-      text-decoration: none;
+      &:hover {
+        color: white;
+        opacity: 0.8;
+        text-decoration: none;
+      }
     }
   }
   #langs {
@@ -56,12 +61,21 @@ nav {
     justify-content: space-around;
     visibility: hidden;
     transition: 0.5s width ease;
-    a { font-size: 1.5em; }
+    div {
+      flex-direction: column;
+    }
+    a {
+      font-size: 1.5em;
+      text-align: center;
+      margin: 10px 0px;
+      display: block;
+    }
     &.visible {
       width: 70%;
       visibility: visible;
       z-index: 10;
     }
+    #langs { flex-direction: initial; }
   }
 }
 
