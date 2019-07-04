@@ -1,2 +1,0 @@
-class HolidayrentingsController < ApplicationController
-end
