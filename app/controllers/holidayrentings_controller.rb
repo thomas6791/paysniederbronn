@@ -19,4 +19,8 @@ class HolidayrentingsController < ApplicationController
 
   def destroy
   end
+
+  def gites_heidelbeere
+    @bonjour = "Hello"
+  end
 end
