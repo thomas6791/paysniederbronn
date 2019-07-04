@@ -21,6 +21,7 @@ class HolidayrentingsController < ApplicationController
   end
 
   def gites_heidelbeere
+    fail
     @bonjour = "Hello"
   end
 end
