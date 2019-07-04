@@ -27,8 +27,6 @@ class HolidayrentingsController < ApplicationController
       render 'holidayrentings/en.gites_heidelbeere'
     else
     end
-
-
     @bonjour = "Hello"
   end
 
