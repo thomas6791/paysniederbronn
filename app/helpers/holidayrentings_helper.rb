@@ -1,0 +1,2 @@
+module HolidayrentingsHelper
+end
