@@ -19,4 +19,7 @@ class HolidayRentingsController < ApplicationController
 
   def destroy
   end
+
+  def gite_heidelbeere
+  end
 end

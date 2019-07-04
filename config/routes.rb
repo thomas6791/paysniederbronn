@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'holiday_rentings/index'
-  get 'holiday_rentings/show'
-  get 'holiday_rentings/new'
-  get 'holiday_rentings/create'
-  get 'holiday_rentings/edit'
-  get 'holiday_rentings/update'
-  get 'holiday_rentings/destroy'
   scope '(:locale)', locale: /fr|en|de/ do
     root to: 'pages#home'
     get 'about', to: 'pages#about', as: :about
@@ -18,7 +11,7 @@ Rails.application.routes.draw do
     #end
     resource :holiday_rentings do
       collection do
-        get 'gites-heidelbeeres'
+        get 'gites_heidelbeere'
       end
     end
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
