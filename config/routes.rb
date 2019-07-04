@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'holidayrentings/index'
+  get 'holidayrentings/show'
+  get 'holidayrentings/new'
+  get 'holidayrentings/create'
+  get 'holidayrentings/edit'
+  get 'holidayrentings/update'
+  get 'holidayrentings/destroy'
   scope '(:locale)', locale: /fr|en|de/ do
     root to: 'pages#home'
     get 'about', to: 'pages#about', as: :about
