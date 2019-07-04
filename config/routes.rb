@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     get 'contact', to: 'pages#contact', as: :contact
     get 'alentours', to: 'pages#alentours', as: :alentours
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    resources :holidayrentings do
+      collection do                       # collection => no restaurant id in URL
+        get 'gites_heidelbeere'                         # RestaurantsController#top
+      end
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
