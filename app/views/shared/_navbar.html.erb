@@ -1,8 +1,9 @@
 <nav class="nav">
   <div>
     <a href="#"><%= t('nav.accueil') %></a>
+    <%= link_to("Accueil", root_path) %>
     <a href="#"><%= t('nav.se_loger') %></a>
-    <a href="#"><%= t('nav.alentours') %></a>
+    <%= link_to("A voir à faire", alentours_path) %>
     <a href="#"><%= t('nav.contact') %></a>
   </div>
   <%= render 'shared/lang_nav' %>
