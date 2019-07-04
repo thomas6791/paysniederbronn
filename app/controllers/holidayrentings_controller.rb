@@ -32,4 +32,5 @@ class HolidayrentingsController < ApplicationController
 
     @bonjour = "Hello"
   end
+
 end
