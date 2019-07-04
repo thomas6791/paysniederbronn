@@ -34,7 +34,7 @@ class HolidayrentingsController < ApplicationController
   end
 
   def meuble_heidelbeere
-    render 'holidayrentings/gites-heidelbeere/meuble_heidelbeere'
+    render 'holidayrentings/gites-heidelbeere/fr.meuble_heidelbeere'
   end
 
 end
