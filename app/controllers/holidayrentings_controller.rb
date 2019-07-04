@@ -33,4 +33,8 @@ class HolidayrentingsController < ApplicationController
     @bonjour = "Hello"
   end
 
+  def meuble_heidelbeere
+    render 'holidayrentings/gites-heidelbeere/meuble_heidelbeere'
+  end
+
 end

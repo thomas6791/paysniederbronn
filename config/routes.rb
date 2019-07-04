@@ -12,6 +12,9 @@ Rails.application.routes.draw do
         get 'gites-heidelbeere/studio-heidelbeere', to: 'holidayrentings#studio_heidelbeere', as: :studio_heidelbeere
       end
     end
+    constraints(subdomain: 'gites-heidelbeere') do
+      get '/', to: 'holidayrentings#gites_heidelbeere', as: :gites_heidelbeere
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
