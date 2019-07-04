@@ -34,7 +34,12 @@ class HolidayrentingsController < ApplicationController
   end
 
   def meuble_heidelbeere
-    render 'holidayrentings/gites-heidelbeere/fr.meuble_heidelbeere'
+    if locale.to_s == "fr"
+      render 'holidayrentings/gites-heidelbeere/fr.meuble_heidelbeere'
+    elsif locale.to_s == "en"
+      render 'holidayrentings/gites-heidelbeere/en.meuble_heidelbeere'
+    end
+
   end
 
 end
