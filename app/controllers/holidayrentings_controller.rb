@@ -21,7 +21,6 @@ class HolidayrentingsController < ApplicationController
   end
 
   def gites_heidelbeere
-
     if locale.to_s == "fr"
       render 'holidayrentings/gites_heidelbeere'
     elsif
