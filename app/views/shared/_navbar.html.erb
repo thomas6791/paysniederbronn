@@ -1,10 +1,9 @@
 <nav class="nav">
   <div>
-    <a href="#"><%= t('nav.accueil') %></a>
-    <%= link_to("Accueil", root_path) %>
-    <a href="#"><%= t('nav.se_loger') %></a>
-    <%= link_to("A voir à faire", alentours_path) %>
-    <a href="#"><%= t('nav.contact') %></a>
+    <%= link_to t('links.home'), root_path %>
+    <%= link_to t('links.se_loger'), holidayrentings_path %>
+    <%= link_to t('links.alentours'), alentours_path %>
+    <%= link_to t('links.contact'), contact_path %>
   </div>
   <%= render 'shared/lang_nav' %>
 </nav>

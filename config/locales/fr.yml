@@ -1,4 +1,10 @@
 fr:
+  links:
+    home: "Accueil"
+    se_loger: "Se loger"
+    alentours: "A voir, à faire"
+    contact: "Contact"
+
   hello: "Bonjour"
   nav:
     accueil: "Accueil"
@@ -6,4 +12,4 @@ fr:
     alentours: "Aux alentours"
     contact: "Contact"
   alentours:
-    title: "Aux alentours"
+    title: "A voir, à faire"

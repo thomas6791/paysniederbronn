@@ -1,4 +1,10 @@
 de:
+  links:
+    home: "Home"
+    se_loger: "Ferien Wohnung"
+    alentours: "alld"
+    contact: "Contact"
+
   hello: "Hello world"
   nav:
     accueil: "Guten Tag"

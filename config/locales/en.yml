@@ -30,6 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  links:
+    home: "Home"
+    se_loger: "Holiday rentings"
+    alentours: "In the surroundings"
+    contact: "Contact"
+
   hello: "Hello world"
   nav:
     accueil: "Welcome"
