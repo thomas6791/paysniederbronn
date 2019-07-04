@@ -9,11 +9,7 @@ Rails.application.routes.draw do
     #    get 'gittes-heidelbeeres'
     #  end
     #end
-    resource :holiday_rentings do
-      collection do
-        get 'gites_heidelbeere'
-      end
-    end
+    resource :holiday_rentings
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
