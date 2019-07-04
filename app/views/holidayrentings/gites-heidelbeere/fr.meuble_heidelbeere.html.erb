@@ -1,15 +1,17 @@
 <main>
-  <article>
+  <article class="heidelbeere">
     <header>
       <h1>Appartement meublé de 100m<sup>2</sup></h1>
     </header>
     <section>
       <%= image_tag "heidelbeere/chambre-bleue.jpg", class: 'card' %>
-      <%= link_to 'subdomain', sub_heidelbeere_url(subdomain: :gites_heidelbeere) %>
-      <%= image_tag "heidelbeere/balcon.jpg", width: 300 %>
-
+      <p>Cet appartement meublé d'une superficie de 100m<sup>2</sup> situé au coeur des Vosges du Nord d'Alsace, à 10 minutes en voiture de la station thermale de Niederbronn.</p>
     </section>
     <section>
+      <%= link_to 'subdomain', sub_heidelbeere_url(subdomain: :gites_heidelbeere) %>
+    </section>
+    <section>
+      <%= image_tag "heidelbeere/balcon.jpg", width: 300 %>
     </section>
 
     <footer>
