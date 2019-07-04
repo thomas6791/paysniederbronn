@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :holidayrentings do
       collection do                       # collection => no restaurant id in URL
-        get 'gites_heidelbeere'                      # RestaurantsController#top
+        get 'gites_heidelbeere'                    # RestaurantsController#top
       end
     end
   end
