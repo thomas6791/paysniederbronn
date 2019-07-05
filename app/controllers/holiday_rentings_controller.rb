@@ -1,4 +1,4 @@
-class HolidayrentingsController < ApplicationController
+class HolidayRentingsController < ApplicationController
   def index
   end
 
@@ -39,7 +39,5 @@ class HolidayrentingsController < ApplicationController
     elsif locale.to_s == "en"
       render 'holidayrentings/gites-heidelbeere/en.meuble_heidelbeere'
     end
-
   end
-
 end
