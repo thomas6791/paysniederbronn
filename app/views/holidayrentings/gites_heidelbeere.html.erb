@@ -1,4 +1,23 @@
-<h1>Gîtes Heidelbeere</h1>
-<h2><%= @bonjour %></h2>
+<header>
+  <h1>Gîtes Heidelbeere</h1>
+</header>
+<main id="alentours">
+  <section class="cards">
+    <% @cards.each do |card| %>
+      <div class="card">
+        <%= image_tag "#{card[:photo]}" %>
+        <div class="footer">
+          <h2><%= card[:name] %></h2>
+          <div class="hide-content">
+            <p class="more">En savoir plus</p>
+            <p class="content">
+              <%= card[:description] %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </section>
+</main>
 <%= link_to 'Studio', studio_heidelbeere_holidayrentings_path %>
 <%= link_to 'Appartement', meuble_heidelbeere_holidayrentings_path %>
