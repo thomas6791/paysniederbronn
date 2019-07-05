@@ -1,5 +1,6 @@
 class HolidayRentingsController < ApplicationController
   def index
+    @annonces = HolidayRenting.all
   end
 
   def show
