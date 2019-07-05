@@ -8,8 +8,11 @@ Rails.application.routes.draw do
     resources :holiday_rentings do
       collection do                       # collection => no restaurant id in URL
         get 'gites-heidelbeere'
-        get 'gites-heidelbeere/meuble-heidelbeere', to: 'holiday_rentings#meuble_heidelbeere', as: :meuble_heidelbeere
-        get 'gites-heidelbeere/studio-heidelbeere', to: 'holiday_rentings#studio_heidelbeere', as: :studio_heidelbeere
+        scope '/gites-heidelbeere' do
+          get 'meuble-heidelbeere', to: 'holiday_rentings#meuble_heidelbeere', as: :meuble_heidelbeere
+          get 'studio-heidelbeere', to: 'holiday_rentings#studio_heidelbeere', as: :studio_heidelbeere
+        end
+
       end
     end
     constraints(subdomain: 'gites-heidelbeere') do
