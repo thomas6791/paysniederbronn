@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         get 'studio-heidelbeere', to: 'holiday_rentings#studio_heidelbeere', as: :studio_heidelbeere
       end
     end
+    get '/holiday_rentings/1', to: redirect('/meuble-heidelbeere')
     constraints(subdomain: 'gites-heidelbeere') do
       get '/', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
     end

@@ -4,6 +4,7 @@ class HolidayRentingsController < ApplicationController
   end
 
   def show
+    @annonce = HolidayRenting.find(params[:id])
   end
 
   def new
