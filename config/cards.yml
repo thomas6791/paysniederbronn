@@ -34,9 +34,11 @@
   - :name: Appartement de 100m2
     :photo: heidelbeere/chambre-bleue.jpg
     :description: Appartement tout équipé pouvant accueillir 4 personnes. A partir de 70€/nuit
+    :link: meuble_heidelbeere_holidayrentings_path
   - :name: Studio Meublé
     :photo: heidelbeere/chambre grise.jpg
     :description: Studio avec une capacité de 3 personnes. A partir de 70€/nuit
+    :link: studio_heidelbeere_holidayrentings_path
   en:
   - :name: Appartement de 100m<sup>2<sup>
     :photo: heidelbeere/chambre-bleue.jpg
