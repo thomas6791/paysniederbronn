@@ -6,6 +6,7 @@ class HolidayRentingsController < ApplicationController
   end
 
   def new
+    @annonce  = HolidayRenting.new
   end
 
   def create

@@ -2,7 +2,7 @@
 
 nav {
   padding: 0px 10px;
-  height: 2.2em;
+  height: 3em;
   border: solid 1px;
   display: flex;
   align-items: center;
@@ -19,6 +19,7 @@ nav {
     font-size: 1em;
     color: white;
     text-decoration: none;
+    align-self: center;
       &:hover {
         color: white;
         opacity: 0.8;
