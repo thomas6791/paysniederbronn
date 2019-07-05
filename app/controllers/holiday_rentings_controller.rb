@@ -24,7 +24,7 @@ class HolidayRentingsController < ApplicationController
 
   def gites_heidelbeere
     require 'yaml'
-    if locale.to_s == "fr"
+    if locale == :fr
       @cards = YAML.load(File.read("config/cards.yml"))[:heidelbeere][locale.to_s]
       render 'holiday_rentings/gites_heidelbeere'
     elsif
@@ -36,10 +36,8 @@ class HolidayRentingsController < ApplicationController
   end
 
   def meuble_heidelbeere
-    if locale.to_s == "fr"
-      render 'holiday_rentings/gites-heidelbeere/fr.meuble_heidelbeere'
-    elsif locale.to_s == "en"
-      render 'holiday_rentings/gites-heidelbeere/en.meuble_heidelbeere'
+    if locale == :fr
+      render 'holiday_rentings/gites-heidelbeere/fr.meuble-heidelbeere'
     end
   end
 end
