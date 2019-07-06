@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       end
     end
 
-    get 'ligne-maginots/index', to: 'ligne_maginots#index'
+    get 'ligne-maginots/index', to: 'ligne_maginots#index', as: :ligne_maginots
     get 'ligne_maginots/alsace', to: 'ligne_maginots#alsace'
     get 'ligne_maginots/lorraine', to: 'ligne_maginots#lorraine'
     scope 'ligne-maginot/alsace' do
