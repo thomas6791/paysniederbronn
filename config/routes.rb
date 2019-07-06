@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'ligne_maginots/index'
+  get 'ligne_maginots/alsace'
+  get 'ligne_maginots/lorraine'
+  get 'ligne_maginots/four_a_chaux'
+  get 'ligne_maginots/dambach'
   scope '(:locale)', locale: /fr|en|de/ do
     root to: 'pages#home'
     get 'about', to: 'pages#about', as: :about
