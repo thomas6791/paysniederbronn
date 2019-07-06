@@ -6,5 +6,5 @@
 <% end %>
 <%= link_to 'meuble', meuble_heidelbeere_holiday_rentings_path %>
 <%= link_to 'voir gites heidelbeere', gites_heidelbeere_holiday_rentings_path %>
-<%= link_to 'sous-domaine', sub_heidelbeere_path %>
-<%= link_to 'blog', blog_path %>
+<%= link_to 'sous-domaine', sub_heidelbeere_url(subdomain: 'gites-heidelbeere') %>
+<%= link_to 'blog', blog_url(subdomain: :blog) %>
