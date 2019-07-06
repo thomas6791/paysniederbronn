@@ -40,7 +40,9 @@ class HolidayRentingsController < ApplicationController
   end
 
   def meuble_heidelbeere
-    if locale == :fr
+    if locale != :fr
+      render 'holiday_rentings/gites-heidelbeere/#{locale.to_s}.meuble-heidelbeere'
+    else
       render 'holiday_rentings/gites-heidelbeere/fr.meuble-heidelbeere'
     end
   end
