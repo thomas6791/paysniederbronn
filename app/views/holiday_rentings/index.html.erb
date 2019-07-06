@@ -1,0 +1,10 @@
+<h1>HolidayRentings#index</h1>
+<p>Find me in app/views/holiday_rentings/index.html.erb</p>
+<% @annonces.each do |annonce| %>
+<%= annonce.name %>
+<%= link_to "voir annonce", holiday_renting_path(annonce) %>
+<% end %>
+<%= link_to 'meuble', meuble_heidelbeere_holiday_rentings_path %>
+<%= link_to 'voir gites heidelbeere', gites_heidelbeere_holiday_rentings_path %>
+<%= link_to 'sous-domaine', sub_heidelbeere_url(subdomain: 'gites-heidelbeere') %>
+<%= link_to 'blog', blog_url(subdomain: :blog) %>

@@ -1,0 +1,2 @@
+class HolidayRenting < ApplicationRecord
+end

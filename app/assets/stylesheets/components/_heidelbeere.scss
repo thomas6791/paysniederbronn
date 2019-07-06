@@ -1,0 +1,9 @@
+.heidelbeere {
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    div p {
+      word-break: break-word;
+    }
+  }
+}
