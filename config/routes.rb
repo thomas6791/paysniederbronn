@@ -13,11 +13,11 @@ Rails.application.routes.draw do
       end
     end
 
-    get 'ligne_maginots/index'
-    get 'ligne_maginots/alsace'
-    get 'ligne_maginots/lorraine'
-    get 'ligne_maginots/four_a_chaux'
-    get 'ligne_maginots/dambach'
+    get 'ligne-maginots/index', to: 'ligne_maginots#index'
+    get 'ligne_maginots/alsace', to: 'ligne_maginots#alsace'
+    get 'ligne_maginots/lorraine', to: 'ligne_maginots#lorraine'
+    get 'ligne_maginots/alsace/four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
+    get 'ligne_maginots/alsace/dambach', to: 'ligne_maginots#dambach'
 
     constraints(subdomain: 'gites-heidelbeere') do
       get '/', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
