@@ -1,5 +1,12 @@
+.article {
+}
 #four_a_chaux_lembach {
+  article > section:first-of-type {
+    img { float: left; margin-right: 15px; margin-bottom: 10px; }
+    h2:first-of-type { clear: both; }
+  }
   img { max-width: 100%; }
+
   table {
     border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
   }
@@ -9,6 +16,8 @@
   }
   caption {
     font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 0px;
   }
   .tableau.fourlembach {
     width: 100%;
@@ -16,12 +25,42 @@
     flex-direction: column;
   }
   .fr, .de { text-align: center; word-break:break-all; }
-  .tableau.fourlembach.visites > table > tbody > tr > th { color: red; word-break:break-all; }
-  thead > tr > th:first-child { color: blue; }
-  table > thead > tr { color: green; word-break:break-all;
+  .tableau.fourlembach.visites > table > tbody > tr > th { word-break:break-all; }
+  thead > tr > th:first-child {}
+  table > thead > tr { word-break:break-all;
     //white-space: nowrap;
     //overflow: hidden;
     //text-overflow: ellipsis;
     //max-width: 200px;
   }
+  .day-color { background-color: lightseagreen; }
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  #four_a_chaux_lembach {
+    img { float: none; margin-right: 0px; }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .article {
+    padding: 0px 40px;
+  }
+
 }
