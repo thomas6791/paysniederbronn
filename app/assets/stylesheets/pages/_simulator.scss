@@ -6,3 +6,18 @@
   .entete p, .results p {  display: flex; min-width: 90px; border: solid 1px; align-self: center; }
   .entete p:first-of-type, .results p:first-of-type { width: 100px; border: solid 2px red; align-self: center; }
 }
+#calcul {
+  display: flex;
+  justify-content: center;
+  form {
+    border: solid 1px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 30%;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
