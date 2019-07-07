@@ -1,5 +1,5 @@
 class LigneMaginotsController < ApplicationController
-  before_action :set_date
+  before_action :set_date, only: [:four_a_chaux]
   def index
   end
 
