@@ -6,7 +6,7 @@
     <section>
       <p><%= @taxes["niederbronn"] %></p>
       <div>
-        <%= simple_form_for :anything, :url => result_path, :method => :post do |f| %>
+        <%= simple_form_for :taxe_sejour, :url => result_path, :method => :post do |f| %>
           <%= f.input :amount, :input_html => { :type => "number" } %>
           <%= f.input :days, :input_html => { :type => "number" } %>
           <%= f.input :people, :input_html => { :type => "number" } %>

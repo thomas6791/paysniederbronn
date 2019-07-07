@@ -22,6 +22,12 @@ class PagesController < ApplicationController
 
   def result
     taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
-    fail
+    amount = params[:taxe_sejour][:amount].to_f
+    days = params[:taxe_sejour][:days].to_f
+    people = params[:taxe_sejour][:people].to_f
+    minors = params[:taxe_sejour][:minors].to_f
+    people_pay = people - minors
+    @tax_day = ((amount / days / people) * 0.05 * 1.10).round(2,half: :up)
+    @result = (@tax_day * people_pay * days).round(2)
   end
 end
