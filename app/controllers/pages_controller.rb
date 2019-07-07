@@ -29,5 +29,6 @@ class PagesController < ApplicationController
     people_pay = people - minors
     @tax_day = ((amount / days / people) * 0.05 * 1.10).round(2,half: :up)
     @result = (@tax_day * people_pay * days).round(2)
+    redirect_to simulateur_path(tax_day: @tax_day, result: @result)
   end
 end
