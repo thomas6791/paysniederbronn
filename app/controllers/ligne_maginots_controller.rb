@@ -1,4 +1,5 @@
 class LigneMaginotsController < ApplicationController
+  before_action :set_date
   def index
   end
 
@@ -9,9 +10,12 @@ class LigneMaginotsController < ApplicationController
   end
 
   def four_a_chaux
-    @day = Time.now.strftime("%a").downcase
   end
 
   def dambach
+  end
+
+  def set_date
+    @day = Time.now.strftime("%a").downcase
   end
 end
