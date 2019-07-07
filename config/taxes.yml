@@ -1,0 +1,13 @@
+:taxes:
+  niederbronn:
+  - :5: 2.73
+  - :4: 2.00
+  - :3: 1.64
+  - :2: 0.90
+  - :1: 0.73
+  - :nc-hotel: 0.55
+  - :nc-meuble: 0.55
+  - :camping-3-4-5: 0.36
+  - :camping-1-2: 0.20
+  - :add_tax?: oui
+  - :add_tax: 1.10
