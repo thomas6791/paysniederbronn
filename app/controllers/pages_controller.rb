@@ -21,5 +21,6 @@ class PagesController < ApplicationController
   end
 
   def result
+    fail
   end
 end

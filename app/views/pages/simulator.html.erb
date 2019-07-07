@@ -6,9 +6,12 @@
     <section>
       <p><%= @taxes["niederbronn"] %></p>
       <div>
-        <%= form_for :anything, url: "pages_controller/simulator" do |form| %>
-          <%= form.text_field :name %>
-          <%= form.submit  %>
+        <%= simple_form_for :anything, :url => result_path, :method => :post do |f| %>
+          <%= f.input :amount, :input_html => { :type => "number" } %>
+          <%= f.input :days, :input_html => { :type => "number" } %>
+          <%= f.input :people, :input_html => { :type => "number" } %>
+          <%= f.input :minors, :input_html => { :type => "number" } %>
+          <%= f.submit  %>
         <% end  %>
       </div>
     </section>
