@@ -9,19 +9,22 @@
 #calcul {
   display: flex;
   justify-content: center;
+  margin: 25px 0px;
   form {
     border: solid 1px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 30%;
+    width: auto;
     padding: 20px;
+    label { font-weight: bold; margin-right: 10px; }
     div {
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
     }
     input[type="submit"]{
+      margin-top: 10px;
       cursor:pointer;
       font-size: 1em;
       line-height: 2em;
