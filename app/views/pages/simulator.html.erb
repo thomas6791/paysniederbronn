@@ -8,7 +8,7 @@
         <%= f.input :amount, :input_html => { :type => "number" }, label: "Montant total du séjour :", :required => false %>
         <%= f.input :days, :input_html => { :type => "number" }, label: "Durée du séjour :", :required => false %>
         <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
-        <%= f.input :minors, :input_html => { :type => "number" }, label: "Nbre de personne non assujettie :", :required => false %>
+        <%= f.input :minors, :input_html => { :type => "number" }, label: "Pers. non assujetties (ex: mineurs) :", :required => false %>
         <%= f.button :submit, value: "Calculer" %>
       <% end  %>
     </section>
