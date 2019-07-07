@@ -10,4 +10,5 @@
     font-size: 1.2em;
   }
   .fr, .de { text-align: center; }
+  .tableau.fourlembach.visites > table > tbody > tr > th, thead > tr > th:first-child { color: red; }
 }
