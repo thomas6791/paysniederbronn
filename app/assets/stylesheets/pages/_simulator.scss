@@ -23,9 +23,15 @@
     }
     input[type="submit"]{
       cursor:pointer;
-      border: solid 1px;
       font-size: 1em;
       line-height: 2em;
+      border-radius: 3px;
+      background-color: lightseagreen;
+      border: solid lightseagreen 1px;
+      color: white;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }
