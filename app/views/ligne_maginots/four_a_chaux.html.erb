@@ -17,7 +17,7 @@
       <h2>Horaires et tarifs du Four à Chaux</h2>
     </section>
     <section>
-      <div class="tableau fourlembach visites">
+      <div class="tableau fourlembach visites" data-day=<%= @day %> >
         <p>Il est nécessaire d'être présent 10 minutes avant l'heure des visites</p>
         <table>
 
@@ -27,13 +27,13 @@
             <tr>
              <th>Périodes</th>
              <th>Langue des visites</th>
-             <th>Lundi</th>
-             <th>Mardi</th>
-             <th>Mercredi</th>
-             <th>Jeudi</th>
-             <th>Vendredi</th>
-             <th>Samedi</th>
-             <th>Dimanche</th>
+             <th class="mon">Lundi</th>
+             <th class="tue">Mardi</th>
+             <th class="wed">Mercredi</th>
+             <th class="thu">Jeudi</th>
+             <th class="fri">Vendredi</th>
+             <th class="sat">Samedi</th>
+             <th class="sun">Dimanche</th>
             </tr>
           </thead>
 
@@ -42,7 +42,7 @@
             <tr>
               <th scope="row" rowspan="2">Du 02/01/2019 au 31/03/2019</th>
               <td class="fr">Français</td>
-              <td class="monday"></td>
+              <td class="mon"></td>
               <td class="tue"></td>
               <td class="wed"></td>
               <td class="thu"></td>
@@ -52,7 +52,7 @@
             </tr>
             <tr>
               <td class="de">Allemand</td>
-              <td class="monday"></td>
+              <td class="mon"></td>
               <td class="tue"></td>
               <td class="wed"></td>
               <td class="thu"></td>
@@ -64,7 +64,7 @@
             <tr>
               <th scope="row" rowspan="2">Du 01/04/2019 au 30/04/2019</th>
               <td class="fr">Français</td>
-              <td class="monday">14h00; 16h00</td>
+              <td class="mon">14h00; 16h00</td>
               <td class="tue">14h00; 16h00</td>
               <td class="wed">14h00; 16h00</td>
               <td class="thu">14h00; 16h00</td>
@@ -74,7 +74,7 @@
             </tr>
             <tr>
               <td class="de">Allemand</td>
-              <td class="monday">13h30; 15h30</td>
+              <td class="mon">13h30; 15h30</td>
               <td class="tue">13h30; 15h30</td>
               <td class="wed">13h30; 15h30</td>
               <td class="thu">13h30; 15h30</td>
@@ -86,7 +86,7 @@
             <tr>
               <th scope="row" rowspan="2">Du 01/05/2019 au 30/09/2019</th>
               <td class="fr">Français</td>
-              <td class="monday">10h00; 14h00; 16h00</td>
+              <td class="mon">10h00; 14h00; 16h00</td>
               <td class="tue">10h00; 14h00; 16h00</td>
               <td class="wed">10h00; 14h00; 16h00</td>
               <td class="thu">10h00; 14h00; 16h00</td>
@@ -96,7 +96,7 @@
             </tr>
             <tr>
               <td class="de">Allemand</td>
-              <td class="monday">10h30; 13h30; 15h30</td>
+              <td class="mon">10h30; 13h30; 15h30</td>
               <td class="tue">10h30; 13h30; 15h30</td>
               <td class="wed">10h30; 13h30; 15h30</td>
               <td class="thu">10h30; 13h30; 15h30</td>
@@ -108,7 +108,7 @@
             <tr>
               <th scope="row" rowspan="2">Du 01/10/2019 au 31/10/2019</th>
               <td class="fr">Français</td>
-              <td class="monday">14h00; 16h00</td>
+              <td class="mon">14h00; 16h00</td>
               <td class="tue">14h00; 16h00</td>
               <td class="wed">14h00; 16h00</td>
               <td class="thu">14h00; 16h00</td>
@@ -118,7 +118,7 @@
             </tr>
             <tr>
               <td class="de">Allemand</td>
-              <td class="monday">10h30; 13h30; 15h30</td>
+              <td class="mon">10h30; 13h30; 15h30</td>
               <td class="tue">13h30; 15h30</td>
               <td class="wed">13h30; 15h30</td>
               <td class="thu">13h30; 15h30</td>
@@ -130,7 +130,7 @@
             <tr>
               <th scope="row" rowspan="2">Du 01/11/2019 au 23/12/2019</th>
               <td class="fr">Français</td>
-              <td class="monday"></td>
+              <td class="mon"></td>
               <td class="tue"></td>
               <td class="wed"></td>
               <td class="thu"></td>
@@ -140,7 +140,7 @@
             </tr>
             <tr>
               <td class="de">Allemand</td>
-              <td class="monday"></td>
+              <td class="mon"></td>
               <td class="tue"></td>
               <td class="wed"></td>
               <td class="thu"></td>
@@ -152,7 +152,7 @@
             <tr>
               <th scope="row" rowspan="2">Du 27/12/2019 au 30/12/2019</th>
               <td class="fr">Français</td>
-              <td class="monday">14h30</td>
+              <td class="mon">14h30</td>
               <td class="tue">14h30</td>
               <td class="wed">14h30</td>
               <td class="thu">14h30</td>
@@ -162,7 +162,7 @@
             </tr>
             <tr>
               <td class="de">Allemand</td>
-              <td class="monday">14h30</td>
+              <td class="mon">14h30</td>
               <td class="tue">14h30</td>
               <td class="wed">14h30</td>
               <td class="thu">14h30</td>
@@ -244,4 +244,5 @@
     </section>
   </article>
 </main>
+<%= javascript_pack_tag "dayCalendar" %>
 

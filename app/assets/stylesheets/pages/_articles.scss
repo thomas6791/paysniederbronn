@@ -27,12 +27,13 @@
   .fr, .de { text-align: center; word-break:break-all; }
   .tableau.fourlembach.visites > table > tbody > tr > th { word-break:break-all; }
   thead > tr > th:first-child {}
-  table > thead > tr {word-break:break-all;
+  table > thead > tr { word-break:break-all;
     //white-space: nowrap;
     //overflow: hidden;
     //text-overflow: ellipsis;
     //max-width: 200px;
   }
+  .day-color { background-color: lightseagreen; }
 }
 
 // Smallest device

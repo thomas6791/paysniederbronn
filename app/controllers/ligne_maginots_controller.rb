@@ -9,6 +9,7 @@ class LigneMaginotsController < ApplicationController
   end
 
   def four_a_chaux
+    @day = Time.now.strftime("%a").downcase
   end
 
   def dambach
