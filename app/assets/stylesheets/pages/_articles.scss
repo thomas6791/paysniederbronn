@@ -19,9 +19,9 @@
   .tableau.fourlembach.visites > table > tbody > tr > th { color: red; word-break:break-all; }
   thead > tr > th:first-child { color: blue; }
   table > thead > tr { color: green; word-break:break-all;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
+    //white-space: nowrap;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
+    //max-width: 200px;
   }
 }
