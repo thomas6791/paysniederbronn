@@ -22,12 +22,12 @@ class PagesController < ApplicationController
       @tax_day = params[:results][0][:tax_day]
       @result_nc = params[:results][0][:result]
       @people_pay = params[:results][0][:people_pay].to_i
-      @days = params[:results][0][:days]
-      @one = @people_pay * @taxes[:one].to_f * @days
-      @two = @people_pay * @taxes[:two].to_f * @days
-      @three = @people_pay * @taxes[:three].to_f * @days
-      @four = @people_pay * @taxes[:four].to_f * @days
-      @five = @people_pay * @taxes[:five].to_f * @days
+      @days = params[:results][0][:days].to_i
+      @one = (@people_pay * @taxes[:one].to_f * @days).round(2)
+      @two = (@people_pay * @taxes[:two].to_f * @days).round(2)
+      @three = (@people_pay * @taxes[:three].to_f * @days).round(2)
+      @four = (@people_pay * @taxes[:four].to_f * @days).round(2)
+      @five = (@people_pay * @taxes[:five].to_f * @days).round(2)
     end
   end
 
