@@ -18,6 +18,6 @@ class PagesController < ApplicationController
   def simulator
     require 'yaml'
     @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
-    fail
+    @result = Simulator.new
   end
 end

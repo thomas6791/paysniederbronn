@@ -6,10 +6,11 @@
     <section>
       <p><%= @taxes["niederbronn"] %></p>
       <div>
-        <%= simple_form_for :result, url: simulateur_path do |f| %>
-          <%= f.input :amount, as: :integer %>
-          <%= f.submit %>
-          <% end %>
+        <%= simple_form_for @result do |f| %>
+          <%= f.input :amount %>
+          <%= f.input :days %>
+          <%= f.button :submit %>
+        <% end %>
       </div>
     </section>
   </article>
