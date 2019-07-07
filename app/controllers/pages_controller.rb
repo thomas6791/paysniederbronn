@@ -21,7 +21,7 @@ class PagesController < ApplicationController
   end
 
   def result
-    @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
+    taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
     fail
   end
 end
