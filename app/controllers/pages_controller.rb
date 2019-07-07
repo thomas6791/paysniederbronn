@@ -23,11 +23,11 @@ class PagesController < ApplicationController
       @result_nc = params[:results][0][:result]
       @people_pay = params[:results][0][:people_pay].to_i
       @days = params[:results][0][:days]
-      @one = @people_pay * @taxes[:one].to_f
-      @two = @people_pay * @taxes[:two].to_f
-      @three = @people_pay * @taxes[:three].to_f
-      @four = @people_pay * @taxes[:four].to_f
-      @five = @people_pay * @taxes[:five].to_f
+      @one = @people_pay * @taxes[:one].to_f * @days
+      @two = @people_pay * @taxes[:two].to_f * @days
+      @three = @people_pay * @taxes[:three].to_f * @days
+      @four = @people_pay * @taxes[:four].to_f * @days
+      @five = @people_pay * @taxes[:five].to_f * @days
     end
   end
 
