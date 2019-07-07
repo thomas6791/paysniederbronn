@@ -1,8 +1,9 @@
 class PagesController < ApplicationController
+  require 'yaml'
   def home
   end
   def alentours
-    require 'yaml'
+
     @cards = YAML.load(File.read("config/cards.yml"))[:cards][locale.to_s]
   end
 
@@ -16,11 +17,11 @@ class PagesController < ApplicationController
   end
 
   def simulator
-    require 'yaml'
     @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
   end
 
   def result
+    @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
     fail
   end
 end
