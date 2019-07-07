@@ -1,3 +1,5 @@
+.article {
+}
 #four_a_chaux_lembach {
   article > section:first-of-type {
     img { float: left; margin-right: 15px; margin-bottom: 10px; }
@@ -56,5 +58,8 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+  .article {
+    padding: 0px 40px;
+  }
 
 }
