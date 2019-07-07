@@ -9,6 +9,8 @@
   caption {
     font-size: 1.2em;
   }
-  .fr, .de { text-align: center; }
-  .tableau.fourlembach.visites > table > tbody > tr > th, thead > tr > th:first-child { color: red; }
+  .fr, .de { text-align: center; word-break:break-all; }
+  .tableau.fourlembach.visites > table > tbody > tr > th { color: red; word-break:break-all; }
+  thead > tr > th:first-child { color: blue; }
+  table > thead > tr { color: green; word-break:break-all; }
 }
