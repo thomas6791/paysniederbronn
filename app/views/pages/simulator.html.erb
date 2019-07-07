@@ -3,8 +3,8 @@
     <header>
       <h1>Simulateur Taxe de sejour</h1>
     </header>
-    <section>
-      <p><%= @taxes["niederbronn"] %></p>
+    <section id="calcul">
+      <p><%= @taxes %></p>
       <div>
         <%= simple_form_for :taxe_sejour, :url => result_path, :method => :post do |f| %>
           <%= f.input :amount, :input_html => { :type => "number" } %>
@@ -15,6 +15,29 @@
         <% end  %>
       </div>
     </section>
+    <section id="results">
+      <div class="tableau">
+        <div class="entete">
+          <p>Classement</p>
+          <p>NC</p>
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+          <p>5</p>
+        </div>
+        <div class="results">
+          <p>Montant</p>
+          <p><%= @result_nc %> €</p>
+          <p><%= @one %> €</p>
+          <p><%= @two %> €</p>
+          <p><%= @three %> €</p>
+          <p><%= @four %> €</p>
+          <p><%= @five %> €</p>
+        </div>
+      </div>
+    </section>
   </article>
 </main>
+
 

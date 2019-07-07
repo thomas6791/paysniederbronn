@@ -1,0 +1,8 @@
+.tableau {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px;
+  .entete, .results { display: inline-flex; }
+  .entete p, .results p { min-width: 50px; border: solid 1px;}
+  .entete p:first-of-type, .results p:first-of-type { width: 100px; border: solid 2px red; }
+}
