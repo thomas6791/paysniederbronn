@@ -12,6 +12,15 @@ Rails.application.routes.draw do
         get 'studio-heidelbeere', to: 'holiday_rentings#studio_heidelbeere', as: :studio_heidelbeere
       end
     end
+
+    get 'ligne-maginots/index', to: 'ligne_maginots#index', as: :ligne_maginots
+    get 'ligne_maginots/alsace', to: 'ligne_maginots#alsace'
+    get 'ligne_maginots/lorraine', to: 'ligne_maginots#lorraine'
+    scope 'ligne-maginot/alsace' do
+      get 'four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
+      get 'dambach', to: 'ligne_maginots#dambach'
+    end
+
     constraints(subdomain: 'gites-heidelbeere') do
       get '/', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
     end
