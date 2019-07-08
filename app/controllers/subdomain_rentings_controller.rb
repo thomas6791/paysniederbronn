@@ -1,5 +1,5 @@
 class SubdomainRentingsController < ApplicationController
-  layout "gite_layout"
+   layout 'gite'
   def index
   end
 end
