@@ -22,10 +22,11 @@ class PagesController < ApplicationController
       taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
       datas = params[:results].first
       taxes_towns = []
-      taxes.each do |town|
-        taxes_towns << TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, town)
+      taxes.each do |key, value|
+        taxes_towns << TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, key)
       end
       fail
+      #taxes_towns[0].town[0]
     end
   end
 
