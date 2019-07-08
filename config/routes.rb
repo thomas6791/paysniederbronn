@@ -22,12 +22,12 @@ Rails.application.routes.draw do
       get 'four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
       get 'dambach', to: 'ligne_maginots#dambach'
     end
-    constraints(subdomain: 'blog') do
-      get '/', to: 'holiday_rentings#index', as: 'blog'
-    end
   end
   constraints(subdomain: 'gites-heidelbeere') do
     get 'gites-heidelbeere', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
+  end
+  constraints(subdomain: 'blog') do
+    get 'blog', to: 'pages#blog', as: 'blog'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
