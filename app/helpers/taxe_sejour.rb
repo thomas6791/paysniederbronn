@@ -5,7 +5,7 @@ class TaxeSejour
     @days = days
     @people = people
     @minors = minors
-    @town = town.first
+    @town = town
     @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes][@town]
     @price_ratings = []
   end
