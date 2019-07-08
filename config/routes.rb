@@ -24,10 +24,10 @@ Rails.application.routes.draw do
     end
   end
   constraints(subdomain: 'gites-heidelbeere') do
-    get 'gites-heidelbeere', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
+    get '/', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
   end
   constraints(subdomain: 'blog') do
-    get 'blog', to: 'pages#blog', as: 'blog'
+    get '/', to: 'pages#blog', as: 'blog'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
