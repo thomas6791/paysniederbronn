@@ -1,5 +1,5 @@
 class TaxeSejour
-  attr_reader :amount, :days, :people, :minors, :town
+  attr_reader :amount, :days, :people, :minors, :town, :price_ratings
   def initialize(amount, days, people, minors, town)
     @amount = amount
     @days = days
@@ -7,13 +7,14 @@ class TaxeSejour
     @minors = minors
     @town = town
     @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes][@town]
+    @price_ratings = []
   end
   def people_pay
     return @people - @minors
   end
 
   def tax_day
-    ((@amount / @days / @people) * 0.05 * @taxes[:add_tax].to_f).round(2,half: :up)
+    ((@amount / @days / @people) * @taxes[:taux].to_f * @taxes[:add_tax].to_f).round(2,half: :up)
   end
 
   def result
@@ -32,5 +33,7 @@ class TaxeSejour
     prices << (self.people_pay * @taxes[:three].to_f * @days).round(2)
     prices << (self.people_pay * @taxes[:four].to_f * @days).round(2)
     prices << (self.people_pay * @taxes[:five].to_f * @days).round(2)
+    @price_ratings = prices
   end
+
 end

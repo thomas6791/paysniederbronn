@@ -43,7 +43,7 @@
     :add_tax?: oui
     :add_tax: 1.10
     :plafond: 2.30
-    taux: 0.05
+    :taux: 0.05
   colmar:
     :palace: 4.40
     :five: 1.65
@@ -59,3 +59,18 @@
     :add_tax: 1.10
     :plafond: 2.30
     :taux: 0.05
+  strasbourg:
+    :palace: 4.40
+    :five: 3.30
+    :four: 2.45
+    :three: 1.65
+    :two: 0.80
+    :one: 0.55
+    :nc-hotel: 0.5
+    :nc-meuble: 0.5
+    :camping-3-4-5: 0.55
+    :camping-1-2: 0.22
+    :add_tax?: oui
+    :add_tax: 1.10
+    :plafond: 2.30
+    :taux: 0.04
