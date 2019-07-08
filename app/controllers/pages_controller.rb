@@ -19,6 +19,13 @@ class PagesController < ApplicationController
   def simulator
     if params[:results].present?
       @taxes_sejour = params[:results].first[:prices]
+      taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
+      datas = params[:results].first
+      taxes_towns = []
+      taxes.each do |town|
+        taxes_towns << TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, town)
+      end
+      fail
     end
   end
 
