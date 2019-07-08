@@ -28,8 +28,6 @@ class PagesController < ApplicationController
           @taxes_town << TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, key).price_ratings
           @towns << key
         end
-      fail
-      #taxes_towns[0].town[0]
     end
   end
 
