@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     get 'about', to: 'pages#about', as: :about
     get 'contact', to: 'pages#contact', as: :contact
     get 'alentours', to: 'pages#alentours', as: :alentours
+    get 'simulateur', to: 'pages#simulator', as: :simulateur
+    post 'result', to: 'pages#result', as: :result
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :holiday_rentings do
       collection do                       # collection => no restaurant id in URL

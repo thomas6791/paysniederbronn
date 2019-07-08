@@ -1,0 +1,44 @@
+<main id="simulator">
+  <article>
+    <header>
+      <h1>Simulateur Taxe de sejour</h1>
+    </header>
+    <section id="calcul">
+      <%= simple_form_for :taxe_sejour, :url => result_path, :method => :post do |f| %>
+        <%= f.input :amount, :input_html => { :type => "number" }, label: "Montant total du séjour :", :required => false %>
+        <%= f.input :days, :input_html => { :type => "number" }, label: "Durée du séjour :", :required => false %>
+        <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
+        <%= f.input :minors, :input_html => { :type => "number" }, label: "Pers. non assujetties (ex: mineurs) :", :required => false %>
+        <%= f.button :submit, value: "Calculer" %>
+        <p>Comm Comm Niederbronn</p>
+      <% end  %>
+    </section>
+    <section id="results">
+      <div class="tableau-simulator">
+        <table>
+         <tr>
+           <th>Classement</th>
+           <td>NC</td>
+           <td><% 1.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           <td><% 2.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           <td><% 3.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           <td><% 4.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           <td><% 5.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+         </tr>
+         <tr>
+           <th>Montant Pour Meublé de Tourisme</th>
+           <td><%= @result_nc %> €</td>
+           <td><%= @one %> €</td>
+           <td><%= @two %> €</td>
+           <td><%= @three %> €</td>
+           <td><%= @four %> €</td>
+           <td><%= @five %> €</td>
+         </tr>
+        </table>
+      </div>
+
+    </section>
+  </article>
+</main>
+
+
