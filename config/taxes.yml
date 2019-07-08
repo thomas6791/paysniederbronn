@@ -21,7 +21,7 @@
     :one: 0.80
     :nc-hotel: 0.5
     :nc-meuble: 0.5
-    :camping-3-4-5: 0.36
+    :camping-3-4-5: 0.45
     :camping-1-2: 0.20
     :add_tax?: oui
     :add_tax: 1.10
