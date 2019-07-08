@@ -19,15 +19,17 @@ class PagesController < ApplicationController
   def simulator
     if params[:results].present?
       @taxes_sejour = params[:results].first[:prices]
-      taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
+      @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
       datas = params[:results].first
       @taxes_town = []
       @towns = Array.new
-        taxes.each do |key, value|
-          town = taxes[key]
+        @taxes.each do |key, value|
+          town = @taxes[key]
           @taxes_town << TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, key).price_ratings
           @towns << key
         end
+      @hash_town = Hash[@towns.zip @taxes_town]
+      @hash_town = @hash_town.reject { |k,v| k == "niederbronn" }
     end
   end
 

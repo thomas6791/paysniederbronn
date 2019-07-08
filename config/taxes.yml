@@ -12,7 +12,7 @@
     :camping-1-2: 0.20
     :add_tax?: oui
     :add_tax: 1.10
-    :plafond:
+    :plafond: 2.30
     :taux: 0.05
   kaysersberg:
     :palace: 3.30

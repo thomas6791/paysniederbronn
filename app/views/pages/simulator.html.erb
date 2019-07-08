@@ -17,7 +17,7 @@
       <div class="tableau-simulator">
         <table>
          <tr>
-           <th>Classement</th>
+           <th>Classement - Niederbron</th>
            <td>NC</td>
            <td><% 1.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
            <td><% 2.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
@@ -39,8 +39,38 @@
          </tr>
         </table>
       </div>
-
     </section>
+    <section id="results-town">
+      <h2>Comparatif avec d'autres villes</h2>
+      <% @hash_town.each do |key, value| %>
+        <div class="tableau-simulator towns">
+          <table>
+           <tr>
+             <th>Classement - <%= "#{key.capitalize}" %></th>
+             <td>NC</td>
+             <td><% 1.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+             <td><% 2.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+             <td><% 3.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+             <td><% 4.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+             <td><% 5.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           </tr>
+           <tr>
+             <th>Montant Pour Meublé de Tourisme</th>
+             <% if value != nil %>
+              <% value.each do |taxe| %>
+                <td><%= taxe %> €</td>
+              <% end %>
+             <% else %>
+              <% 6.times do %>
+                <td>0.00 €</td>
+              <% end %>
+             <% end %>
+           </tr>
+          </table>
+        </div>
+      <% end %>
+    </section>
+
   </article>
 </main>
 

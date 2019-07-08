@@ -1,4 +1,5 @@
 #simulator { min-height: 100vh; }
+h2 { text-align: center; }
 .tableau-simulator {
   display: flex;
   justify-content: center;
@@ -11,6 +12,12 @@
     font-size: 1em;
     text-align: center;
     padding: 5px;
+  }
+}
+#results-town {
+  margin-top: 20px;
+  .tableau-simulator {
+     margin: 10px 0px;
   }
 }
 #calcul {
