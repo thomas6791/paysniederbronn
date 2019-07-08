@@ -22,7 +22,11 @@ class TaxeSejour
 
   def price_ratings
     prices = []
-    prices << self.result
+    if self.tax_day < @taxes[:four].to_f
+      prices << self.result
+    else
+      prices << (self.people_pay * @taxes[:four].to_f * @days).round(2)
+    end
     prices << (self.people_pay * @taxes[:one].to_f * @days).round(2)
     prices << (self.people_pay * @taxes[:two].to_f * @days).round(2)
     prices << (self.people_pay * @taxes[:three].to_f * @days).round(2)
