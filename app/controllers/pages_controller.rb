@@ -29,6 +29,6 @@ class PagesController < ApplicationController
     minors = params[:taxe_sejour][:minors].to_f
     town = "niederbronn"
     @taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
-    redirect_to simulateur_path(results: [prices: @taxe_sejour.price_ratings])
+    redirect_to simulateur_path(results: [prices: @taxe_sejour.price_ratings, amount: @taxe_sejour.amount, days: @taxe_sejour.days, people: @taxe_sejour.people, minors: @taxe_sejour.minors, town: @taxe_sejour.town ])
   end
 end
