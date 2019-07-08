@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  constraints(subdomain: 'gites-heidelbeere') do
+    root to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
+  end
+  constraints(subdomain: 'blog') do
+    root to: 'pages#blog', as: 'blog'
+  end
+
   scope '(:locale)', locale: /fr|en|de/ do
     root to: 'pages#home'
     get 'about', to: 'pages#about', as: :about
@@ -22,12 +30,6 @@ Rails.application.routes.draw do
       get 'four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
       get 'dambach', to: 'ligne_maginots#dambach'
     end
-  end
-  constraints(subdomain: 'gites-heidelbeere') do
-    get 'gites-heidelbeere', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
-  end
-  constraints(subdomain: 'blog') do
-    get 'blog', to: 'pages#blog', as: 'blog'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
