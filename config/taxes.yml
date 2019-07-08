@@ -12,6 +12,7 @@
     :camping-1-2: 0.20
     :add_tax?: oui
     :add_tax: 1.10
+    :plafond:
   kaysersberg:
     :palace: 3.30
     :five: 1.65
@@ -25,3 +26,18 @@
     :camping-1-2: 0.20
     :add_tax?: oui
     :add_tax: 1.10
+    :plafond:
+  obernai:
+    :palace: 3.30
+    :five: 1.50
+    :four: 1.50
+    :three: 1.10
+    :two: 0.90
+    :one: 0.80
+    :nc-hotel: 0.5
+    :nc-meuble: 0.5
+    :camping-3-4-5: 0.50
+    :camping-1-2: 0.22
+    :add_tax?: oui
+    :add_tax: 1.10
+    :plafond: 2.30
