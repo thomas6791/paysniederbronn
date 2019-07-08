@@ -43,7 +43,7 @@
     :add_tax?: oui
     :add_tax: 1.10
     :plafond: 2.30
-    taux: 0.05
+    :taux: 0.05
   colmar:
     :palace: 4.40
     :five: 1.65
