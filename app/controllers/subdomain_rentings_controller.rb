@@ -1,0 +1,2 @@
+class SubdomainRentingsController < ApplicationController
+end
