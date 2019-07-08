@@ -13,7 +13,7 @@ class TaxeSejour
   end
 
   def tax_day
-    ((@amount / @days / @people) * 0.05 * @taxes[:add_tax].to_f).round(2,half: :up)
+    ((@amount / @days / @people) * @taxes[:taux].to_f * @taxes[:add_tax].to_f).round(2,half: :up)
   end
 
   def result
