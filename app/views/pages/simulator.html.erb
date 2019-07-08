@@ -33,7 +33,7 @@
            <td><% 5.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
          </tr>
          <tr>
-           <th>Montant Pour Meublé de Tourisme</th>
+           <th>Montant total pour meublé de tourisme</th>
            <% if @taxes_sejour != nil %>
             <% @taxes_sejour.each do |taxe| %>
               <td><%= taxe %> €</td>
@@ -63,7 +63,7 @@
                <td><% 5.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
              </tr>
              <tr>
-               <th>Montant Pour Meublé de Tourisme</th>
+               <th>Montant total pour meublé de tourisme</th>
                <% if value != nil %>
                 <% value.each do |taxe| %>
                   <td><%= taxe %> €</td>
