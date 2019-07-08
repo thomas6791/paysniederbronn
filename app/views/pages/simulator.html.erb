@@ -27,12 +27,15 @@
          </tr>
          <tr>
            <th>Montant Pour Meublé de Tourisme</th>
-           <td><%= @result_nc %> €</td>
-           <td><%= @one %> €</td>
-           <td><%= @two %> €</td>
-           <td><%= @three %> €</td>
-           <td><%= @four %> €</td>
-           <td><%= @five %> €</td>
+           <% if @taxes_sejour != nil %>
+            <% @taxes_sejour.each do |taxe| %>
+              <td><%= taxe %> €</td>
+            <% end %>
+           <% else %>
+            <% 6.times do %>
+              <td>0.00 €</td>
+            <% end %>
+           <% end %>
          </tr>
         </table>
       </div>
