@@ -17,14 +17,12 @@ class PagesController < ApplicationController
   end
 
   def simulator
-    @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]["niederbronn"]
     if params[:results].present?
       @taxes_sejour = params[:results].first[:prices]
     end
   end
 
   def result
-    taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]["niederbronn"]
     amount = params[:taxe_sejour][:amount].to_f
     days = params[:taxe_sejour][:days].to_f
     people = params[:taxe_sejour][:people].to_f
