@@ -17,7 +17,6 @@ class PagesController < ApplicationController
   end
 
   def simulator
-    fail
     @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
     if params[:results].present?
       @tax_day = params[:results][0][:tax_day]
