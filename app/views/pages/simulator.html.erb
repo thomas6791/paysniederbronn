@@ -14,7 +14,14 @@
       <% end  %>
     </section>
     <section id="results">
+      <div class="simulator-datas">
+        <p>Montant: <%= params[:results].first[:amount] %> €</p>
+        <p>Durée: <%= params[:results].first[:days] %> jours</p>
+        <p>Nbre total de personnes: <%= params[:results].first[:people] %></p>
+        <p>Personnes non assujettis: <%= params[:results].first[:minors] %></p>
+      </div>
       <div class="tableau-simulator">
+
         <table>
          <tr>
            <th>Classement - Niederbron</th>

@@ -1,5 +1,10 @@
 #simulator { min-height: 100vh; }
 h2 { text-align: center; }
+.simulator-datas {
+  display: flex;
+  justify-content: center;
+  p { padding: 10px; font-weight: bold; }
+}
 .tableau-simulator {
   display: flex;
   justify-content: center;
