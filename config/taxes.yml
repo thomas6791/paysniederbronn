@@ -13,6 +13,7 @@
     :add_tax?: oui
     :add_tax: 1.10
     :plafond:
+    :taux: 0.05
   kaysersberg:
     :palace: 3.30
     :five: 1.65
@@ -41,3 +42,18 @@
     :add_tax?: oui
     :add_tax: 1.10
     :plafond: 2.30
+  colmar:
+    :palace: 4.40
+    :five: 1.65
+    :four: 1.25
+    :three: 1.10
+    :two: 0.85
+    :one: 0.60
+    :nc-hotel: 0.5
+    :nc-meuble: 0.5
+    :camping-3-4-5: 0.60
+    :camping-1-2: 0.22
+    :add_tax?: oui
+    :add_tax: 1.10
+    :plafond: 2.30
+    :taux: 0.05
