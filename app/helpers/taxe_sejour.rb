@@ -1,4 +1,4 @@
-class Customer
+class TaxeSejour
   attr_reader :name, :width, :length
   def initialize(name, width, length)
     @name = name
