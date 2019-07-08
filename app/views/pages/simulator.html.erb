@@ -15,25 +15,28 @@
     </section>
     <section id="results">
       <div class="tableau-simulator">
-        <div class="entete">
-          <p>Classement</p>
-          <p>NC</p>
-          <p><% 1.times do %><%= image_tag("star.png", size: "18x18") %><% end %></p>
-          <p><% 2.times do %><%= image_tag("star.png", size: "18x18") %><% end %></p>
-          <p><% 3.times do %><%= image_tag("star.png", size: "18x18") %><% end %></p>
-          <p><% 4.times do %><%= image_tag("star.png", size: "18x18") %><% end %></p>
-          <p><% 5.times do %><%= image_tag("star.png", size: "18x18") %><% end %></p>
-        </div>
-        <div class="results">
-          <p>Montant</p>
-          <p><%= @result_nc %> €</p>
-          <p><%= @one %> €</p>
-          <p><%= @two %> €</p>
-          <p><%= @three %> €</p>
-          <p><%= @four %> €</p>
-          <p><%= @five %> €</p>
-        </div>
+        <table>
+         <tr>
+           <th>Classement</th>
+           <td>NC</td>
+           <td><% 1.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           <td><% 2.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           <td><% 3.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           <td><% 4.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+           <td><% 5.times do %><%= image_tag("star.png", size: "18x18") %><% end %></td>
+         </tr>
+         <tr>
+           <th>Montant Pour Meublé de Tourisme</th>
+           <td><%= @result_nc %> €</td>
+           <td><%= @one %> €</td>
+           <td><%= @two %> €</td>
+           <td><%= @three %> €</td>
+           <td><%= @four %> €</td>
+           <td><%= @five %> €</td>
+         </tr>
+        </table>
       </div>
+
     </section>
   </article>
 </main>
