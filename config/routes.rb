@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     end
   end
   constraints(subdomain: 'gites-heidelbeere') do
-    get '/', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
+    get 'gites-heidelbeere', to: 'holiday_rentings#gites_heidelbeere', as: 'sub_heidelbeere'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
