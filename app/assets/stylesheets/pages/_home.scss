@@ -40,6 +40,9 @@
 @media (min-width: 100px) and (max-width: 575px) {
   #home-banner {
     height: 100vh;
+    div {
+      padding-bottom: 30px;
+    }
   }
   #home {
     z-index: 10;
