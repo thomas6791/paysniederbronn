@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     root to: 'pages#home'
     get 'about', to: 'pages#about', as: :about
     get 'contact', to: 'pages#contact', as: :contact
+    get 'mentions', to: 'pages#mentions', as: :mentions
     get 'alentours', to: 'pages#alentours', as: :alentours
     get 'simulateur', to: 'pages#simulator', as: :simulateur
     post 'result', to: 'pages#result', as: :result
