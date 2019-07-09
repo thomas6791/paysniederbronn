@@ -30,7 +30,6 @@ class PagesController < ApplicationController
         end
       @hash_town = Hash[@towns.zip @taxes_town]
       @hash_town = @hash_town.reject { |k,v| k == "niederbronn" }
-      @hash_town = @hash_town.keys.sort
     end
   end
 
