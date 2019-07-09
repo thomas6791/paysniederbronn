@@ -37,15 +37,12 @@
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  #mobile {
-    z-index: 3;
-    background-color: transparent;
+  #home-banner {
+    height: 100vh;
   }
-#home-banner {
-  position: fixed;
-  top: 0;
-  z-index: 2;
-}
+  #home {
+    z-index: 10;
+  }
 
 }
 
