@@ -1,5 +1,7 @@
 #home-banner {
-  background-image: url("wintersberg-top.jpg");
+  background-image: url('/assets/wintersberg-top.jpg');
+  background-size: cover;
+  height: 100vh;
 }
 #home {
 
