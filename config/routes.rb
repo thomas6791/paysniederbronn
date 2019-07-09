@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     get 'alentours', to: 'pages#alentours', as: :alentours
     get 'simulateur', to: 'pages#simulator', as: :simulateur
     post 'result', to: 'pages#result', as: :result
-    get 'test', to: 'subdomain_rentings#index', as: :test
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :holiday_rentings do
       collection do                       # collection => no restaurant id in URL
