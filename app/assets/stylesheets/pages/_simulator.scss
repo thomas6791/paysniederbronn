@@ -66,6 +66,9 @@
       background-color: lightseagreen;
       border: solid lightseagreen 1px;
       color: white;
+      webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
       &:hover {
         opacity: 0.8;
       }
