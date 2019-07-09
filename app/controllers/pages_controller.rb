@@ -16,6 +16,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def mentions
+  end
+
   def simulator
     if params[:results].present?
       @taxes_sejour = params[:results].first[:prices]
