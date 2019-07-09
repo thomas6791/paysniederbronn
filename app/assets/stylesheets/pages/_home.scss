@@ -1,7 +1,33 @@
 #home-banner {
   background-image: url('/assets/wintersberg-top.jpg');
   background-size: cover;
-  height: 100vh;
+  background-position: center;
+  padding: 50px 0;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    h1 {
+      margin: 0;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-size: 32px;
+      font-weight: bold;
+      bottom: 30vh;
+      align-self: center;
+    }
+    h2 {
+      font-size: 20px;
+      color: white;
+      opacity: .7;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+  }
 }
 #home {
 
