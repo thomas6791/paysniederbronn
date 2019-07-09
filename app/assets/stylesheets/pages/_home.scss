@@ -1,0 +1,71 @@
+#home-banner {
+  background-image: url('/assets/wintersberg-top.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-self: center;
+    h1 {
+      margin: 0;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-size: 40px;
+      font-weight: bold;
+      bottom: 30vh;
+      align-self: center;
+      font-family: 'Caveat', cursive;
+      padding: 0px 15px;
+    }
+    h2 {
+      font-size: 20px;
+      color: white;
+      opacity: .7;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      padding: 0px 40px;
+    }
+  }
+}
+#home {
+
+}
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  #home-banner {
+    height: 100vh;
+  }
+  #home {
+    z-index: 10;
+  }
+  main {
+    padding-top: 55px;
+  }
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
+
