@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     root to: 'subdomain_rentings#index', as: 'sub_heidelbeere'
     get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
   end
-  constraints(subdomain: 'blog') do
-    root to: 'pages#blog', as: 'blog'
-  end
+  #constraints(subdomain: 'blog') do
+  #  root to: 'pages#blog', as: 'blog'
+  #end
 
   scope '(:locale)', locale: /fr|en|de/ do
     root to: 'pages#home'
