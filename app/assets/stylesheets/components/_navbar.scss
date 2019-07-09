@@ -56,6 +56,7 @@ nav {
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
+  #mobile { height: 55px; }
   .nav {
     width: 0px;
     height: 100vh;
