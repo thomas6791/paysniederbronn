@@ -1,6 +1,10 @@
 <h1>HolidayRentings#index</h1>
 <p>Find me in app/views/holiday_rentings/index.html.erb</p>
+<ul>
 <% @annonces.each do |annonce| %>
-<%= annonce.name %>
-<%= link_to "voir annonce", holiday_renting_path(annonce) %>
+  <li>
+    <%= annonce.name %>
+    <%= link_to "voir annonce", holiday_renting_path(annonce) %>
+  </li>
 <% end %>
+</ul>
