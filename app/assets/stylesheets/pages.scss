@@ -1,6 +1,8 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "config/colors";
+
 * {
   padding: 0px;
   margin: 0px;
@@ -8,6 +10,7 @@
   //font-family: 'Source Sans Pro', sans-serif;
   //font-family: 'Muli', sans-serif;
 }
+ul > li { margin-left: 20px; }
 body {
 }
 header, main {
@@ -24,6 +27,13 @@ p { font-size: 1em; }
   grid-template-rows: auto;
   grid-column-gap: 20px;
   grid-row-gap: 10px;
+}
+.advice {
+  border: solid 2px $red;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 20px 0px;
+  display: inline-block;
 }
 
 // Smallest device
