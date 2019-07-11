@@ -1,8 +1,12 @@
 class PagesController < ApplicationController
   require 'yaml'
   def home
+    @page_title       = 'Pays Niederbronn Home'
+    @page_noindex     = 'false'
   end
   def alentours
+    @page_title       = 'Aux alentours'
+    @page_noindex     = 'true'
 
     @cards = YAML.load(File.read("config/cards.yml"))[:cards][locale.to_s]
   end
