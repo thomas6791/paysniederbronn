@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_13_173606) do
+ActiveRecord::Schema.define(version: 2019_07_13_174411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "titre"
+    t.text "content"
+    t.string "summary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -30,8 +40,14 @@ ActiveRecord::Schema.define(version: 2019_07_13_173606) do
   end
 
   create_table "post_categories", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_post_categories_on_article_id"
+    t.index ["category_id"], name: "index_post_categories_on_category_id"
   end
 
+  add_foreign_key "post_categories", "articles"
+  add_foreign_key "post_categories", "categories"
 end
