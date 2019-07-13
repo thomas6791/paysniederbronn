@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @page_title       = 'Pays Niederbronn Home'
   end
   def alentours
-    @page_title       = 'Aux alentours'
+    @page_title = 'Aux alentours'
     #set_meta_tags noindex: true
     set_meta_tags canonical: "http://yoursite.com/canonical/url"
 
