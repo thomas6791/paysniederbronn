@@ -3,6 +3,9 @@
 #four_a_chaux_lembach {
   article > section:first-of-type {
     .image-float { float: left; margin-right: 15px; margin-bottom: 10px;
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+                  url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Ouvrage_Four_%C3%A0_Chaux_Lembach_Elsass_Ligne_Maginot.JPG/1600px-Ouvrage_Four_%C3%A0_Chaux_Lembach_Elsass_Ligne_Maginot.JPG");
+                  width: 500px;
     p { font-size: 0.6em; color: lightgrey; }
     }
     h2:first-of-type { clear: both; }
