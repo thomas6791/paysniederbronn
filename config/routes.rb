@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'articles/index'
-  get 'articles/show'
-  get 'articles/new'
-  get 'articles/create'
-  get 'articles/edit'
-  get 'articles/update'
-  get 'articles/destroy'
   constraints(subdomain: 'gites-heidelbeere') do
     root to: 'subdomain_rentings#index', as: :sub_heidelbeere
     get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
@@ -31,6 +23,8 @@ Rails.application.routes.draw do
         get 'studio-heidelbeere', to: 'holiday_rentings#studio_heidelbeere', as: :studio_heidelbeere
       end
     end
+
+    resources :articles
 
     get 'ligne-maginots/index', to: 'ligne_maginots#index', as: :ligne_maginots
     get 'ligne_maginots/alsace', to: 'ligne_maginots#alsace'
