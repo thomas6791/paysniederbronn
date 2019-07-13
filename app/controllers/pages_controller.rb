@@ -1,8 +1,14 @@
 class PagesController < ApplicationController
+  before_action :set_seo
   require 'yaml'
   def home
+    set_meta_tags noindex: false
+    @page_title = 'Pays Niederbronn Home'
   end
   def alentours
+    @page_title = 'Aux alentours'
+    #set_meta_tags noindex: true
+    set_meta_tags canonical: "http://yoursite.com/canonical/url"
 
     @cards = YAML.load(File.read("config/cards.yml"))[:cards][locale.to_s]
   end
@@ -47,5 +53,9 @@ class PagesController < ApplicationController
   end
 
   def blog
+  end
+
+  def set_seo
+    set_meta_tags noindex: true
   end
 end
