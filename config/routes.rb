@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'articles/index'
+  get 'articles/show'
+  get 'articles/new'
+  get 'articles/create'
+  get 'articles/edit'
+  get 'articles/update'
+  get 'articles/destroy'
   constraints(subdomain: 'gites-heidelbeere') do
     root to: 'subdomain_rentings#index', as: :sub_heidelbeere
     get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
