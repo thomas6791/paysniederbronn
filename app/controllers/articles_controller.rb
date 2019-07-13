@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    @article = Article.create(article_params)
+    redirect_to @article
   end
 
   def edit
@@ -19,5 +21,11 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :content, category_ids:[])
   end
 end
