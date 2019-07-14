@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     #end
     #resources :articles
     get 'articles', to: 'articles#index'
-    get '/:category/:title', to: 'articles#show', as: :article
+    get '/:category/:name', to: 'articles#show', as: :article
     #get '/:category/:titre', 'articles#show'
 
     #get ':category/:titre', to: 'articles#show'
