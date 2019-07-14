@@ -1,8 +1,13 @@
 class ArticlesController < ApplicationController
+  before_action :set_category, only: [:show]
   def index
+    @articles = Article.all
   end
 
   def show
+    fail
+    @article = Article.find(params[:id])
+    fail
   end
 
   def new
@@ -27,5 +32,11 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :content, category_ids:[])
+  end
+
+  def set_category
+    article = Article.find(params[:id])
+    category = article.categories.first.name.parameterize
+    { locale: category }
   end
 end
