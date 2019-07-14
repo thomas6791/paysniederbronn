@@ -32,6 +32,9 @@ Rails.application.routes.draw do
     get '/:category/:name', to: 'articles#show', as: :article
     scope '(:locale)', locale: 'cat' do
     end
+    scope '/:class' do
+      resources :various_resources, path: ''
+    end
     #get '/:category/:titre', 'articles#show'
 
     #get ':category/:titre', to: 'articles#show'
