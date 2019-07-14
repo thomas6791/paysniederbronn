@@ -14,9 +14,10 @@
     //background-position: center;
     //padding: 150px 0;
     //position: relative;
-     .image-float { float: left; margin-right: 15px; margin-bottom: 10px;
+     .image-float { float: left;
       img {
         object-fit: cover;
+        margin-right: 15px; margin-bottom: 10px;
       }
 
       p { font-size: 0.6em; color: lightgrey; }
