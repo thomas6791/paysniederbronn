@@ -24,7 +24,9 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :articles, param: :titre
+    #resources :articles
+
+    get ':category/:titre', to: 'articles#show'
 
     get 'ligne-maginots/index', to: 'ligne_maginots#index', as: :ligne_maginots
     get 'ligne_maginots/alsace', to: 'ligne_maginots#alsace'
