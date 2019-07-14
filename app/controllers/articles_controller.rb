@@ -5,9 +5,8 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    fail
-    @article = Article.find(params[:id])
-    fail
+    #@article = Article.find(params[:id])
+    @article = Article.find_by(title: params[:title])
   end
 
   def new
@@ -35,8 +34,7 @@ class ArticlesController < ApplicationController
   end
 
   def set_category
-    article = Article.find(params[:id])
-    category = article.categories.first.name.parameterize
-    { locale: category }
+    #@article = Article.find(params[:id])
+    #@category = article.categories.first.name.parameterize
   end
 end

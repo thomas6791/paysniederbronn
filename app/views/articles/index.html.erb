@@ -2,6 +2,7 @@
 <p>Find me in app/views/articles/index.html.erb</p>
 <ul>
 <% @articles.each do |article| %>
-<li><%= link_to 'Go', article_path(article) %></li>
+<% category = article.categories.first.name.parameterize %>
+<li><%= link_to 'Go', article_path(category, article.title) %></li>
 <% end %>
 </ul>

@@ -27,7 +27,9 @@ Rails.application.routes.draw do
     #scope '/:category' do
     #  resources :articles
     #end
-    resources :articles
+    #resources :articles
+    get 'articles', to: 'articles#index'
+    get '/:category/:title', to: 'articles#show', as: :article
     #get '/:category/:titre', 'articles#show'
 
     #get ':category/:titre', to: 'articles#show'
