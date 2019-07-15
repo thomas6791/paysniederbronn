@@ -3,6 +3,6 @@
 <ul>
 <% @articles.each do |article| %>
 <% category = article.categories.first.name.parameterize %>
-<li><%= link_to 'Go', article_path(category, article.title) %></li>
+<li><%= link_to "#{article.categories.first.name}", article_path(category, article) %></li>
 <% end %>
 </ul>
