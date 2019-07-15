@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   constraints(subdomain: 'gites-heidelbeere') do
     root to: 'subdomain_rentings#index', as: :sub_heidelbeere
     get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
@@ -24,6 +23,21 @@ Rails.application.routes.draw do
         get 'studio-heidelbeere', to: 'holiday_rentings#studio_heidelbeere', as: :studio_heidelbeere
       end
     end
+
+    #scope '/:category' do
+    #  resources :articles
+    #end
+    #resources :articles
+    get 'articles', to: 'articles#index'
+    get '/:category/:name', to: 'articles#show', as: :article
+    scope '(:locale)', locale: 'cat' do
+    end
+    scope '/:class' do
+      resources :various_resources, path: ''
+    end
+    #get '/:category/:titre', 'articles#show'
+
+    #get ':category/:titre', to: 'articles#show'
 
     get 'ligne-maginots/index', to: 'ligne_maginots#index', as: :ligne_maginots
     get 'ligne_maginots/alsace', to: 'ligne_maginots#alsace'
