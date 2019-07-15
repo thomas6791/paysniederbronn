@@ -14,12 +14,12 @@
     //background-position: center;
     //padding: 150px 0;
     //position: relative;
-    .image-float { float: left;
+    .image-float {
+      float: left;
       img {
         object-fit: cover;
-        margin-right: 15px;
+        padding-right: 15px;
       }
-
       p { font-size: 0.6em; color: lightgrey; }
     }
     h2:first-of-type { clear: both; }
@@ -60,9 +60,9 @@
 @media (min-width: 100px) and (max-width: 575px) {
   #four_a_chaux_lembach {
     .image-float {
-      img { float: none; margin-right: 0px; }
+      float: none;
+      img { padding: 0px; }
     }
-    img { float: none; margin-right: 0px; }
   }
 }
 
