@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_category, only: [:show]
+  before_action :set_seo
   def index
     @articles = Article.all
   end
@@ -36,5 +37,11 @@ class ArticlesController < ApplicationController
   def set_category
     #@article = Article.find(params[:id])
     #@category = article.categories.first.name.parameterize
+  end
+
+  private
+
+  def set_seo
+    set_meta_tags noindex: true
   end
 end
