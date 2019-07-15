@@ -59,6 +59,9 @@
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   #four_a_chaux_lembach {
+    .image-float {
+      img { float: none; margin-right: 0px; }
+    }
     img { float: none; margin-right: 0px; }
   }
 }
