@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :set_seo
   require 'yaml'
   def home
-    set_meta_tags noindex: false
+    #set_meta_tags noindex: false
     @page_title = 'Pays Niederbronn Home'
   end
   def alentours
