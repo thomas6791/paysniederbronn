@@ -24,6 +24,12 @@ Rails.application.routes.draw do
       end
     end
 
+    scope 'ligne-maginot-alsace' do
+      get '/', to: 'ligne_maginots#index', as: :ligne_maginots
+      get 'four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
+      get 'dambach', to: 'ligne_maginots#dambach'
+    end
+
     #scope '/:category' do
     #  resources :articles
     #end
@@ -38,14 +44,6 @@ Rails.application.routes.draw do
     #get '/:category/:titre', 'articles#show'
 
     #get ':category/:titre', to: 'articles#show'
-
-    get 'ligne-maginots/index', to: 'ligne_maginots#index', as: :ligne_maginots
-    get 'ligne_maginots/alsace', to: 'ligne_maginots#alsace'
-    get 'ligne_maginots/lorraine', to: 'ligne_maginots#lorraine'
-    scope 'ligne-maginot/alsace' do
-      get 'four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
-      get 'dambach', to: 'ligne_maginots#dambach'
-    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
