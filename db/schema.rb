@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_16_174947) do
+ActiveRecord::Schema.define(version: 2019_07_13_174411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,50 +21,6 @@ ActiveRecord::Schema.define(version: 2019_07_16_174947) do
     t.string "titre"
     t.text "content"
     t.string "summary"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "author_blogs", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "nick_name"
-    t.text "biography"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "blog_categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "blog_pages", force: :cascade do |t|
-    t.string "title", default: ""
-    t.string "description", default: ""
-    t.boolean "published", default: true
-    t.string "titre", default: ""
-    t.text "content", default: ""
-    t.datetime "custom_date"
-    t.string "photos"
-    t.string "slug", default: ""
-    t.text "summary", default: ""
-    t.text "copyright", default: ""
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "blog_posts", force: :cascade do |t|
-    t.string "title", default: ""
-    t.string "description", default: ""
-    t.boolean "published", default: true
-    t.string "titre", default: ""
-    t.text "content", default: ""
-    t.datetime "custom_date"
-    t.string "photos"
-    t.text "summary"
-    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -83,15 +39,6 @@ ActiveRecord::Schema.define(version: 2019_07_16_174947) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post_blog_categories", force: :cascade do |t|
-    t.bigint "blog_category_id"
-    t.bigint "blog_page_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["blog_category_id"], name: "index_post_blog_categories_on_blog_category_id"
-    t.index ["blog_page_id"], name: "index_post_blog_categories_on_blog_page_id"
-  end
-
   create_table "post_categories", force: :cascade do |t|
     t.bigint "category_id"
     t.bigint "article_id"
@@ -101,8 +48,6 @@ ActiveRecord::Schema.define(version: 2019_07_16_174947) do
     t.index ["category_id"], name: "index_post_categories_on_category_id"
   end
 
-  add_foreign_key "post_blog_categories", "blog_categories"
-  add_foreign_key "post_blog_categories", "blog_pages"
   add_foreign_key "post_categories", "articles"
   add_foreign_key "post_categories", "categories"
 end
