@@ -56,7 +56,15 @@
       justify-content: space-between;
       margin-bottom: 10px;
     }
-    input { font-size: 1em; }
+    input {
+      font-size: 1em;
+      border: none;
+      border-bottom: solid 1px lightgrey;
+      text-align: center;
+    }
+    input:focus {
+      outline: none;
+    }
     input[type="submit"]{
       margin-top: 10px;
       cursor:pointer;

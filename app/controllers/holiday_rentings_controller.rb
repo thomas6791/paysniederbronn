@@ -1,4 +1,5 @@
 class HolidayRentingsController < ApplicationController
+  before_action :set_seo
   def index
     @annonces = HolidayRenting.all
   end
@@ -41,5 +42,11 @@ class HolidayRentingsController < ApplicationController
 
   def meuble_heidelbeere
     render "holiday_rentings/gites-heidelbeere/#{locale.to_s}.meuble-heidelbeere"
+  end
+
+  private
+
+  def set_seo
+    set_meta_tags noindex: true
   end
 end
