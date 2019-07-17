@@ -1,5 +1,6 @@
 .blog {
   min-height: 100vh;
+  .article { padding: 0px 60px; }
   .content { margin: 20px 0px; }
   .post-categories {
     margin-bottom: 15px;
@@ -7,6 +8,15 @@
       border: solid 2px lightseagreen;
       border-radius: 25px;
       padding: 5px 10px;
+    }
+    hr { color: lightseagreen; }
+  }
+  .float-text {
+    font-size: 1.3em;
+    max-width: 30%;
+    font-weight: bold;
+    &.right {
+      float: right;
     }
   }
 }
