@@ -1,2 +1,21 @@
-<h1>BlogPosts#show</h1>
-<p>Find me in app/views/blog_posts/show.html.erb</p>
+<% title "#{@post.title}" %>
+<% description "#{@post.description}" %>
+<% noindex %>
+<div class="main">
+  <article class="blog-post">
+    <header>
+      <h1><%= @post.titre %></h1>
+    </header>
+    <main>
+
+      <div><%= @post.content.html_safe %></div>
+      <div class="post-categories">
+        <% @post.blog_categories.each do |cat| %>
+          <span>#<%= cat.name %></span>
+        <% end %>
+      </div>
+      <p><%= @author.first_name %></p>
+    </main>
+  </article>
+
+</div>

@@ -4,6 +4,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    @author = @post.author_blog
   end
 
   def new
