@@ -3,7 +3,7 @@
   <%= f.input :description, label: 'Meta description' %>
   <%= f.input :titre, label: 'Titre <h1>' %>
   <%= f.input :summary, label: "Résumé",:input_html => {:rows => 3} %>
-
+  <%= f.input :custom_date, label: 'Date personnalisée' %>
   <%= f.input :content, label: 'Contenu',:input_html => {:rows => 20} %>
   <%= f.collection_select :author_blog, AuthorBlog.all, :id, :first_name %>
   <%= f.association :blog_categories, collection: BlogCategory.order(:name), label: false, as: :check_boxes %>
