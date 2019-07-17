@@ -37,30 +37,33 @@ p { font-size: 1em; }
   display: inline-block;
   h2 { margin-top: 0px !important; }
 }
-form {
-  font-size: 1em;
-  div {
-    display: flex;
-    flex-direction: column;
-    label, input, textarea {
-      font-size: 1em;
-    }
-  }
-  input:focus { outline: none; }
-  input[type="submit"]{
-    margin-top: 10px;
-    cursor:pointer;
+.form {
+  form {
     font-size: 1em;
-    line-height: 2em;
-    border-radius: 3px;
-    background-color: lightseagreen;
-    border: solid lightseagreen 1px;
-    color: white;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    &:hover {
-      opacity: 0.8;
+    div {
+      display: flex;
+      flex-direction: column;
+      label, input, textarea {
+        font-size: 1em;
+      }
+    }
+    input:focus { outline: none; }
+    input[type="submit"]{
+      margin-top: 10px;
+      cursor:pointer;
+      font-size: 1em;
+      line-height: 2em;
+      border-radius: 3px;
+      background-color: lightseagreen;
+      border: solid lightseagreen 1px;
+      color: white;
+      width: 100%;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }
