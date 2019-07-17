@@ -1,6 +1,7 @@
 class BlogPostsController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   def index
+    @posts =  BlogPost.all
   end
 
   def show
