@@ -1,5 +1,6 @@
 class BlogPostsController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_seo
   def index
     @posts =  BlogPost.all
   end
@@ -49,5 +50,9 @@ class BlogPostsController < ApplicationController
 
   def set_page
     @post = BlogPost.find_by!(slug: params[:id])
+  end
+
+  def set_seo
+    set_meta_tags noindex: true
   end
 end
