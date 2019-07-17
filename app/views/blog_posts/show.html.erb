@@ -6,7 +6,6 @@
     <header>
       <h1><%= @post.titre %></h1>
     </header>
-    <main>
 
       <div><%= @post.content.html_safe %></div>
       <div class="post-categories">
@@ -15,7 +14,6 @@
         <% end %>
       </div>
       <p><%= @author.first_name %></p>
-    </main>
   </article>
 
 </main>
