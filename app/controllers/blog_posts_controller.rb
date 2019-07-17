@@ -23,10 +23,10 @@ class BlogPostsController < ApplicationController
     else
       @post.title = @post.title
     end
-    author = AuthorBlog.find(params[:blog_page][:author_blog].to_i)
-    author.blog_pages << @post
+    author = AuthorBlog.find(params[:blog_post][:author_blog].to_i)
+    author.blog_posts << @post
     @post.save
-    redirect_to blog_page_path(@post)
+    redirect_to blog_post_path(@post)
   end
 
   def edit
