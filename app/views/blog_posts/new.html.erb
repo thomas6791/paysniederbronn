@@ -4,7 +4,7 @@
       <h1>Article</h1>
     </header>
     <section class="form">
-      <%= simple_form_for @post do |f| %>
+      <%= simple_form_for @post, defaults: { input_html: { class: 'form' } } do |f| %>
 
         <%= f.input :title, label: 'Title' %>
         <%= f.input :description, label: 'Meta description' %>
