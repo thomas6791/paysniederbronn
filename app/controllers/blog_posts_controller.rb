@@ -35,6 +35,8 @@ class BlogPostsController < ApplicationController
   end
 
   def update
+    @post.update(blog_params)
+    redirect_to blog_post_path(@post)
   end
 
   def destroy
