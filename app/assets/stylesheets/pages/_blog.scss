@@ -11,6 +11,9 @@
     hr { color: lightseagreen; }
   }
   .float-text {
+    border: solid 2px lightseagreen;
+    border-radius: 5px;
+    padding: 10px;
     font-size: 1.3em;
     max-width: 30%;
     font-weight: bold;
