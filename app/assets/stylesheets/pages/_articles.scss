@@ -55,6 +55,20 @@
   }
   .day-color { background-color: lightseagreen; }
 }
+table { border-collapse: collapse; }
+td, th {
+  border: 1px solid black;
+  font-size: 0.8em;
+}
+table > tbody > tr > th { word-break:break-all; }
+table > thead > tr { word-break:break-all; }
+.barre { text-decoration: line-through; }
+caption {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
