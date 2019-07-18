@@ -55,7 +55,7 @@
   }
   .day-color { background-color: lightseagreen; }
 }
-table { border-collapse: collapse; }
+table { border-collapse: collapse; width: 100%; max-width: 100%; }
 td, th {
   border: 1px solid black;
   font-size: 0.8em;
