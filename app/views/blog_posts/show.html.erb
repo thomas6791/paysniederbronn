@@ -1,0 +1,21 @@
+<% title "#{@post.title}" %>
+<% description "#{@post.description}" %>
+<% noindex %>
+<main class="blog">
+  <article class="article">
+    <header>
+      <h1><%= @post.titre %></h1>
+    </header>
+
+      <section class="content">
+        <p><%= @post.content.html_safe %></p>
+      </section>
+      <section class="post-categories">
+        <% @post.blog_categories.each do |cat| %>
+          <span>#<%= cat.name %></span>
+        <% end %>
+      </section>
+      <p><%= @author.first_name %></p>
+  </article>
+
+</main>

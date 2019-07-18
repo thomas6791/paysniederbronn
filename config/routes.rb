@@ -34,13 +34,14 @@ Rails.application.routes.draw do
     #  resources :articles
     #end
     #resources :articles
+    resources :blog_posts, path: 'blog'
     get 'articles', to: 'articles#index'
     get '/:category/:id', to: 'articles#show', as: :article
     scope '(:locale)', locale: 'cat' do
     end
-    scope '/:class' do
-      resources :various_resources, path: ''
-    end
+    #scope '/:class' do
+    #  resources :various_resources, path: ''
+    #end
     #get '/:category/:titre', 'articles#show'
 
     #get ':category/:titre', to: 'articles#show'

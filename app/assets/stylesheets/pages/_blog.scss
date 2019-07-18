@@ -1,0 +1,26 @@
+.blog {
+  min-height: 100vh;
+  .content { margin: 20px 0px; }
+  .post-categories {
+    margin-bottom: 15px;
+    span {
+      border: solid 2px lightseagreen;
+      border-radius: 25px;
+      padding: 5px 10px;
+    }
+    hr { color: lightseagreen; }
+  }
+  .float-text {
+    border: solid 2px lightseagreen;
+    border-radius: 5px;
+    padding: 10px;
+    word-break: break-word;
+    font-size: 1.3em;
+    max-width: 30%;
+    font-weight: bold;
+    margin: 10px 0px 10px 10px;
+    &.right {
+      float: right;
+    }
+  }
+}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_13_174411) do
+ActiveRecord::Schema.define(version: 2019_07_17_075011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,45 @@ ActiveRecord::Schema.define(version: 2019_07_13_174411) do
     t.string "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "author_blogs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "nick_name"
+  end
+
+  create_table "blog_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blog_post_categories", force: :cascade do |t|
+    t.bigint "blog_post_id"
+    t.bigint "blog_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["blog_category_id"], name: "index_blog_post_categories_on_blog_category_id"
+    t.index ["blog_post_id"], name: "index_blog_post_categories_on_blog_post_id"
+  end
+
+  create_table "blog_posts", force: :cascade do |t|
+    t.bigint "author_blog_id"
+    t.string "title", default: ""
+    t.string "description", default: ""
+    t.boolean "published", default: true
+    t.string "titre", default: ""
+    t.text "content", default: ""
+    t.datetime "custom_date"
+    t.string "photos"
+    t.string "slug"
+    t.text "summary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_blog_id"], name: "index_blog_posts_on_author_blog_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -48,6 +87,9 @@ ActiveRecord::Schema.define(version: 2019_07_13_174411) do
     t.index ["category_id"], name: "index_post_categories_on_category_id"
   end
 
+  add_foreign_key "blog_post_categories", "blog_categories"
+  add_foreign_key "blog_post_categories", "blog_posts"
+  add_foreign_key "blog_posts", "author_blogs"
   add_foreign_key "post_categories", "articles"
   add_foreign_key "post_categories", "categories"
 end
