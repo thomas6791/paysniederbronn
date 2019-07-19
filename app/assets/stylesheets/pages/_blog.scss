@@ -28,7 +28,6 @@
     }
   }
   .float-text + h2 { clear: both; }
-  .float-text + p { clear: both; }
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -39,13 +38,6 @@
     }
   }
   .float-text {
-    float: none;
-    width: auto;
-    display: inline-block;
-    float: none;
-    margin: 0px;
-    padding: 5px;
-    text-align: center;
   }
 }
 
