@@ -38,14 +38,19 @@
       margin: 0px 0px 0px 0px !important;
     }
   }
+  .float-text {
+    float: none;
+    width: auto;
+    display: inline-block;
+    float: none;
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .float-text {
-    display: flex;
-    min-width: 100%;
-  }
 }
 
 // Medium devices (tablets, 768px and up)
