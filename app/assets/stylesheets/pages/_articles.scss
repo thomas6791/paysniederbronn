@@ -2,6 +2,9 @@
   h2 {
     margin-top: 10px;
   }
+.tableau {
+  clear: both;
+}
 }
 #four_a_chaux_lembach {
   article > section:first-of-type {
@@ -69,6 +72,7 @@ caption {
   padding: 10px 0px;
 }
 .tableau-article {
+  clear: both;
   td {
     padding: 0px 10px;
     text-align: center;
