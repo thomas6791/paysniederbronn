@@ -38,6 +38,10 @@
     }
   }
   .float-text {
+    float: none;
+    width: 100%;
+    display: block;
+    max-width: 90%;
   }
 }
 
