@@ -37,11 +37,17 @@
       margin: 0px 0px 0px 0px !important;
     }
   }
-  .float-text {
+  .blog .float-text.right {
     float: none;
     width: 100%;
     display: block;
-    max-width: 90%;
+    min-width: 90%;
+  }
+  .blog .float-text.left {
+    float: none;
+    width: 100%;
+    display: block;
+    min-width: 90%;
   }
 }
 
