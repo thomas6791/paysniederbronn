@@ -26,6 +26,7 @@
       float: left;
       margin: 10px 10px 10px 0px;
     }
-    & + h2 { clear: both; }
   }
+  .float-text + h2 { clear: both; }
+  .float-text + p { clear: both; }
 }
