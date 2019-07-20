@@ -33,15 +33,16 @@ Rails.application.routes.draw do
     #scope '/:category' do
     #  resources :articles
     #end
-    #resources :articles
+    resources :articles
+
     resources :blog_posts, path: 'blog'
-    get 'articles', to: 'articles#index'
-    get '/:category/:id', to: 'articles#show', as: :article
+    #get 'articles', to: 'articles#index'
+    #get '/:category/:id', to: 'articles#show', as: :article
     scope '(:locale)', locale: 'cat' do
     end
-    scope '/:category/:slug' do
-      resources :articles
-    end
+    #scope '/:category/:slug' do
+    #  resources :articles
+    #end
     #scope '/:class' do
     #  resources :various_resources, path: ''
     #end
