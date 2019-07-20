@@ -1,13 +1,12 @@
 class ArticlesController < ApplicationController
   before_action :set_category, only: [:show]
   before_action :set_seo
+  before_action :set_page, only: [:show, :edit, :update, :destroy]
   def index
     @articles = Article.all
   end
 
   def show
-    #@article = Article.find(params[:id])
-    @article = Article.find(params[:id])
   end
 
   def new
@@ -16,6 +15,12 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.create(article_params)
+    if @article.title.blank?
+      @article.title = @post.titre
+    else
+      @article.title = @post.title
+    end
+    @article.save
     redirect_to @article
   end
 
@@ -23,6 +28,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    @article.update(article_params)
+    redirect_to article_path(@article)
   end
 
   def destroy
@@ -31,7 +38,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, category_ids:[])
+    params.require(:article).permit(:title, :content, :titre, :slug, :summary, category_ids:[])
   end
 
   def set_category
@@ -39,9 +46,11 @@ class ArticlesController < ApplicationController
     #@category = article.categories.first.name.parameterize
   end
 
-  private
-
   def set_seo
     set_meta_tags noindex: true
+  end
+
+  def set_page
+    @article = Article.find_by!(slug: params[:id])
   end
 end
