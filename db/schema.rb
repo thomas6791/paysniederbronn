@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_20_090351) do
+ActiveRecord::Schema.define(version: 2019_07_21_094038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,4 @@ ActiveRecord::Schema.define(version: 2019_07_20_090351) do
   add_foreign_key "blog_post_categories", "blog_categories"
   add_foreign_key "blog_post_categories", "blog_posts"
   add_foreign_key "blog_posts", "author_blogs"
-  add_foreign_key "post_categories", "articles"
-  add_foreign_key "post_categories", "categories"
 end
