@@ -1,8 +1,10 @@
-<h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
-<%= simple_form_for @article do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
-  <%= f.button :submit %>
-<% end %>
+<main>
+  <article class="article">
+    <header>
+      <h1>Article</h1>
+    </header>
+    <section class="form">
+      <%= render 'form' %>
+    </section>
+  </article>
+</main>

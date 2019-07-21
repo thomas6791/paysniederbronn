@@ -2,7 +2,6 @@
 <p>Find me in app/views/articles/index.html.erb</p>
 <ul>
 <% @articles.each do |article| %>
-<% category = article.categories.first.name.parameterize %>
-<li><%= link_to "#{article.categories.first.name}", article_path(category, article) %></li>
+<li><%= link_to "#{article.titre}", article_path(article.category.name.parameterize, article.slug) %></li>
 <% end %>
 </ul>

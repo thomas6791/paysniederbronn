@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_17_075011) do
+ActiveRecord::Schema.define(version: 2019_07_21_095322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,10 @@ ActiveRecord::Schema.define(version: 2019_07_17_075011) do
     t.string "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.string "photos"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_articles_on_category_id"
   end
 
   create_table "author_blogs", force: :cascade do |t|
@@ -87,9 +91,8 @@ ActiveRecord::Schema.define(version: 2019_07_17_075011) do
     t.index ["category_id"], name: "index_post_categories_on_category_id"
   end
 
+  add_foreign_key "articles", "categories"
   add_foreign_key "blog_post_categories", "blog_categories"
   add_foreign_key "blog_post_categories", "blog_posts"
   add_foreign_key "blog_posts", "author_blogs"
-  add_foreign_key "post_categories", "articles"
-  add_foreign_key "post_categories", "categories"
 end
