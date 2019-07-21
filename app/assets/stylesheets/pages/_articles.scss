@@ -3,6 +3,7 @@
   .tableau {
     clear: both;
     overflow-x:auto;
+    max-width: 100%;
   }
 }
 #four_a_chaux_lembach {
@@ -40,7 +41,6 @@ caption {
   font-weight: bold;
   padding: 10px 0px;
 }
-.tableau { overflow-x:auto; width: auto; }
 .tableau.fourlembach {
   max-width: 100%;
   display: flex;
@@ -60,6 +60,7 @@ table > tbody > tr > th { word-break:break-word; }
 table > thead > tr { word-break:break-word; }
 .tableau-article {
   overflow-x:auto;
+  max-width: 100%;
   clear: both;
   td {
     padding: 0px 10px;
