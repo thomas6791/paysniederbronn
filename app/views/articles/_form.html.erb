@@ -4,7 +4,7 @@
   <%= f.input :titre, label: 'Titre <h1>' %>
   <%= f.input :summary, label: "Résumé",:input_html => {:rows => 3} %>
   <%= f.input :content, label: 'Contenu',:input_html => {:rows => 20} %>
-  <%= f.association :categories, collection: Category.order(:name), label: false, as: :check_boxes %>
+  <%= f.collection_select(:category_id, Category.all, :id, :name) %>
   <%= f.file_field :photos, multiple: true, direct_upload: true %>
   <%= f.submit "Créer l'article", class: '' %>
 <% end %>

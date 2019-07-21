@@ -16,9 +16,9 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.create(article_params)
     if @article.title.blank?
-      @article.title = @post.titre
+      @article.title = @article.titre
     else
-      @article.title = @post.title
+      @article.title = @article.title
     end
     @article.save
     redirect_to @article
@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :titre, :slug, :summary, category_ids:[])
+    params.require(:article).permit(:title, :content, :titre, :slug, :summary, :category_id)
   end
 
   def set_category
@@ -51,6 +51,7 @@ class ArticlesController < ApplicationController
   end
 
   def set_page
-    @article = Article.find_by!(slug: params[:id])
+    #@article = Article.find_by!(slug: params[:id])
+     @article = Article.find_by!(slug: params[:slug])
   end
 end
