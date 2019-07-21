@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  #belongs_to :category
+  belongs_to :category
 
   #has_many :post_categories
   #has_many :post_categories, dependent: :destroy
