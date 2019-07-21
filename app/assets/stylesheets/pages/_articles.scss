@@ -28,7 +28,7 @@
 img { max-width: 100%; }
 
 table {
-  border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+  border-collapse: collapse; width: 100%; max-width: 100%; /* Les bordures du tableau seront collées (plus joli) */
 }
 td, th {
   border: 1px solid black;
@@ -40,35 +40,24 @@ caption {
   font-weight: bold;
   padding: 10px 0px;
 }
-.tableau { overflow-x:auto; }
+.tableau { overflow-x:auto; width: auto; }
 .tableau.fourlembach {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
 }
 .fr, .de { text-align: center; word-break:break-all; }
 .tableau.fourlembach.visites > table > tbody > tr > th { word-break:break-all; }
 thead > tr > th:first-child {}
-table > thead > tr { word-break:break-all;
+table > thead > tr { word-break:break-word;
   //white-space: nowrap;
   //overflow: hidden;
   //text-overflow: ellipsis;
   //max-width: 200px;
 }
 .day-color { background-color: lightseagreen; }
-table { border-collapse: collapse; width: 100%; max-width: 100%; }
-td, th {
-  border: 1px solid black;
-  font-size: 0.8em;
-}
-table > tbody > tr > th { word-break:break-all; }
-table > thead > tr { word-break:break-all; }
-.barre { text-decoration: line-through; }
-caption {
-  font-size: 1.2em;
-  font-weight: bold;
-  padding: 10px 0px;
-}
+table > tbody > tr > th { word-break:break-word; }
+table > thead > tr { word-break:break-word; }
 .tableau-article {
   overflow-x:auto;
   clear: both;
