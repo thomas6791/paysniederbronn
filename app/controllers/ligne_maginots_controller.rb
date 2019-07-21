@@ -1,5 +1,6 @@
 class LigneMaginotsController < ApplicationController
   before_action :set_date, only: [:four_a_chaux]
+  before_action :set_seo
   def index
   end
 
@@ -17,5 +18,8 @@ class LigneMaginotsController < ApplicationController
 
   def set_date
     @day = Time.now.strftime("%a").downcase
+  end
+  def set_seo
+    set_meta_tags noindex: true
   end
 end
