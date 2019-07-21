@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     #scope "/:category/:slug", :as => "shop" do
     #  resources :articles
     #end
+    #resources :articles
     resources :articles
 
     resources :blog_posts, path: 'blog'
