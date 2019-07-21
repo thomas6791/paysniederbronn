@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
       @article.title = @article.title
     end
     @article.save
-    redirect_to @article
+    redirect_to article_path(@article.category.name.parameterize, @article.slug)
   end
 
   def edit
