@@ -34,7 +34,12 @@ Rails.application.routes.draw do
     #  resources :articles
     #end
     #resources :articles
-    get 'articles', to: 'articles#index'
+    resources :articles, only: [:index]
+    #resources :articles, :except => [:show]
+    get 'articles/new', to: 'articles#new'
+    get '/:category/:slug/edit', to: 'articles#edit'
+    patch ":category/slug/update", to: "artciles#update"
+    get ":category/slug/destroy", to: "artciles#destroy"
     get '/:category/:slug', to: 'articles#show', as: :article
 
     resources :blog_posts, path: 'blog'

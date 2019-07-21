@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :set_category, only: [:show]
-  before_action :set_seo
   before_action :set_page, only: [:show, :edit, :update, :destroy]
+  #before_action :set_category, only: [:show]
+  before_action :set_seo
   def index
     @articles = Article.all
   end
@@ -29,7 +29,8 @@ class ArticlesController < ApplicationController
 
   def update
     @article.update(article_params)
-    redirect_to article_path(@article)
+    fail
+    redirect_to article_path(@article.category, @article)
   end
 
   def destroy
