@@ -1,5 +1,7 @@
 .article {
-  h2 { margin-top: 10px; }
+  h2 {
+    margin-top: 10px;
+  }
   .tableau {
     clear: both;
     overflow-x:auto;
@@ -7,57 +9,68 @@
   }
 }
 #four_a_chaux_lembach {
-  //.image-float { float: left; margin-right: 15px; margin-bottom: 10px;
-  //background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)),
-  //url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Ouvrage_Four_%C3%A0_Chaux_Lembach_Elsass_Ligne_Maginot.JPG/1600px-Ouvrage_Four_%C3%A0_Chaux_Lembach_Elsass_Ligne_Maginot.JPG");
-  //width: 500px;
-  //max-width: 100%;
-  //background-size: cover;
-  //background-position: center;
-  //padding: 150px 0;
-  //position: relative;
   .image-float {
     float: left;
     margin: 0px 15px 0px 0px;
     img {
       object-fit: cover;
     }
-    p { font-size: 0.6em; color: lightgrey; }
+    p {
+      font-size: 0.6em;
+      color: lightgrey;
+    }
   }
-  h2:first-of-type { clear: both; }
+  h2:first-of-type {
+    clear: both;
+  }
 }
-img { max-width: 100%; }
+img {
+  max-width: 100%;
+}
 
 table {
-  border-collapse: collapse; width: 100%; max-width: 100%; /* Les bordures du tableau seront collées (plus joli) */
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%; /* Les bordures du tableau seront collées (plus joli) */
 }
 td, th {
   border: 1px solid black;
   font-size: 0.8em;
 }
-.barre { text-decoration: line-through; }
+thead > tr > th:first-child {}
+table > thead > tr {
+  word-break:break-word;
+  //white-space: nowrap;
+  //overflow: hidden;
+  //text-overflow: ellipsis;
+  //max-width: 200px;
+}
 caption {
   font-size: 1.2em;
   font-weight: bold;
   padding: 10px 0px;
+}
+table > tbody > tr > th {
+  word-break:break-word;
+}
+.barre {
+  text-decoration: line-through;
 }
 .tableau.fourlembach {
   max-width: 100%;
   display: flex;
   flex-direction: column;
 }
-.fr, .de { text-align: center; word-break:break-all; }
-.tableau.fourlembach.visites > table > tbody > tr > th { word-break:break-all; }
-thead > tr > th:first-child {}
-table > thead > tr { word-break:break-word;
-  //white-space: nowrap;
-  //overflow: hidden;
-  //text-overflow: ellipsis;
-  //max-width: 200px;
+.fr, .de {
+  text-align: center;
+  word-break:break-all;
 }
-.day-color { background-color: lightseagreen; }
-table > tbody > tr > th { word-break:break-word; }
-table > thead > tr { word-break:break-word; }
+.tableau.fourlembach.visites > table > tbody > tr > th {
+  word-break:break-all;
+}
+.day-color {
+  background-color: lightseagreen;
+}
 .tableau-article {
   overflow-x:auto;
   max-width: 100%;
