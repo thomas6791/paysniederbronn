@@ -45,11 +45,11 @@ Rails.application.routes.draw do
     #end
     #resources :articles
     #resources :articles
+    resources :blog_posts, path: 'blog'
     resources :articles, :path => ":category"
 
-    resources :blog_posts, path: 'blog'
-    scope '(:locale)', locale: 'cat' do
-    end
+    #scope '(:locale)', locale: 'cat' do
+    #end
     #scope '/:category/:slug' do
     #  resources :articles
     #end
