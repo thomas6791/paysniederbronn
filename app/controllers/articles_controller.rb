@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  #before_action :set_page, only: [:show, :edit, :update, :destroy]
+  before_action :set_page, only: [:show, :edit, :update, :destroy]
   #before_action :set_category, only: [:show]
   before_action :set_seo
   def index
@@ -7,7 +7,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    fail
   end
 
   def new
@@ -30,8 +29,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article.update(article_params)
-    fail
-    redirect_to article_path(@article.category, @article)
+    redirect_to article_path(@article.category.name.parameterize, @article.slug)
   end
 
   def destroy
@@ -53,7 +51,7 @@ class ArticlesController < ApplicationController
   end
 
   def set_page
-    #@article = Article.find_by!(slug: params[:id])
-     @article = Article.find_by!(slug: params[:slug])
+    @article = Article.find_by!(slug: params[:id])
+    #@article = Article.find_by!(slug: params[:slug])
   end
 end

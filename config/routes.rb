@@ -44,7 +44,8 @@ Rails.application.routes.draw do
     #  resources :articles
     #end
     #resources :articles
-    resources :articles
+    #resources :articles
+    resources :articles, :path => ":category"
 
     resources :blog_posts, path: 'blog'
     scope '(:locale)', locale: 'cat' do
