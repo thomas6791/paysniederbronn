@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   #before_action :set_category, only: [:show]
-  before_action :set_seo
+  before_action :set_seo, except: [:show]
   def index
     @articles = Article.all
   end
