@@ -1,6 +1,16 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
-<h2><%= @article.titre %></h2>
-<p><strong><%= @article.id %></strong></p>
-<section><%= @article.content.html_safe %></section>
+<% title @article.title %>
+<% description @article.description %>
+<link rel="canonical" href="<%= "#{request.protocol}#{request.host}#{request.path}" %>">
+<% set_meta_tags alternate: { "#{locale.to_s}" => "http://www.paysniederbronn.fr/#{locale.to_s}/#{@article.category.name.parameterize}/#{@article.slug}" } %>
+<main>
+  <article class="article">
+    <header>
+      <h1><%= @article.titre %></h1>
+    </header>
+
+    <section>
+      <%= @article.content.html_safe %>
+    </section>
+  </article>
+</main>
 
