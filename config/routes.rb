@@ -34,11 +34,16 @@ Rails.application.routes.draw do
     #  resources :articles
     #end
     #resources :articles
+    #resources :articles
+    #scope "/(:category)", :defaults => {:category => "/"} do
+    #  resources :articles, only: [:edit, :update, :destroy]
+    #  get '/:category/:slug', to: 'articles#show'
+    #end
+
+    #scope "/:category/:slug", :as => "shop" do
+    #  resources :articles
+    #end
     resources :articles
-    scope "/(:category)", :defaults => {:category => "/"} do
-      resources :articles, only: [:edit, :update, :destroy]
-      get '/:category/:slug', to: 'articles#show'
-    end
 
     resources :blog_posts, path: 'blog'
     scope '(:locale)', locale: 'cat' do
