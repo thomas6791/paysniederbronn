@@ -7,10 +7,7 @@
     <header>
       <h1><%= @article.titre %></h1>
     </header>
-
-    <section>
-      <%= @article.content.html_safe %>
-    </section>
+    <%= @article.content.html_safe %>
   </article>
 </main>
 
