@@ -53,6 +53,6 @@ class BlogPostsController < ApplicationController
   end
 
   def set_seo
-    set_meta_tags noindex: true
+    #set_meta_tags noindex: true
   end
 end
