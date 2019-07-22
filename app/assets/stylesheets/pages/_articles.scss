@@ -8,21 +8,19 @@
     max-width: 100%;
   }
 }
-#four_a_chaux_lembach {
-  .image-float {
-    float: left;
-    margin: 0px 15px 0px 0px;
-    img {
-      object-fit: cover;
-    }
-    p {
-      font-size: 0.6em;
-      color: lightgrey;
-    }
+.image-float {
+  float: left;
+  margin: 0px 15px 0px 0px;
+  img {
+    object-fit: cover;
   }
-  h2:first-of-type {
-    clear: both;
+  p {
+    font-size: 0.6em;
+    color: lightgrey;
   }
+}
+h2:first-of-type {
+  clear: both;
 }
 img {
   max-width: 100%;
@@ -57,9 +55,8 @@ table > tbody > tr > th {
   text-decoration: line-through;
 }
 .tableau.fourlembach {
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  table {}
 }
 .fr, .de {
   text-align: center;
@@ -72,8 +69,8 @@ table > tbody > tr > th {
   background-color: lightseagreen;
 }
 .tableau-article {
-  overflow-x:auto;
-  max-width: 100%;
+  //overflow-x:auto;
+  //max-width: 100%;
   clear: both;
   td {
     padding: 0px 10px;
