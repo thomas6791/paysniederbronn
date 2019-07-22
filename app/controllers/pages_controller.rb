@@ -11,9 +11,11 @@ class PagesController < ApplicationController
     set_meta_tags canonical: "http://yoursite.com/canonical/url"
 
     @cards = YAML.load(File.read("config/cards.yml"))[:cards][locale.to_s]
+    redirect_to root_path
   end
 
   def holidayrentings
+    redirect_to root_path
   end
 
   def contact
