@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+  http_basic_authenticate_with name: "hunckler", password: "gabriel-6791", only: :edit
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_action :set_seo
   def index
