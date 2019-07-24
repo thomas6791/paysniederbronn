@@ -29,6 +29,24 @@
   }
   .float-text + h2 { clear: both; }
 }
+.articles-list {
+  li {
+    list-style-type: none;
+    margin: 0px;
+    a {
+      border: solid 2px lightseagreen;
+      padding: 10px;
+      border-radius: 5px;
+      color: black;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   article {

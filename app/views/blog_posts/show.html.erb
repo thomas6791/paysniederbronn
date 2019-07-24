@@ -15,6 +15,7 @@
         <% end %>
       </section>
       <p><%= @author.first_name %></p>
+      <%= @post.custom_date.strftime("%d/%m/%y") %>
   </article>
 
 </main>
