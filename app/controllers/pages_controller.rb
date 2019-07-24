@@ -28,6 +28,7 @@ class PagesController < ApplicationController
   end
 
   def simulator
+    set_meta_tags noindex: false
     if params[:results].present?
       @taxes_sejour = params[:results].first[:prices]
       @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
