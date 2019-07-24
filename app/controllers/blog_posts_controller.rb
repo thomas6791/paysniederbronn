@@ -3,7 +3,7 @@ class BlogPostsController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_action :set_seo
   def index
-    @posts =  BlogPost.all
+    @posts =  BlogPost.all.order(custom_date: :desc)
   end
 
   def show
