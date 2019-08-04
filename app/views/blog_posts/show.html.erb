@@ -14,7 +14,7 @@
           <span>#<%= cat.name %></span>
         <% end %>
       </section>
-      <p><%= @author.first_name %></p>
+      <p><%= @author.first_name %> <%= @author.last_name.capitalize %></p>
       <%= @post.custom_date.strftime("%d/%m/%y") %>
   </article>
 
