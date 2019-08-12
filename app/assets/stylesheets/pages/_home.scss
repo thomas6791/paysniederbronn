@@ -42,6 +42,13 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
       border-radius: 3px;
     }
+    a {
+      border: solid 2px;
+      border-radius: 15px;
+      padding: 3px 15px;
+      text-decoration: none; color: $green;
+      &:hover { background-color: $green; border: solid 2px $green; color: white; }
+    }
   }
   h2 {
     font-size: 2em;
@@ -59,7 +66,9 @@
     }
   }
   section:nth-child(1) { margin: 0px; }
-  section > div { word-wrap: break-word; max-width: 100%; }
+  section > div { word-wrap: break-word; max-width: 100%;
+    p { margin-bottom: 20px; }
+  }
 
 }
 // Smallest device
