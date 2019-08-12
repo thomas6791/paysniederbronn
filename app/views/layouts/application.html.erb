@@ -6,6 +6,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= display_meta_tags site: "" %>
+    <% set_meta_tags alternate: { "fr" => "http://www.paysniederbronn.fr/#{request.fullpath}",
+                           "de" => "http://www.paysniederbronn.fr/de/#{request.fullpath}",
+                           "en" => "http://www.paysniederbronn.fr/en/#{request.fullpath}"
+                          } %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
