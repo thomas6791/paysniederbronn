@@ -74,10 +74,15 @@
     z-index: 10;
     article { padding: 0px 10px; }
     section {
-      margin: 30px 0px;
+      margin: 10px 0px;
       flex-drection: colum;
       flex-wrap: wrap;
-      img { width: 100%; }
+      div { margin-bottom: 20px; }
+      img { width: 100%; max-width: 100%; }
+    }
+    section:nth-child(1), section:nth-child(odd) {
+      img { margin: 0px; }
+      margin: 0px;
     }
     section:nth-child(1) { margin-top: 20px; }
   }
