@@ -1,3 +1,4 @@
+@import "config/colors";
 #home-banner {
   //background-image: url('/assets/wintersberg-top.jpg');
   background: url(asset_path('wintersberg-top.jpg'));
@@ -35,6 +36,30 @@
 }
 #home {
   padding: 0px;
+  article { padding-top: 20px; }
+  section { display: flex; margin: 50px 0px;
+    img {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      border-radius: 3px;
+    }
+  }
+  h2 {
+    font-size: 2em;
+    span {
+      font-family: 'Caveat', cursive;
+      box-shadow: inset 0 -8px 0 white, inset 0 -15px 0 $blue;
+      &.green { box-shadow: inset 0 -8px 0 white, inset 0 -15px 0 $light-green; }
+      &.pink { box-shadow: inset 0 -8px 0 white, inset 0 -15px 0 $pink; }
+    }
+  }
+  section:nth-child(odd) {
+    flex-direction: row-reverse;
+    img {
+      margin-right: 10px;
+    }
+  }
+  section:nth-child(1) { margin: 0px; }
+  section > div { word-wrap: break-word; max-width: 100%; }
 
 }
 // Smallest device
@@ -47,6 +72,14 @@
   }
   #home {
     z-index: 10;
+    article { padding: 0px 10px; }
+    section {
+      margin: 30px 0px;
+      flex-drection: colum;
+      flex-wrap: wrap;
+      img { width: 100%; }
+    }
+    section:nth-child(1) { margin-top: 20px; }
   }
 
 }
