@@ -24,22 +24,26 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :landing_pages, :path => '' do
-      collection do
-        get 'alimentation', to: 'landing_pages#alimentation'
-        get 'chateaux-forts', to: 'landing_pages#chateaux_forts'
-        get 'cures-thermales', to: 'landing_pages#cures_thermales'
-        get 'ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
-        get 'randonnees', to: 'landing_pages#randonnees'
-        get 'strasbourg', to: 'landing_pages#strasbourg'
-      end
-    end
-
     scope 'ligne-maginot-alsace' do
       get '/', to: 'ligne_maginots#index', as: :ligne_maginots
       get 'four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
       get 'dambach', to: 'ligne_maginots#dambach'
     end
+
+    resources :blog_posts, path: 'blog'
+
+    resources :landing_pages, :path => '' do
+      collection do
+        get '/alimentation', to: 'landing_pages#alimentation'
+        get '/chateaux-forts', to: 'landing_pages#chateaux_forts'
+        get '/cures-thermales', to: 'landing_pages#cures_thermales'
+        get '/ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
+        get '/randonnees', to: 'landing_pages#randonnees'
+        get '/strasbourg', to: 'landing_pages#strasbourg'
+      end
+    end
+
+    resources :articles, :path => ":category"
 
     #scope '/:category' do
     #  resources :articles
@@ -56,8 +60,6 @@ Rails.application.routes.draw do
     #end
     #resources :articles
     #resources :articles
-    resources :blog_posts, path: 'blog'
-    resources :articles, :path => ":category"
 
     #scope '(:locale)', locale: 'cat' do
     #end
