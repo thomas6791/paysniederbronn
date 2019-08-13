@@ -1,10 +1,7 @@
 <% title "Pays de Niederbronn-les-Bains, la porte d'entree des vosges du nord d'Alsace" %>
 <% description "" %>
-<% set_meta_tags canonical: "http://www.paysniederbronn.fr" %>
-<% set_meta_tags alternate: { "fr" => "http://www.paysniederbronn.fr",
-                           "de" => "http://www.paysniederbronn.fr/de",
-                           "en" => "http://www.paysniederbronn.fr/en"
-                          } %>
+<% set_meta_tags canonical: "http://www.paysniederbronn.fr/fr" %>
+
 <div id="home-banner">
   <div>
     <h1>Bienvenue au Pays de Niederbronn-les-Bains</h1>
@@ -35,7 +32,7 @@
       <div>
         <h2><span>Le Thermalisme</span></h2>
         <p>Avec pas moins de deux stations thermales spécialisées dans la rhumathologie, les stations thermales de Niederbronn-les-Bains et de Morsbronn-les-Bains seront les lieux idéals pour apporter les soins.</p>
-        <%= link_to "En savoir plus sur les cures thermales", '' %>
+        <%= link_to "En savoir plus sur les cures thermales", cures_thermales_landing_pages_path() %>
       </div>
       <%= image_tag "home/thermes.jpg", width: 400, height: 300, crop: :fill %>
     </section>
