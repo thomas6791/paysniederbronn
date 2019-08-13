@@ -26,12 +26,12 @@ Rails.application.routes.draw do
 
     resources :landing_pages, :path => '' do
       collection do
-        get 'alimentation', to: 'landing_pages#alimentation', as: :alimentation
-        get 'chateaux-forts', to: 'landing_pages#chateaux_forts', as: :chateaux
-        get 'cures-thermales', to: 'landing_pages#cures_thermales', as: :thermes
-        get 'ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace', as: :maginot
-        get 'randonnees', to: 'landing_pages#randonnees', as: :randonnees
-        get 'strasbourg', to: 'landing_pages#strasbourg', as: :strasbourg
+        get 'alimentation', to: 'landing_pages#alimentation'
+        get 'chateaux-forts', to: 'landing_pages#chateaux_forts'
+        get 'cures-thermales', to: 'landing_pages#cures_thermales'
+        get 'ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
+        get 'randonnees', to: 'landing_pages#randonnees'
+        get 'strasbourg', to: 'landing_pages#strasbourg'
       end
     end
 
