@@ -24,6 +24,17 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :landing_pages, :path => '' do
+      collection do
+        get 'alimentation', to: 'landing_pages#alimentation', as: :alimentation
+        get 'chateaux-forts', to: 'landing_pages#chateaux_forts', as: :chateaux
+        get 'cures-thermales', to: 'landing_pages#cures_thermales', as: :thermes
+        get 'ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace', as: :maginot
+        get 'randonnees', to: 'landing_pages#randonnees', as: :randonnees
+        get 'strasbourg', to: 'landing_pages#strasbourg', as: :strasbourg
+      end
+    end
+
     scope 'ligne-maginot-alsace' do
       get '/', to: 'ligne_maginots#index', as: :ligne_maginots
       get 'four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
