@@ -6,10 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= display_meta_tags site: "" %>
-    <% set_meta_tags alternate: { "fr" => "http://www.paysniederbronn.fr/#{request.fullpath}",
-                           "de" => "http://www.paysniederbronn.fr/de/#{request.fullpath}",
-                           "en" => "http://www.paysniederbronn.fr/en/#{request.fullpath}"
-                          } %>
+    <% if @locale_url != '/' %>
+      <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr<%=@locale_url %>" />
+      <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>" />
+      <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>" />
+    <% else %>
+      <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr/" />
+      <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de/" />
+      <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en/" />
+    <% end %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
