@@ -4,7 +4,7 @@
 <main id="simulator">
   <article>
     <header>
-      <h1>Simulateur Taxe de sejour</h1>
+      <h1>Simulateur Taxe de séjour</h1>
     </header>
     <section id="calcul">
       <%= simple_form_for :taxe_sejour, :url => result_path, :method => :post do |f| %>
@@ -13,7 +13,7 @@
         <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
         <%= f.input :minors, :input_html => { :type => "number" }, label: "Pers. non assujetties (ex: mineurs) :", :required => false %>
         <%= f.button :submit, value: "Calculer" %>
-        <p>Comm Comm Niederbronn</p>
+        <h2>Comm Comm de Niederbronn-les-Bains</h2>
       <% end  %>
     </section>
     <section id="results">
