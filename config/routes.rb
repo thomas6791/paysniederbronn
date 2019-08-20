@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #constraints(subdomain: 'blog') do
   #  root to: 'pages#blog', as: 'blog'
   #end
+  resources :blog_posts, path: 'blog'
 
   scope '(:locale)', locale: /fr|en|de/ do
     root to: 'pages#home'
@@ -30,7 +31,6 @@ Rails.application.routes.draw do
       get 'dambach', to: 'ligne_maginots#dambach'
     end
 
-    resources :blog_posts, path: 'blog'
 
     resources :landing_pages, :path => '' do
       collection do
@@ -44,34 +44,6 @@ Rails.application.routes.draw do
     end
 
     resources :articles, :path => ":category"
-
-    #scope '/:category' do
-    #  resources :articles
-    #end
-    #resources :articles
-    #resources :articles
-    #scope "/(:category)", :defaults => {:category => "/"} do
-    #  resources :articles, only: [:edit, :update, :destroy]
-    #  get '/:category/:slug', to: 'articles#show'
-    #end
-
-    #scope "/:category/:slug", :as => "shop" do
-    #  resources :articles
-    #end
-    #resources :articles
-    #resources :articles
-
-    #scope '(:locale)', locale: 'cat' do
-    #end
-    #scope '/:category/:slug' do
-    #  resources :articles
-    #end
-    #scope '/:class' do
-    #  resources :various_resources, path: ''
-    #end
-    #get '/:category/:titre', 'articles#show'
-
-    #get ':category/:titre', to: 'articles#show'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
