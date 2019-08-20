@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   before_action :set_seo
   require 'yaml'
   def home
-    set_meta_tags noindex: false
   end
   def alentours
     @page_title = 'Aux alentours'
@@ -15,19 +14,22 @@ class PagesController < ApplicationController
 
   def holidayrentings
     redirect_to root_path
+    set_meta_tags noindex: true
   end
 
   def contact
+    set_meta_tags noindex: true
   end
 
   def about
+    set_meta_tags noindex: true
   end
 
   def mentions
+    set_meta_tags noindex: true
   end
 
   def simulator
-    set_meta_tags noindex: false
     if params[:results].present?
       @taxes_sejour = params[:results].first[:prices]
       @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
@@ -54,10 +56,6 @@ class PagesController < ApplicationController
     redirect_to simulateur_path(results: [prices: @taxe_sejour.price_ratings, amount: @taxe_sejour.amount, days: @taxe_sejour.days, people: @taxe_sejour.people, minors: @taxe_sejour.minors, town: @taxe_sejour.town ])
   end
 
-  def blog
-  end
-
   def set_seo
-    set_meta_tags noindex: true
   end
 end
