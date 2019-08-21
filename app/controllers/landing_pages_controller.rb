@@ -6,6 +6,10 @@ class LandingPagesController < ApplicationController
   def chateaux_forts
     set_meta_tags title: "Les chateaux forts en alsace des vosges du nord",
               description: "Les circuits de randonnées en Alsace du Nord"
+              #@chateaux = Category.joins(:articles).uniq
+    articles = Article.joins(:category)
+    @chateaux = []
+    articles.each { |article| @chateaux << article if article.category.name == 'chateau fort alsace' }
   end
   def randonnees
     set_meta_tags title: "Les circuits de randonnées en Alsace du Nord",

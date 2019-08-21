@@ -35,7 +35,7 @@ Rails.application.routes.draw do
     resources :landing_pages, :path => '' do
       collection do
         get '/alimentation', to: 'landing_pages#alimentation'
-        get '/chateaux-forts', to: 'landing_pages#chateaux_forts'
+        get '/chateau-fort-alsace', to: 'landing_pages#chateaux_forts'
         get '/cures-thermales', to: 'landing_pages#cures_thermales'
         get '/ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
         get '/randonnees', to: 'landing_pages#randonnees'
