@@ -1,6 +1,6 @@
 <h1>Les Châteaux Forts d'Alsace</h1>
 <ul>
   <% @chateaux.each do |link| %>
-  <li><%= link_to "lien", article_path(link.category.name.parameterize, link) %></li>
+  <li><%= link_to link.titre, article_path(link.category.name.parameterize, link) %></li>
   <% end %>
 </ul>
