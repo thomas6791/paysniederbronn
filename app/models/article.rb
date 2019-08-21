@@ -8,7 +8,7 @@ class Article < ApplicationRecord
   validates :title, uniqueness: { message: "cette title est déjà prise" }
   validates :titre, uniqueness: { message: "ce titre est déjà pris" }
   validates :slug, uniqueness: { message: "slug déjà prise" }
-  after_validation :set_slug, only: [:create, :update]
+  after_validation :set_slug, only: [:create]
 
   def to_param
     #{}"#{id}-#{slug}"
