@@ -1,4 +1,5 @@
 class LandingPagesController < ApplicationController
+  before_action :set_articles
   def ligne_maginot_alsace
     set_meta_tags title: "La ligne maginot en alsace du nord",
               description: "la ligne maginot, ouvrages, bunkers présents en alsace du nord"
@@ -7,9 +8,8 @@ class LandingPagesController < ApplicationController
     set_meta_tags title: "Les chateaux forts en alsace des vosges du nord",
               description: "Les circuits de randonnées en Alsace du Nord"
               #@chateaux = Category.joins(:articles).uniq
-    articles = Article.joins(:category)
     @chateaux = []
-    articles.each { |article| @chateaux << article if article.category.name == 'chateau fort alsace' }
+    @articles.each { |article| @chateaux << article if article.category.name == 'chateau fort alsace' }
   end
   def randonnees
     set_meta_tags title: "Les circuits de randonnées en Alsace du Nord",
@@ -26,6 +26,11 @@ class LandingPagesController < ApplicationController
   def cures_thermales
     set_meta_tags title: 'cures thermales en alsace',
               description: 'cures thermales en alsace.'
+  end
+
+  private
+  def set_articles
+    @articles = Article.joins(:category)
   end
 
 end
