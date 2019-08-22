@@ -30,15 +30,10 @@
   <url>
     <loc>https://www.paysniederbronn.fr/fr</loc>
     <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.64</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.paysniederbronn.fr/en/simulateur</loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.paysniederbronn.fr/en/blog</loc>
     <lastmod>2019-08-12T20:31:27+00:00</lastmod>
     <priority>0.64</priority>
   </url>
@@ -48,7 +43,7 @@
     <priority>0.64</priority>
   </url>
   <url>
-    <loc>https://www.paysniederbronn.fr/de/blog</loc>
+    <loc>https://www.paysniederbronn.fr/fr/simulateur</loc>
     <lastmod>2019-08-12T20:31:27+00:00</lastmod>
     <priority>0.64</priority>
   </url>
@@ -72,78 +67,5 @@
     </loc>
     <lastmod>2019-08-12T20:31:27+00:00</lastmod>
     <priority>0.64</priority>
-  </url>
-  <url>
-    <loc>https://www.paysniederbronn.fr/fr/simulateur</loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>https://www.paysniederbronn.fr/fr/blog</loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/en/blog/free-rejoint-le-reseau-de-la-fibre-optique-alsacien-rosace
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/en/blog/taxe-de-sejour-a-niederbronn-une-incoherence-strategique
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/en/blog/taxe-de-sejour-2019-dans-l-ensemble-de-l-alsace
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/de/blog/free-rejoint-le-reseau-de-la-fibre-optique-alsacien-rosace
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/de/blog/taxe-de-sejour-a-niederbronn-une-incoherence-strategique
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/de/blog/taxe-de-sejour-2019-dans-l-ensemble-de-l-alsace
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.51</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/fr/blog/free-rejoint-le-reseau-de-la-fibre-optique-alsacien-rosace
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/fr/blog/taxe-de-sejour-a-niederbronn-une-incoherence-strategique
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.41</priority>
-  </url>
-  <url>
-    <loc>
-    https://www.paysniederbronn.fr/fr/blog/taxe-de-sejour-2019-dans-l-ensemble-de-l-alsace
-    </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.41</priority>
   </url>
 </urlset>
