@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     get 'about', to: 'pages#about', as: :about
     get 'contact', to: 'pages#contact', as: :contact
     get 'mentions', to: 'pages#mentions', as: :mentions
-    get 'annuaire', to: 'pages#annuaire', as: :annuaire
     get 'alentours', to: 'pages#alentours', as: :alentours
     get 'simulateur', to: 'pages#simulator', as: :simulateur
     post 'result', to: 'pages#result', as: :result
