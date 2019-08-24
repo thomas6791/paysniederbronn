@@ -16,14 +16,47 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= display_meta_tags site: "" %>
+
     <% if @locale_url != '/' %>
-      <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr<%=@locale_url %>" />
-      <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>" />
-      <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>" />
+      <% if locale == :fr %>
+        <link rel="canonical" href="<%= "#{request.protocol}#{request.host}#{request.path}" %>">
+        <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr<%=@locale_url %>?lang=fr" />
+        <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>?lang=en" />
+        <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>?lang=de" />
+
+        <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr<%=@locale_url %>?lang=fr" />
+        <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>?lang=en" />
+        <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>?lang=de" />
+
+      <% elsif locale == :en %>
+        <link rel="canonical" href="<%= "#{request.protocol}#{request.host}#{request.path}" %>">
+        <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr<%=@locale_url %>" />
+        <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>" />
+        <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>" />
+
+        <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr<%=@locale_url %>?lang=fr" />
+        <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>?lang=en" />
+        <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>?lang=de" />
+
+      <% elsif locale == :de %>
+        <link rel="canonical" href="<%= "#{request.protocol}#{request.host}#{request.path}" %>">
+        <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr<%=@locale_url %>" />
+        <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>" />
+        <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>" />
+
+        <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr<%=@locale_url %>?lang=fr" />
+        <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>?lang=en" />
+        <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>?lang=de" />
+      <% end %>
     <% else %>
+      <link rel="canonical" href="https://www.paysniederbronn.fr">
       <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr/" />
       <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de/" />
       <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en/" />
+
+      <link rel="alternate" hreflang="fr" href="https://www.paysniederbronn.fr/fr?lang=fr" />
+        <link rel="alternate" hreflang="en" href="https://www.paysniederbronn.fr/en<%=@locale_url %>?lang=en" />
+        <link rel="alternate" hreflang="de" href="https://www.paysniederbronn.fr/de<%=@locale_url %>?lang=de" />
     <% end %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
