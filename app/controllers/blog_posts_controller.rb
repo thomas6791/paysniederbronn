@@ -8,6 +8,7 @@ class BlogPostsController < ApplicationController
 
   def show
     @author = @post.author_blog
+    set_meta_tags canonical: url_for(:only_path => false)
   end
 
   def new
