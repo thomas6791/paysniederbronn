@@ -11,5 +11,12 @@ class ApplicationController < ActionController::Base
   end
   def set_url
     @locale_url = request.fullpath
+    if @locale_url[0..2] == "/fr"
+      @locale_url = @locale_url.remove("/fr")
+    elsif @locale_url[0..2] == "/en"
+      @locale_url = @locale_url.remove("/en")
+    elsif @locale_url[0..2] == "/de"
+      @locale_url = @locale_url.remove("/de")
+    end
   end
 end
