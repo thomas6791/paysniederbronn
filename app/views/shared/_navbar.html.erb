@@ -6,5 +6,8 @@
     <%= link_to t('links.contact'), contact_path, rel: "nofollow" %>
     <%= link_to "Poster une annonce",new_holiday_renting_path, class: "button create", rel: "nofollow" %>
   </div>
-  <%= render 'shared/lang_nav' %>
+  <% if params[:controller] != "blog_posts" %>
+    <%= render 'shared/lang_nav' %>
+  <% else %>
+  <% end %>
 </nav>
