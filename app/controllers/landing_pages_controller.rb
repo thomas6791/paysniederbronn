@@ -24,7 +24,7 @@ class LandingPagesController < ApplicationController
               description: "les produits locaux et supermarché d'Alsace du Nord"
   end
   def cures_thermales
-    set_meta_tags title: 'Cures thermales et stations en Alsace',
+    set_meta_tags title: 'Cure thermale et stations en Alsace',
               description: 'cures thermales en alsace.'
   end
 
