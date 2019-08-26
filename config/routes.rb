@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #  root to: 'pages#blog', as: 'blog'
   #end
   resources :blog_posts, path: '/blog/'
+  get '/fr/blog', :to => redirect('/blog'), :constraints => lambda {|r| !r.original_fullpath.end_with?('/')}
 
   scope '(:locale)', locale: /fr|en|de/ do
     root to: 'pages#home'
