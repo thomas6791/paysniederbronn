@@ -20,16 +20,16 @@
   <url>
     <loc>https://www.paysniederbronn.fr/simulateur</loc>
     <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.64</priority>
   </url>
   <url>
     <loc>https://www.paysniederbronn.fr/blog</loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.paysniederbronn.fr/fr</loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
@@ -51,21 +51,28 @@
     <loc>
     https://www.paysniederbronn.fr/blog/free-rejoint-le-reseau-de-la-fibre-optique-alsacien-rosace
     </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>
     https://www.paysniederbronn.fr/blog/taxe-de-sejour-a-niederbronn-une-incoherence-strategique
     </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>
     https://www.paysniederbronn.fr/blog/taxe-de-sejour-2019-dans-l-ensemble-de-l-alsace
     </loc>
-    <lastmod>2019-08-12T20:31:27+00:00</lastmod>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
     <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+    https://www.paysniederbronn.fr/cures-thermales
+    </loc>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
 </urlset>
