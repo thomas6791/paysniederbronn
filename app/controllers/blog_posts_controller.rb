@@ -49,7 +49,7 @@ class BlogPostsController < ApplicationController
   def actualites
     set_meta_tags noindex: true
     @categorie = "actualites"
-    @posts = BlogCategory.find_by(name:"actualites").blog_posts
+    #@posts = BlogCategory.find_by(name:"actualites").blog_posts
     @text = 'text'
   end
   def ligne_maginot
