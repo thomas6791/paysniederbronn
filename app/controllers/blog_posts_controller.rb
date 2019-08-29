@@ -49,25 +49,25 @@ class BlogPostsController < ApplicationController
   def actualites
     set_meta_tags noindex: true
     @categorie = "actualites"
-    #@posts = BlogCategory.find_by(name:"actualites").blog_posts
+    @posts = BlogCategory.find_by(name:"actualites").blog_posts
     @text = 'text'
   end
   def ligne_maginot
     set_meta_tags noindex: true
     @categorie = "ligne maginot"
-    #@posts = BlogCategory.find_by(name:"ligne maginot").blog_posts
+    @posts = BlogCategory.find_by(name:"ligne maginot").blog_posts
     @text = 'text'
   end
   def tourisme
     set_meta_tags noindex: true
     @categorie = "tourisme"
-    #@posts = BlogCategory.find_by(name:"tourisme").blog_posts
+    @posts = BlogCategory.find_by(name:"tourisme").blog_posts
     @text = 'text'
   end
   def thermalisme
     set_meta_tags noindex: true
     @categorie = "thermalisme"
-    #@posts = BlogCategory.find_by(name:"thermalisme").blog_posts
+    @posts = BlogCategory.find_by(name:"thermalisme").blog_posts
     @text = 'text'
   end
 
