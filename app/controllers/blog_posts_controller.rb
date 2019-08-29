@@ -2,7 +2,9 @@ class BlogPostsController < ApplicationController
   http_basic_authenticate_with name: "hunckler", password: "gabriel-6791", only: [:new, :edit]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_action :set_seo
+  layout 'blog'
   def index
+    set_meta_tags canonical: "https://www.paysniederbronn.fr/blog/"
     @posts =  BlogPost.all.order(custom_date: :desc)
   end
 
