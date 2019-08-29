@@ -45,6 +45,32 @@ class BlogPostsController < ApplicationController
   def destroy
   end
 
+  ### Blog categories
+  def actualites
+    set_meta_tags noindex: true
+    @categorie = "actualites"
+    @posts = BlogCategory.find_by(name:"actualites").blog_posts
+    @text = 'text'
+  end
+  def ligne_maginot
+    set_meta_tags noindex: true
+    @categorie = "ligne maginot"
+    @posts = BlogCategory.find_by(name:"ligne maginot").blog_posts
+    @text = 'text'
+  end
+  def tourisme
+    set_meta_tags noindex: true
+    @categorie = "tourisme"
+    @posts = BlogCategory.find_by(name:"tourisme").blog_posts
+    @text = 'text'
+  end
+  def thermalisme
+    set_meta_tags noindex: true
+    @categorie = "thermalisme"
+    @posts = BlogCategory.find_by(name:"thermalisme").blog_posts
+    @text = 'text'
+  end
+
   private
   def blog_params
     params.require(:blog_post).permit(:title, :description, :published, :titre, :content, :summary, :copyright, :author_blog_id, :custom_date, photos: [], blog_category_ids:[])
