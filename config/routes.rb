@@ -6,10 +6,16 @@ Rails.application.routes.draw do
   #constraints(subdomain: 'blog') do
   #  root to: 'pages#blog', as: 'blog'
   #end
-  resources :blog_posts, path: '/blog/'
+  resources :blog_posts, path: '/blog/' do
+    collection do
+      get "actualites", to: "blog_posts#actualites"
+      get "ligne-maginot", to: "blog_posts#ligne_maginot"
+      get "thermalisme", to: "blog_posts#thermalisme"
+      get "tourisme", to: "blog_posts#tourisme"
+    end
+  end
   get "/fr/blog/", to: redirect("/blog/")
   get "/fr/blog/:id", to: redirect("/blog/%{id}")
-
   scope '(:locale)', locale: /fr|en|de/ do
     root to: 'pages#home'
     get 'about', to: 'pages#about', as: :about

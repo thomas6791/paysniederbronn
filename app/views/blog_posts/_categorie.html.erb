@@ -1,0 +1,23 @@
+<% title "#{}" %>
+<% description "#{}" %>
+<main class="blog">
+  <article class="article">
+    <header>
+      <h1><%= categorie.titleize %></h1>
+      <p><%= @text %></p>
+    </header>
+
+      <section class="articles-list">
+        <ul>
+          <% @posts.each do |post| %>
+            <li><%= link_to blog_post_path(post) do %>
+              <p><%= post.titre %></p>
+              <p><%= post.custom_date.strftime("%d/%m/%y") %></p>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+  </article>
+
+</main>
