@@ -53,24 +53,28 @@ class BlogPostsController < ApplicationController
     @categorie = "actualites"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => "Actualite").order('custom_date DESC')
     @text = 'text'
+    @color = "pink"
   end
   def ligne_maginot
     set_meta_tags noindex: true
     @categorie = "ligne maginot"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
     @text = 'text'
+    @color = "green"
   end
   def tourisme
     set_meta_tags noindex: true
     @categorie = "tourisme"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
     @text = 'text'
+    @color = "green"
   end
   def thermalisme
     set_meta_tags noindex: true
     @categorie = "thermalisme"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
     @text = 'text'
+    @color = "blue"
   end
 
   private
