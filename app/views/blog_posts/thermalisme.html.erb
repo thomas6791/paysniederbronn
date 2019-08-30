@@ -4,7 +4,7 @@
   <article class="article">
     <header>
       <h1><span class="blue">Qu'est-ce que le thermalisme ?</span></h1>
-      <p>Le <strong>thermalisme</strong> est l'utilisation des eaux minérales ou des eaux thermales à des fins thérapeutiques tel que dans les cures thermales afin de soigner diverses pathologies.<br>Celles-ci peuvent également être utilisées à des fins récréatives avec pour but le bien-être, la détente ou la relaxation des personnes.</p>
+      <p>Le <strong>thermalisme</strong> est l'utilisation des eaux minérales ou des eaux thermales à des fins thérapeutiques notamment lors d'une <a href="https://www.paysniederbronn.fr/cures-thermales">cure thermale</a> afin de soigner diverses pathologies.<br>Celles-ci peuvent également être utilisées à des fins récréatives avec pour but le bien-être, la détente ou la relaxation des personnes.</p>
     </header>
     <section>
       <h2>Quelles sont les différences entre le thermalisme et la thalasso ?</h2>
@@ -13,17 +13,17 @@
       </p>
     </section>
 
-      <section class="articles-list">
-        <ul>
-          <% @posts.each do |post| %>
-            <li><%= link_to blog_post_path(post) do %>
-              <p><%= post.titre %></p>
-              <p><%= post.custom_date.strftime("%d/%m/%y") %></p>
-            <% end %>
-            </li>
+    <section class="articles-list">
+      <ul>
+        <% @posts.each do |post| %>
+          <li><%= link_to blog_post_path(post) do %>
+            <p><%= post.titre %></p>
+            <p><%= post.custom_date.strftime("%d/%m/%y") %></p>
           <% end %>
-        </ul>
-      </section>
+          </li>
+        <% end %>
+      </ul>
+    </section>
   </article>
 
 </main>
