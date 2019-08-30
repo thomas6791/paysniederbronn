@@ -20,7 +20,9 @@ class BlogPost < ApplicationRecord
   private
 
   def set_slug
-    self.slug = titre.to_s.parameterize
+    if self.slug.nil? || self.slug.blank?
+      self.slug = titre.to_s.parameterize
+    end
   end
 
   def set_custom_date
