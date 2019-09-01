@@ -15,11 +15,22 @@ nav {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    ul {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      li {
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+      }
+    }
     a {
     font-size: 1em;
     color: white;
     text-decoration: none;
     align-self: center;
+    padding: 0px 10px;
       &:hover {
         color: white;
         opacity: 0.8;
@@ -66,8 +77,10 @@ nav {
     justify-content: space-around;
     visibility: hidden;
     transition: 0.5s width ease;
-    div {
+    div > ul {
       flex-direction: column;
+      width: 80%;
+      margin: auto;
     }
     a {
       font-size: 1.5em;
