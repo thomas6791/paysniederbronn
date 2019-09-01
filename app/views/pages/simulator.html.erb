@@ -3,9 +3,7 @@
 <% set_meta_tags canonical: "https://www.paysniederbronn.fr/simulateur" %>
 <main id="simulator">
   <article>
-    <header>
-      <h1>Simulateur Taxe de séjour</h1>
-    </header>
+    <h1>Simulateur Taxe de séjour</h1>
     <section id="calcul">
       <%= simple_form_for :taxe_sejour, :url => result_path, :method => :post do |f| %>
         <%= f.input :amount, :input_html => { :type => "number" }, label: "Montant total du séjour :", :required => false %>

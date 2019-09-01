@@ -65,8 +65,10 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/mobile" %>
+    <header>
+      <%= render "shared/navbar" %>
+      <%= render "shared/mobile" %>
+    </header>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>
