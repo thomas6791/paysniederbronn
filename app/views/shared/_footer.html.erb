@@ -1,8 +1,10 @@
 <footer id="footer">
   <%= link_to "simulateur taxe de sejour", simulateur_path, rel: "nofollow" %>
   <%= link_to "mentions legales", mentions_path, rel: "nofollow" %>
-  <% if locale == :fr %>
+  <% if locale == :fr && params[:controller] != "blog_posts" %>
     <%= link_to "le blog", blog_posts_path %>
+  <% else %>
+    <%= link_to "Pays de Niederbronn", root_path %>
   <% end %>
   <!--
     <div class="annuaire">
