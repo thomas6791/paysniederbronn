@@ -1,3 +1,97 @@
-// Place all the styles related to the blog_posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.blog {
+  min-height: 100vh;
+  .content {}
+  .post-categories {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    span {
+      border: solid 2px lightseagreen;
+      border-radius: 25px;
+      padding: 5px 10px;
+    }
+    hr { color: lightseagreen; }
+  }
+  .float-text {
+    border: solid 2px lightseagreen;
+    border-radius: 5px;
+    padding: 10px;
+    word-break: break-word;
+    font-size: 1.1em;
+    max-width: 30%;
+    font-weight: bold;
+    &.right {
+      float: right;
+      margin: 10px 0px 10px 10px;
+    }
+    &.left {
+      float: left;
+      margin: 10px 10px 10px 0px;
+    }
+  }
+  .float-text + h2 { clear: both; }
+}
+.articles-list {
+  li {
+    list-style-type: none;
+    margin: 0px;
+    border-top: solid 0.5px #ECEBEB;
+    line-height: 70px;
+    padding: 5px 10px;
+    a {
+      color: black;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+    }
+    &:hover {
+      -webkit-transition: all 0.3s ease 0s;
+      -moz-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      -ms-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border: none;
+    }
+  }
+}
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  article {
+    .image-float {
+      float: none;
+      margin: 0px 0px 0px 0px !important;
+    }
+  }
+  .blog .float-text.right {
+    float: none;
+    width: 100%;
+    display: block;
+    min-width: 90%;
+  }
+  .blog .float-text.left {
+    float: none;
+    width: 100%;
+    display: block;
+    min-width: 90%;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
+
