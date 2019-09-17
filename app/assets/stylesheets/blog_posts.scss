@@ -35,8 +35,10 @@
     list-style-type: none;
     margin: 0px;
     border-top: solid 0.5px #ECEBEB;
-    line-height: 70px;
+    height: 70px;
     padding: 5px 10px;
+    display: flex;
+    align-items: center;
     a {
       color: black;
       text-decoration: none;
