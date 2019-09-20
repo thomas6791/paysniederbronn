@@ -1,17 +1,25 @@
 :cards:
   fr:
+  - :name: Alimentation, marchés & produits locaux
+    :photo: https://github.com/thomas6791/photos-pays/blob/master/marche-reicho.JPG?raw=true
+    :description: commerces, marchés et produits locaux
+    :link: /fr/alimentation
   - :name: Chemin des châteaux forts d'Alsace
     :photo: wegelnburg.jpg
     :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
+    :link:
   - :name: Visiter Strasbourg
     :photo: strasbourg.jpg
     :description: bonjour
+    :link:
   - :name: Le château du Schoeneck
     :photo: schoeneck.jpg
     :description: ozfregergze
+    :link:
   - :name: La Ligne Maginot d'Alsace
     :photo: casemate_neunhoffen.jpg
     :description: casemate neunhoffen
+    :link:
   en:
   - :name: Chemin des châteaux forts d'Alsace
     :photo: wegelnburg.jpg

@@ -2,18 +2,20 @@
   <h1><%= t('alentours.title').capitalize %></h1>
   <section class="cards">
     <% @cards.each do |card| %>
-      <div class="card">
-        <%= image_tag "#{card[:photo]}" %>
-        <div class="footer">
-          <h2><%= card[:name] %></h2>
-          <div class="hide-content">
-            <p class="more">En savoir plus</p>
-            <p class="content">
-              <%= card[:description] %>
-            </p>
+      <%= link_to card[:link] do %>
+        <div class="card">
+          <%= image_tag("#{card[:photo]}") %>
+          <div class="footer">
+            <h2><%= card[:name] %></h2>
+            <div class="hide-content">
+              <p class="more">En savoir plus</p>
+              <p class="content">
+                <%= card[:description] %>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </section>
 <%= link_to 'ligne maginot', ligne_maginots_path %>
