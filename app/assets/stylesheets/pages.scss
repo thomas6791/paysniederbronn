@@ -14,20 +14,20 @@ ul > li { margin-left: 20px; }
 body {
 }
 main {
-  padding: 0px 10px;
+  max-width: 1080px; margin: auto;
 }
-main { max-width: 1280px; margin: auto; }
 h1 { font-size: 2em; text-align: center; margin: 20px 0px; }
 p { font-size: 1em; }
 #alentours {
   min-height: 100vh;
 }
 .cards {
+  padding: 0px 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  grid-column-gap: 20px;
-  grid-row-gap: 10px;
+  grid-column-gap: 40px;
+  grid-row-gap: 15px;
 }
 .advice {
   border: solid 2px $red;
@@ -69,6 +69,7 @@ p { font-size: 1em; }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   main {
+    padding: 0px 10px;
     padding-top: 55px;
   }
   .cards {
@@ -100,6 +101,6 @@ p { font-size: 1em; }
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

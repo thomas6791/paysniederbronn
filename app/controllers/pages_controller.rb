@@ -5,11 +5,11 @@ class PagesController < ApplicationController
   end
   def alentours
     @page_title = 'Aux alentours'
-    #set_meta_tags noindex: true
+    set_meta_tags noindex: true
     set_meta_tags canonical: "http://yoursite.com/canonical/url"
 
     @cards = YAML.load(File.read("config/cards.yml"))[:cards][locale.to_s]
-    redirect_to root_path
+    #redirect_to root_path
   end
 
   def holidayrentings
