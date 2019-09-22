@@ -52,7 +52,7 @@ class BlogPostsController < ApplicationController
     set_meta_tags noindex: true
     @categorie = "actualites"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => "Actualite").order('custom_date DESC')
-    @text = 'text'
+    @text = ''
     @color = "pink"
   end
   def ligne_maginot
