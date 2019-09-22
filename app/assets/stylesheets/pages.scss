@@ -38,6 +38,15 @@ p { font-size: 1em; }
   display: inline-block;
   h2 { margin-top: 0px !important; }
 }
+.sommaire {
+  display: inline-block;
+  border: solid 1px;
+  border-radius: 5px;
+  padding: 5px;
+  a { color: black; text-decoration: none; font-weight: bold;
+    &:hover { color: $red; font-weight: bold; }
+  }
+}
 .form {
   font-size: 1em;
   div {
