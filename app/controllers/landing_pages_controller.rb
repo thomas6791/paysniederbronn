@@ -22,7 +22,7 @@ class LandingPagesController < ApplicationController
   def alimentation
     set_meta_tags title: "Produits locaux et supermarché d'Alsace du Nord",
               description: "les produits locaux et supermarché d'Alsace du Nord",
-              noindex: true
+              #noindex: true
   end
   def cures_thermales
     set_meta_tags title: "Cure thermale et station en Alsace des Vosges du Nord",
