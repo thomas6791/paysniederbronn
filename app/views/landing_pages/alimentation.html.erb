@@ -4,10 +4,11 @@
 <main class="landing">
   <ul class="sommaire">
     <li><a href="#marches">Marchés & terroir</a></li>
-    <li><a href="#supermarches">Petite & Grandes surfaces</a></li>
-    <li><a href="#boulangeries">Boulangeries</a></li>
+    <li><a href="#supermarches"><%= t('alentours.commerces.supermarches').capitalize %></a></li>
+    <li><a href="#boulangeries"><%= t('alentours.commerces.boulangerie').capitalize %></a></li>
     <li><a href="#boucheries">Boucheries & Traiteurs</a></li>
   </ul>
+
   <h2 id="marches">Marchés et producteurs locaux</h2>
 
   <h3>Marchés hebdomadaires</h3>
@@ -31,74 +32,137 @@
   <p></p>
   <h5>Adresse:</h5>
   <p>Route de Nehwiller, Lieu dit Welshhof, 67110 Windstein</p>
-  <h2 id="supermarches">Petites et grandes surfaces par ville</h2>
+  <h2 id="supermarches"><%= t('alentours.commerces.supermarches').capitalize %></h2>
   <iframe src="https://www.google.com/maps/d/embed?mid=1o3HENahj7Bzq2-SEmjeihIDnmNNXfS9D"></iframe>
   <br>
-  <h3>Reichshoffen:</h3>
+  <article>
+    <h3>Reichshoffen</h3>
 
-  <h4>Supermarché Match</h4>
-  <h5>Adresse:</h5>
-  <h5>Horaires d’ouvertures</h5>
-  <ul>
-    <li>Lundi: 08:00 - 19:30</li>
-    <li>Mardi: 08:00 - 19:30</li>
-    <li>Mercredi: 08:00 - 19:30</li>
-    <li>Jeudi: 08:00 - 19:30</li>
-    <li>Vendredi: 08:00 - 19:30</li>
-    <li>Samedi: 08:00 - 19:30</li>
-    <li>Dimanche: Fermé</li>
-  </ul>
+    <h4>Supermarché Match</h4>
+    <h5>Adresse:</h5>
+    <h5>Horaires d’ouvertures</h5>
+    <ul>
+      <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+    </ul>
 
-  <h4>Supermarché Intermarché</h4>
-  <h5>Horaires d’ouvertures</h5>
-  <ul>
-    <li>Lundi: 08:00 - 19:30</li>
-    <li>Mardi: 08:00 - 19:30</li>
-    <li>Mercredi: 08:00 - 19:30</li>
-    <li>Jeudi: 08:00 - 19:30</li>
-    <li>Vendredi: 08:00 - 20:00</li>
-    <li>Samedi: 08:00 - 19:00</li>
-    <li>Dimanche: Fermé</li>
-  </ul>
+    <h4>Intermarché</h4>
+    <h5>Horaires d’ouvertures</h5>
+    <ul>
+      <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+      <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 19:00</li>
+      <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+    </ul>
 
-  <h4>Norma</h4>
-  <h5>Horaires d’ouvertures</h5>
-  <ul>
-    <li>Lundi: 08:30 - 19:30</li>
-    <li>Mardi: 08:30 - 19:30</li>
-    <li>Mercredi: 08:30 - 19:30</li>
-    <li>Jeudi: 08:30 - 19:30</li>
-    <li>Vendredi: 08:00 - 19:30</li>
-    <li>Samedi: 08:30 - 19:30</li>
-    <li>Dimanche: Fermé</li>
-  </ul>
+    <h4>Norma</h4>
+    <h5>Horaires d’ouvertures</h5>
+    <ul>
+      <li><%= t('date.day_names')[1].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[2].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[3].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[4].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 19:30</li>
+      <li><%= t('date.day_names')[6].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+    </ul>
 
-  <h4>Lidl</h4>
-  <h5>Horaires d’ouvertures</h5>
-  <ul>
-    <li>Lundi: 08:30 - 19:30</li>
-    <li>Mardi: 08:30 - 19:30</li>
-    <li>Mercredi: 08:30 - 19:30</li>
-    <li>Jeudi: 08:30 - 19:30</li>
-    <li>Vendredi: 08:30 - 19:30</li>
-    <li>Samedi: 08:30 - 19:30</li>
-    <li>Dimanche: Fermé</li>
-  </ul>
+    <h4>Lidl</h4>
+    <h5>Horaires d’ouvertures</h5>
+    <ul>
+      <li><%= t('date.day_names')[1].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[2].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[3].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[4].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[5].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[6].capitalize %>: 08:30 - 19:30</li>
+      <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+    </ul>
+  </article>
 
   <h3>Niederbronn-les-Bains</h3>
   <h4>Supermarché Match</h4>
+  <h5>Horaires d’ouvertures</h5>
+  <ul>
+    <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+  </ul>
   <h4>Carrefour Express</h4>
+  <h5>Horaires d’ouvertures</h5>
+  <ul>
+    <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[0].capitalize %>: 09:00 -  13:00</li>
+  </ul>
   <h3>Gundershoffen</h3>
   <h4>Hyper U</h4>
+  <h5>Horaires d’ouvertures</h5>
+  <ul>
+    <li><%= t('date.day_names')[1].capitalize %>: 08:30 - 20:00</li>
+    <li><%= t('date.day_names')[2].capitalize %>: 08:30 - 20:00</li>
+    <li><%= t('date.day_names')[3].capitalize %>: 08:30 - 20:00</li>
+    <li><%= t('date.day_names')[4].capitalize %>: 08:30 - 20:00</li>
+    <li><%= t('date.day_names')[5].capitalize %>: 08:30 - 20:00</li>
+    <li><%= t('date.day_names')[6].capitalize %>: 08:30 - 20:00</li>
+    <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+  </ul>
   <h3>Woerth</h3>
   <h4>Super U</h4>
+  <h5>Horaires d’ouvertures</h5>
+  <ul>
+    <li><%= t('date.day_names')[1].capitalize %>: 08:30 - 19:30</li>
+    <li><%= t('date.day_names')[2].capitalize %>: 08:30 - 19:30</li>
+    <li><%= t('date.day_names')[3].capitalize %>: 08:30 - 19:30</li>
+    <li><%= t('date.day_names')[4].capitalize %>: 08:30 - 19:30</li>
+    <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 19:30</li>
+    <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+  </ul>
   <h3>Bitche</h3>
-  <h4>Supermarché Match</h4>
+  <h4>Intermarché</h4>
+  <h5>Horaires d’ouvertures</h5>
+  <ul>
+    <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 19:30</li>
+    <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 19:30</li>
+    <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 19:30</li>
+    <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 19:30</li>
+    <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+    <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 19:00</li>
+    <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+  </ul>
 
-  <h2 id="boulangeries">Boulangerie & Dépôts de Pain</h2>
+  <h2 id="boulangeries"><%= t('alentours.commerces.boulangerie').capitalize %></h2>
   <h3>Niederbronn-les-Bains</h3>
+  <h4>Le Pâtissier des thermes</h4>
+  <h5>Horaires d’ouvertures</h5>
+  <ul>
+    <li><%= t('date.day_names')[1].capitalize %>: 05:00 - 18:00</li>
+    <li><%= t('date.day_names')[2].capitalize %>: 05:00 - 18:00</li>
+    <li><%= t('date.day_names')[3].capitalize %>: 05:00 - 18:00</li>
+    <li><%= t('date.day_names')[4].capitalize %>: 05:00 - 18:00</li>
+    <li><%= t('date.day_names')[5].capitalize %>: 05:00 - 18:00</li>
+    <li><%= t('date.day_names')[6].capitalize %>: 06:00 - 18:00</li>
+    <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+  </ul>
   <h3>Reichshoffen</h3>
-  <h3>Neunoffen</h3>
+  <h3>Neunhoffen</h3>
   <h2 id="boucheries">Boucherie et Traiteurs</h2>
 </main>
 

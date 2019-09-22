@@ -13,3 +13,24 @@ de:
     contact: "Contact"
   alentours:
     title: "in the surroundings"
+    commerces:
+      boulangerie: "bäckerei und brotdepot"
+      supermarches: "kleine und große supermärkte"
+
+  date:
+    abbr_day_names:
+    - son
+    - mon
+    - die
+    - mit
+    - don
+    - fre
+    - sam
+    day_names:
+    - sonntag
+    - montage
+    - dienstag
+    - mittwoch
+    - donnerstag
+    - freitag
+    - samstag
