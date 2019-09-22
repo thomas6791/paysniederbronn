@@ -44,3 +44,25 @@ en:
     contact: "Contact"
   alentours:
     title: "in the surroundings"
+    commerces:
+      boulangerie: "bakery and bread depot"
+      supermarches: "small and large supermarkets"
+
+  date:
+    abbr_day_names:
+    - sun
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    day_names:
+    - sunday
+    - monday
+    - tuesday
+    - wednesday
+    - thursday
+    - friday
+    - saturday
+

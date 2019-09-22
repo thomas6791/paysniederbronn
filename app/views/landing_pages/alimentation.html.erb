@@ -1,3 +1,277 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://github.com/thomas6791/photos-pays/blob/master/marche%CC%81-banner.jpg?raw=true)">
+<div class="banner landing" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://github.com/thomas6791/photos-pays/blob/master/marche%CC%81-banner.jpg?raw=true)">
   <h1>Alimentation</h1>
 </div>
+<main class="landing">
+  <ul class="sommaire">
+    <li><a href="#marches">Marchés & terroir</a></li>
+    <li><a href="#supermarches"><%= t('alentours.commerces.supermarches').capitalize %></a></li>
+    <li><a href="#boulangeries"><%= t('alentours.commerces.boulangerie').capitalize %></a></li>
+    <li><a href="#boucheries">Boucheries & Traiteurs</a></li>
+  </ul>
+
+  <h2 id="marches">Marchés et producteurs locaux</h2>
+
+  <h3>Marchés hebdomadaires</h3>
+  <p>Marché présent toutes les semaines le <b>jeudi matin à Reichshoffen</b> et le <b>vendredi matin à Niederbronn-les-Bains</b>, ce rendez-vous hebdomadaire est l’occasion d’acheter les fruits et légumes de saison, des plats exotiques tel que de la cuisine chinoise ou encore brésilienne mais également des vêtements, ustensiles de cuisine et bien d’autre d’objets de consommation courante.
+  Le jeudi matin sa taille devient impressionnante, lorsque ce dernier occupe l’ensemble de la rue du Général Koenig de Reichshoffen et offre aux riverains l’occasion de se rencontrer tout en faisant leur achat.
+  <h4>Horaires (hors jours fériés) :</h4>
+  <ul>
+    <li>Reichshoffen: Tous les jeudis de 8h00 à 12h00</li>
+    <li>Niederbronn-les-Bains: Tous les vendredis de 8h à 12h00</li>
+  </ul>
+  <div class="advice">
+    <h4>Conseils:</h4>
+    <ul>
+      <li>Des places de parking sont disponibles à proximité pour chacune des villes.
+      Pour Reichshoffen, il vaut mieux se garer sur le parking de la Castine.</li>
+      <li>Pour prendre des plats chinois, il vaut mieux anticiper un peu son achat, une file d’attente se crée assez rapidement au fur et à mesure qu’on approche de midi.</li>
+    </ul>
+  </div>
+
+  <h3>La Chèvrerie du Windstein</h3>
+  <p></p>
+  <h5>Adresse:</h5>
+  <p>Route de Nehwiller, Lieu dit Welshhof, 67110 Windstein</p>
+  <h2 id="supermarches"><%= t('alentours.commerces.supermarches').capitalize %></h2>
+  <iframe src="https://www.google.com/maps/d/embed?mid=1o3HENahj7Bzq2-SEmjeihIDnmNNXfS9D"></iframe>
+  <br>
+  <h3>Reichshoffen</h3>
+  <article class="cards">
+    <section>
+      <h4>Supermarché Match</h4>
+      <h5>Adresse:</h5>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>Intermarché</h4>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 19:00</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>Norma</h4>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+
+    <section>
+      <h4>Lidl</h4>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+  </article>
+
+  <h3>Niederbronn-les-Bains</h3>
+  <article class="cards">
+    <section>
+      <h4>Supermarché Match</h4>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+    <section>
+      <h4>Carrefour Express</h4>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[0].capitalize %>: 09:00 -  13:00</li>
+      </ul>
+    </section>
+  </article>
+  <h3>Gundershoffen</h3>
+  <article class="cards">
+    <section>
+      <h4>Hyper U</h4>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:30 - 20:00</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:30 - 20:00</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:30 - 20:00</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:30 - 20:00</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:30 - 20:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:30 - 20:00</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+  </article>
+  <h3>Woerth</h3>
+  <article class="cards">
+    <section>
+      <h4>Super U</h4>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:30 - 19:30</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+  </article>
+  <h3>Bitche</h3>
+  <article class="cards">
+    <section>
+      <h4>Intermarché</h4>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 08:00 - 19:30</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 08:00 - 20:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 08:00 - 19:00</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+  </article>
+
+  <h2 id="boulangeries"><%= t('alentours.commerces.boulangerie').capitalize %></h2>
+  <h3>Niederbronn-les-Bains</h3>
+  <article class="cards">
+    <section>
+      <h4>Le Pâtissier des thermes</h4>
+      <h5>2 Passage des Thermes, 67110 Niederbronn-les-Bains</h5>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 05:00 - 18:00</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 05:00 - 18:00</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 05:00 - 18:00</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 05:00 - 18:00</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 05:00 - 18:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 06:00 - 18:00</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+    <section>
+      <h4>Pâtisserie Mary</h4>
+      <h5>Adresse: 31 Rue du Général de Gaulle, 67110 Niederbronn-les-Bains</h5>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: Fermé</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 06:00 - 18:00</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 06:00 - 18:00</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 06:00 - 18:00</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 06:00 - 18:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 06:00 - 18:00</li>
+        <li><%= t('date.day_names')[0].capitalize %>: 06:00 - 18:00</li>
+      </ul>
+    </section>
+    <section>
+      <h4>Boulangerie Pâtisserie Chez Hoffmann</h4>
+      <h5>Adresse: 4 Rue du Général de Gaulle, 67110 Niederbronn-les-Bains</h5>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 07:00 - 19:00</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 07:00 - 19:00</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 07:00 - 19:00</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 07:00 - 19:00</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 07:00 - 19:00</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 07:00 - 19:00</li>
+        <li><%= t('date.day_names')[0].capitalize %>: Fermé</li>
+      </ul>
+    </section>
+  </article>
+  <h3>Reichshoffen</h3>
+  <article class="cards">
+    <section>
+      <h4>Boulangerie Pâtissier Krebs</h4>
+      <h5>Adresse: 2 Rue de l'Église, 67110 Reichshoffen</h5>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: Fermé</li>
+        <li><%= t('date.day_names')[2].capitalize %>: 05:30 - 12:30, 14:30 -  18:30</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 05:30 - 12:30, 14:30 -  18:30</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 05:30 - 12:30, 14:30 -  18:30</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 05:30 - 12:30, 14:30 -  18:30</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 05:30 - 12:30, 14:30 -  18:30</li>
+        <li><%= t('date.day_names')[0].capitalize %>: 7:00 - 12:00</li>
+      </ul>
+    </section>
+    <section>
+      <h4>Trautmann Et Compagnie</h4>
+      <h5>Adresse: 16 Rue du Général Leclerc, 67110 Reichshoffen</h5>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>:</li>
+        <li><%= t('date.day_names')[2].capitalize %>:</li>
+        <li><%= t('date.day_names')[3].capitalize %>:</li>
+        <li><%= t('date.day_names')[4].capitalize %>:</li>
+        <li><%= t('date.day_names')[5].capitalize %>:</li>
+        <li><%= t('date.day_names')[6].capitalize %>:</li>
+        <li><%= t('date.day_names')[0].capitalize %>:</li>
+      </ul>
+    </section>
+    <section>
+      <h4>Chez Jerem et Flo</h4>
+      <h5>Adressse: 17 Rue du Général Koenig, 67110 Reichshoffen</h5>
+      <h5>Horaires d’ouvertures</h5>
+      <ul>
+        <li><%= t('date.day_names')[1].capitalize %>: 05:30 - 12:30, 13:30 -  18:30</li>
+        <li><%= t('date.day_names')[2].capitalize %>: Fermé</li>
+        <li><%= t('date.day_names')[3].capitalize %>: 05:30 - 12:30, 13:30 -  18:30</li>
+        <li><%= t('date.day_names')[4].capitalize %>: 05:30 - 12:30, 13:30 -  18:30</li>
+        <li><%= t('date.day_names')[5].capitalize %>: 05:30 - 12:30, 13:30 -  18:30</li>
+        <li><%= t('date.day_names')[6].capitalize %>: 05:30 - 12:30, 13:30 -  18:30</li>
+        <li><%= t('date.day_names')[0].capitalize %>: 6:00 - 12:00</li>
+      </ul>
+    </section>
+  </article>
+  <h3>Neunhoffen</h3>
+  <article class="cards">
+    <section></section>
+  </article>
+  <h2 id="boucheries">Boucherie et Traiteurs</h2>
+  <h3></h3>
+  <article class="cards">
+    <section></section>
+  </article>
+</main>
+
