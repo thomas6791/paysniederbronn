@@ -45,6 +45,10 @@ Rails.application.routes.draw do
         get '/alimentation', to: 'landing_pages#alimentation'
         get '/chateau-fort-alsace', to: 'landing_pages#chateaux_forts'
         get '/cures-thermales', to: 'landing_pages#cures_thermales'
+        scope :"cures-thermales" do
+          get '/station-thermale-niederbronn', to: 'landing_pages#station_niederbronn'
+          get 'station-thermale-morsbronn', to: 'landing_pages#station_morsbronn'
+        end
         get '/ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
         get '/randonnees', to: 'landing_pages#randonnees'
         get '/strasbourg', to: 'landing_pages#strasbourg'
