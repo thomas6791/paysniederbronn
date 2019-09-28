@@ -23,7 +23,7 @@
       <div>
         <h2><span class="green">Le Parc Naturel des Vosges du Nord</span></h2>
         <p>Nichée au Nord Est de la France, frontalière de l’Allemagne et de la Suisse, la région d’Alsace possède un des patrimoines culturel, historique et naturel les plus riches de France offrant aux touristes une réelle expérience durant leurs séjours quelquesoit la période de l’année.</p>
-        <%= link_to "En savoir plus", '' %>
+        <%= link_to "En savoir plus", "" %>
       </div>
       <%= image_tag "home/chateau_schoeneck.jpg", width: 400, height: 300, crop: :fill %>
     </section>
@@ -31,7 +31,7 @@
       <div>
         <h2><span>Le Thermalisme</span></h2>
         <p>Avec pas moins de deux stations thermales spécialisées dans la rhumathologie, les stations thermales de Niederbronn-les-Bains et de Morsbronn-les-Bains seront les lieux idéals pour apporter les soins.</p>
-        <%= link_to "En savoir plus sur les cures thermales", cures_thermales_landing_pages_path() %>
+        <%= link_to "En savoir plus sur les cures thermales", cures_thermales_landing_pages_path(), class: "link" %>
       </div>
       <%= image_tag "home/thermes.jpg", width: 400, height: 300, crop: :fill %>
     </section>
