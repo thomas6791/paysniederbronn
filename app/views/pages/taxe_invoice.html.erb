@@ -1,6 +1,6 @@
 <main class="invoice">
   <h1>Créer une facture de taxe de séjour pour meublé de tourisme</h1>
-  <section class="calcul">
+  <section class="calcul invoice">
     <%= simple_form_for :taxe_sejour, :url => taxe_facture_path, :method => :post do |f| %>
       <%= f.input :town, collection: [ "Niederbronn", "Morsbronn" ], selected: "Niederbronn", required: false, label: "Communauté de commune" %>
       <%= f.input :rating, :input_html => { :type => "string" }, collection: [ "non classé", "1", "2", "3", "4", "5" ], selected: "Niederbronn", required: false, label: "Classement en étoile" %>
