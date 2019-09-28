@@ -60,7 +60,7 @@ class PagesController < ApplicationController
       else
         @taxe = datas[:taxes][datas[:rating].to_i]
       end
-      @single_tax = @taxe.to_f / @days.to_i / (@people.to_i - @minors.to_i)
+      @single_tax = sprintf('%.2f', @taxe.to_f / @days.to_i / (@people.to_i - @minors.to_i))
     end
   end
 

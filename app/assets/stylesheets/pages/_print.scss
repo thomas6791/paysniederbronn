@@ -1,4 +1,7 @@
 @media print {
+  body {
+    height: auto;
+  }
   .invoice {
     h1, .calcul, a {
       height: 0px;

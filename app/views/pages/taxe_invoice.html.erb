@@ -28,17 +28,19 @@
         <div>
           <p>Total de personnes :</p><p><%= @people %></p>
         </div>
-        <div>
-          <p>Nombre de pers. exonérées (ex: pers. mineures) :</p><p><%= @people.to_i - @minors.to_i %></p>
-        </div>
+
+        <% if @minors.to_f == 0 %>
+        <% else %>
+          <div>
+            <p>Nombre de pers. exonérées (ex: pers. mineures) :</p><p><%= @minors.to_i %></p>
+          </div>
+        <% end %>
+
         <div>
           <p>Taxe par personne (dont taxe dep. de 10%) :</p><p><%= sprintf("%.2f",@single_tax) %> €</p>
         </div>
         <div>
-          <% if @minors.to_f == 0 %>
-          <% else %>
           <p>Détail du calcul : <%= @single_tax %> € x <%= @people.to_i - @minors.to_i %> (pers. assujetties) x <%= @days %> (jours)</p>
-          <% end %>
         </div>
         <div class="amount-taxe">
           <p>Montant total de la taxe de séjour à verser :</p><p><b><%= sprintf("%.2f", @taxe.to_f) %> €</b></p>
