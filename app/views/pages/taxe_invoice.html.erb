@@ -35,7 +35,7 @@
           <p>Taxe par personne (dont taxe dep. de 10%) :</p><p><%= @single_tax %> €</p>
         </div>
         <div>
-          <p>Détail du calcul : <%= @single_tax %> (taxe par pers. dont taxe add.) x <%= @people.to_i - @minors.to_i %> (pers. assujetties) x <%= @days %> (jours)</p>
+          <p>Détail du calcul : <%= @single_tax %> € x <%= @people.to_i - @minors.to_i %> (pers. assujetties) x <%= @days %> (jours)</p>
         </div>
         <div class="amount-taxe">
           <p>Montant total de la taxe de séjour à verser :</p><p><b><%= @taxe.to_f %> €</b></p>
