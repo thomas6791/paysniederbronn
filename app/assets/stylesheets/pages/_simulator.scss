@@ -28,7 +28,36 @@
      margin: 10px 0px;
   }
 }
-#calcul {
+#taxe-invoice {
+  display: flex;
+  justify-content: center;
+}
+#facture {
+  h2 { text-align: center; }
+  padding: 25px 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  .details {
+    div {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0px;
+      border-bottom: solid 1px;
+      p:nth-child(1) {}
+      p:nth-child(2) {
+        padding: 0px 0px 0px 30px;
+      }
+    }
+    .amount-taxe {}
+  }
+  a {
+    color: lightseagreen;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+.calcul {
   display: flex;
   justify-content: center;
   margin: 25px 0px;
