@@ -7,9 +7,19 @@
     #facture {
       box-shadow:none;
     }
+    a[href]:after { content: none !important; }
+    img[src]:after { content: none !important; }
+
   }
   footer {
     height: 0px;
     opacity: 0;
+    visibility: hidden;
   }
+  nav {
+    visibility: hidden;
+    height: 0px;
+    opacity: 0;
+  }
+
 }
