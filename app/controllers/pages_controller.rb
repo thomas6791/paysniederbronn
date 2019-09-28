@@ -46,6 +46,14 @@ class PagesController < ApplicationController
     end
   end
 
+  def taxe_invoice
+  end
+
+  def result_invoice
+    #@taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
+    fail
+  end
+
   def result
     amount = params[:taxe_sejour][:amount].to_f
     days = params[:taxe_sejour][:days].to_f
