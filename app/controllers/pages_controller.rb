@@ -49,10 +49,10 @@ class PagesController < ApplicationController
   def taxe_invoice
     if params[:result_invoice].present?
       datas = params[:result_invoice][0]
-      people = datas[:people]
-      amount = datas[:amount]
+      @people = datas[:people]
+      @amount = datas[:amount]
       rating = datas[:rating]
-      days = datas[:days]
+      @days = datas[:days]
 
       if datas[:rating] == "non classé"
         @taxe = datas[:taxes][0]

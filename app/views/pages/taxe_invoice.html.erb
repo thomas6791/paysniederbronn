@@ -11,3 +11,14 @@
     <h2>Formulaire de facturation pour taxe de séjour | 2019</h2>
   <% end  %>
 </section>
+<% if @taxe != "0.0" %>
+<section id="taxe-invoice">
+  <h2>Facture</h2>
+  <div>
+    <p>Montant du séjour: <%= @amount.to_f %> €</p>
+    <p>Nombre de jours: <%= @days %></p>
+    <p>Montant total de la taxe de séjour à verser: <%= @taxe.to_f %> €</p>
+  </div>
+</section>
+<% else %>
+<% end %>
