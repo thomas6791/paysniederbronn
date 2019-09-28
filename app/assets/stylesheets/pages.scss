@@ -30,7 +30,7 @@ p { font-size: 1em; }
   text-decoration: none; color: $green;
   &:hover { background-color: $green; border: solid 2px $green; color: white; }
 }
-.close { color: red; font-weight: bold; }
+.close { color: $red; font-weight: bold; }
 
 #alentours {
   min-height: 100vh;
