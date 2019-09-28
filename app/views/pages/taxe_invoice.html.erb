@@ -20,13 +20,25 @@
       <h2>Facture</h2>
       <div class="details">
         <div>
-          <p>Montant du séjour:</p><p><%= @amount.to_f %> €</p>
+          <p>Montant du séjour :</p><p><%= @amount.to_f %> €</p>
         </div>
         <div>
-          <p>Nombre de jours:</p><p><%= @days %></p>
+          <p>Nombre de nuitées :</p><p><%= @days %></p>
+        </div>
+        <div>
+          <p>Total de personnes :</p><p><%= @people %></p>
+        </div>
+        <div>
+          <p>Nombre de pers. exonérées (ex: pers. mineures) :</p><p><%= @people.to_i - @minors.to_i %></p>
+        </div>
+        <div>
+          <p>Taxe par personne (dont taxe dep. de 10%) :</p><p><%= @single_tax %> €</p>
+        </div>
+        <div>
+          <p>Détail du calcul : <%= @single_tax %> (taxe par pers. dont taxe add.) x <%= @people.to_i - @minors.to_i %> (pers. assujetties) x <%= @days %> (jours)</p>
         </div>
         <div class="amount-taxe">
-          <p>Montant total de la taxe de séjour à verser:</p><p><%= @taxe.to_f %> €</p>
+          <p>Montant total de la taxe de séjour à verser :</p><p><b><%= @taxe.to_f %> €</b></p>
         </div>
         <%= link_to 'Imprimer', 'your_link_here', :onclick => 'window.print();return false;', class: '' %>
       </div>

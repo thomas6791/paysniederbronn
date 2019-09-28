@@ -33,7 +33,7 @@
   justify-content: center;
 }
 #facture {
-  h2 { text-align: center; }
+  h2 { text-align: center; line-height: 3em; }
   padding: 25px 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 3px;
@@ -47,6 +47,10 @@
       p:nth-child(2) {
         padding: 0px 0px 0px 30px;
       }
+    }
+    div:last-of-type {
+      margin-top: 2em;
+      border-bottom: 3px double;
     }
     .amount-taxe {}
   }
