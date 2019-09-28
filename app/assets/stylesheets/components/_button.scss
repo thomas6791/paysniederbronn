@@ -2,3 +2,23 @@
   border: solid 1px;
   padding: 5px;
 }
+
+.button-green {
+  margin-top: 10px;
+  cursor:pointer;
+  font-size: 1em;
+  line-height: 2em;
+  border-radius: 3px;
+  background-color: lightseagreen;
+  border: solid lightseagreen 1px;
+  color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: center;
+  display: flex;
+  margin: auto;
+  &:hover {
+    opacity: 0.8;
+  }
+}

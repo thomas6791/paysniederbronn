@@ -46,6 +46,32 @@ class PagesController < ApplicationController
     end
   end
 
+  def taxe_invoice
+    if params[:result_invoice].present?
+      datas = params[:result_invoice][0]
+      @people = datas[:people]
+      @minors = datas[:minors]
+      @amount = datas[:amount]
+      rating = datas[:rating]
+      @days = datas[:days]
+
+      if datas[:rating] == "non classé"
+        @taxe = datas[:taxes][0]
+      else
+        @taxe = datas[:taxes][datas[:rating].to_i]
+      end
+      @single_tax = @taxe.to_f / @days.to_i / (@people.to_i - @minors.to_i)
+    end
+  end
+
+  def result_invoice
+    #@taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
+    @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
+    datas = params[:taxe_sejour]
+    @taxe_sejour = TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, datas[:town].downcase).price_ratings
+    redirect_to taxe_invoice_path(result_invoice: [taxes: @taxe_sejour, amount: datas[:amount], days: datas[:days], people: datas[:people], minors: datas[:minors], rating: datas[:rating] ])
+  end
+
   def result
     amount = params[:taxe_sejour][:amount].to_f
     days = params[:taxe_sejour][:days].to_f

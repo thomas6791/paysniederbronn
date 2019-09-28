@@ -1,0 +1,15 @@
+@media print {
+  .invoice {
+    h1, .calcul, a {
+      height: 0px;
+      opacity: 0;
+    }
+    #facture {
+      box-shadow:none;
+    }
+  }
+  footer {
+    height: 0px;
+    opacity: 0;
+  }
+}

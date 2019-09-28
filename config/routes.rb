@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     get 'mentions', to: 'pages#mentions', as: :mentions
     get 'alentours', to: 'pages#alentours', as: :alentours
     get 'simulateur', to: 'pages#simulator', as: :simulateur
+    get 'taxe_invoice', to: 'pages#taxe_invoice'
     post 'result', to: 'pages#result', as: :result
+    post 'taxe-facture', to: 'pages#result_invoice'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :holiday_rentings do
       collection do                       # collection => no restaurant id in URL
