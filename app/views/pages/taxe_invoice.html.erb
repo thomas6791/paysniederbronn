@@ -2,7 +2,8 @@
 <section id="calcul">
   <%= simple_form_for :taxe_sejour, :url => taxe_facture_path, :method => :post do |f| %>
     <%= f.input :town, :input_html => { :type => "string" }, label: "Ville:", :required => false %>
-    <%= f.input :rating, :input_html => { :type => "string" }, label: "Classement:", :required => false %>
+    <%= f.input :town, collection: [ "Niederbronn", "Morsbronn", "Wissembourg" ], selected: "Niederbronn", required: false, label: "Communauté de commune" %>
+    <%= f.input :rating, collection: [ 1, 2, 3, 4, 5 ], selected: "Niederbronn", required: false, label: "Classement en étoile" %>
     <%= f.input :amount, :input_html => { :type => "number" }, label: "Montant total du séjour :", :required => false %>
     <%= f.input :days, :input_html => { :type => "number" }, label: "Durée du séjour :", :required => false %>
     <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
