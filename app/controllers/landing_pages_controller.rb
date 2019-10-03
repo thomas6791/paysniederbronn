@@ -29,11 +29,11 @@ class LandingPagesController < ApplicationController
               description: "cures thermales présentes dans les vosges du nord d'alsace"
   end
   def station_niederbronn
-    set_meta_tags title: "Station thermale de Niederbronn-les-Bains",
+    set_meta_tags title: "Station thermale de Niederbronn, établissement de cure en alsace",
               description: "Faire une cure thermale en alsace dans la station thermale de Niederbronn"
   end
   def station_morsbronn
-    set_meta_tags title: "Station thermale de Morsbronn-les-Bains",
+    set_meta_tags title: "Station thermale de Morsbronn, établissement de cure",
               description: "cures thermales présentes dans les vosges du nord d'alsace",
               noindex: true
   end
