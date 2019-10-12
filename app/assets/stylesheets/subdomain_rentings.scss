@@ -18,12 +18,16 @@
         display: block;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         transition-duration: 0.8s;
+        .text {
+          opacity: 0px;
+        }
         &:hover {
           width: 200%;
           a {
-            visibility: visible;
+            //visibility: visible;
             opacity: 1; /* La transition dure 1s */
           }
+          .text { opacity: 1; }
         }
       }
       section:first-of-type {
@@ -37,7 +41,7 @@ a.grey {
   border-radius: 20px;
   text-decoration: none;
   padding: 5px 15px;
-  visibility: hidden;
+  //visibility: hidden;
   opacity: 0;
   transition-property: opacity; /* Active la transition sur background-color */
   transition-duration: 1.5s;
