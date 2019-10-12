@@ -1,12 +1,18 @@
 // Place all the styles related to the subdomain_rentings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//font-family: 'EB Garamond', serif;
+//font-family: 'Caveat', cursive;
+//font-family: 'Kalam', cursive;
 #gite {
+  h1, h2 { font-family: 'Kalam', sans-serif; }
   #home {
     article {
       display: flex;
       section {
         margin: 0px;
+        padding: 10px;
         min-height: 90vh;
         width: 100%;
         display: block;
