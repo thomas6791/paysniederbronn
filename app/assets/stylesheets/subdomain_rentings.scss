@@ -6,13 +6,19 @@
 //font-family: 'Caveat', cursive;
 //font-family: 'Kalam', cursive;
 #gite {
-  h1, h2, sup { font-family: 'Kalam', sans-serif; }
+  h1, h2, sup {
+    font-family: 'Kalam', sans-serif;
+  }
   #home {
     article {
       display: flex;
       section {
+        font-size: 1em;
         margin: 0px;
         padding: 10px;
+        background-size: cover;
+        background-position: center;
+        //padding: 150px 0;
         min-height: 90vh;
         width: 100%;
         display: block;
@@ -32,14 +38,11 @@
           .text { opacity: 1; }
         }
       }
-      section:first-of-type {
-        color: red;
-      }
     }
   }
 a.grey {
-  color: grey;
-  border: solid 1px grey;
+  color: white;
+  border: solid 1px white;
   border-radius: 20px;
   text-decoration: none;
   padding: 5px 15px;
