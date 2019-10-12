@@ -1,3 +1,27 @@
 // Place all the styles related to the subdomain_rentings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#gite {
+  #home {
+    article {
+      display: flex;
+      section {
+        margin: 0px;
+        min-height: 90vh;
+        width: 100%;
+        display: block;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        transition-duration: 0.8s;
+        &:hover {
+          width: 200%;
+        }
+      }
+    }
+  }
+a.grey {
+  border: solid 1px grey;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 5px 15px;
+}
+}

@@ -2,6 +2,7 @@ class SubdomainRentingsController < ApplicationController
   before_action :set_seo
   layout 'gite'
   def index
+    render "subdomain_rentings/#{params[:subdomain]}/index"
   end
 
   def simulator
