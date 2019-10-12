@@ -6,11 +6,19 @@
         margin: 0px;
         min-height: 70vh;
         width: 100%;
-        border: solid 1px;
+        display: block;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        transition-duration: 0.8s;
         &:hover {
           width: 200%;
         }
       }
     }
   }
+a.grey {
+  border: solid 1px grey;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 5px 15px;
+}
 }
