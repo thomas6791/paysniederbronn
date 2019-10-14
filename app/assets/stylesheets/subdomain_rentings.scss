@@ -9,7 +9,7 @@
   h1, h2, sup {
     font-family: 'Kalam', sans-serif;
   }
-  #home {
+  .home {
     article {
       display: flex;
       section {
@@ -26,15 +26,22 @@
         justify-content: flex-start;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
         transition-duration: 0.8s;
-        .container { padding: 0px 0px 15px 0px; }
+        .container {}
         .text {
           height: 0px;
+          margin-bottom: 10px;
           opacity: 0;
           transition-property: opacity, height; /* Active la transition sur background-color */
           transition-duration: 1.5s 1s;
         }
+
+      }
+    }
+    &.double {
+      section {
         &:hover {
           width: 200%;
+          .container { padding: 0px 0px 15px 0px; }
           a {
             //visibility: visible;
             opacity: 1; /* La transition dure 1s */
@@ -61,3 +68,46 @@ a.grey {
   }
 }
 }
+
+@media (min-width: 100px) and (max-width: 575px) {
+  #gite {
+    .home {
+      &.double {
+        color: red;
+        article {
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+      &:hover {
+        section { max-width: 100%; }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
+
+@media print {
+  #mobile { display: none; }
+}
+
+
