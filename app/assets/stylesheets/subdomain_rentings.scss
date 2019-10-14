@@ -1,3 +1,124 @@
 // Place all the styles related to the subdomain_rentings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//font-family: 'EB Garamond', serif;
+//font-family: 'Caveat', cursive;
+//font-family: 'Kalam', cursive;
+#gite {
+  h1, h2, sup {
+    font-family: 'Kalam', sans-serif;
+  }
+  .home {
+    article {
+      display: flex;
+      section {
+        font-size: 1em;
+        margin: 0px;
+        padding: 10px;
+        background-size: cover;
+        background-position: center;
+        //padding: 150px 0;
+        min-height: 90vh;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        transition-duration: 0.8s;
+        .container {}
+        .text {
+          height: 0px;
+          margin-bottom: 10px;
+          opacity: 0;
+          transition-property: opacity, height; /* Active la transition sur background-color */
+          transition-duration: 1.5s 1s;
+        }
+
+      }
+    }
+    &.double {
+      section {
+        &:hover {
+          width: 200%;
+          .container { padding: 0px 0px 15px 0px; }
+          a {
+            //visibility: visible;
+            opacity: 1; /* La transition dure 1s */
+          }
+          .text { opacity: 1; height: auto; }
+        }
+      }
+    }
+  }
+a.grey {
+  color: white;
+  border: solid 1px white;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 5px 15px;
+  //visibility: hidden;
+  opacity: 0;
+  transition-property: opacity; /* Active la transition sur background-color */
+  transition-duration: 1.5s;
+  &:hover {
+    background-color: white;
+    color: black;
+    border: solid 1px white;
+  }
+}
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  #gite {
+    .home {
+      &.double {
+        article {
+          flex-direction: column;
+          width: 100%;
+          section {
+            //min-height: auto;
+            padding: 0px;
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            .container { padding: 15px; }
+            .text, a { opacity: 1; height: auto; }
+            &:hover {
+              width: 100%;
+              .container { padding: 15px; }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+}
+
+@media print {
+  #mobile { display: none; }
+}
+
+

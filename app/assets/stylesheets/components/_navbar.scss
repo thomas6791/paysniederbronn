@@ -95,6 +95,9 @@ nav {
     }
     #langs { flex-direction: initial; }
   }
+  .nav.gite {
+    div { flex-direction: column; }
+  }
 }
 
 // Small devices (landscape phones, 576px and up)

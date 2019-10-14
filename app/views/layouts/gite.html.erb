@@ -8,10 +8,11 @@
     <%= display_meta_tags site: 'Gites' %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Caveat|EB+Garamond|Kalam&display=swap" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="gite">
     <%= render "shared/navbar-gite" %>
     <%= render "shared/mobile" %>
     <%= yield %>
