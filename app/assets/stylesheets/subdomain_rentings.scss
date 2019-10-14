@@ -73,14 +73,25 @@ a.grey {
   #gite {
     .home {
       &.double {
-        color: red;
         article {
           flex-direction: column;
           width: 100%;
+          section {
+            //min-height: auto;
+            padding: 0px;
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            .container { padding: 15px; }
+            .text, a { opacity: 1; height: auto; }
+            &:hover {
+              width: 100%;
+              .container { padding: 15px; }
+            }
+          }
         }
-      }
-      &:hover {
-        section { max-width: 100%; }
       }
     }
   }
