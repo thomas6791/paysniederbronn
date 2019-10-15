@@ -6,7 +6,7 @@ class SubdomainRentingsController < ApplicationController
   end
 
   def renting1
-    @name = "Appartement"
+    @name = "Appartement 100m<sup>2</sup>"
     render "subdomain_rentings/#{params[:subdomain]}/renting1"
   end
   def renting2
