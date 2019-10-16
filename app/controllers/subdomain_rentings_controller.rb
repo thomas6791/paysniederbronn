@@ -5,6 +5,15 @@ class SubdomainRentingsController < ApplicationController
     render "subdomain_rentings/#{params[:subdomain]}/index"
   end
 
+  def renting1
+    @name = "Appartement 100m<sup>2</sup>"
+    render "subdomain_rentings/#{params[:subdomain]}/renting1"
+  end
+  def renting2
+    @name = "Studio"
+    render "subdomain_rentings/#{params[:subdomain]}/renting2"
+  end
+
   def simulator
     render 'pages/simulator'
   end
