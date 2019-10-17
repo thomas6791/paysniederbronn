@@ -46,6 +46,10 @@ class HolidayRentingsController < ApplicationController
 
   private
 
+  def renting_params
+    params.require(:holiday_renting).permit(:name, :description, :city, :zip_code, :address, :latitude, :longitude, :website)
+  end
+
   def set_seo
     set_meta_tags noindex: true
   end
