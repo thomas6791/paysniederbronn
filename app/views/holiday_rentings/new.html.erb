@@ -1,2 +1,14 @@
-<h1>HolidayRentings#new</h1>
-<p>Find me in app/views/holiday_rentings/new.html.erb</p>
+<main>
+  <h1>HolidayRentings#new</h1>
+  <p>Find me in app/views/holiday_rentings/new.html.erb</p>
+  <%= simple_form_for @annonce do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :city %>
+    <%= f.input :zip_code %>
+    <%= f.input :website %>
+    <%= f.button :submit %>
+  <% end %>
+</main>
+

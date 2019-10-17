@@ -6,9 +6,9 @@ class HolidayRentingsController < ApplicationController
 
   def show
     @annonce = HolidayRenting.find(params[:id])
-    if @annonce.id == 1
-      redirect_to action: "meuble_heidelbeere"
-    end
+    #if @annonce.id == 1
+    #  redirect_to action: "meuble_heidelbeere"
+    #end
   end
 
   def new
@@ -16,6 +16,8 @@ class HolidayRentingsController < ApplicationController
   end
 
   def create
+    @annonce  = HolidayRenting.new(renting_params)
+    @annonce.save
   end
 
   def edit
