@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 2019_10_17_185553) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.boolean "published"
   end
 
   create_table "post_categories", force: :cascade do |t|

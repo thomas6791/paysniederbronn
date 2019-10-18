@@ -6,5 +6,6 @@ class AddElementsToRentings < ActiveRecord::Migration[5.2]
     add_column :holiday_rentings, :address, :string
     add_column :holiday_rentings, :latitude, :float
     add_column :holiday_rentings, :longitude, :float
+    add_column :holiday_rentings, :published, :boolean
   end
 end
