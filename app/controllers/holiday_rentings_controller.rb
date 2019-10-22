@@ -6,9 +6,9 @@ class HolidayRentingsController < ApplicationController
 
   def show
     @annonce = HolidayRenting.find(params[:id])
-    if @annonce.id == 1
-      redirect_to action: "meuble_heidelbeere"
-    end
+    #if @annonce.id == 1
+    #  redirect_to action: "meuble_heidelbeere"
+    #end
   end
 
   def new
@@ -16,6 +16,8 @@ class HolidayRentingsController < ApplicationController
   end
 
   def create
+    @annonce  = HolidayRenting.new(renting_params)
+    @annonce.save
   end
 
   def edit
@@ -45,6 +47,10 @@ class HolidayRentingsController < ApplicationController
   end
 
   private
+
+  def renting_params
+    params.require(:holiday_renting).permit(:name, :description, :city, :zip_code, :address, :latitude, :longitude, :website)
+  end
 
   def set_seo
     set_meta_tags noindex: true

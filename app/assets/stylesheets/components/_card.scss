@@ -52,5 +52,13 @@
       }
     }
   }
-
+  .link-website {
+    display: flex;
+    justify-content: center;
+    p {
+      border: solid 1px;
+      border-radius: 25px;
+      padding: 5px 25px;
+    }
+  }
 }

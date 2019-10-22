@@ -10,3 +10,30 @@
 </ul>
 <%= link_to 'Gîte Lindauer', sub_lindauer_url %>
 <%= link_to 'Meublés Heidelbeere', sub_hunckler_url %>
+
+<main id="alentours">
+  <h1>Se loger</h1>
+  <section class="cards">
+    <% 10.times do %>
+      <% @annonces.each do |annonce| %>
+        <%= link_to annonce do %>
+          <div class="card">
+
+            <div class="footer">
+              <h2><%= annonce.name %></h2>
+              <div class="hide-content">
+                <p class="more">En savoir plus</p>
+                <div class="content">
+                  <p><%= annonce.description %></p>
+                  <span class="link-website"><p>Voir site internet</p></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </section>
+<%= link_to 'ligne maginot', ligne_maginots_path %>
+</main>
