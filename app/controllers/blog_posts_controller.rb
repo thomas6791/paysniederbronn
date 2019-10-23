@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-  http_basic_authenticate_with name: "hunckler", password: "gabriel-6791", only: [:new, :edit]
+  http_basic_authenticate_with name: Dotenv.parse(".env.local", ".env")["EDIT_BLOG_NAME"], password: Dotenv.parse(".env.local", ".env")["EDIT_BLOG_PASSWORD"], only: [:new, :edit]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_action :set_seo
   layout 'blog'
