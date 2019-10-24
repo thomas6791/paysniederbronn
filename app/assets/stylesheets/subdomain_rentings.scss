@@ -74,9 +74,26 @@
   .sejours {
     display: flex;
     justify-content: space-between;
+    margin: 10px 0px;
     div {
       width: 100%;
-      border: solid 1px;
+      min-height: 200px;
+      border: solid 1px lightgrey;
+      padding: 10px;
+      border-radius: 5px;
+      h3 {}
+      &:nth-child(2) {
+        margin: 0px 10px;
+      }
+      &:hover {
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        -ms-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border: none;
+      }
     }
   }
 }
