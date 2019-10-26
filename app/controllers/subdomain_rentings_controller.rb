@@ -18,6 +18,10 @@ class SubdomainRentingsController < ApplicationController
     render 'pages/simulator'
   end
 
+  def calendar
+    @name = "test"
+  end
+
   private
 
   def set_seo
