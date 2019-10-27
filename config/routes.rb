@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  constraints(subdomain: 'gites-heidelbeere') do
+  constraints(subdomain: 'heidelbeere') do
     root to: 'subdomain_rentings#index', as: :sub_hunckler
     #get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
     get 'appartement', to: 'subdomain_rentings#renting1', as: :grenier
