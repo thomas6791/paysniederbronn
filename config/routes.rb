@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     get 'mentions', to: 'pages#mentions', as: :mentions
     get 'alentours', to: 'pages#alentours', as: :alentours
     get 'simulateur', to: 'pages#simulator', as: :simulateur
+    get 'tarifs', to: 'pages#tarifs', as: :tarifs
     get 'calendar', to: 'subdomain_rentings#calendar', as: :calendar
 
     get 'taxe-invoice', to: 'pages#taxe_invoice'
