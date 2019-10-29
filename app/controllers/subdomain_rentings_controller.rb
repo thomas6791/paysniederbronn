@@ -21,9 +21,6 @@ class SubdomainRentingsController < ApplicationController
 
   def calendar
     @name = "test"
-    Event.destroy_all
-    Event.create(name: "test", start_time: Time.now + 3600)
-    Event.create(name: "test", start_time: Time.now)
     @meetings = Event.all
   end
 
@@ -34,5 +31,8 @@ class SubdomainRentingsController < ApplicationController
   end
 
   def initial_events
+    Event.destroy_all
+    Event.create(name: "test", start_time: Time.now + 3600)
+    Event.create(name: "bonjour", start_time: Time.now)
   end
 end
