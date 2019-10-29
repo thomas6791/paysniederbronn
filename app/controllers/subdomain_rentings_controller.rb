@@ -20,27 +20,9 @@ class SubdomainRentingsController < ApplicationController
   end
 
   def calendar
-    require 'json'
-    require 'open-uri'
     @name = "test"
+
     @meetings = Event.all
-    url_studio = "https://www.airbnb.fr/calendar/ical/4176483.ics?s=5168a985ff51e67f88aea39c1532bca5"
-    #ActiveSupport::JSON.decode(string.gsub(/:([a-zA-z])/,'\\1').gsub('=>', ' : '))
-    @airbnb = Net::HTTP.get(URI.parse(url_studio))
-
-    #match_data = @airbnb.scan(/DTEND(.*)VALUE=DATE:\d{8}/)
-
-
-    #x = @airbnb.scan(/DTEND(.*)VALUE=DATE:\d{8}/)
-    x = @airbnb.scan(/DTEND;([^abc]+)/).flatten
-    pattern = /:(\d{8})/
-    match_data = x[23].scan(pattern).flatten
-    #y = @airbnb.scan(/VALUE=DATE:\d{8}/)
-
-    #url = 'https://api.github.com/users/ssaunier'
-    #user_serialized = open(url_studio).read
-    #user = JSON.parse(user_serialized)
-    fail
   end
 
   private
@@ -50,9 +32,27 @@ class SubdomainRentingsController < ApplicationController
   end
 
   def initial_events
+    require 'open-uri'
     Event.destroy_all
     ActiveRecord::Base.connection.reset_pk_sequence!(Event.table_name)
     Event.create(name: "test", start_time: Time.now + 3600 * 24 * 2)
     Event.create(name: "bonjour", start_time: Time.now)
+    url_studio = "https://www.airbnb.fr/calendar/ical/4176483.ics?s=5168a985ff51e67f88aea39c1532bca5"
+    #ActiveSupport::JSON.decode(string.gsub(/:([a-zA-z])/,'\\1').gsub('=>', ' : '))
+    @airbnb = Net::HTTP.get(URI.parse(url_studio))
+
+    list = @airbnb.scan(/DTEND;([^abc]+)/).flatten
+    pattern = /:(\d{8})/
+    #match_data = list[23].scan(pattern).flatten
+
+    list.each do |array|
+      z = array.scan(pattern).flatten
+      z.each do |item|
+        item.insert(4, '-')
+        item.insert(7, '-')
+      end
+      Event.create(name: "thomas", start_time: z[0], end_time: z[1])
+      #Event.last.end_time = Event.last.end_time - 1.day
+    end
   end
 end
