@@ -32,7 +32,9 @@ class SubdomainRentingsController < ApplicationController
 
 
     #x = @airbnb.scan(/DTEND(.*)VALUE=DATE:\d{8}/)
-    x = @airbnb.scan(/DTEND;([^abc]+)/)
+    x = @airbnb.scan(/DTEND;([^abc]+)/).flatten
+    pattern = /:(\d{8})/
+    match_data = x[23].scan(pattern).flatten
     #y = @airbnb.scan(/VALUE=DATE:\d{8}/)
 
     #url = 'https://api.github.com/users/ssaunier'
