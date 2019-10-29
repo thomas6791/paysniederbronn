@@ -1,5 +1,6 @@
 class SubdomainRentingsController < ApplicationController
   before_action :set_seo
+  before_action :initial_events, only: [:calendar]
   layout 'gite'
   def index
     render "subdomain_rentings/#{params[:subdomain]}/index"
@@ -30,5 +31,8 @@ class SubdomainRentingsController < ApplicationController
 
   def set_seo
     set_meta_tags noindex: true
+  end
+
+  def initial_events
   end
 end
