@@ -28,7 +28,11 @@ class SubdomainRentingsController < ApplicationController
     #ActiveSupport::JSON.decode(string.gsub(/:([a-zA-z])/,'\\1').gsub('=>', ' : '))
     @airbnb = Net::HTTP.get(URI.parse(url_studio))
 
+    #match_data = @airbnb.scan(/DTEND(.*)VALUE=DATE:\d{8}/)
 
+
+    #x = @airbnb.scan(/DTEND(.*)VALUE=DATE:\d{8}/)
+    x = @airbnb.scan(/DTEND;([^abc]+)/)
 
     #url = 'https://api.github.com/users/ssaunier'
     #user_serialized = open(url_studio).read
