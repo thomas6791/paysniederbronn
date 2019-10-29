@@ -20,21 +20,19 @@ class SubdomainRentingsController < ApplicationController
   end
 
   def calendar
+    require 'json'
+    require 'open-uri'
     @name = "test"
     @meetings = Event.all
     url_studio = "https://www.airbnb.fr/calendar/ical/4176483.ics?s=5168a985ff51e67f88aea39c1532bca5"
     #ActiveSupport::JSON.decode(string.gsub(/:([a-zA-z])/,'\\1').gsub('=>', ' : '))
     @airbnb = Net::HTTP.get(URI.parse(url_studio))
 
-    require 'json'
-    require 'open-uri'
+
 
     #url = 'https://api.github.com/users/ssaunier'
-    user_serialized = open(url_studio).read
-    user = JSON.parse(user_serialized)
-    fail
-
-    puts "#{user['name']} - #{user['bio']}"
+    #user_serialized = open(url_studio).read
+    #user = JSON.parse(user_serialized)
     fail
   end
 
