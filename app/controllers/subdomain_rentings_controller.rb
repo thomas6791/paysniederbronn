@@ -32,6 +32,7 @@ class SubdomainRentingsController < ApplicationController
 
   def initial_events
     Event.destroy_all
+    ActiveRecord::Base.connection.reset_pk_sequence!(Event.table_name)
     Event.create(name: "test", start_time: Time.now + 3600 * 24 * 2)
     Event.create(name: "bonjour", start_time: Time.now)
   end
