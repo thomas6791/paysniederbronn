@@ -4,7 +4,7 @@
   <%= date.day %>
 <% end %>
 
-<%= month_calendar events: @meetings do |date, meetings| %>
+<%= month_calendar events: @meetings, attribute: :start_time, end_attribute: :end_date do |date, meetings| %>
   <%= date.day %>
 
   <% meetings.each do |meeting| %>

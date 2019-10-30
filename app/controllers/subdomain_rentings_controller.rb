@@ -21,7 +21,6 @@ class SubdomainRentingsController < ApplicationController
 
   def calendar
     @name = "test"
-
     @meetings = Event.all
   end
 
@@ -47,11 +46,16 @@ class SubdomainRentingsController < ApplicationController
 
     list.each do |array|
       z = array.scan(pattern).flatten
-      z.each do |item|
+      z.map.each do |item|
         item.insert(4, '-')
         item.insert(7, '-')
       end
-      Event.create(name: "thomas", start_time: z[0], end_time: z[1])
+      z = z.each do |item|
+        item = item.to_datetime
+      end
+      x = z[0].to_datetime
+      y = z[1].to_datetime
+      Event.create(name: "thomas", start_time: x, end_time: y)
       #Event.last.end_time = Event.last.end_time - 1.day
     end
   end
