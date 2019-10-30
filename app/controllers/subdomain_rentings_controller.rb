@@ -46,7 +46,7 @@ class SubdomainRentingsController < ApplicationController
 
     list.each do |array|
       z = array.scan(pattern).flatten
-      z.each do |item|
+      z.map.each do |item|
         item.insert(4, '-')
         item.insert(7, '-')
       end
