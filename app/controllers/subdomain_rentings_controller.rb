@@ -55,8 +55,21 @@ class SubdomainRentingsController < ApplicationController
       end
       x = z[0].to_datetime
       y = z[1].to_datetime
-      Event.create(name: "thomas", start_time: x, end_time: y)
+      #Event.create(name: "thomas", start_time: x, end_time: y)
       #Event.last.end_time = Event.last.end_time - 1.day
     end
+
+
+    dates = []
+    list.each do |array|
+      date_array = array.scan(pattern).flatten
+      x =  date_array.map.each do |item|
+        item.insert(4, '-')
+        item.insert(7, '-')
+      end
+      dates << x.map {|item| Date.strptime(item)}
+    end
+    @dates = dates.map { |date| (date[1]..date[0]).map(&:to_s) }
+
   end
 end

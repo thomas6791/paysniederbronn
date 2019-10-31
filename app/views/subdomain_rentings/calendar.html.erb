@@ -6,7 +6,7 @@
 
 <%= month_calendar events: @meetings, attribute: :start_time, end_attribute: :end_date do |date, meetings| %>
   <%= date.day %>
-
+  <% fail %>
   <% meetings.each do |meeting| %>
     <div>
       <%= meeting.name %>
