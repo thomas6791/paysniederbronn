@@ -1,5 +1,12 @@
 .simple-calendar {
+  width: 50%;
+  margin: auto;
   .calendar-heading {
     text-align: center;
+  }
+  td {
+    text-align: center;
+    height: 50px;
+    width: 50px;
   }
 }
