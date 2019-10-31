@@ -4,7 +4,7 @@
   <%= date.day %>
 <% end %>
 
-<%= month_calendar events: @meetings, attribute: :start_time, end_attribute: :end_date do |date, meetings| %>
+<%= month_calendar attribute: :start_time, end_attribute: :end_date do |date| %>
   <%= date.day %>
   <% @dates.each do |date_day| %>
     <% if Date.strptime(date_day) == date %>
