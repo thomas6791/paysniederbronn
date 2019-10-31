@@ -22,6 +22,7 @@ class SubdomainRentingsController < ApplicationController
   def calendar
     @name = "test"
     @meetings = Event.all
+    @dates = @dates.flatten
   end
 
   private
@@ -70,6 +71,7 @@ class SubdomainRentingsController < ApplicationController
       dates << x.map {|item| Date.strptime(item)}
     end
     @dates = dates.map { |date| (date[1]..date[0]).map(&:to_s) }
+    @dates = @dates.each { |array| array.pop }
 
   end
 end

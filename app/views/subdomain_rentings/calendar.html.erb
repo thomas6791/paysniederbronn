@@ -6,11 +6,10 @@
 
 <%= month_calendar events: @meetings, attribute: :start_time, end_attribute: :end_date do |date, meetings| %>
   <%= date.day %>
-  <% fail %>
-  <% meetings.each do |meeting| %>
-    <div>
-      <%= meeting.name %>
-    </div>
+  <% @dates.each do |date_day| %>
+    <% if Date.strptime(date_day) == date %>
+      <p>bloqué</p>
+    <% end %>
   <% end %>
 <% end %>
 
