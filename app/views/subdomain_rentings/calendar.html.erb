@@ -8,7 +8,7 @@
   <%= date.day %>
   <% @dates.each do |date_day| %>
     <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
-      <span>bloqué</span>
+      <span><b>bloqué</b></span>
     <% end %>
   <% end %>
 <% end %>
