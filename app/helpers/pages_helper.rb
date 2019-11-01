@@ -30,7 +30,8 @@ module PagesHelper
 
 
   def airbnb_dates(url)
-    airbnb = Net::HTTP.get(URI.parse(url))
+    require 'open-uri'
+    airbnb = open(url).read
 
     list = airbnb.scan(/DTEND;([^abc]+)/).flatten
     pattern = /:(\d{8})/
@@ -61,6 +62,8 @@ module PagesHelper
   end
 
   def booking_dates(url)
+    require 'open-uri'
+    booking = open(url).read
   end
 
 end
