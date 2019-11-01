@@ -6,4 +6,14 @@ const dateCalendar = () => {
     item.classList.add("day-color");
   });
 }
+
+const blockedDates = () => {
+  console.log("dates");
+  let cells = document.querySelectorAll(".blocked");
+  cells.forEach((item) => {
+    item.parentNode.classList.add("cell-blocked");
+  });
+}
+
 export { dateCalendar };
+export { blockedDates };
