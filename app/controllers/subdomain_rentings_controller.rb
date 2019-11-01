@@ -21,8 +21,6 @@ class SubdomainRentingsController < ApplicationController
 
   def calendar
     @name = "test"
-    @meetings = Event.all
-    @dates = @dates.flatten
   end
 
   private
@@ -45,21 +43,6 @@ class SubdomainRentingsController < ApplicationController
     pattern = /:(\d{8})/
     #match_data = list[23].scan(pattern).flatten
 
-    list.each do |array|
-      z = array.scan(pattern).flatten
-      z.map.each do |item|
-        item.insert(4, '-')
-        item.insert(7, '-')
-      end
-      z = z.each do |item|
-        item = item.to_datetime
-      end
-      x = z[0].to_datetime
-      y = z[1].to_datetime
-      #Event.create(name: "thomas", start_time: x, end_time: y)
-      #Event.last.end_time = Event.last.end_time - 1.day
-    end
-
 
     dates = []
     list.each do |array|
@@ -72,6 +55,16 @@ class SubdomainRentingsController < ApplicationController
     end
     @dates = dates.map { |date| (date[1]..date[0]).map(&:to_s) }
     @dates = @dates.each { |array| array.pop }
+    @dates = @dates.flatten
+
+    clean_array = @dates
+    clean_array.each do |date|
+      if Date.strptime(date) < DateTime.now.to_date == true
+        clean_array.delete(date)
+      else
+      end
+    end
+    @dates = clean_array
 
   end
 end
