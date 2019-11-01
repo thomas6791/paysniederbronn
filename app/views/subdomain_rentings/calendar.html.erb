@@ -1,19 +1,21 @@
-<h1>Disponibilités</h1>
-<p><%= @name %></p>
-<%= month_calendar do |date| %>
-  <%= date.day %>
-<% end %>
+<main>
+  <h1>Disponibilités</h1>
+  <p><%= @name %></p>
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+  <% end %>
 
-<%= month_calendar attribute: :start_time, end_attribute: :end_date do |date| %>
-  <%= date.day %>
-  <% @dates.each do |date_day| %>
-    <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
-      <span><b>bloqué</b></span>
+  <%= month_calendar attribute: :start_time, end_attribute: :end_date do |date| %>
+    <%= date.day %>
+    <% @dates.each do |date_day| %>
+      <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
+        <span><b>bloqué</b></span>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
 
 <h2><%= @dates.size %></h2>
+</main>
 
 
 
