@@ -56,9 +56,8 @@ class SubdomainRentingsController < ApplicationController
 
     clean_array = @dates
     clean_array.each do |date|
-      if Date.strptime(date) < DateTime.now.to_date == true
+      if DateTime.parse(date) < DateTime.now - 1
         clean_array.delete(date)
-      else
       end
     end
     @dates = clean_array
