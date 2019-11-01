@@ -9,6 +9,9 @@
     width: 50px;
   }
   .cell-blocked {
-    background-color: red;
+    background-color: lightgrey;
+    text-decoration: line-through;
+    opacity: 0.5;
   }
+  .date {}
 }

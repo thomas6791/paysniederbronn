@@ -4,9 +4,9 @@
   <%= month_calendar do |date| %>
     <%= date.day %>
   <% end %>
-
+  <h2>Disponibilités du Studio</h2>
   <%= month_calendar attribute: :start_time, end_attribute: :end_date do |date| %>
-    <%= date.day %>
+    <span class="date"><%= date.day %></span>
     <% @dates.each do |date_day| %>
       <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
         <span class="blocked"></span>
