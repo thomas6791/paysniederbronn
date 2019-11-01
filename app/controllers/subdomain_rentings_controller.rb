@@ -31,10 +31,6 @@ class SubdomainRentingsController < ApplicationController
 
   def initial_events
     require 'open-uri'
-    Event.destroy_all
-    ActiveRecord::Base.connection.reset_pk_sequence!(Event.table_name)
-    Event.create(name: "test", start_time: Time.now + 3600 * 24 * 2)
-    Event.create(name: "bonjour", start_time: Time.now)
     url_studio = "https://www.airbnb.fr/calendar/ical/4176483.ics?s=5168a985ff51e67f88aea39c1532bca5"
     #ActiveSupport::JSON.decode(string.gsub(/:([a-zA-z])/,'\\1').gsub('=>', ' : '))
     @airbnb = Net::HTTP.get(URI.parse(url_studio))
