@@ -1,20 +1,29 @@
 <main>
   <h1>Disponibilités</h1>
-  <p><%= @name %></p>
-  <%= month_calendar do |date| %>
-    <%= date.day %>
-  <% end %>
-  <h2>Disponibilités du Studio</h2>
+
+  <h2>Disponibilités de l'appartement</h2>
   <%= month_calendar attribute: :start_time, end_attribute: :end_date do |date| %>
     <span class="date"><%= date.day %></span>
-    <% @dates.each do |date_day| %>
+    <% @dates_grenier.each do |date_day| %>
       <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
         <span class="blocked"></span>
       <% end %>
     <% end %>
   <% end %>
 
-<h2><%= @dates.size %></h2>
+
+  <h2>Disponibilités du Studio</h2>
+  <%= month_calendar attribute: :start_time, end_attribute: :end_date do |date| %>
+    <span class="date"><%= date.day %></span>
+    <% @dates_studio.each do |date_day| %>
+      <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
+        <span class="blocked"></span>
+      <% end %>
+    <% end %>
+  <% end %>
+
+<h2><%= @dates_studio.size %></h2>
+<h2><%= @dates_grenier.size %></h2>
 </main>
 <%= javascript_pack_tag "blockedDates" %>
 
