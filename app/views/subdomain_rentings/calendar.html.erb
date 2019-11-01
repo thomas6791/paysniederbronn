@@ -9,13 +9,14 @@
     <%= date.day %>
     <% @dates.each do |date_day| %>
       <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
-        <span><b>bloqué</b></span>
+        <span class="blocked"></span>
       <% end %>
     <% end %>
   <% end %>
 
 <h2><%= @dates.size %></h2>
 </main>
+<%= javascript_pack_tag "blockedDates" %>
 
 
 
