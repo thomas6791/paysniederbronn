@@ -1,5 +1,5 @@
 module PagesHelper
-  def clean_dates_calendar(dates_array)
+  def clean_dates_year(dates_array)
     array = dates_array
     today = DateTime.now.to_date
     ### 367
