@@ -56,8 +56,15 @@ class SubdomainRentingsController < ApplicationController
     @dates = dates.map { |date| (date[1]..date[0]).map(&:to_s) }
     @dates = @dates.each { |array| array.pop }
     @dates = @dates.flatten
-    clean_array = helpers.clean_dates_year(@dates)
-    fail
+    #helpers.clean_dates_calendar(@dates)
+
+    clean_array = @dates
+    clean_array.each do |date|
+      if Date.strptime(date) < DateTime.now.to_date == true
+        clean_array.delete(date)
+      else
+      end
+    end
     @dates = clean_array
 
   end
