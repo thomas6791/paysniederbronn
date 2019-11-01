@@ -22,4 +22,9 @@ module PagesHelper
     #  else
     #end
   end
+
+  def clean_dates_month(dates_array)
+    array = dates_array
+    today = DateTime.now.to_date
+  end
 end
