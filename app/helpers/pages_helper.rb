@@ -27,4 +27,67 @@ module PagesHelper
     array = dates_array
     today = DateTime.now.to_date
   end
+
+
+  def airbnb_dates(url)
+    require 'open-uri'
+    airbnb = open(url).read
+
+    list = airbnb.scan(/DTEND;([^abc]+)/).flatten
+    pattern = /:(\d{8})/
+    #match_data = list[23].scan(pattern).flatten
+
+
+    dates = []
+    list.each do |array|
+      date_array = array.scan(pattern).flatten
+      x =  date_array.map.each do |item|
+        item.insert(4, '-')
+        item.insert(7, '-')
+      end
+      dates << x.map {|item| Date.strptime(item)}
+    end
+    @dates = dates.map { |date| (date[1]..date[0]).map(&:to_s) }
+    @dates = @dates.each { |array| array.pop }
+    @dates = @dates.flatten
+    #helpers.clean_dates_calendar(@dates)
+
+    clean_array = @dates
+    clean_array.each do |date|
+      if DateTime.parse(date) < DateTime.now - 1
+        clean_array.delete(date)
+      end
+    end
+    return clean_array
+  end
+
+  def booking_dates(url)
+    require 'open-uri'
+    booking = open(url).read
+    list = booking.scan(/DTSTART;([^abc]+)/).flatten
+    pattern = /:(\d{8})/
+
+    dates = []
+    list.each do |array|
+      date_array = array.scan(pattern).flatten
+      x =  date_array.map.each do |item|
+        item.insert(4, '-')
+        item.insert(7, '-')
+      end
+      dates << x.map {|item| Date.strptime(item)}
+    end
+    @dates = dates.map { |date| (date.first..date.last).map(&:to_s) }
+    @dates = @dates.each { |array| array.pop }
+    @dates = @dates.flatten
+    #helpers.clean_dates_calendar(@dates)
+
+    clean_array = @dates
+    clean_array.each do |date|
+      if DateTime.parse(date) < DateTime.now - 1
+        clean_array.delete(date)
+      end
+    end
+    return clean_array
+  end
+
 end
