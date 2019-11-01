@@ -59,4 +59,8 @@ module PagesHelper
     end
     return clean_array
   end
+
+  def booking_dates(url)
+  end
+
 end
