@@ -29,6 +29,9 @@ class PagesController < ApplicationController
     set_meta_tags noindex: true
   end
 
+  def tarifs
+  end
+
   def simulator
     if params[:results].present?
       @taxes_sejour = params[:results].first[:prices]
