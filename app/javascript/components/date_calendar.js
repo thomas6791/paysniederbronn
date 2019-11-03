@@ -14,6 +14,10 @@ const blockedDates = () => {
     item.parentNode.classList.add("cell-blocked");
   });
 }
+const cellToday = () => {
+
+}
 
 export { dateCalendar };
 export { blockedDates };
+export { cellToday };
