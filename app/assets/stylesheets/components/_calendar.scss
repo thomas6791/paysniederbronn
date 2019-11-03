@@ -1,3 +1,4 @@
+@import "config/colors";
 .simple-calendar {
   margin: auto;
   .calendar-heading {
@@ -13,6 +14,7 @@
     text-decoration: line-through;
     opacity: 0.5;
   }
+  .today { border: solid 2px $red; }
   .date {}
   th {
     background-color: #333333;

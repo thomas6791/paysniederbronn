@@ -15,7 +15,14 @@ const blockedDates = () => {
   });
 }
 const cellToday = () => {
-
+ let today = document.getElementById("today").dataset.today;
+ let days = document.querySelectorAll(".date");
+ days.forEach((date) => {
+  if (date.dataset.day === today) {
+    date.parentNode.classList.add("today");
+  }
+ });
+ console.log(today);
 }
 
 export { dateCalendar };
