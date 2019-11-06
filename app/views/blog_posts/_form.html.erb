@@ -1,4 +1,13 @@
 <%= simple_form_for @post, defaults: { input_html: { class: 'form' } } do |f| %>
+  <% if @post.published == true %>
+    <p>Article publié</p>
+  <% else %>
+    <p>Article non publié</p>
+  <% end %>
+  <%= f.input :published, as: :boolean do
+      f.check_box :published, {}, "true", "false"
+    end
+  %>
   <%= f.input :title, label: 'Title' %>
   <%= f.input :description, label: 'Meta description' %>
   <%= f.input :titre, label: 'Titre <h1>' %>

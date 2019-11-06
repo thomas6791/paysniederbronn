@@ -1,5 +1,8 @@
 <% title "#{@post.title}" %>
 <% description "#{@post.description}" %>
+<% if @post.published == false %>
+  <% noindex %>
+<% end %>
 <main class="blog">
   <article class="article">
     <header>
