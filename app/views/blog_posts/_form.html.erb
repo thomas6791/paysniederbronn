@@ -4,7 +4,10 @@
   <% else %>
     <p>Article non publié</p>
   <% end %>
-  <%= f.input :published, label: 'Publié' %>
+  <%= f.input :published, as: :boolean do
+      f.check_box :published, {}, "true", "false"
+    end
+  %>
   <%= f.input :title, label: 'Title' %>
   <%= f.input :description, label: 'Meta description' %>
   <%= f.input :titre, label: 'Titre <h1>' %>

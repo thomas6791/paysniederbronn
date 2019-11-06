@@ -5,7 +5,7 @@ class BlogPostsController < ApplicationController
   layout 'blog'
   def index
     set_meta_tags canonical: "https://www.paysniederbronn.fr/blog/"
-    @posts =  BlogPost.all.order(custom_date: :desc)
+    @posts =  BlogPost.all.where(published: true).order(custom_date: :desc)
   end
 
   def show
