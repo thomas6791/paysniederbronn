@@ -66,6 +66,7 @@ Rails.application.routes.draw do
         get '/ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
         get '/randonnees', to: 'landing_pages#randonnees'
         get '/strasbourg', to: 'landing_pages#strasbourg'
+        get '/marches-noel', to: 'landing_pages#marches_noel'
       end
     end
 
