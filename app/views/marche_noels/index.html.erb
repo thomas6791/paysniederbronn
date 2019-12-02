@@ -10,17 +10,13 @@
     <section>
       <h2>La liste des marchés de Noël en Alsace</h2>
       <ul class="articles-list">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
+        <% @marches.each do |market| %>
+          <%= link_to marche_noel_path(market) do %>
+            <li><%= market.name %></li>
+          <% end %>
+        <% end %>
       </ul>
     </section>
   </article>
 </main>
+
