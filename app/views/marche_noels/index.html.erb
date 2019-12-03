@@ -14,7 +14,7 @@
       <ul class="articles-list">
         <% @marches.each do |market| %>
           <%= link_to marche_noel_path(market) do %>
-            <li><h3>Marché de <%= market.name.capitalize %></h3><p><%= market.summary %></p></li>
+            <li><h3>Marché de <%= market.titre.capitalize %></h3><p><%= market.summary %></p></li>
           <% end %>
         <% end %>
       </ul>
