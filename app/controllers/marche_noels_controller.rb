@@ -14,6 +14,7 @@ class MarcheNoelsController < ApplicationController
 
   def show
     @marche_noel = MarcheNoel.find(params[:id])
+    set_meta_tags noindex: true
   end
 
   def edit
