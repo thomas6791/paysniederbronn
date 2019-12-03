@@ -13,7 +13,7 @@ class MarcheNoelsController < ApplicationController
   end
 
   def show
-    @marche_noel = MarcheNoel.find(params[:id])
+    @marche_noel = MarcheNoel.find_by!(slug: params[:id])
     set_meta_tags noindex: true
   end
 
