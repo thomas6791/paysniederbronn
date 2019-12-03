@@ -25,10 +25,6 @@ class LandingPagesController < ApplicationController
               #noindex: true
   end
 
-  def marches_noel
-    set_meta_tags title: "Marchés de noel en Alsace",
-              description: "les marchés de noel dans l'ensemble de l'Alsace"
-  end
   def cures_thermales
     set_meta_tags title: "Cure thermale et station en Alsace des Vosges du Nord",
               description: "cures thermales présentes dans les vosges du nord d'alsace"

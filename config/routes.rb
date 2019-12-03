@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   constraints(subdomain: 'heidelbeere') do
     root to: 'subdomain_rentings#index', as: :sub_hunckler
     #get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
@@ -53,6 +54,8 @@ Rails.application.routes.draw do
       get 'dambach', to: 'ligne_maginots#dambach'
     end
 
+    resources :marche_noels, :path => "marches-noel"
+
 
     resources :landing_pages, :path => '' do
       collection do
@@ -66,10 +69,9 @@ Rails.application.routes.draw do
         get '/ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
         get '/randonnees', to: 'landing_pages#randonnees'
         get '/strasbourg', to: 'landing_pages#strasbourg'
-        get '/marches-noel', to: 'landing_pages#marches_noel'
+        #get '/marches-noel', to: 'landing_pages#marches_noel'
       end
     end
-
     resources :articles, :path => ":category"
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

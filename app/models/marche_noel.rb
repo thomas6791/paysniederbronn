@@ -1,0 +1,2 @@
+class MarcheNoel < HolidayRenting
+end

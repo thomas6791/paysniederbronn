@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_073327) do
+ActiveRecord::Schema.define(version: 2019_12_02_200802) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -89,6 +89,11 @@ ActiveRecord::Schema.define(version: 2019_10_29_073327) do
     t.boolean "published"
   end
 
+  create_table "marche_noels", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "post_categories", force: :cascade do |t|
     t.bigint "category_id"
     t.bigint "article_id"
@@ -96,6 +101,11 @@ ActiveRecord::Schema.define(version: 2019_10_29_073327) do
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_post_categories_on_article_id"
     t.index ["category_id"], name: "index_post_categories_on_category_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "articles", "categories"
