@@ -1,5 +1,5 @@
 const navBar = () => {
-  console.log('Bonjour');
+  //console.log('Bonjour');
   const navButton = document.querySelector(".mobile-button");
   let navMenu =  document.querySelector(".nav");
   navButton.addEventListener("click", (event) => {
