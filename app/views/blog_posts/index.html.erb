@@ -2,6 +2,14 @@
 <% description "Accéder aux dernières actualités, études, idées dans le tourisme et la vie économique et locales" %>
 <% set_meta_tags canonical: "https://www.paysniederbronn.fr/blog" %>
 <main class="blog">
+  <aside>
+    <nav id="nav-blog">
+      <ul>
+        <li><%= link_to 'thermalisme', thermalisme_blog_posts_path %></li>
+        <li><%= link_to 'actualités', actualites_blog_posts_path %></li>
+      </ul>
+    </nav>
+  </aside>
   <article class="article">
     <h1>Le Blog</h1>
 
@@ -18,6 +26,4 @@
       </ul>
     </section>
   </article>
-<%= link_to 'thermalisme', thermalisme_blog_posts_path %>
-<%= link_to 'actualités', actualites_blog_posts_path %>
 </main>
