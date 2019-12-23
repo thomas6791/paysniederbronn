@@ -64,6 +64,24 @@ nav {
     padding-top: 10px;
   }
 }
+#nav-blog {
+  width: auto;
+  border: solid 1px;
+  height: 100vh;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  align-items: baseline;
+  ul > li {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    a {
+      font-family: 'Caveat', cursive;
+      font-size: 1.5em;
+    }
+  }
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
