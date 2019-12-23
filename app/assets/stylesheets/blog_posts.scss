@@ -1,5 +1,10 @@
 .blog {
   min-height: 100vh;
+  display: flex;
+  article, aside {
+    width: 100%;
+  }
+  aside { width: auto; }
   .content {}
   .post-categories {
     margin-bottom: 15px;
@@ -31,6 +36,7 @@
   .float-text + h2 { clear: both; }
 }
 .articles-list {
+  padding: 0px 10px;
   a {
     color: black;
     text-decoration: none;
