@@ -1,9 +1,19 @@
+.blog-css {
+  display: flex;
+  max-width: 1224px;
+  margin: auto;
+}
 .blog {
   min-height: 100vh;
   display: flex;
+  width: 100%;
   article, aside {
     width: 100%;
   }
+  article {
+    padding: 0px 20px;
+  }
+  .blog-title { font-family: 'Caveat', cursive; }
   aside { width: auto; }
   .content {}
   .post-categories {
@@ -61,16 +71,8 @@
     }
   }
 
-  &.none {
-    li:hover {
-      -webkit-transition: unset !important;
-      -moz-transition: unset !important;
-      -o-transition: unset !important;
-      -ms-transition: unset !important;
-      transition: unset !important;
-      box-shadow: unset !important;
-      border: none;
-    }
+  &.none { padding: 0px;
+    li:hover {}
   }
 
 }
