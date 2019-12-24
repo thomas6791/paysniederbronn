@@ -5,6 +5,11 @@
     padding: 30px 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
+  .city {
+    display: flex;
+    justify-content: space-between;
+    .input.string.optional { width: 45%; }
+  }
   input, textarea {
     width: 100%;
     font-size: 1em;

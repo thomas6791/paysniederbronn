@@ -8,8 +8,10 @@
       </div>
       <div class="second">
         <%= f.input :address %>
-        <%= f.input :city %>
-        <%= f.input :zip_code %>
+        <div class="city">
+          <%= f.input :city %>
+          <%= f.input :zip_code %>
+        </div>
       </div>
       <div class="third">
         <%= f.input :website %>
