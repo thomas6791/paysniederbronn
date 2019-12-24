@@ -2,7 +2,7 @@
   .first, .second, .third {
     margin-bottom: 20px;
     border-radius: 5px;
-    padding: 10px;
+    padding: 30px 30px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
   input, textarea {
@@ -18,5 +18,8 @@
     width: auto;
     margin: auto;
     border-radius: 3px;
+  }
+  .input.string.optional {
+    margin: 15px 0px;
   }
 }
