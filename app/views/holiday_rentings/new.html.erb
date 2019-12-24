@@ -3,14 +3,14 @@
   <section class="form-create">
     <%= simple_form_for @annonce do |f| %>
       <div class="first">
-        <%= f.input :titre %>
+        <%= f.input :titre, label: "Titre de l'annonce" %>
         <%= f.input :description %>
       </div>
       <div class="second">
-        <%= f.input :address %>
+        <%= f.input :address, label: "Adresse de la location" %>
         <div class="city">
-          <%= f.input :city %>
-          <%= f.input :zip_code %>
+          <%= f.input :city, label: "Ville" %>
+          <%= f.input :zip_code, label: "Code Postal" %>
         </div>
       </div>
       <div class="third">
