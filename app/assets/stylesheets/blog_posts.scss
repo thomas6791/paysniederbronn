@@ -60,6 +60,19 @@
       border: none;
     }
   }
+
+  &.none {
+    li:hover {
+      -webkit-transition: unset !important;
+      -moz-transition: unset !important;
+      -o-transition: unset !important;
+      -ms-transition: unset !important;
+      transition: unset !important;
+      box-shadow: unset !important;
+      border: none;
+    }
+  }
+
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
