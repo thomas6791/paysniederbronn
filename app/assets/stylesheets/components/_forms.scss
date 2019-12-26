@@ -20,19 +20,7 @@
     border: solid 1px lightgray;
   }
   label { font-weight: bold; }
-  input[type="submit"]{
-    cursor:pointer;
-    display: block;
-    border: solid 1px;
-    padding: 10px 25px;
-    width: 100%;
-    background-color: lightseagreen;
-    color: white;
-    font-weight: bold;
-    margin: auto;
-    border-radius: 3px;
-    &:hover { opacity: 0.7; }
-  }
+  input[type="submit"]{}
   .input.string.optional {
     margin: 15px 0px;
   }
