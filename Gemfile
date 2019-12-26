@@ -43,6 +43,8 @@ gem 'meta-tags'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem "simple_calendar", "~> 2.0"
+gem'actiontext',github:'kobaltz/actiontext',branch:'archive',require:'action_text'
+gem 'image_processing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
