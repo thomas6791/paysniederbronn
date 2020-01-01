@@ -11,7 +11,7 @@
         <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
         <%= f.input :minors, :input_html => { :type => "number" }, label: "Pers. non assujetties (ex: mineurs) :", :required => false %>
         <%= f.button :submit, value: "Calculer", class: "btn-green" %>
-        <h2>Comm Comm de Niederbronn-les-Bain | 2019</h2>
+        <h2>Comm Comm de Niederbronn-les-Bain | <%= Time.now.year %></h2>
       <% end  %>
     </section>
     <section id="results">
