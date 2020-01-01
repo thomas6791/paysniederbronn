@@ -9,7 +9,7 @@
       <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
       <%= f.input :minors, :input_html => { :type => "number" }, label: "Pers. non assujetties (ex: mineurs) :", :required => false %>
       <%= f.button :submit, value: "Calculer", class: "btn-green" %>
-      <h2>Créer une facture de taxe de séjour | 2019</h2>
+      <h2>Créer une facture de taxe de séjour | <%= Time.now.year %></h2>
     <% end  %>
   </section>
 
