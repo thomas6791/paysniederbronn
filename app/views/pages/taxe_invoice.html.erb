@@ -9,11 +9,11 @@
       <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
       <%= f.input :minors, :input_html => { :type => "number" }, label: "Pers. non assujetties (ex: mineurs) :", :required => false %>
       <div class="inline">
-        <%= f.text_field :option, :required => false, placeholder: "ex: location de draps", class: "option" %>
+        <%= f.text_field :option, :required => false, placeholder: "Option 1, ex: location de draps", class: "option" %>
         <%= f.input :tarif, label: false, :required => false, :input_html => { :type => "number" } %>
       </div>
       <div class="inline">
-        <%= f.text_field :option, :required => false, placeholder: "ex: petits déjeuner", class: "option" %>
+        <%= f.text_field :option, :required => false, placeholder: "Option 2, ex: petits déjeuner", class: "option" %>
         <%= f.input :tarif, label: false, :required => false, :input_html => { :type => "number" } %>
       </div>
       <%= f.button :submit, value: "Calculer" %>
