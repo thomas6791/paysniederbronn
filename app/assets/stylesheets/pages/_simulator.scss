@@ -29,6 +29,18 @@
   }
 }
 .invoice { min-height: 100vh; }
+.invoice {
+  .inline {
+    div, input { margin: 0px; }
+    input {
+      display: flex;
+      flex-grow: 1;
+      margin-right: 0px;
+      text-align: left;
+    }
+    .option { margin-right: 10px; }
+  }
+}
 #taxe-invoice {
   display: flex;
   justify-content: center;
