@@ -72,11 +72,19 @@ class PagesController < ApplicationController
     datas = params[:taxe_sejour]
     options = datas.keys.grep(/option/)
     options_price = datas.keys.grep(/tarif/)
+    name_options_array = []
     new_array = []
+
+    options.each_with_index do |option, index|
+      name_options_array << datas[options[index]]
+    end
+
     options_price.each_with_index do |element, index|
       new_array << datas[options_price[index]].to_f
     end
-    options_price = new_array
+
+    options_hash = Hash[name_options_array.zip new_array]
+
     @taxe_sejour = TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, datas[:town].downcase).price_ratings
     redirect_to taxe_invoice_path(result_invoice: [taxes: @taxe_sejour, amount: datas[:amount], days: datas[:days], people: datas[:people], minors: datas[:minors], rating: datas[:rating] ])
   end
