@@ -1,6 +1,14 @@
 #simulator { min-height: 100vh;
   h2 { text-align: center; }
 }
+.fa-plus-square {
+  cursor: pointer;
+  color: lightseagreen;
+  text-align: right;
+  &:hover {
+    filter: invert(0.5);
+  }
+}
 
 .simulator-datas {
   display: flex;
@@ -29,6 +37,18 @@
   }
 }
 .invoice { min-height: 100vh; }
+.invoice {
+  .inline {
+    div, input { margin: 0px; }
+    input {
+      display: flex;
+      flex-grow: 1;
+      margin-right: 0px;
+      text-align: left;
+    }
+    .option { margin-right: 10px; }
+  }
+}
 #taxe-invoice {
   display: flex;
   justify-content: center;
@@ -48,6 +68,9 @@
       p:nth-child(2) {
         padding: 0px 0px 0px 30px;
       }
+    }
+    .options-list {
+      display: block;
     }
     div:last-of-type {
       margin-top: 2em;

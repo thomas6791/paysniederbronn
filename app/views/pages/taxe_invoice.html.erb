@@ -8,8 +8,19 @@
       <%= f.input :days, :input_html => { :type => "number" }, label: "Durée du séjour :", :required => false %>
       <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
       <%= f.input :minors, :input_html => { :type => "number" }, label: "Pers. non assujetties (ex: mineurs) :", :required => false %>
+      <span id="options">
+        <div class="inline">
+          <%= f.text_field :option1, :required => false, placeholder: "Option 1, ex: location de draps", class: "option" %>
+          <%= f.input :tarif1, label: false, :required => false, :input_html => { :type => "number" } %>
+        </div>
+        <div class="inline">
+          <%= f.text_field :option2, :required => false, placeholder: "Option 2, ex: petits déjeuner", class: "option" %>
+          <%= f.input :tarif2, label: false, :required => false, :input_html => { :type => "number" } %>
+        </div>
+      </span>
+      <span class="far fa-plus-square" style="font-size: 1.5em;"></span>
       <%= f.button :submit, value: "Calculer", class: "btn-green" %>
-      <h2>Créer une facture de taxe de séjour | <%= Time.now.year %></h2>
+      <h2>Créer une facture de taxe de séjour | <%= Time.now.year %</h2>
     <% end  %>
   </section>
 
@@ -22,6 +33,16 @@
         <div>
           <p>Montant du séjour :</p><p><%= sprintf("%.2f",@amount.to_f) %> €</p>
         </div>
+        <% if !@options.nil? %>
+          <div class="options-list">
+            <p>Options lors du séjour:</p>
+            <ul>
+              <% @options.each do |key, value| %>
+                <li><%= key.capitalize %>: <%= sprintf("%.2f",value.to_f) %> €</li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
         <div>
           <p>Nombre de nuitées :</p><p><%= @days %></p>
         </div>
@@ -52,3 +73,4 @@
   <% else %>
   <% end %>
 </main>
+<%= javascript_pack_tag "taxes" %>
