@@ -70,6 +70,9 @@ class PagesController < ApplicationController
     #@taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
     @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
     datas = params[:taxe_sejour]
+    options = datas.keys.grep(/option/)
+    options_price = datas.keys.grep(/tarif/)
+    fail
     @taxe_sejour = TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, datas[:town].downcase).price_ratings
     redirect_to taxe_invoice_path(result_invoice: [taxes: @taxe_sejour, amount: datas[:amount], days: datas[:days], people: datas[:people], minors: datas[:minors], rating: datas[:rating] ])
   end
