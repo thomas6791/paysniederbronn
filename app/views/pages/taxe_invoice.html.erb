@@ -16,9 +16,9 @@
         <div class="inline">
           <%= f.text_field :option2, :required => false, placeholder: "Option 2, ex: petits déjeuner", class: "option" %>
           <%= f.input :tarif2, label: false, :required => false, :input_html => { :type => "number" } %>
-          <span class="far fa-plus-square" style="font-size: 1.5em;"></span>
         </div>
       </span>
+      <span class="far fa-plus-square" style="font-size: 1.5em;"></span>
       <%= f.button :submit, value: "Calculer" %>
       <h2>Créer une facture de taxe de séjour | 2019</h2>
     <% end  %>
