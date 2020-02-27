@@ -4,7 +4,7 @@
     <%= simple_form_for @annonce do |f| %>
       <div class="first">
         <%= f.input :titre, label: "Titre de l'annonce" %>
-        <%= f.input :description %>
+        <%= f.rich_text_area :description %>
       </div>
       <div class="second">
         <%= f.input :address, label: "Adresse de la location" %>
@@ -16,8 +16,7 @@
       <div class="third">
         <%= f.input :website %>
       </div>
-      <%= f.button :submit, value: "Confirmer" %>
+      <%= f.button :submit, value: "Confirmer", class: "btn-green large" %>
     <% end %>
   </section>
 </main>
-

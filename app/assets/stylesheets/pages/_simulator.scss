@@ -124,22 +124,6 @@
     input:focus {
       outline: none;
     }
-    input[type="submit"]{
-      margin-top: 10px;
-      cursor:pointer;
-      font-size: 1em;
-      line-height: 2em;
-      border-radius: 3px;
-      background-color: lightseagreen;
-      border: solid lightseagreen 1px;
-      color: white;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      &:hover {
-        opacity: 0.8;
-      }
-    }
   }
 }
 @media (min-width: 100px) and (max-width: 575px) {
