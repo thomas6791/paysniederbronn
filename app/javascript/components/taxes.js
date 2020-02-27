@@ -17,7 +17,7 @@ const test = () => {
   x.addEventListener("click", (event) => {
     console.log("00", event.currentTarget);
     console.log("01", event.target);
-    removeItem(event.target);
+    console.log("02", event.target.id);
   });
 }
 export { insertInput };
