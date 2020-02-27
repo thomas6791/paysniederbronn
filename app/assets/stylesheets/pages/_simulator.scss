@@ -1,6 +1,13 @@
 #simulator { min-height: 100vh;
   h2 { text-align: center; }
 }
+.fa-plus-square {
+  cursor: pointer;
+  color: lightseagreen;
+  &:hover {
+    filter: invert(0.5);
+  }
+}
 
 .simulator-datas {
   display: flex;
