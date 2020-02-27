@@ -30,14 +30,16 @@
         <div>
           <p>Montant du séjour :</p><p><%= sprintf("%.2f",@amount.to_f) %> €</p>
         </div>
-        <div class="options-list">
-          <p>Options lors du séjour:</p>
-          <ul>
-            <% @options.each do |key, value| %>
-              <li><%= key.capitalize %>: <%= sprintf("%.2f",value.to_f) %> €</li>
-            <% end %>
-          </ul>
-        </div>
+        <% if !@options.nil? %>
+          <div class="options-list">
+            <p>Options lors du séjour:</p>
+            <ul>
+              <% @options.each do |key, value| %>
+                <li><%= key.capitalize %>: <%= sprintf("%.2f",value.to_f) %> €</li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
         <div>
           <p>Nombre de nuitées :</p><p><%= @days %></p>
         </div>

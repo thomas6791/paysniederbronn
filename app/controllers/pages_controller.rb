@@ -56,7 +56,7 @@ class PagesController < ApplicationController
       @amount = datas[:amount]
       rating = datas[:rating]
       @days = datas[:days]
-      @options = params[:result_invoice][0][:options]
+      @options = params[:result_invoice][0][:options] unless params[:result_invoice][0][:options] == ["0.0"]
 
       if datas[:rating] == "non classé"
         @taxe = datas[:taxes][0]
