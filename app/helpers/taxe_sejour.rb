@@ -1,6 +1,6 @@
 class TaxeSejour
-  attr_reader :amount, :days, :people, :minors, :town, :price_ratings, :option
-  def initialize(amount, days, people, minors, town, options)
+  attr_reader :amount, :days, :people, :minors, :town, :price_ratings, :options
+  def initialize(amount, days, people, minors, town, options = 0)
     @amount = amount
     @days = days
     @people = people
