@@ -24,6 +24,10 @@ class LandingPagesController < ApplicationController
               description: "les produits locaux et supermarché d'Alsace du Nord"
               #noindex: true
   end
+  def attraction
+    set_meta_tags title: "Parcs d'attraction & aquatiques en et proche de l'Alsace",
+              description: "Europapark, Rulantica, Didiland ou encore BadeParadise, autant de parcs à thèmes où il est facile de s'y amuser"
+  end
 
   def cures_thermales
     set_meta_tags title: "Cure thermale et station en Alsace des Vosges du Nord",

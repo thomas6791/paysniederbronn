@@ -1,3 +1,4 @@
+# Ajout des taxes de séjour en intégrant la taxe additionnelle departementale de +10%
 :taxes:
   niederbronn:
     :palace: 3.00
@@ -24,6 +25,21 @@
     :nc-hotel: 0.5
     :nc-meuble: 0.5
     :camping-3-4-5: 0.55
+    :camping-1-2: 0.22
+    :add_tax?: oui
+    :add_tax: 1.10
+    :plafond:
+    :taux: 0.05
+  wissembourg:
+    :palace: 4.40
+    :five: 1.65
+    :four: 1.50
+    :three: 1.10
+    :two: 0.90
+    :one: 0.70
+    :nc-hotel: 0.5
+    :nc-meuble: 0.5
+    :camping-3-4-5: 0.50
     :camping-1-2: 0.22
     :add_tax?: oui
     :add_tax: 1.10

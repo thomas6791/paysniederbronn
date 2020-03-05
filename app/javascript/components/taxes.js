@@ -12,4 +12,13 @@ const insertInput = () => {
         </div>`);
     });
 }
+const test = () => {
+  let x = document.querySelector('.simple_form.taxe_sejour');
+  x.addEventListener("click", (event) => {
+    console.log("00", event.currentTarget);
+    console.log("01", event.target);
+    console.log("02", event.target.id);
+  });
+}
 export { insertInput };
+export { test };
