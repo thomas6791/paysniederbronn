@@ -14,7 +14,10 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-.banner.landing { margin-bottom: 10px; }
+.banner.landing {
+  margin-bottom: 10px;
+  h1 { font-weight: 400; }
+}
 iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
 
 .landing {
