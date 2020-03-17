@@ -2,7 +2,7 @@ class HolidayRenting < ApplicationRecord
   #validates :title, uniqueness: { message: "cette title est déjà prise" }
   validates :titre, uniqueness: { message: "ce titre est déjà pris" }
   validates :slug, uniqueness: { message: "slug déjà prise" }
-  after_validation :set_slug, only: [:create]
+  after_validation :set_slug, only: [:show, :edit, :update, :destroy]
   has_rich_text :description
 
   def to_param
