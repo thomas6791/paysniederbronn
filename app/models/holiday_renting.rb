@@ -5,6 +5,7 @@ class HolidayRenting < ApplicationRecord
   after_validation :set_slug, only: [:create]
   after_validation :set_category, only: [:create]
   has_rich_text :description
+  has_many_attached :photos
 
   def to_param
     "#{id}-#{slug}"
