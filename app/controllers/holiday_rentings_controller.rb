@@ -2,7 +2,7 @@ class HolidayRentingsController < ApplicationController
   before_action :set_seo
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
-    @annonces = HolidayRenting.all
+    @annonces = HolidayRenting.all.where(category: "renting")
   end
 
   def show
@@ -47,7 +47,7 @@ class HolidayRentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:holiday_renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website)
+    params.require(:holiday_renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website, :category)
   end
 
   def set_seo
