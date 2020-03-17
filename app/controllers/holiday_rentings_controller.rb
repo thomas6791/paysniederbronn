@@ -1,14 +1,11 @@
 class HolidayRentingsController < ApplicationController
   before_action :set_seo
+  before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
     @annonces = HolidayRenting.all
   end
 
   def show
-    @annonce = HolidayRenting.find(params[:id])
-    #if @annonce.id == 1
-    #  redirect_to action: "meuble_heidelbeere"
-    #end
   end
 
   def new
@@ -24,6 +21,7 @@ class HolidayRentingsController < ApplicationController
   end
 
   def update
+    @annonce.update(renting_params)
   end
 
   def destroy
@@ -49,10 +47,14 @@ class HolidayRentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:holiday_renting).permit(:name, :description, :city, :zip_code, :address, :latitude, :longitude, :website)
+    params.require(:holiday_renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website)
   end
 
   def set_seo
     set_meta_tags noindex: true
+  end
+
+  def set_data
+    @annonce = HolidayRenting.find(params[:id])
   end
 end

@@ -6,15 +6,12 @@ class HolidayRenting < ApplicationRecord
   has_rich_text :description
 
   def to_param
-    #{}"#{id}-#{slug}"
-    "#{slug}"
+    "#{id}-#{slug}"
   end
 
   private
 
   def set_slug
-    if self.slug.nil? || self.slug.blank?
-      self.slug = titre.to_s.parameterize
-    end
+    self.slug = titre.to_s.parameterize
   end
 end
