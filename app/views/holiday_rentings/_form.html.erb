@@ -18,6 +18,9 @@
         </div>
       </div>
       <div class="third">
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      </div>
+      <div class="third">
         <%= f.input :website %>
       </div>
       <%= f.button :submit, value: "Confirmer", class: "btn-green large" %>
