@@ -1,6 +1,6 @@
 class HolidayRentingsController < ApplicationController
   before_action :set_seo
-  before_action :set_data, except: [:index]
+  before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
     @annonces = HolidayRenting.all
   end
