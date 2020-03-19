@@ -28,7 +28,9 @@
     <div class="blog-css">
       <%= render "shared/blog_categories" %>
       <main class="blog">
-        <%= render_breadcrumbs :separator => ' > ' %>
+        <div class="breadcrumb">
+          <%= render_breadcrumbs :separator => '<span> > </span>' %>
+        </div>
         <%= yield %>
       </main>
     </div>

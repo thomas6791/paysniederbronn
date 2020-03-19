@@ -18,6 +18,10 @@ main {
   max-width: 1080px; margin: auto;
   min-height: 100vh;
 }
+.breadcrumb {
+  display: flex;
+  span { margin: 0 3px; }
+}
 
 h1 { font-size: 2em; text-align: center; margin: 20px 0px; }
 p { font-size: 1em; }
