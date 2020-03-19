@@ -21,7 +21,9 @@ class LandingPagesController < ApplicationController
   end
   def alimentation
     set_meta_tags title: "Produits locaux et supermarché d'Alsace du Nord",
-              description: "les produits locaux et supermarché d'Alsace du Nord"
+              description: "les produits locaux et supermarché d'Alsace du Nord",
+              canonical: "https://www.paysniederbronn.fr/fr/alimentation"
+
               #noindex: true
   end
   def attraction
