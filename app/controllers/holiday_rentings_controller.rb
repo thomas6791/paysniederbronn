@@ -47,7 +47,7 @@ class HolidayRentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:holiday_renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website, :category, photos: [])
+    params.require(:holiday_renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website, :category, :airbnb, :booking, photos: [])
   end
 
   def set_seo

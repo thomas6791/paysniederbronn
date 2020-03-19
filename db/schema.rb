@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_17_202911) do
+ActiveRecord::Schema.define(version: 2020_03_19_190906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,6 +121,8 @@ ActiveRecord::Schema.define(version: 2020_03_17_202911) do
     t.string "title"
     t.string "slug"
     t.string "category"
+    t.string "airbnb"
+    t.string "booking"
   end
 
   create_table "marche_noels", force: :cascade do |t|
