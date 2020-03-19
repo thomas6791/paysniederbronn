@@ -35,4 +35,14 @@ iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
   article {
 
   }
+  &.attractions {
+    section { padding: 10px 0px; }
+    section > div { display: flex; }
+    section > div > p { padding-left: 10px; }
+    img {
+      min-width: 300px; max-width: 300px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
 }
