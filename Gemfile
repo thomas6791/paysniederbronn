@@ -47,6 +47,7 @@ gem'actiontext',github:'kobaltz/actiontext',branch:'archive',require:'action_tex
 gem 'image_processing'
 gem 'trix-rails', require: 'trix'
 gem 'cloudinary', '~> 1.12.0'
+gem "breadcrumbs_on_rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

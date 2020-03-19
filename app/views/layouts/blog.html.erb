@@ -27,7 +27,10 @@
     <%= render "shared/mobile" %>
     <div class="blog-css">
       <%= render "shared/blog_categories" %>
-      <%= yield %>
+      <main class="blog">
+        <%= render_breadcrumbs :separator => ' > ' %>
+        <%= yield %>
+      </main>
     </div>
     <%= render "shared/footer" %>
   </body>

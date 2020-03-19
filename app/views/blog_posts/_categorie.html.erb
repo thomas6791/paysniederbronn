@@ -1,21 +1,18 @@
 <% title "#{}" %>
 <% description "#{}" %>
-<main class="blog">
-  <article class="article">
-    <h1><span class= <%= color %> ><%= categorie.titleize %></span></h1>
-    <p><%= @text %></p>
+<article class="article">
+  <h1><span class= <%= color %> ><%= categorie.titleize %></span></h1>
+  <p><%= @text %></p>
 
-    <section class="articles-list">
-      <ul>
-        <% @posts.each do |post| %>
-          <li><%= link_to blog_post_path(post) do %>
-            <p><%= post.titre %></p>
-            <p><%= post.custom_date.strftime("%d/%m/%y") %></p>
-          <% end %>
-          </li>
+  <section class="articles-list">
+    <ul>
+      <% @posts.each do |post| %>
+        <li><%= link_to blog_post_path(post) do %>
+          <p><%= post.titre %></p>
+          <p><%= post.custom_date.strftime("%d/%m/%y") %></p>
         <% end %>
-      </ul>
-    </section>
-  </article>
-
-</main>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</article>
