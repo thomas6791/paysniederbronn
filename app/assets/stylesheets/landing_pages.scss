@@ -36,6 +36,7 @@ iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
 
   }
   &.attractions {
+    section { padding: 10px 0px; }
     section > div { display: flex; }
     img {
       width: 300px;
