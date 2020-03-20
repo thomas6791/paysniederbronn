@@ -11,7 +11,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    add_breadcrumb "index", blog_post_path, title: "Back to the Index"
+    add_breadcrumb "#{@post.titre}", blog_post_path, title: "Back to the Index"
     @author = @post.author_blog
     set_meta_tags canonical: url_for(:only_path => false)
   end

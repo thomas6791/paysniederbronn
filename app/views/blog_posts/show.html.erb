@@ -6,6 +6,9 @@
 <article class="article">
   <header>
     <h1><%= @post.titre %></h1>
+    <div class="breadcrumb">
+      <%= render_breadcrumbs :separator => '<span>/</span>' %>
+    </div>
   </header>
 
     <section class="content">

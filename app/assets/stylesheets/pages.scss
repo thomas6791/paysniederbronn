@@ -20,7 +20,16 @@ main {
 }
 .breadcrumb {
   display: flex;
-  span { margin: 0 3px; }
+  font-size: 0.8em;
+  padding: 10px 0px;
+  border-top: solid 1px lightgrey;
+  border-bottom: solid 1px lightgrey;
+  margin-bottom: 30px;
+  color: lightgrey;
+  span { margin: 0 5px; }
+  a { text-decoration: none; color: lightgrey;
+  &:hover { color: black; }
+  }
 }
 
 h1 { font-size: 2em; text-align: center; margin: 20px 0px; }
