@@ -64,7 +64,7 @@ class BlogPostsController < ApplicationController
     @categorie = "ligne maginot"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
     @text = 'text'
-    @color = "green"
+    @color = "beige"
   end
   def tourisme
     set_meta_tags noindex: true
