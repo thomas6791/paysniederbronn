@@ -11,7 +11,10 @@ class BlogPostsController < ApplicationController
   end
 
   def show
-    add_breadcrumb "#{@url[:action].sub("_"," ").downcase}", "/blog/#{@url[:action].sub("_","-")}"
+    if
+      @url[:action] != "index" || @url[:action] == "home"
+      add_breadcrumb "#{@url[:action].sub("_"," ").downcase}", "/blog/#{@url[:action].sub("_","-")}"
+    end
     add_breadcrumb "#{@post.titre}", blog_post_path, title: "retour"
     @author = @post.author_blog
     set_meta_tags canonical: url_for(:only_path => false)
