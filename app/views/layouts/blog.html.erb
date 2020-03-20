@@ -27,7 +27,9 @@
     <%= render "shared/mobile" %>
     <div class="blog-css">
       <%= render "shared/blog_categories" %>
-      <%= yield %>
+      <main class="blog">
+        <%= yield %>
+      </main>
     </div>
     <%= render "shared/footer" %>
   </body>

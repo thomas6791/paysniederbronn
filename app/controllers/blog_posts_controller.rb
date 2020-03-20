@@ -3,12 +3,15 @@ class BlogPostsController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_action :set_seo
   layout 'blog', except: [:new, :edit]
+
+  add_breadcrumb "Blog", :blog_posts_path
   def index
     set_meta_tags canonical: "https://www.paysniederbronn.fr/blog/"
     @posts =  BlogPost.all.where(published: true).order(custom_date: :desc)
   end
 
   def show
+    add_breadcrumb "#{@post.titre}", blog_post_path, title: "Back to the Index"
     @author = @post.author_blog
     set_meta_tags canonical: url_for(:only_path => false)
   end
@@ -49,6 +52,7 @@ class BlogPostsController < ApplicationController
 
   ### Blog categories
   def actualites
+    add_breadcrumb "actualites", actualites_blog_posts_path, title: "actualites"
     set_meta_tags noindex: true
     @categorie = "actualites"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => "Actualite").order('custom_date DESC')

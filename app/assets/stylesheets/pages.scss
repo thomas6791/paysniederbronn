@@ -18,6 +18,19 @@ main {
   max-width: 1080px; margin: auto;
   min-height: 100vh;
 }
+.breadcrumb {
+  display: flex;
+  font-size: 0.85em;
+  padding: 10px 0px;
+  border-top: solid 1px lightgrey;
+  border-bottom: solid 1px lightgrey;
+  margin-bottom: 30px;
+  color: lightgrey;
+  span { margin: 0 5px; }
+  a { text-decoration: none; color: lightgrey;
+  &:hover { color: lightseagreen; }
+  }
+}
 
 h1 { font-size: 2em; text-align: center; margin: 20px 0px; }
 p { font-size: 1em; }

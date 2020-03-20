@@ -3,22 +3,22 @@
 <% if @post.published == false %>
   <% noindex %>
 <% end %>
-<main class="blog">
-  <article class="article">
-    <header>
-      <h1><%= @post.titre %></h1>
-    </header>
+<article class="article">
+  <header>
+    <h1><%= @post.titre %></h1>
+    <div class="breadcrumb">
+      <%= render_breadcrumbs :separator => '<span>/</span>' %>
+    </div>
+  </header>
 
-      <section class="content">
-        <p><%= @post.content.html_safe %></p>
-      </section>
-      <section class="post-categories">
-        <% @post.blog_categories.each do |cat| %>
-          <span>#<%= cat.name %></span>
-        <% end %>
-      </section>
-      <p><%= @author.first_name %> <%= @author.last_name.capitalize %></p>
-      <%= @post.custom_date.strftime("%d/%m/%y") %>
-  </article>
-
-</main>
+    <section class="content">
+      <p><%= @post.content.html_safe %></p>
+    </section>
+    <section class="post-categories">
+      <% @post.blog_categories.each do |cat| %>
+        <span>#<%= cat.name %></span>
+      <% end %>
+    </section>
+    <p><%= @author.first_name %> <%= @author.last_name.capitalize %></p>
+    <%= @post.custom_date.strftime("%d/%m/%y") %>
+</article>
