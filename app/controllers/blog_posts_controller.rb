@@ -11,6 +11,7 @@ class BlogPostsController < ApplicationController
   end
 
   def show
+    add_breadcrumb "#{@url[:action].sub("_"," ").downcase}", "/blog/#{@url[:action].sub("_","-")}"
     add_breadcrumb "#{@post.titre}", blog_post_path, title: "retour"
     @author = @post.author_blog
     set_meta_tags canonical: url_for(:only_path => false)
@@ -91,6 +92,7 @@ class BlogPostsController < ApplicationController
 
   def set_page
     @post = BlogPost.find_by!(slug: params[:id])
+    @url = Rails.application.routes.recognize_path(request.referrer)
   end
 
   def set_seo
