@@ -3,6 +3,9 @@
 <article class="article">
   <h1><span class= <%= color %> ><%= categorie.titleize %></span></h1>
   <p><%= @text %></p>
+  <div class="breadcrumb">
+    <%= render_breadcrumbs :separator => '<span>/</span>' %>
+  </div>
 
   <section class="articles-list">
     <ul>
