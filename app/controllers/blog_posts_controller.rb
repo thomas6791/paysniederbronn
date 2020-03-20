@@ -60,6 +60,7 @@ class BlogPostsController < ApplicationController
     @color = "pink"
   end
   def ligne_maginot
+    add_breadcrumb "ligne maginot", ligne_maginot_blog_posts_path, title: "actualites"
     set_meta_tags noindex: true
     @categorie = "ligne maginot"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
@@ -67,6 +68,7 @@ class BlogPostsController < ApplicationController
     @color = "beige"
   end
   def tourisme
+    add_breadcrumb "tourisme", tourisme_blog_posts_path, title: "actualites"
     set_meta_tags noindex: true
     @categorie = "tourisme"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
@@ -74,6 +76,7 @@ class BlogPostsController < ApplicationController
     @color = "green"
   end
   def thermalisme
+    add_breadcrumb "thermalisme", thermalisme_blog_posts_path, title: "actualites"
     set_meta_tags noindex: true
     @categorie = "thermalisme"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
