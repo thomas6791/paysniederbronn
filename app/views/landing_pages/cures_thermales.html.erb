@@ -5,7 +5,8 @@
     <h2>Quelles sont les stations thermales présentes en Alsace ?</h2>
     <p>Les deux centres proposant des <strong>cures thermales en Alsace</strong> se trouvent toutes les deux dans le territoire d' <strong>Alsace</strong> <b>des Vosges du Nord</b>  au nord du Bas-Rhin, à quelques kilomètres de la frontière lorraine et allemande.<br>Ces deux stations thermales sont celles de <b>Niederbronn-les-Bains</b> et de <b>Morsbronn-les-Bains</b> disposant chacune de leur propre eau de source pour appliquer les soins qu'elles proposent.<br> Ces deux centres de cure hormis qu'elles proposent toutes les deux des soins dans le traitement des rhumatismes, sont également membres du groupe Valvital.</p><br>
 
-    <h3>Faire une cure thermale à Niederbronn-les-Bains</h3>
+   <%= image_tag "home/thermes.jpg", width: 400, height: 300, crop: :fill, alt: "établissement thermal de niederbronn-les-bains" %>
+   <h3>Faire une cure thermale à Niederbronn-les-Bains</h3>
     <p>La <%= link_to station_thermale_niederbronn_landing_pages_path do %>
       <strong>station thermale</strong><b> de Niederbronn-les-Bains</b>
     <% end  %>
@@ -13,23 +14,70 @@
     Cette station propose deux types de cure à savoir une spécialisée dans le traitement de la rhumatologie et de l’arthrose associé et dans le « mieux bouger » pour faciliter les déplacements des personnes y effectuant une cure.
     Sa position dans le parc naturel des voges du nord, offre un cadre hydillique pour les amoureux de nature. Cette situation offre ainsi un séjour nature et enchanteur lors d’une cure thermale.
     </p>
-    <br>
 
     <h3>Aller à la station thermale de Morsbronn-les-Bains</h3>
-    <p>Située aux portes des Vosges du Nord, la
+    <p>Située aux portes des Vosges du Nord, l'
     <%= link_to station_thermale_morsbronn_landing_pages_path do %>
-      <strong>station thermale</strong><b> de Morsbronn-les-Bains</b>
+      <strong>établissement thermal</strong><b> de Morsbronn-les-Bains</b>
     <% end %>
     disposant non pas d’une mais de deux sources d’eau thermale afin de prodiguer des soins. Dans les soins que propose ce centre de cure, on retrouve comme à Niederbronn-les-Bains, le traitement de la rhumatologie mais également des traitements complémentaires pour les cures de longue durée.
     </p>
+
     <br>
 
+    <h2>Des cures conventionnées prises en charge</h2>
+    <p>Conventionnés tous les deux par l'assurance-maladie, ces établissements thermaux leurs donnent la possibilité de proposer des cures qui selon leurs nature et leurs durées permettent la prise en charge totale ou partielle des frais liés au séjour par la caisse d'assurance maladie et les complémentaires santé de chacun.</p>
+
+    <h3>Quelles sont les conditions pour qu'une cure thermale soit prise en charge par l'assurance maladie ?</h3>
+    <p>Pour qu'une thermale soir effectivement prise en charge celle-ci doit remplir les conditions suivantes:
+      <ul>
+        <li>La cure doit avoir fait l'objet d'une <strong>prescription médicale</strong> par un professionel de santé, à savoir son médecin traitant ou un chirurgien-dentiste pour les affections de bouches</li>
+        <li>La cure doit se dérouler dans un établissement à la fois <strong>conventionné</strong> et <strong>agrée par l'Assurance maladie</strong></li>
+        <li>La cure doit comporter <strong>18 jours de traitements effectifs</strong>. Si celle-ci est incomplète ou interrompue pour des raisons médicales, la cure sera prise en charge proportionnellement au nombre de jours effectués</li>
+        <li>Effectuer une cure motivée par des pathologies et des affections ciblées dans la liste des <b>12 orientations thérapeutiques listées</b></li>
+        <li>Une <b>seule cure thermale</b> par année civile pour une même affection</li>
+        <li>Le <b>nombre de séances de soins</b>, fixé en fonction de la pathologie devra être indiqué</li>
+        <li>Effectuer des <b>démarches administratives</b> remplies à la fois par le médécin prescripteur et par le curiste</li>
+      </ul>
+    </p>
+
+    <h3>Quels sont les soins liés aux cures pris en charge?</h3>
+    <ul>
+      <li>Affection des muqueuses bucco-linguales</li>
+      <li>Affection digestive</li>
+      <li>Affection psychosomatique</li>
+      <li>Affection urinaire</li>
+      <li>Dermatologie</li>
+      <li>Gynécologie</li>
+      <li>Maladie cardio-artérielle</li>
+      <li>Neurologie</li>
+      <li>Phlébologie</li>
+      <li>Rhumatologie</li>
+      <li>Troubles du développement chez l'enfant</li>
+      <li>Troubles des voies respiratoires</li>
+    </ul>
+    <br>
+
+    <h2>Quelles sont les cures thermales proposées dans les établissements d'Alsace</h2>
+
+    <h3>Les soins proposés dans l'établissement de Niederbronn-les-Bains</h3>
+    <h4>La liste des cures conventionnées</h4>
+    <p>Le centre thermal de Niederbronn ne propose qu'un seul type de cure conventionnée, à savoir le <strong>soin des rhumatismes</strong>.</p>
+    <h4>La liste des autres soins et prestations proposés</h4>
+    <h4>Les cures à double orientation</h4>
+
+    <h3>Les cures proposées dans le centre de Morsbronn-les-Bains</h3>
+    <h4>La liste des cures conventionnées</h4>
+    <p>L'établissement de Morsbronn-les-Bains propose les mêmes soins pris en charge par la sécurité sociale à savoir le <strong>traitement des rhumatismes</strong>.</p>
+    <h4>La liste des autres soins et prestations proposés</h4>
+    <h4>Les cures à double orientation</h4>
+
     <h2>Un séjour pour découvrir l'Alsace et les Vosges du Nord</h2>
-    <p>Lors d'une cure thermale effectuée dans l'une des stations thermales présentes en Alsace du Nord, c'est l'occasion pour les curistes de découvrir l'Alsace mais également le Parc Naturel des Vosges du Nord d'Alsace.</p><br>
+    <p>Lors d'une cure thermale effectuée dans l'une des stations thermales présentes en Alsace du Nord, c'est l'occasion pour les curistes de découvrir l'Alsace mais également le Parc Naturel des Vosges du Nord d'Alsace.</p>
     <h3>Visiter l'Alsace</h3>
     <p>L'Alsace est sans doute l'une des régions les plus visitée de France avec un nombre de touristes en progression chaque année.<br>
     Cette région à l'extrême Est de la France, possède une richesse dans sa culture, son patrimoine ou encore sa gastronomie. Parmi les grands sites touristiques on citera naturellement la ville de Strasbourg et sa cathédrale, mais également les villes de Colmar, Obernai, les villages de Kaysersberg et Eguisheim, élus "villages préférés des français" ou encore les château du Haut-Koenigsbourg et du Fleckenstein, les marchés de Noël présents dans de nombreux villages et villes d'Alsace.
-    </p><br>
+    </p>
     <h3>Découvrir les Vosges du Nord</h3>
     <p>Le Parc Naturel des Vosges du Nord, classé réserve de biosphère et donc inscrit au patrimoine de l'UNESCO possède en son sein une richesse en nature mais également en patrimoine avec une densité de châteaux forts exceptionnelle par rapport aux autres régions et au reste de l'Alsace. Les Vosges du Nord, de par sa position géographique habite également les vestiges de la célèbre ligne maginot dont quelques oubvrages sont aujourd'hui ouverts aux visites.</p>
   </article>
