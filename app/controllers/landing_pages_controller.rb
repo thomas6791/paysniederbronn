@@ -32,7 +32,7 @@ class LandingPagesController < ApplicationController
   end
 
   def cures_thermales
-    set_meta_tags title: "Cure thermale et station en Alsace des Vosges du Nord",
+    set_meta_tags title: "Cure thermale, thermes et stations en Alsace des Vosges du Nord",
               description: "cures thermales présentes dans les vosges du nord d'alsace"
   end
   def station_niederbronn
