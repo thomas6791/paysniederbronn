@@ -32,16 +32,16 @@ class LandingPagesController < ApplicationController
   end
 
   def cures_thermales
-    set_meta_tags title: "Cure thermale, thermes et stations en Alsace",
+    set_meta_tags title: "Cure thermale et stations en Alsace",
               description: "cures thermales présentes dans les vosges du nord d'alsace",
               canonical: "https://www.paysniederbronn.fr/cures-thermales"
   end
   def station_niederbronn
-    set_meta_tags title: "Station thermale de Niederbronn, établissement de cure en alsace",
+    set_meta_tags title: "Station thermale de Niederbronn, établissement de cure en Alsace",
               description: "Faire une cure thermale en alsace dans la station thermale de Niederbronn"
   end
   def station_morsbronn
-    set_meta_tags title: "Station thermale de Morsbronn, établissement de cure",
+    set_meta_tags title: "Station thermale de Morsbronn, établissement de cure en Alsace",
               description: "cures thermales présentes dans les vosges du nord d'alsace",
               noindex: true
   end
