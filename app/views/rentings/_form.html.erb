@@ -1,0 +1,32 @@
+<main>
+  <% if params[:action] == "edit" %>
+    <h1>Modifier votre location de vacances</h1>
+  <% else %>
+    <h1>Ajouter votre location de vacances</h1>
+  <% end %>
+  <section class="form-create">
+    <%= simple_form_for @annonce do |f| %>
+      <div class="first">
+        <%= f.input :titre, label: "Titre de l'annonce" %>
+        <%= f.rich_text_area :description %>
+      </div>
+      <div class="second">
+        <%= f.input :address, label: "Adresse de la location" %>
+        <div class="city">
+          <%= f.input :city, label: "Ville" %>
+          <%= f.input :zip_code, label: "Code Postal" %>
+        </div>
+      </div>
+      <div class="third">
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      </div>
+      <div class="third">
+        <%= f.input :website %>
+      </div>
+      <div class="third">
+        <%= f.input :airbnb %>
+      </div>
+      <%= f.button :submit, value: "Confirmer", class: "btn-green large" %>
+    <% end %>
+  </section>
+</main>
