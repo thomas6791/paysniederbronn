@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'rentings/index'
+  get 'rentings/show'
+  get 'rentings/edit'
+  get 'rentings/new'
+  get 'rentings/create'
+  get 'rentings/update'
+  get 'rentings/destroy'
   constraints(subdomain: 'heidelbeere') do
     root to: 'subdomain_rentings#index', as: :sub_hunckler
     #get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
