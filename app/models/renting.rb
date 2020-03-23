@@ -1,2 +1,2 @@
-class Renting < ApplicationRecord
+class Renting < HolidayRenting
 end
