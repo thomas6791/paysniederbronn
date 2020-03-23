@@ -1,0 +1,9 @@
+<h1>Rentings#show</h1>
+<h2><%= @annonce.titre %></h2>
+<%= @annonce.id %>
+<div>
+  <p><%= @annonce.description %></p>
+</div>
+<% @annonce.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>

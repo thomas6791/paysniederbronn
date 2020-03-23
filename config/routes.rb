@@ -39,12 +39,14 @@ Rails.application.routes.draw do
 
     post 'result', to: 'pages#result', as: :result
     post 'taxe-facture', to: 'pages#result_invoice'
+
+    resources :holiday_rentings
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    resources :holiday_rentings do
+    resources :rentings do
       collection do                       # collection => no restaurant id in URL
         get 'gites-heidelbeere'
-        get 'meuble-heidelbeere', to: 'holiday_rentings#meuble_heidelbeere', as: :meuble_heidelbeere
-        get 'studio-heidelbeere', to: 'holiday_rentings#studio_heidelbeere', as: :studio_heidelbeere
+        get 'meuble-heidelbeere', to: 'rentings#meuble_heidelbeere', as: :meuble_heidelbeere
+        get 'studio-heidelbeere', to: 'rentings#studio_heidelbeere', as: :studio_heidelbeere
       end
     end
 
