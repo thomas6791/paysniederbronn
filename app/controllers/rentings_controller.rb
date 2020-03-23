@@ -2,7 +2,7 @@ class RentingsController < ApplicationController
   before_action :set_seo
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
-    @annonces = Renting.all
+    @annonces = Renting.all.where(category:"renting")
   end
 
   def show
