@@ -23,8 +23,6 @@ class LandingPagesController < ApplicationController
     set_meta_tags title: "Produits locaux et supermarché d'Alsace du Nord",
               description: "les produits locaux et supermarché d'Alsace du Nord",
               canonical: "https://www.paysniederbronn.fr/fr/alimentation"
-
-              #noindex: true
   end
   def attraction
     set_meta_tags title: "Parcs d'attraction & aquatiques en et proche de l'Alsace",
@@ -32,8 +30,8 @@ class LandingPagesController < ApplicationController
   end
 
   def cures_thermales
-    set_meta_tags title: "Cure thermale et stations en Alsace",
-              description: "cures thermales présentes dans les vosges du nord d'alsace",
+    set_meta_tags title: "Cure thermale et stations thermales en Alsace",
+              description: "Les établissements thermaux conventionnés proposant des cures en Alsace",
               canonical: "https://www.paysniederbronn.fr/cures-thermales"
   end
   def station_niederbronn
