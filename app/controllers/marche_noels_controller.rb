@@ -3,7 +3,7 @@ class MarcheNoelsController < ApplicationController
   def index
     set_meta_tags title: "Marchés de noel en Alsace",
                 description: "les marchés de noel dans l'ensemble de l'Alsace"
-    @marches = MarcheNoel.all.order(:titre)
+    @marches = MarcheNoel.all.where(category: "marche").order(:titre)
   end
 
   def new
