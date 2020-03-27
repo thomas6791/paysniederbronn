@@ -11,12 +11,6 @@
     <section class="content">
       <p><%= @post.content.html_safe %></p>
     </section>
-    <% if !@post.link_left.blank? && !@post.link_right.blank? %>
-      <section class="linksblog">
-        <%= link_to "#{@left}", "#{@post.link_left}", class: "linkblog left" %>
-        <%= link_to "#{@right}", "#{@post.link_right}", class: "linkblog right" %>
-      </section>
-    <% end %>
     <section class="post-categories">
       <% @post.blog_categories.each do |cat| %>
         <span>#<%= cat.name %></span>
@@ -26,6 +20,12 @@
     <span class="date">
       <%= @post.custom_date.strftime("%d/%m/%y") %>
     </span>
+    <% if !@post.link_left.blank? && !@post.link_right.blank? %>
+      <section class="linksblog">
+        <%= link_to "#{@left}", "#{@post.link_left}", class: "linkblog left" %>
+        <%= link_to "#{@right}", "#{@post.link_right}", class: "linkblog right" %>
+      </section>
+    <% end %>
     <div class="breadcrumb">
       <%= render_breadcrumbs :separator => '<span>/</span>' %>
     </div>
