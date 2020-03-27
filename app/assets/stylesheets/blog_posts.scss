@@ -41,10 +41,10 @@ footer {
     grid-template-areas:  "titre"
                           "breadcrumb"
                           "text"
-                          "links"
                           "category"
                           "author"
-                          "date";
+                          "date"
+                          "links";
     h1 { grid-area: titre; }
     .breadcrumb { grid-area: breadcrumb; }
     .content { grid-area: text;
