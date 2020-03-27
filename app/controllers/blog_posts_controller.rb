@@ -14,8 +14,10 @@ class BlogPostsController < ApplicationController
     add_breadcrumb "#{@url[:action].sub("_"," ").downcase}", "/blog/#{@url[:action].sub("_","-")}" if ["home","index","show","edit","update"].exclude?(@url[:action])
     add_breadcrumb "#{@post.titre}", blog_post_path, title: "retour"
     @author = @post.author_blog
-    @left = BlogPost.find_by_slug(@post.link_left.scan(/blog\/.+/)[0].gsub(/blog\//, '')) != nil ? BlogPost.find_by_slug(@post.link_left.scan(/blog\/.+/)[0].gsub(/blog\//, '')) : "Lire un autre article"
-    @right = BlogPost.find_by_slug(@post.link_right.scan(/blog\/.+/)[0].gsub(/blog\//, '')) != nil ? BlogPost.find_by_slug(@post.link_right.scan(/blog\/.+/)[0].gsub(/blog\//, '')) : "Lire un autre article"
+    if !@post.link_left.blank? && !@post.link_right.blank?
+      @left = BlogPost.find_by_slug(@post.link_left.scan(/blog\/.+/)[0].gsub(/blog\//, '')).titre != nil ? BlogPost.find_by_slug(@post.link_left.scan(/blog\/.+/)[0].gsub(/blog\//, '')) : "Lire un autre article"
+      @right = BlogPost.find_by_slug(@post.link_right.scan(/blog\/.+/)[0].gsub(/blog\//, '')).titre != nil ? BlogPost.find_by_slug(@post.link_right.scan(/blog\/.+/)[0].gsub(/blog\//, '')) : "Lire un autre article"
+    end
     if @post.canonical.blank?
       set_meta_tags canonical: url_for(:only_path => false)
     else
