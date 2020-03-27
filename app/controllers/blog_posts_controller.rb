@@ -15,8 +15,8 @@ class BlogPostsController < ApplicationController
     add_breadcrumb "#{@post.titre}", blog_post_path, title: "retour"
     @author = @post.author_blog
     if !@post.link_left.blank? && !@post.link_right.blank?
-      @left = BlogPost.find_by_slug(@post.link_left.scan(/blog\/.+/)[0].gsub(/blog\//, '')).titre != nil ? BlogPost.find_by_slug(@post.link_left.scan(/blog\/.+/)[0].gsub(/blog\//, '')) : "Lire un autre article"
-      @right = BlogPost.find_by_slug(@post.link_right.scan(/blog\/.+/)[0].gsub(/blog\//, '')).titre != nil ? BlogPost.find_by_slug(@post.link_right.scan(/blog\/.+/)[0].gsub(/blog\//, '')) : "Lire un autre article"
+      @left = BlogPost.find_by_slug(@post.link_left.scan(/blog\/.+/)[0].gsub(/blog\//, '')) != nil ? BlogPost.find_by_slug(@post.link_left.scan(/blog\/.+/)[0].gsub(/blog\//, '')).titre : "Lire un autre article"
+      @right = BlogPost.find_by_slug(@post.link_right.scan(/blog\/.+/)[0].gsub(/blog\//, '')) != nil ? BlogPost.find_by_slug(@post.link_right.scan(/blog\/.+/)[0].gsub(/blog\//, '')).titre : "Lire un autre article"
     end
     if @post.canonical.blank?
       set_meta_tags canonical: url_for(:only_path => false)
