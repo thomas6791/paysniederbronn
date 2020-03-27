@@ -1,9 +1,26 @@
+#blog-layout {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-areas:  "nav"
+                        "main"
+                        "footer";
+}
+.nav {
+  grid-area: nav;
+}
 .blog-css {
+  grid-area: main;
   display: flex;
   max-width: 1224px;
+  width: 100%;
   margin: auto;
   flex-direction: row-reverse;
 }
+footer {
+  grid-area: footer;
+}
+
 .blog {
   min-height: 100vh;
   display: flex;
@@ -15,6 +32,27 @@
   }
   article {
     padding: 0px 20px;
+  }
+  .article {
+    display: grid;
+    height: auto;
+    grid-auto-rows: min-content;
+    width: 100%;
+    grid-template-areas:  "titre"
+                          "breadcrumb"
+                          "text"
+                          "category"
+                          "author"
+                          "date";
+    h1 { grid-area: titre; }
+    .breadcrumb { grid-area: breadcrumb; }
+    .content { grid-area: text;
+      min-height: 80vh;
+    }
+    .post-categories { grid-area: category; }
+    .author { grid-area: author; }
+    .date { grid-area: date;}
+
   }
   .blog-title { font-family: 'Caveat', cursive; }
   aside { width: auto; }

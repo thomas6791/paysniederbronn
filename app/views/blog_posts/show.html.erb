@@ -6,9 +6,6 @@
 <article class="article">
   <header>
     <h1><%= @post.titre %></h1>
-    <div class="breadcrumb">
-      <%= render_breadcrumbs :separator => '<span>/</span>' %>
-    </div>
   </header>
 
     <section class="content">
@@ -19,6 +16,11 @@
         <span>#<%= cat.name %></span>
       <% end %>
     </section>
-    <p><%= @author.first_name %> <%= @author.last_name.capitalize %></p>
-    <%= @post.custom_date.strftime("%d/%m/%y") %>
+    <span class="author"><%= @author.first_name %> <%= @author.last_name.capitalize %></span>
+    <span class="date">
+      <%= @post.custom_date.strftime("%d/%m/%y") %>
+    </span>
+    <div class="breadcrumb">
+      <%= render_breadcrumbs :separator => '<span>/</span>' %>
+    </div>
 </article>
