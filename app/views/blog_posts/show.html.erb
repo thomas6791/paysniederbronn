@@ -16,10 +16,10 @@
         <span>#<%= cat.name %></span>
       <% end %>
     </section>
-    <p class="author"><%= @author.first_name %> <%= @author.last_name.capitalize %></p>
-    <p class="date">
+    <span class="author"><%= @author.first_name %> <%= @author.last_name.capitalize %></span>
+    <span class="date">
       <%= @post.custom_date.strftime("%d/%m/%y") %>
-    </p>
+    </span>
     <div class="breadcrumb">
       <%= render_breadcrumbs :separator => '<span>/</span>' %>
     </div>

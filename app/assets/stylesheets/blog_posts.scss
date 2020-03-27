@@ -35,7 +35,8 @@ footer {
   }
   .article {
     display: grid;
-    grid-template-columns: 1fr;
+    height: auto;
+    grid-auto-rows: min-content;
     width: 100%;
     grid-template-areas:  "titre"
                           "breadcrumb"
@@ -45,7 +46,9 @@ footer {
                           "date";
     h1 { grid-area: titre; }
     .breadcrumb { grid-area: breadcrumb; }
-    .content { grid-area: text; }
+    .content { grid-area: text;
+      min-height: 80vh;
+    }
     .post-categories { grid-area: category; }
     .author { grid-area: author; }
     .date { grid-area: date;}
