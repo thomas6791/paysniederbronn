@@ -41,6 +41,7 @@ footer {
     grid-template-areas:  "titre"
                           "breadcrumb"
                           "text"
+                          "links"
                           "category"
                           "author"
                           "date";
@@ -116,6 +117,35 @@ footer {
     li:hover {}
   }
 
+}
+.linksblog {
+  display: flex;
+   grid-area: links;
+}
+.linkblog {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  list-style-type: none;
+  margin: 0px;
+  border-top: solid 0.5px #ECEBEB;
+  height: 70px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border: none;
+  }
+  a { text-decoration: none; }
+  &.left { border-left: solid 4px lightseagreen; }
+  &.right { border-right: solid 4px lightseagreen; }
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

@@ -14,7 +14,11 @@ class BlogPostsController < ApplicationController
     add_breadcrumb "#{@url[:action].sub("_"," ").downcase}", "/blog/#{@url[:action].sub("_","-")}" if ["home","index","show","edit","update"].exclude?(@url[:action])
     add_breadcrumb "#{@post.titre}", blog_post_path, title: "retour"
     @author = @post.author_blog
-    set_meta_tags canonical: url_for(:only_path => false)
+    if @post.canonical.blank?
+      set_meta_tags canonical: url_for(:only_path => false)
+    else
+      set_meta_tags canonical: @post.canonical
+    end
   end
 
   def new
@@ -87,7 +91,7 @@ class BlogPostsController < ApplicationController
 
   private
   def blog_params
-    params.require(:blog_post).permit(:title, :description, :published, :titre, :content, :summary, :copyright, :author_blog_id, :custom_date, photos: [], blog_category_ids:[])
+    params.require(:blog_post).permit(:title, :description, :published, :titre, :content, :summary, :copyright, :canonical, :link_left, :link_right, :author_blog_id, :custom_date, photos: [], blog_category_ids:[])
   end
 
   def set_page

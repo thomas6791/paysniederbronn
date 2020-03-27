@@ -11,6 +11,12 @@
     <section class="content">
       <p><%= @post.content.html_safe %></p>
     </section>
+    <% if !@post.link_left.blank? && !@post.link_right.blank? %>
+      <section class="linksblog">
+        <%= link_to "gauche", "#{@post.link_left}", target: "_blank", class: "linkblog left" %>
+        <%= link_to "droite", "#{@post.link_right}", target: "_blank", class: "linkblog right" %>
+      </section>
+    <% end %>
     <section class="post-categories">
       <% @post.blog_categories.each do |cat| %>
         <span>#<%= cat.name %></span>

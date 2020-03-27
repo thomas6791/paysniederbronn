@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_23_154815) do
+ActiveRecord::Schema.define(version: 2020_03_27_120805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_03_23_154815) do
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
+    t.integer "position", default: 0
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -96,6 +97,9 @@ ActiveRecord::Schema.define(version: 2020_03_23_154815) do
     t.text "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "canonical"
+    t.string "link_left"
+    t.string "link_right"
     t.index ["author_blog_id"], name: "index_blog_posts_on_author_blog_id"
   end
 
