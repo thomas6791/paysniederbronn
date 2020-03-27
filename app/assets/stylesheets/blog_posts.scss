@@ -20,6 +20,7 @@
 footer {
   grid-area: footer;
 }
+
 .blog {
   min-height: 100vh;
   display: flex;
@@ -31,6 +32,24 @@ footer {
   }
   article {
     padding: 0px 20px;
+  }
+  .article {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    grid-template-areas:  "titre"
+                          "breadcrumb"
+                          "text"
+                          "category"
+                          "author"
+                          "date";
+    h1 { grid-area: titre; }
+    .breadcrumb { grid-area: breadcrumb; }
+    .content { grid-area: text; }
+    .post-categories { grid-area: category; }
+    .author { grid-area: author; }
+    .date { grid-area: date;}
+
   }
   .blog-title { font-family: 'Caveat', cursive; }
   aside { width: auto; }
