@@ -2,7 +2,8 @@ class LandingPagesController < ApplicationController
   before_action :set_articles
   def ligne_maginot_alsace
     set_meta_tags title: "La ligne maginot en alsace du nord",
-              description: "la ligne maginot, ouvrages, bunkers présents en alsace du nord"
+              description: "la ligne maginot, ouvrages, bunkers présents en alsace du nord",
+              canonical: "https://www.paysniederbronn.fr/fr/ligne-maginot-alsace"
   end
   def chateaux_forts
     set_meta_tags title: "Les chateaux forts en alsace des vosges du nord",
@@ -26,7 +27,8 @@ class LandingPagesController < ApplicationController
   end
   def attraction
     set_meta_tags title: "Parcs d'attraction & aquatiques en et proche de l'Alsace",
-              description: "Europapark, Rulantica, Didiland ou encore BadeParadise, autant de parcs à thèmes où il est facile de s'y amuser"
+              description: "Europapark, Rulantica, Didiland ou encore BadeParadise, autant de parcs à thèmes où il est facile de s'y amuser",
+              canonical: "https://www.paysniederbronn.fr/fr/parcs-attractions"
   end
 
   def cures_thermales
@@ -36,7 +38,8 @@ class LandingPagesController < ApplicationController
   end
   def station_niederbronn
     set_meta_tags title: "Station thermale de Niederbronn, établissement de cure en Alsace",
-              description: "Faire une cure thermale en alsace dans la station thermale de Niederbronn"
+              description: "Faire une cure thermale en alsace dans la station thermale de Niederbronn",
+              canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-niederbronn"
   end
   def station_morsbronn
     set_meta_tags title: "Station thermale de Morsbronn, établissement de cure en Alsace",

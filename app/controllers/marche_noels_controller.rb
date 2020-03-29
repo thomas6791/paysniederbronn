@@ -2,7 +2,8 @@ class MarcheNoelsController < ApplicationController
 
   def index
     set_meta_tags title: "Marchés de noel en Alsace",
-                description: "les marchés de noel dans l'ensemble de l'Alsace"
+                description: "les marchés de noel dans l'ensemble de l'Alsace",
+                canonical: "https://www.paysniederbronn.fr/fr/marches-noel"
     @marches = MarcheNoel.all.where(category: "marche").order(:titre)
   end
 
