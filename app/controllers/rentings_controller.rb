@@ -6,7 +6,7 @@ class RentingsController < ApplicationController
   end
 
   def show
-    @dates_renting = helpers.airbnb_dates(@annonce.airbnb)
+    @dates_renting = helpers.airbnb_dates(@annonce.airbnb) if !@annonce.airbnb.blank?
   end
 
   def new
