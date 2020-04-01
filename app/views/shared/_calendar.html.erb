@@ -1,0 +1,10 @@
+<h2>Disponibilités</h2>
+<%= month_calendar attribute: :start_time, end_attribute: :end_date do |date| %>
+  <span class="date" data-day=<%= date %>><%= date.day %></span>
+  <% @dates_renting.each do |date_day| %>
+    <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
+      <span class="blocked"></span>
+    <% end %>
+  <% end %>
+<% end %>
+<span id="today" data-today=<%= DateTime.now.to_date %>></span>

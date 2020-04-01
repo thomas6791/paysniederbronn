@@ -1,5 +1,5 @@
-<h1>Rentings#show</h1>
-<h2><%= @annonce.titre %></h2>
+<main>
+<h1><%= @annonce.titre %></h1>
 <%= @annonce.id %>
 <div>
   <p><%= @annonce.description %></p>
@@ -7,3 +7,6 @@
 <% @annonce.photos.each do |photo| %>
   <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
+<%= render "shared/calendar" %>
+</main>
+<%= javascript_pack_tag "blockedDates" %>
