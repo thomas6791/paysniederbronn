@@ -9,7 +9,7 @@
   </header>
 
   <section class="content">
-    <p><%= @post.content.html_safe %></p>
+    <%= @post.content.html_safe %>
   </section>
   <section class="post-categories">
     <% @post.blog_categories.each do |cat| %>
