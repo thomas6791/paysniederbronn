@@ -48,6 +48,16 @@ class PagesController < ApplicationController
     end
   end
 
+  def result
+    amount = params[:taxe_sejour][:amount].to_f
+    days = params[:taxe_sejour][:days].to_f
+    people = params[:taxe_sejour][:people].to_f
+    minors = params[:taxe_sejour][:minors].to_f
+    town = "niederbronn"
+    @taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
+    redirect_to simulateur_path(results: [prices: @taxe_sejour.price_ratings, amount: @taxe_sejour.amount, days: @taxe_sejour.days, people: @taxe_sejour.people, minors: @taxe_sejour.minors, town: @taxe_sejour.town ])
+  end
+
   def taxe_invoice
     if params[:result_invoice].present?
       datas = params[:result_invoice][0]
@@ -88,16 +98,6 @@ class PagesController < ApplicationController
 
     @taxe_sejour = TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, datas[:town].downcase, new_array.sum).price_ratings
     redirect_to taxe_invoice_path(result_invoice: [taxes: @taxe_sejour, amount: datas[:amount], days: datas[:days], people: datas[:people], minors: datas[:minors], rating: datas[:rating], options: options_hash ])
-  end
-
-  def result
-    amount = params[:taxe_sejour][:amount].to_f
-    days = params[:taxe_sejour][:days].to_f
-    people = params[:taxe_sejour][:people].to_f
-    minors = params[:taxe_sejour][:minors].to_f
-    town = "niederbronn"
-    @taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
-    redirect_to simulateur_path(results: [prices: @taxe_sejour.price_ratings, amount: @taxe_sejour.amount, days: @taxe_sejour.days, people: @taxe_sejour.people, minors: @taxe_sejour.minors, town: @taxe_sejour.town ])
   end
 
   def set_seo
