@@ -5,13 +5,17 @@
       <%= f.input :town, collection: [ "Niederbronn", "Morsbronn" ], selected: "Niederbronn", required: false, label: "Communauté de commune" %>
       <h3>Etablissement</h3>
       <%= f.input :rating, :input_html => { :type => "string" }, collection: [ "non classé", "1", "2", "3", "4", "5" ], selected: "Niederbronn", required: false, label: "Classement en étoile" %>
-      <%= f.input :renting_name, :input_html => {:type => "string" }, label: "Nom de l'établissement", required: false %>
-      <%= f.input :renting_address, :input_html => {:type => "string" }, label: "Adresse de l'établissement", required: false %>
+      <%= f.input :renting_name, :input_html => {:type => "string" }, label: "Nom de l'établissement :", required: false %>
+      <%= f.input :renting_address, :input_html => {:type => "string" }, label: "Adresse de l'établissement :", required: false %>
+      <%= f.input :renting_zipcode, :input_html => {:type => "string" }, label: "Code Postal :", required: false %>
+      <%= f.input :renting_town, :input_html => {:type => "string" }, label: "Commune :", required: false %>
       <h3>Client</h3>
-      <%= f.input :client_name, :input_html => {:type => "string" }, label: "Nom du client", required: false %>
-      <%= f.input :client_address, :input_html => {:type => "string" }, label: "Adresse du client", required: false %>
+      <%= f.input :client_name, :input_html => {:type => "string" }, label: "Nom du client :", required: false %>
+      <%= f.input :client_address, :input_html => {:type => "string" }, label: "Adresse du client :", required: false %>
+      <%= f.input :client_zipcode, :input_html => {:type => "string" }, label: "Code Postal :", required: false %>
+      <%= f.input :client_town, :input_html => {:type => "string" }, label: "Commune :", required: false %>
       <h3>Séjour</h3>
-      <%= f.input :invoice_number, :input_html => { type: "text" }, label: "N° de Facture", required: false %>
+      <%= f.input :invoice_number, :input_html => { type: "text" }, label: "N° de Facture :", required: false %>
       <h4>Dates du séjour</h4>
       <%= f.input :start_date, as: :date, html5: true, label: "Date de début", required: false %>
       <%= f.input :end_date, as: :date, html5: true, label: "Date de fin", required: false %>

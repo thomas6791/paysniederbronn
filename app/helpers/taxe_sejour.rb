@@ -1,6 +1,6 @@
 class TaxeSejour
-  attr_reader :amount, :days, :people, :minors, :town, :price_ratings, :options, :client_name, :client_address, :invoice_number, :renting_name, :renting_address, :start_date, :end_date, :reglement
-  def initialize(amount, days, people, minors, town, options = 0, client_name = "", client_address = "", invoice_number = "", renting_name = "", renting_address = "", start_date = "", end_date = "", reglement = "")
+  attr_reader :amount, :days, :people, :minors, :town, :price_ratings, :options, :client_name, :client_address, :invoice_number, :renting_name, :renting_address, :start_date, :end_date, :reglement, :zipcode, :renting_town, :client_zipcode, :client_town
+  def initialize(amount, days, people, minors, town, options = 0, client_name = "", client_address = "", invoice_number = "", renting_name = "", renting_address = "", start_date = "", end_date = "", reglement = "", zipcode = "", renting_town = "", client_zipcode = "", client_town = "")
     @amount = amount
     @days = days
     @people = people
@@ -11,9 +11,13 @@ class TaxeSejour
     @options = options
     @client_name = client_name
     @client_address = client_address
+    @client_zipcode = client_zipcode
+    @client_town = client_town
     @invoice_number = invoice_number
     @renting_name = renting_name
     @renting_address = renting_address
+    @renting_zipcode = zipcode
+    @renting_town = renting_town
     @start_date = start_date
     @end_date = end_date
     @reglement = reglement
