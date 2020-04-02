@@ -3,7 +3,19 @@
   <section class="calcul">
     <%= simple_form_for :taxe_sejour, :url => taxe_facture_path, :method => :post do |f| %>
       <%= f.input :town, collection: [ "Niederbronn", "Morsbronn" ], selected: "Niederbronn", required: false, label: "Communauté de commune" %>
+      <h3>Etablissement</h3>
       <%= f.input :rating, :input_html => { :type => "string" }, collection: [ "non classé", "1", "2", "3", "4", "5" ], selected: "Niederbronn", required: false, label: "Classement en étoile" %>
+      <%= f.input :renting_name, :input_html => {:type => "string" }, label: "Nom de l'établissement", required: false %>
+      <%= f.input :renting_address, :input_html => {:type => "string" }, label: "Adresse de l'établissement", required: false %>
+      <h3>Client</h3>
+      <%= f.input :client_name, :input_html => {:type => "string" }, label: "Nom du client", required: false %>
+      <%= f.input :client_address, :input_html => {:type => "string" }, label: "Adresse du client", required: false %>
+      <h3>Séjour</h3>
+      <%= f.input :invoice_number, :input_html => { type: "text" }, label: "N° de Facture", required: false %>
+      <h4>Dates du séjour</h4>
+      <%= f.input :start_date, as: :date, html5: true, label: "Date de début", required: false %>
+      <%= f.input :end_date, as: :date, html5: true, label: "Date de fin", required: false %>
+      <h4>Descriptif du séjour</h4>
       <%= f.input :amount, :input_html => { :type => "number" }, label: "Montant total du séjour :", :required => false %>
       <%= f.input :days, :input_html => { :type => "number" }, label: "Durée du séjour :", :required => false %>
       <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
