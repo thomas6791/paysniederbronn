@@ -1,6 +1,6 @@
 class TaxeSejour
-  attr_reader :amount, :days, :people, :minors, :town, :price_ratings, :options, :date, :client_name, :client_address, :invoice_number, :renting_name, :renting_address, :start_date, :end_date
-  def initialize(amount, days, people, minors, town, options = 0, date = "", client_name = "", client_adress = "", invoice_number = "", renting_name = "", renting_address = "", start_date = "", end_date = "", regelement)
+  attr_reader :amount, :days, :people, :minors, :town, :price_ratings, :options, :client_name, :client_address, :invoice_number, :renting_name, :renting_address, :start_date, :end_date, :reglement
+  def initialize(amount, days, people, minors, town, options = 0, client_name = "", client_address = "", invoice_number = "", renting_name = "", renting_address = "", start_date = "", end_date = "", reglement = "")
     @amount = amount
     @days = days
     @people = people
@@ -9,7 +9,6 @@ class TaxeSejour
     @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes][@town]
     @price_ratings = []
     @options = options
-    @date = date
     @client_name = client_name
     @client_address = client_address
     @invoice_number = invoice_number
@@ -17,7 +16,7 @@ class TaxeSejour
     @renting_address = renting_address
     @start_date = start_date
     @end_date = end_date
-    @regelement = regelement
+    @reglement = reglement
   end
   def people_pay
     return @people - @minors
