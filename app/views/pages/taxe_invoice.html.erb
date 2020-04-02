@@ -31,7 +31,8 @@
         </div>
       </span>
       <span class="far fa-plus-square" style="font-size: 1.5em;"></span>
-      <%= f.button :submit, value: "Calculer", class: "btn-green" %>
+      <%= f.input :reglement, collection: [ "Espèces", "Chèque", "Virement", "Chèques Vacance" ], selected: "Niederbronn", required: false, label: "Mode de règlement" %>
+      <%= f.button :submit, value: "Créer la facture", class: "btn-green" %>
       <h2>Créer une facture de taxe de séjour | <%= Time.now.year %></h2>
     <% end  %>
   </section>
