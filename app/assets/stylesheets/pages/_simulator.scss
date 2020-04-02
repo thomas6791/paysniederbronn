@@ -37,7 +37,7 @@
   }
 }
 .invoice { min-height: 100vh; }
-.invoice {
+.invoice, .invoice.taxe {
   .inline {
     div, input { margin: 0px; }
     input {
@@ -54,6 +54,7 @@
   }
   label { font-weight: inherit; }
 }
+.invoice.taxe { input { text-align: right; } }
 #taxe-invoice {
   display: flex;
   justify-content: center;
