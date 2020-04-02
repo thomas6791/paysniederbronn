@@ -54,7 +54,9 @@
   }
   label { font-weight: inherit; }
 }
-.invoice.taxe { input { text-align: right; } }
+.invoice.taxe { input { text-align: right; }
+  .btn.btn-green { text-align: center; }
+}
 #taxe-invoice {
   display: flex;
   justify-content: center;
