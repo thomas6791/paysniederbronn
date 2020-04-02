@@ -1,9 +1,25 @@
-<main class="invoice">
+<main class="invoice taxe">
   <h1>Créer une facture de taxe de séjour pour meublé de tourisme</h1>
   <section class="calcul">
     <%= simple_form_for :taxe_sejour, :url => taxe_facture_path, :method => :post do |f| %>
       <%= f.input :town, collection: [ "Niederbronn", "Morsbronn" ], selected: "Niederbronn", required: false, label: "Communauté de commune" %>
+      <h3>Etablissement</h3>
       <%= f.input :rating, :input_html => { :type => "string" }, collection: [ "non classé", "1", "2", "3", "4", "5" ], selected: "Niederbronn", required: false, label: "Classement en étoile" %>
+      <%= f.input :renting_name, :input_html => {:type => "string" }, label: "Nom de l'établissement :", required: false %>
+      <%= f.input :renting_address, :input_html => {:type => "string" }, label: "Adresse de l'établissement :", required: false %>
+      <%= f.input :renting_zipcode, :input_html => {:type => "string" }, label: "Code Postal :", required: false %>
+      <%= f.input :renting_town, :input_html => {:type => "string" }, label: "Commune :", required: false %>
+      <h3>Client</h3>
+      <%= f.input :client_name, :input_html => {:type => "string" }, label: "Nom du client :", required: false %>
+      <%= f.input :client_address, :input_html => {:type => "string" }, label: "Adresse du client :", required: false %>
+      <%= f.input :client_zipcode, :input_html => {:type => "string" }, label: "Code Postal :", required: false %>
+      <%= f.input :client_town, :input_html => {:type => "string" }, label: "Commune :", required: false %>
+      <h3>Séjour</h3>
+      <%= f.input :invoice_number, :input_html => { type: "text" }, label: "N° de Facture :", required: false %>
+      <h4>Dates du séjour</h4>
+      <%= f.input :start_date, as: :date, html5: true, label: "Date de début", required: false %>
+      <%= f.input :end_date, as: :date, html5: true, label: "Date de fin", required: false %>
+      <h4>Descriptif du séjour</h4>
       <%= f.input :amount, :input_html => { :type => "number" }, label: "Montant total du séjour :", :required => false %>
       <%= f.input :days, :input_html => { :type => "number" }, label: "Durée du séjour :", :required => false %>
       <%= f.input :people, :input_html => { :type => "number" }, label: "Total personnes :", :required => false %>
@@ -19,7 +35,8 @@
         </div>
       </span>
       <span class="far fa-plus-square" style="font-size: 1.5em;"></span>
-      <%= f.button :submit, value: "Calculer", class: "btn-green" %>
+      <%= f.input :reglement, collection: [ "Espèces", "Chèque", "Virement", "Chèques Vacance" ], selected: "Niederbronn", required: false, label: "Mode de règlement" %>
+      <%= f.button :submit, value: "Créer une facture", class: "btn-green" %>
       <h2>Créer une facture de taxe de séjour | <%= Time.now.year %></h2>
     <% end  %>
   </section>
@@ -28,7 +45,22 @@
 
   <section id="taxe-invoice">
     <div id="facture">
-      <h2>Facture</h2>
+      <div class="coordonnees">
+        <div class="etablishment">
+          <p>Etablissement : <%= @datas[:renting_name]  if !@datas[:renting_name].blank? %></p>
+          <p>Adresse: <%= @datas[:renting_address] if !@datas[:renting_address].blank? %></p>
+          <p><%= @datas[:renting_zipcode] if !@datas[:renting_zipcode].blank? %></p>
+          <p><%= @datas[:renting_town] %></p>
+        </div>
+        <div class="customer">
+          <p>Nom: <%= @datas[:client_name] if !@datas[:client_name].blank? %></p>
+          <p>Adresse: <%= @datas[:client_address] if !@datas[:client_address].blank? %></p>
+          <p><%= @datas[:client_zipcode] if !@datas[:client_zipcode].blank? %></p>
+          <p><%= @datas[:client_town] if !@datas[:client_town].blank? %></p>
+        </div>
+      </div>
+      <p class="" style="text-align: right; margin-top: 1.5em;"><%= Time.now.strftime("%d/%m/%Y") %></p>
+      <h2>Facture n° <%= @datas[:invoice_number] if !@datas[:invoice_number].blank? %></h2>
       <div class="details">
         <div>
           <p>Montant du séjour :</p><p><%= sprintf("%.2f",@amount.to_f) %> €</p>
@@ -38,7 +70,7 @@
             <p>Options lors du séjour:</p>
             <ul>
               <% @options.each do |key, value| %>
-                <li><%= key.capitalize %>: <%= sprintf("%.2f",value.to_f) %> €</li>
+                <li>- <%= key.capitalize %>: <span class="price-option"><%= sprintf("%.2f",value.to_f) %> €</span></li>
               <% end %>
             </ul>
           </div>
@@ -63,9 +95,14 @@
         <div>
           <p>Détail du calcul : <%= @single_tax %> € x <%= @people.to_i - @minors.to_i %> (pers. assujetties) x <%= @days %> (jours)</p>
         </div>
+        <br>
         <div class="amount-taxe">
           <p>Montant total de la taxe de séjour à verser :</p><p><b><%= sprintf("%.2f", @taxe.to_f) %> €</b></p>
         </div>
+        <div class="amount-taxe total">
+          <p>Montant Total du séjour :</p><p><b><%= sprintf("%.2f", @total_amount.to_f) %> €</b></p>
+        </div>
+        <p style="text-align: right; margin: 2em 0;">Règlement en <%= @datas[:reglement] if !@datas[:reglement].blank? %></p>
         <%= link_to 'Imprimer', 'your_link_here', :onclick => 'window.print();return false;', class: '' %>
       </div>
     </div>

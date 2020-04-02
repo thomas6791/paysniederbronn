@@ -48,6 +48,16 @@ class PagesController < ApplicationController
     end
   end
 
+  def result
+    amount = params[:taxe_sejour][:amount].to_f
+    days = params[:taxe_sejour][:days].to_f
+    people = params[:taxe_sejour][:people].to_f
+    minors = params[:taxe_sejour][:minors].to_f
+    town = "niederbronn"
+    @taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
+    redirect_to simulateur_path(results: [prices: @taxe_sejour.price_ratings, amount: @taxe_sejour.amount, days: @taxe_sejour.days, people: @taxe_sejour.people, minors: @taxe_sejour.minors, town: @taxe_sejour.town ])
+  end
+
   def taxe_invoice
     if params[:result_invoice].present?
       datas = params[:result_invoice][0]
@@ -64,6 +74,9 @@ class PagesController < ApplicationController
         @taxe = datas[:taxes][datas[:rating].to_i]
       end
       @single_tax = sprintf('%.2f', @taxe.to_f / @days.to_i / (@people.to_i - @minors.to_i))
+
+      @total_amount = @amount.to_f + @taxe.to_f
+      @datas = params[:result_invoice][0]
     end
   end
 
@@ -87,17 +100,27 @@ class PagesController < ApplicationController
     options_hash = Hash[name_options_array.zip new_array]
 
     @taxe_sejour = TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, datas[:town].downcase, new_array.sum).price_ratings
-    redirect_to taxe_invoice_path(result_invoice: [taxes: @taxe_sejour, amount: datas[:amount], days: datas[:days], people: datas[:people], minors: datas[:minors], rating: datas[:rating], options: options_hash ])
-  end
-
-  def result
-    amount = params[:taxe_sejour][:amount].to_f
-    days = params[:taxe_sejour][:days].to_f
-    people = params[:taxe_sejour][:people].to_f
-    minors = params[:taxe_sejour][:minors].to_f
-    town = "niederbronn"
-    @taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
-    redirect_to simulateur_path(results: [prices: @taxe_sejour.price_ratings, amount: @taxe_sejour.amount, days: @taxe_sejour.days, people: @taxe_sejour.people, minors: @taxe_sejour.minors, town: @taxe_sejour.town ])
+    redirect_to taxe_invoice_path(result_invoice: [
+      taxes: @taxe_sejour,
+      amount: datas[:amount],
+      days: datas[:days],
+      people: datas[:people],
+      minors: datas[:minors],
+      rating: datas[:rating],
+      options: options_hash,
+      renting_name: datas[:renting_name],
+      renting_address: datas[:renting_address],
+      renting_zipcode: datas[:renting_zipcode],
+      renting_town: datas[:renting_town],
+      client_name: datas[:client_name],
+      client_address: datas[:client_address],
+      client_zipcode: datas[:client_zipcode],
+      client_town: datas[:client_town],
+      invoice_number: datas[:invoice_number],
+      start_date: datas[:start_date],
+      end_date: datas[:end_date],
+      reglement: datas[:reglement]
+    ])
   end
 
   def set_seo
