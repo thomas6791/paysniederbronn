@@ -55,7 +55,7 @@
             <p>Options lors du séjour:</p>
             <ul>
               <% @options.each do |key, value| %>
-                <li><%= key.capitalize %>: <%= sprintf("%.2f",value.to_f) %> €</li>
+                <li>- <%= key.capitalize %>: <span class="price-option"><%= sprintf("%.2f",value.to_f) %> €</span></li>
               <% end %>
             </ul>
           </div>
@@ -80,8 +80,12 @@
         <div>
           <p>Détail du calcul : <%= @single_tax %> € x <%= @people.to_i - @minors.to_i %> (pers. assujetties) x <%= @days %> (jours)</p>
         </div>
+        <br>
         <div class="amount-taxe">
           <p>Montant total de la taxe de séjour à verser :</p><p><b><%= sprintf("%.2f", @taxe.to_f) %> €</b></p>
+        </div>
+        <div class="total">
+          <p>Montant Total du séjour: <%= @amount_total %></p>
         </div>
         <%= link_to 'Imprimer', 'your_link_here', :onclick => 'window.print();return false;', class: '' %>
       </div>

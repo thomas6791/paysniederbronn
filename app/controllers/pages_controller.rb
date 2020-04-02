@@ -74,6 +74,7 @@ class PagesController < ApplicationController
         @taxe = datas[:taxes][datas[:rating].to_i]
       end
       @single_tax = sprintf('%.2f', @taxe.to_f / @days.to_i / (@people.to_i - @minors.to_i))
+      @total_amount = @amount + @taxe
     end
   end
 
@@ -97,7 +98,6 @@ class PagesController < ApplicationController
     options_hash = Hash[name_options_array.zip new_array]
 
     @taxe_sejour = TaxeSejour.new(datas[:amount].to_f, datas[:days].to_f, datas[:people].to_f, datas[:minors].to_f, datas[:town].downcase, new_array.sum).price_ratings
-    fail
     redirect_to taxe_invoice_path(result_invoice: [taxes: @taxe_sejour, amount: datas[:amount], days: datas[:days], people: datas[:people], minors: datas[:minors], rating: datas[:rating], options: options_hash ])
   end
 
