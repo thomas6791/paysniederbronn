@@ -57,6 +57,19 @@
 .invoice.taxe { input { text-align: right; }
   .btn.btn-green { text-align: center; }
   .far.fa-plus-square { margin-bottom: 2em; }
+
+  .input.string.optional {
+    position: relative;
+    .far.fa-minus-square {
+      font-size: 1.5em;
+      position: absolute;
+      right: 0px;
+      color: lightgrey;
+      &:hover {
+        color: lightcoral;
+      }
+    }
+  }
 }
 #taxe-invoice {
   display: flex;
