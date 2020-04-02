@@ -45,7 +45,22 @@
 
   <section id="taxe-invoice">
     <div id="facture">
-      <h2>Facture n° <%= @datas[:invoice_number] %></h2>
+      <div class="coordonnees">
+        <div class="etablishment">
+          <p>Etablissement : <%= @datas[:renting_name]  if !@datas[:renting_name].blank? %></p>
+          <p>Adresse: <%= @datas[:renting_address] if !@datas[:renting_address].blank? %></p>
+          <p><%= @datas[:renting_zipcode] if !@datas[:renting_zipcode].blank? %></p>
+          <p><%= @datas[:renting_town] %></p>
+        </div>
+        <div class="customer">
+          <p>Nom: <%= @datas[:client_name] if !@datas[:client_name].blank? %></p>
+          <p>Adresse: <%= @datas[:client_address] if !@datas[:client_address].blank? %></p>
+          <p><%= @datas[:client_zipcode] if !@datas[:client_zipcode].blank? %></p>
+          <p><%= @datas[:client_town] if !@datas[:client_town].blank? %></p>
+        </div>
+      </div>
+      <p class="" style="text-align: right; margin-top: 1.5em;"><%= Time.now.strftime("%d/%m/%Y") %></p>
+      <h2>Facture n° <%= @datas[:invoice_number] if !@datas[:invoice_number].blank? %></h2>
       <div class="details">
         <div>
           <p>Montant du séjour :</p><p><%= sprintf("%.2f",@amount.to_f) %> €</p>
@@ -87,6 +102,7 @@
         <div class="amount-taxe total">
           <p>Montant Total du séjour :</p><p><b><%= sprintf("%.2f", @total_amount.to_f) %> €</b></p>
         </div>
+        <p style="text-align: right; margin: 2em 0;">Règlement en <%= @datas[:reglement] if !@datas[:reglement].blank? %></p>
         <%= link_to 'Imprimer', 'your_link_here', :onclick => 'window.print();return false;', class: '' %>
       </div>
     </div>

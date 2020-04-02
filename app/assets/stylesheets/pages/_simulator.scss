@@ -74,12 +74,19 @@
 #taxe-invoice {
   display: flex;
   justify-content: center;
+  min-width: 1000px;
 }
 #facture {
+  width: 500px;
   h2 { text-align: center; line-height: 3em; }
   padding: 25px 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   border-radius: 3px;
+  .coordonnees {
+    display: flex;
+    justify-content: space-between;
+    .etablishment, .customer { border: solid 1px; padding: 1em; }
+  }
   .details {
     div {
       display: flex;
