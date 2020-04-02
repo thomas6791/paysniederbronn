@@ -45,7 +45,7 @@
 
   <section id="taxe-invoice">
     <div id="facture">
-      <h2>Facture n°</h2>
+      <h2>Facture n° <%= @datas[:invoice_number] %></h2>
       <div class="details">
         <div>
           <p>Montant du séjour :</p><p><%= sprintf("%.2f",@amount.to_f) %> €</p>
@@ -84,8 +84,8 @@
         <div class="amount-taxe">
           <p>Montant total de la taxe de séjour à verser :</p><p><b><%= sprintf("%.2f", @taxe.to_f) %> €</b></p>
         </div>
-        <div class="total">
-          <p>Montant Total du séjour: <%= @amount_total %></p>
+        <div class="amount-taxe total">
+          <p>Montant Total du séjour :</p><p><b><%= sprintf("%.2f", @total_amount.to_f) %> €</b></p>
         </div>
         <%= link_to 'Imprimer', 'your_link_here', :onclick => 'window.print();return false;', class: '' %>
       </div>
