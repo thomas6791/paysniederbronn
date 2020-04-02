@@ -1,5 +1,5 @@
 <main class="invoice taxe">
-  <h1>Créer une facture de taxe de séjour pour meublé de tourisme</h1>
+  <h1>Créer une facture pour meublé de tourisme</h1>
   <section class="calcul">
     <%= simple_form_for :taxe_sejour, :url => taxe_facture_path, :method => :post do |f| %>
       <%= f.input :town, collection: [ "Niederbronn", "Morsbronn" ], selected: "Niederbronn", required: false, label: "Communauté de commune" %>
@@ -37,7 +37,7 @@
       <span class="far fa-plus-square" style="font-size: 1.5em;"></span>
       <%= f.input :reglement, collection: [ "Espèces", "Chèque", "Virement", "Chèques Vacance" ], selected: "Niederbronn", required: false, label: "Mode de règlement" %>
       <%= f.button :submit, value: "Créer une facture", class: "btn-green" %>
-      <h2>Créer une facture de taxe de séjour | <%= Time.now.year %></h2>
+      <h2>Créer une facture | <%= Time.now.year %></h2>
     <% end  %>
   </section>
 
