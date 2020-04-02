@@ -36,7 +36,7 @@
       </span>
       <span class="far fa-plus-square" style="font-size: 1.5em;"></span>
       <%= f.input :reglement, collection: [ "Espèces", "Chèque", "Virement", "Chèques Vacance" ], selected: "Niederbronn", required: false, label: "Mode de règlement" %>
-      <%= f.button :submit, value: "Créer la facture", class: "btn-green" %>
+      <%= f.button :submit, value: "Créer une facture", class: "btn-green" %>
       <h2>Créer une facture de taxe de séjour | <%= Time.now.year %></h2>
     <% end  %>
   </section>
@@ -45,7 +45,7 @@
 
   <section id="taxe-invoice">
     <div id="facture">
-      <h2>Facture</h2>
+      <h2>Facture n°</h2>
       <div class="details">
         <div>
           <p>Montant du séjour :</p><p><%= sprintf("%.2f",@amount.to_f) %> €</p>
