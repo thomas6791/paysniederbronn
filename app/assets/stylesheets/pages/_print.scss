@@ -14,8 +14,10 @@
     #facture {
       box-shadow:none;
       font-size: 1.5em;
-      width: 210mm;
-      height: 297mm;
+      //width: 210mm;
+      //height: 297mm;
+      size: A4;
+      width: 70%;
     }
     a[href]:after { content: none !important; }
     img[src]:after { content: none !important; }
