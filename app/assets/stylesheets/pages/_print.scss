@@ -13,6 +13,9 @@
     }
     #facture {
       box-shadow:none;
+      font-size: 1.5em;
+      width: 210mm;
+      height: 297mm;
     }
     a[href]:after { content: none !important; }
     img[src]:after { content: none !important; }
