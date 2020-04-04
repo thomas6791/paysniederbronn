@@ -10,6 +10,6 @@
 <% if !@annonce.airbnb.blank? %>
   <%= render "shared/calendar" %>
 <% end %>
-<%= render "shared/gallery" %>
+<%= render "shared/gallery", collection: @annonce.photos %>
 </main>
 <%= javascript_pack_tag "blockedDates" %>

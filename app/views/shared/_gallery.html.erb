@@ -2,6 +2,9 @@
   <h3>Row Height and Column Width</h3>
   <p>Row height with value of 180px and column width with value of 280px</p>
   <div class="gg-box dark" id="heightWidth">
+    <% @annonce.photos.each do |photo| %>
+      <%= cl_image_tag photo.key %>
+    <% end %>
     <img src="img/13.jpg">
     <img src="img/14.jpg">
     <img src="img/15.jpg">
