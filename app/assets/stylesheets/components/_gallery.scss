@@ -20,8 +20,11 @@
     border-radius: 5px;
     color: darkgrey;
     &:hover {
-      color: black;
       cursor: pointer;
+      //filter: invert(1);
+      background-color: darkgrey;
+      color: white;
+      border: solid 1px darkgrey;
     }
   }
 }
@@ -153,10 +156,16 @@
     grid-auto-rows: calc(var(--row-height) - 15vh);
     margin: 10px 0;
   }
+  .gg-box img:nth-child(3) {
+    grid-row-end: span 2;
+  }
 }
 
 @media (max-width: 450px) {
   .gg-box {
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+  .gg-box img:nth-child(3) {
+    grid-row-end: span 2;
   }
 }
