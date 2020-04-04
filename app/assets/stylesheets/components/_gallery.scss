@@ -8,6 +8,14 @@
   --row-height: 200px;
   --column-width: 220px;
 }
+.gg-container {
+  position: relative;
+  .more-photos {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+}
 
 .gg-container *[data-theme="dark"] {
   --main-color: #ddd;
@@ -103,6 +111,11 @@
 }
 
 @media (min-width: 478px) {
+  .gg-box img:nth-child(1) {
+    grid-row-end: span 1;
+    grid-column-end: span 1;
+  }
+
   .gg-box img:nth-child(2n):not(:last-of-type) {
     grid-row-end: span 2;
   }
