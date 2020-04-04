@@ -1,0 +1,10 @@
+<div class="gg-container">
+  <div class="gg-box dark" id="heightWidth">
+    <% @annonce.photos.each do |photo| %>
+      <%= cl_image_tag photo.key %>
+    <% end %>
+    <img src="img/13.jpg">
+    <img src="img/14.jpg">
+  </div>
+  <span class="more-photos">voir les photos</span>
+</div>
