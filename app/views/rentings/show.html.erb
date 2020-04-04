@@ -1,15 +1,12 @@
 <main>
+<%= render "shared/gallery", collection: @annonce.photos %>
 <h1><%= @annonce.titre %></h1>
 <%= @annonce.id %>
 <div>
   <p><%= @annonce.description %></p>
 </div>
-<% @annonce.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
 <% if !@annonce.airbnb.blank? %>
   <%= render "shared/calendar" %>
 <% end %>
-<%= render "shared/gallery", collection: @annonce.photos %>
 </main>
 <%= javascript_pack_tag "blockedDates" %>
