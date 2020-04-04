@@ -84,3 +84,5 @@ function gridGallery (options) {
   if (options.rowHeight) selector.style.setProperty('--row-height', options.rowHeight + 'px');
   if (options.columnWidth) selector.style.setProperty('--column-width', options.columnWidth + 'px');
 }
+
+export { gridGallery }
