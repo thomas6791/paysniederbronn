@@ -52,6 +52,13 @@
   width: 100%;
   height: 100%;
   background: var(--img-bg-color);
+  //height: 0px;
+}
+.gg-box > img.visible {
+
+}
+.gg-box > img:not(.visible) {
+  display: none;
 }
 
 .gg-box img:hover {
@@ -74,6 +81,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  visibility: visible;
 }
 
 #gg-screen .gg-image img {
