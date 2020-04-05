@@ -10,23 +10,6 @@
 }
 .gg-container {
   position: relative;
-  .more-photos {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    font-weight: bolder;
-    padding: 5px 10px;
-    border: solid 1px;
-    border-radius: 5px;
-    color: darkgrey;
-    &:hover {
-      cursor: pointer;
-      //filter: invert(1);
-      background-color: darkgrey;
-      color: white;
-      border: solid 1px darkgrey;
-    }
-  }
 }
 
 .gg-container *[data-theme="dark"] {
