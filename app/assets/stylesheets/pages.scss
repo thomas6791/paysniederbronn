@@ -52,6 +52,7 @@ p { font-size: 1em; }
 }
 #tarifs {
   h1, h2, h3 { text-align: center; font-weight: lighter; }
+  h2 { line-height: 2em; }
   h3 { text-align: left; padding: 10px 0px; }
   section {
     display: grid;
@@ -59,14 +60,16 @@ p { font-size: 1em; }
     grid-template-areas:  "one two"
                           "one two"
                           "three three";
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
   }
   section > div {
     display: flex;
     flex-direction: column;
-    border: solid 1px;
     padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     ul { flex-grow: 1; }
   }
   .one {
