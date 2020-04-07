@@ -51,22 +51,23 @@ p { font-size: 1em; }
   min-height: 100vh;
 }
 #tarifs {
-  h1 { color: red; }
-  h2 { text-align: center; }
+  h1, h2, h3 { text-align: center; font-weight: lighter; }
+  h3 { text-align: left; padding: 10px 0px; }
   section {
     display: grid;
     width: 100%;
     grid-template-areas:  "one two"
                           "one two"
                           "three three";
-  grid-template-rows: 2fr;
-  grid-template-columns: 3fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   }
   section > div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     border: solid 1px;
+    padding: 10px;
+    ul { flex-grow: 1; }
   }
   .one {
     grid-area: one;
