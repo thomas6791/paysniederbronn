@@ -135,12 +135,22 @@ span {
   .cards {
     grid-template-columns: 1fr;
   }
+  #tarifs section {
+    grid-template-areas:  "one one"
+                          "two two"
+                          "three three";
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+  #tarifs > section {
+    grid-template-areas:  "one one"
+                          "two two"
+                          "three three";
   }
 }
 
