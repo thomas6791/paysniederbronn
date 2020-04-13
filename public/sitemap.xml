@@ -10,12 +10,12 @@
   <url>
     <loc>https://www.paysniederbronn.fr/en</loc>
     <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.64</priority>
   </url>
   <url>
     <loc>https://www.paysniederbronn.fr/de</loc>
     <lastmod>2019-08-12T20:31:27+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>0.64</priority>
   </url>
   <url>
     <loc>https://www.paysniederbronn.fr/simulateur</loc>
@@ -25,7 +25,7 @@
   <url>
     <loc>https://www.paysniederbronn.fr/blog</loc>
     <lastmod>2019-08-25T20:31:27+00:00</lastmod>
-    <priority>0.80</priority>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://www.paysniederbronn.fr/fr</loc>
@@ -65,6 +65,21 @@
     <loc>
     https://www.paysniederbronn.fr/blog/taxe-de-sejour-2019-dans-l-ensemble-de-l-alsace
     </loc>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.paysniederbronn.fr/blog/qu-est-ce-que-le-thermalisme</loc>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.paysniederbronn.fr/blog/stations-thermales-en-france</loc>
+    <lastmod>2019-08-25T20:31:27+00:00</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.paysniederbronn.fr/blog/stations-thermales-alsace</loc>
     <lastmod>2019-08-25T20:31:27+00:00</lastmod>
     <priority>0.64</priority>
   </url>
