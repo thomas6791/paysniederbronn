@@ -44,7 +44,7 @@ class LandingPagesController < ApplicationController
   def station_morsbronn
     set_meta_tags title: "Station thermale de Morsbronn, établissement de cure en Alsace",
               description: "cures thermales présentes dans les vosges du nord d'alsace",
-              noindex: true
+              canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-morsbronn"
   end
 
   private
