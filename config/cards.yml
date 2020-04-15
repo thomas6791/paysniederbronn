@@ -5,11 +5,11 @@
     :description: Trouver les commerces d'alimentation, boulangeries, supermarchés, marchés et produits du terroir aux alentours
     :link: /fr/alimentation
   - :name: Chemin des châteaux forts d'Alsace
-    :photo: wegelnburg.jpg
+    :photo: #wegelnburg.jpg
     :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
     :link:
   - :name: Visiter Strasbourg
-    :photo: strasbourg.jpg
+    :photo: #strasbourg.jpg
     :description: bonjour
     :link:
   - :name: Le château du Schoeneck
@@ -31,10 +31,10 @@
 
   en:
   - :name: Chemin des châteaux forts d'Alsace
-    :photo: wegelnburg.jpg
+    :photo: #wegelnburg.jpg
     :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
   - :name: Visit Strasbourg
-    :photo: strasbourg.jpg
+    :photo: #strasbourg.jpg
     :description: bonjour
   - :name: Schoeneck Castle
     :photo: schoeneck.jpg
@@ -44,10 +44,10 @@
     :description: casemate neunhoffen
   de:
   - :name: Allemand forts d'Alsace
-    :photo: wegelnburg.jpg
+    :photo: #wegelnburg.jpg
     :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
   - :name: Visit Strasbourg
-    :photo: strasbourg.jpg
+    :photo: #strasbourg.jpg
     :description: bonjour
   - :name: Schoeneck Castle
     :photo: schoeneck.jpg
