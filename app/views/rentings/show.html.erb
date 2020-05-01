@@ -5,6 +5,7 @@
 <div>
   <p><%= @annonce.description %></p>
 </div>
+<h2>Disponibilités</h2>
 <section class="calendars">
   <% if !@annonce.airbnb.blank? %>
     <%= render "shared/calendar" %>
