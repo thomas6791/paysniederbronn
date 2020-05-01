@@ -1,4 +1,3 @@
-<h2>Disponibilités</h2>
 <%= month_calendar attribute: :start_time, end_attribute: :end_date do |date| %>
   <span class="date" data-day=<%= date %>><%= date.day %></span>
   <% @dates_renting.each do |date_day| %>
