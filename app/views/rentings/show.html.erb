@@ -5,8 +5,32 @@
 <div>
   <p><%= @annonce.description %></p>
 </div>
-<% if !@annonce.airbnb.blank? %>
-  <%= render "shared/calendar" %>
+<h2>Disponibilités</h2>
+<section class="calendars">
+  <% if !@annonce.airbnb.blank? %>
+    <%= render "shared/calendar" %>
+
+
+    <%= month_calendar start_date: Date.parse(params[:start_date]).next_month() do |date| %>
+      <span class="date" data-day=<%= date %>><%= date.day %></span>
+      <% @dates_renting.each do |date_day| %>
+        <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
+          <span class="blocked"></span>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <%= month_calendar start_date: Date.parse(params[:start_date]).next_month(2) do |date| %>
+      <span class="date" data-day=<%= date %>><%= date.day %></span>
+      <% @dates_renting.each do |date_day| %>
+        <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
+          <span class="blocked"></span>
+        <% end %>
+      <% end %>
+    <% end %>
+
 <% end %>
+</section>
+
 </main>
 <%= javascript_pack_tag "blockedDates" %>
