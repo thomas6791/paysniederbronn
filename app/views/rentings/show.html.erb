@@ -10,8 +10,13 @@
   <% if !@annonce.airbnb.blank? %>
     <%= render "shared/calendar" %>
 
+    <% if !params[:start_date].nil? %>
+      <% date = Date.parse(params[:start_date]) %>
+    <% else %>
+      <% date = DateTime.now %>
+    <% end %>
 
-    <%= month_calendar start_date: Date.parse(params[:start_date]).next_month() do |date| %>
+    <%= month_calendar start_date: date.next_month() || DateTime.now.next_month do |date| %>
       <span class="date" data-day=<%= date %>><%= date.day %></span>
       <% @dates_renting.each do |date_day| %>
         <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
@@ -20,7 +25,7 @@
       <% end %>
     <% end %>
 
-    <%= month_calendar start_date: Date.parse(params[:start_date]).next_month(2) do |date| %>
+    <%= month_calendar start_date: date.next_month(2) do |date| %>
       <span class="date" data-day=<%= date %>><%= date.day %></span>
       <% @dates_renting.each do |date_day| %>
         <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
@@ -29,7 +34,7 @@
       <% end %>
     <% end %>
 
-<% end %>
+  <% end %>
 </section>
 
 </main>
