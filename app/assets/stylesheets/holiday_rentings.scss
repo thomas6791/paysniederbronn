@@ -4,7 +4,7 @@
 .calendars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 20px;
   .simple-calendar { margin: 0px; }
 }
 // Smallest device

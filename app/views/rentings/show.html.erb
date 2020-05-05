@@ -16,7 +16,7 @@
       <% date = DateTime.now %>
     <% end %>
 
-    <%= month_calendar start_date: date.next_month()do |date| %>
+    <%= month_calendar start_date: date.next_month() do |date| %>
       <span class="date" data-day=<%= date %>><%= date.day %></span>
       <% @dates_renting.each do |date_day| %>
         <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>

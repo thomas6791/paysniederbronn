@@ -4,22 +4,41 @@
   .calendar-heading {
     text-align: center;
   }
+  .calendar-title {
+    font-weight: bold;
+  }
   td {
     text-align: center;
+    //height: 37px;
+    //width: 37px;
+    border: none;
     height: 50px;
-    width: 50px;
+    font-weight: bolder;
+    //padding: 8px;
   }
   .cell-blocked {
-    background-color: #6B6766;
+    //background-color: #6B6766;
     text-decoration: line-through;
     opacity: 0.5;
+    color: grey;
   }
   .today { border: solid 2px $red; }
-  .date {}
+  .date {
+
+  }
   th {
-    background-color: #333333;
-    color: white;
+    //background-color: #333333;
+    background-color: transparent;
+    color: grey;
+    font-weight: 400;
     font-size: 1em;
-    padding: 5px 0px;
+    //padding: 5px 0px;
+    border: none;
+  }
+  tbody > tr > td {
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
   }
 }
