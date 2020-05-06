@@ -8,9 +8,15 @@
 <h2>Disponibilités</h2>
 <% if !params[:start_date].nil? %>
   <% date = Date.parse(params[:start_date]) %>
+  <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
+  <% nexto = date.next_month.beginning_of_month.strftime('%Y-%m-%d') %>
 <% else %>
   <% date = DateTime.now %>
+  <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
+  <% nexto = date.next_month.beginning_of_month.strftime('%Y-%m-%d') %>
 <% end %>
+<a href="/rentings/1-test?start_date=#{prev}">Previous</a>
+<a href="/rentings/1-test?start_date=#{nexto}">Suivant</a>
 <section class="calendars">
   <% if !@annonce.airbnb.blank? %>
     <%= render "shared/calendar" %>
