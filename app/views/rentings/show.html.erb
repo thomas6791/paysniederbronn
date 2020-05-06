@@ -5,7 +5,6 @@
 <div>
   <p><%= @annonce.description %></p>
 </div>
-<h2 id="dispos">Disponibilités</h2>
 <% if !params[:start_date].nil? %>
   <% date = Date.parse(params[:start_date]) %>
   <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
@@ -19,6 +18,7 @@
   <%= link_to renting_path(@annonce, start_date: prev, anchor: "calendar-links") do %>
     <i class="fas fa-chevron-left"></i>
   <% end %>
+  <h2 id="dispos">Disponibilités</h2>
   <%= link_to renting_path(@annonce, start_date: nexto, anchor: "calendar-links") do %>
     <i class="fas fa-chevron-right"></i>
   <% end %>
