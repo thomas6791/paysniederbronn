@@ -6,15 +6,16 @@
   <p><%= @annonce.description %></p>
 </div>
 <h2>Disponibilités</h2>
+<% if !params[:start_date].nil? %>
+  <% date = Date.parse(params[:start_date]) %>
+<% else %>
+  <% date = DateTime.now %>
+<% end %>
 <section class="calendars">
   <% if !@annonce.airbnb.blank? %>
     <%= render "shared/calendar" %>
 
-    <% if !params[:start_date].nil? %>
-      <% date = Date.parse(params[:start_date]) %>
-    <% else %>
-      <% date = DateTime.now %>
-    <% end %>
+
 
     <%= month_calendar start_date: date.next_month() do |date| %>
       <span class="date" data-day=<%= date %>><%= date.day %></span>
