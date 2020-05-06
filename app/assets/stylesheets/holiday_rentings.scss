@@ -39,12 +39,14 @@
       border-radius: 5px;
       padding: 5px;
       .input.date.optional {
+        width: 100%;
         input {
           border: none;
         }
         input::placeholder, #end, #start {
           font-size: 0.8em;
         }
+        &._start { padding-right: 5px; }
         &._end {
           border-left: solid 1px grey;
           padding-left: 5px;
