@@ -1,54 +1,68 @@
 <main>
-<%= render "shared/gallery", collection: @annonce.photos %>
-<h1><%= @annonce.titre %></h1>
-<%= @annonce.id %>
-<div>
-  <p><%= @annonce.description %></p>
-</div>
-<% if !params[:start_date].nil? %>
-  <% date = Date.parse(params[:start_date]) %>
-  <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
-  <% nexto = date.next_month().beginning_of_month.strftime('%Y-%m-%d') %>
-<% else %>
-  <% date = DateTime.now %>
-  <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
-  <% nexto = date.next_month().beginning_of_month.strftime('%Y-%m-%d') %>
-<% end %>
-<aside id="calendar-links">
-  <%= link_to renting_path(@annonce, start_date: prev, anchor: "calendar-links") do %>
-    <i class="fas fa-chevron-left"></i>
-  <% end %>
-  <h2 id="dispos">Disponibilités</h2>
-  <%= link_to renting_path(@annonce, start_date: nexto, anchor: "calendar-links") do %>
-    <i class="fas fa-chevron-right"></i>
-  <% end %>
-</aside>
-<section class="calendars">
-  <% if !@annonce.airbnb.blank? %>
-    <%= render "shared/calendar" %>
-
-
-
-    <%= month_calendar start_date: date.next_month() do |date| %>
-      <span class="date" data-day=<%= date %>><%= date.day %></span>
-      <% @dates_renting.each do |date_day| %>
-        <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
-          <span class="blocked"></span>
+  <%= render "shared/gallery", collection: @annonce.photos %>
+  <article>
+    <h1><%= @annonce.titre %></h1>
+    <section class="holiday">
+      <div class=" holiday description">
+        <%= @annonce.description %>
+      </div>
+      <aside class="holiday form">
+        <p>Tarif semaine: ....€</p>
+        <p>Tarif nuit: ....€</p>
+        <%= simple_form_for "" do |f| %>
+          <div class="dates">
+            <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true %>
+            <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true %>
+          </div>
+          <%= f.button :submit, class: "btn btn-green", value: "Faire une demande" %>
         <% end %>
-      <% end %>
+      </aside>
+    </section>
+    <% if !params[:start_date].nil? %>
+      <% date = Date.parse(params[:start_date]) %>
+      <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
+      <% nexto = date.next_month().beginning_of_month.strftime('%Y-%m-%d') %>
+    <% else %>
+      <% date = DateTime.now %>
+      <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
+      <% nexto = date.next_month().beginning_of_month.strftime('%Y-%m-%d') %>
     <% end %>
+    <aside id="calendar-links">
+      <%= link_to renting_path(@annonce, start_date: prev, anchor: "calendar-links") do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+      <h2 id="dispos">Disponibilités</h2>
+      <%= link_to renting_path(@annonce, start_date: nexto, anchor: "calendar-links") do %>
+        <i class="fas fa-chevron-right"></i>
+      <% end %>
+    </aside>
+    <section class="calendars">
+      <% if !@annonce.airbnb.blank? %>
+        <%= render "shared/calendar" %>
 
-    <%= month_calendar start_date: date.next_month(2).beginning_of_month do |date| %>
-      <span class="date" data-day=<%= date %>><%= date.day %></span>
-      <% @dates_renting.each do |date_day| %>
-        <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
-          <span class="blocked"></span>
+
+
+        <%= month_calendar start_date: date.next_month() do |date| %>
+          <span class="date" data-day=<%= date %>><%= date.day %></span>
+          <% @dates_renting.each do |date_day| %>
+            <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
+              <span class="blocked"></span>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-    <% end %>
 
-  <% end %>
-</section>
+        <%= month_calendar start_date: date.next_month(2).beginning_of_month do |date| %>
+          <span class="date" data-day=<%= date %>><%= date.day %></span>
+          <% @dates_renting.each do |date_day| %>
+            <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
+              <span class="blocked"></span>
+            <% end %>
+          <% end %>
+        <% end %>
+
+      <% end %>
+    </section>
+  </article>
 
 </main>
 <%= javascript_pack_tag "blockedDates" %>
