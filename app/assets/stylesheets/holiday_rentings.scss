@@ -38,11 +38,11 @@
       border: solid 1px grey;
       border-radius: 5px;
       padding: 5px;
-      .input.string.optional {
+      .input.date.optional {
         input {
           border: none;
         }
-        input::placeholder {
+        input::placeholder, #end, #start {
           font-size: 0.8em;
         }
         &._end {
