@@ -7,6 +7,21 @@
   grid-gap: 20px;
   .simple-calendar { margin: 0px; }
 }
+
+.holiday {
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  &.description {
+    border: solid 1px;
+    grid-column: 1 / 3;
+  }
+  &.form {
+    border: solid 1px;
+    grid-column: 3 / 3;
+  }
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .calendars {
