@@ -4,11 +4,11 @@
     <h1><%= @annonce.titre %></h1>
     <section class="holiday">
       <div class=" holiday description">
-        <p><%= @annonce.description %></p>
+        <%= @annonce.description %>
       </div>
       <aside class="holiday form">
-        <p>Tarif semaine:</p>
-        <p>Tarif nuit:</p>
+        <p>Tarif semaine: ....€</p>
+        <p>Tarif nuit: ....€</p>
         <%= simple_form_for "" do |f| %>
           <div class="dates">
             <%= f.input :start, placeholder: "Ajouter une date", label: 'Arrivée', required: false %>
