@@ -40,6 +40,23 @@
     //min-height: 50px;
     //max-width: 50px;
     //max-height: 50px;
+    .date {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: solid 1px transparent;
+      border-radius: 50%;
+      width: 2.2em;
+      height: 2.2em;
+      margin: auto;
+    }
+    &:hover {
+      cursor: pointer;
+      .date {
+        border: solid 1px whitesmoke;
+        background-color: whitesmoke;
+      }
+    }
   }
 }
 .calendar td { height: 100px; width: 14.28%; }
