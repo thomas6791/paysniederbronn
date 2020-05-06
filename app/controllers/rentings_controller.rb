@@ -45,6 +45,9 @@ class RentingsController < ApplicationController
     render "rentings/gites-heidelbeere/#{locale.to_s}.meuble-heidelbeere"
   end
 
+  def contact
+  end
+
   private
 
   def renting_params
