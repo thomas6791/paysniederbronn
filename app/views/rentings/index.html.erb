@@ -23,7 +23,7 @@
             <div class="hide-content">
               <p class="more">En savoir plus</p>
               <div class="content">
-                <p><%= annonce.description %></p>
+                <p><%= annonce.description.to_plain_text.truncate(75) %></p>
                 <span class="link-website"><p>Voir site internet</p></span>
               </div>
             </div>
