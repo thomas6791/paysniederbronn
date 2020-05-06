@@ -43,3 +43,28 @@
   }
 }
 .calendar td { height: 100px; width: 14.28%; }
+#calendar-links {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px whitesmoke;
+  padding: 5px 20px;
+  a {
+    text-decoration: none;
+    border: solid 1px transparent;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      border: solid 1px whitesmoke;
+      border-radius: 50%;
+      background-color: whitesmoke;
+    }
+  }
+}
+.calendar-heading {
+  a { display: none; }
+}
+#dispos { text-align: center; }

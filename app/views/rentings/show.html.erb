@@ -5,18 +5,24 @@
 <div>
   <p><%= @annonce.description %></p>
 </div>
-<h2>Disponibilités</h2>
+<h2 id="dispos">Disponibilités</h2>
 <% if !params[:start_date].nil? %>
   <% date = Date.parse(params[:start_date]) %>
   <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
-  <% nexto = date.next_month.beginning_of_month.strftime('%Y-%m-%d') %>
+  <% nexto = date.next_month().beginning_of_month.strftime('%Y-%m-%d') %>
 <% else %>
   <% date = DateTime.now %>
   <% prev = date.last_month.beginning_of_month.strftime('%Y-%m-%d') %>
-  <% nexto = date.next_month.beginning_of_month.strftime('%Y-%m-%d') %>
+  <% nexto = date.next_month().beginning_of_month.strftime('%Y-%m-%d') %>
 <% end %>
-<a href="/rentings/1-test?start_date=#{prev}">Previous</a>
-<a href="/rentings/1-test?start_date=#{nexto}">Suivant</a>
+<aside id="calendar-links">
+  <%= link_to renting_path(@annonce, start_date: prev, anchor: "dispos") do %>
+    <i class="fas fa-chevron-left"></i>
+  <% end %>
+  <%= link_to renting_path(@annonce, start_date: nexto, anchor: "dispos") do %>
+    <i class="fas fa-chevron-right"></i>
+  <% end %>
+</aside>
 <section class="calendars">
   <% if !@annonce.airbnb.blank? %>
     <%= render "shared/calendar" %>
@@ -32,7 +38,7 @@
       <% end %>
     <% end %>
 
-    <%= month_calendar start_date: date.next_month(2).beginning_of_week do |date| %>
+    <%= month_calendar start_date: date.next_month(3).beginning_of_week do |date| %>
       <span class="date" data-day=<%= date %>><%= date.day %></span>
       <% @dates_renting.each do |date_day| %>
         <% if Date.strptime(date_day) == date && DateTime.parse(date_day) > DateTime.now - 1 %>
