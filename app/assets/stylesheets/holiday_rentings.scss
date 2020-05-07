@@ -30,6 +30,7 @@
     border-radius: 5px;
     grid-column: 3 / 3;
     height: fit-content;
+    height: -moz-max-content;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -62,6 +63,7 @@
     border-radius: 5px;
     padding: 20px;
     height: fit-content;
+    height: -moz-max-content;
     img { height: 1.5em; width: auto; padding-right: 10px; }
     display: flex;
     flex-direction: column;
