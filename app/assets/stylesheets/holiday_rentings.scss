@@ -43,7 +43,7 @@
         input {
           border: none;
         }
-        input::placeholder, #end, #start {
+        input::placeholder, #contact_end, #contact_start {
           font-size: 0.8em;
         }
         &.contact_start { padding-right: 5px; }
