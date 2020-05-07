@@ -2,6 +2,11 @@
   <article>
     <h1>Demande de Réservation</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+    <% !params[:contact][:start].blank? ?  start_date = params[:contact][:start] : start_date = "" %>
+    <% !params[:contact][:end].blank? ? end_date = params[:contact][:end] : end_date = "" %>
+
     <%= simple_form_for :contact, {url: contact_rentings_path, method: "get"} do |f| %>
       <%= f.input :civil, prompt: [ "Mlle" ], collection: [ "Mlle", "Mme", "Mr"], label: "Civilité" %>
       <%= f.input :first_name, as: :string, label: "Prénom" %>
@@ -11,8 +16,8 @@
       <%= f.input :address, as: :string, label: "Adresse" %>
       <%= f.input :CP, as: :string, label: "Code Postal" %>
       <%= f.input :town, as: :string, label: "Ville" %>
-      <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true %>
-      <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true %>
+      <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true, input_html: { value: start_date } %>
+      <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true, input_html: { value: end_date } %>
       <%= f.input :adult, as: :integer, label: "Nbre Adultes" %>
       <%= f.input :kids, as: :integer, label: "Nbre Enfants" %>
       <%= f.input :message, as: :text, label: "Message" %>
