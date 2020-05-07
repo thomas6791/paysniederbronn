@@ -1,16 +1,3 @@
-<h1>Rentings#index</h1>
-<p>Find me in app/views/rentings/index.html.erb</p>
-<ul>
-<% @annonces.each do |annonce| %>
-  <li>
-    <%= annonce.titre %>
-    <%= link_to "voir annonce", holiday_renting_path(annonce) %>
-  </li>
-<% end %>
-</ul>
-<%= link_to 'Gîte Lindauer', sub_lindauer_url %>
-<%= link_to 'Meublés Heidelbeere', sub_hunckler_url %>
-
 <main id="alentours">
   <h1>Se loger</h1>
   <section class="cards">
@@ -34,5 +21,15 @@
     <% end %>
   </section>
 <%= link_to 'ligne maginot', ligne_maginots_path %>
+<ul>
+<% @annonces.each do |annonce| %>
+  <li>
+    <%= annonce.titre %>
+    <%= link_to "voir annonce", holiday_renting_path(annonce) %>
+  </li>
+<% end %>
+</ul>
+<%= link_to 'Gîte Lindauer', sub_lindauer_url %>
+<%= link_to 'Meublés Heidelbeere', sub_hunckler_url %>
 </main>
 
