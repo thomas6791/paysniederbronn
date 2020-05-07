@@ -18,6 +18,11 @@
           <%= f.button :submit, class: "btn btn-green", value: "Faire une demande" %>
         <% end %>
       </aside>
+      <aside class="holiday coordinates">
+        <div><%= image_tag "icons/mob_icon.png"%><p>06XXXXXXXX</p></div>
+        <div><%= image_tag "icons/mail_icon.png"%><p>...@gmail.com</p></div>
+        <div><%= image_tag "icons/world_icon.png"%><p>www.siteinternet.fr</p></div>
+      </aside>
     </section>
     <% if !params[:start_date].nil? %>
       <% date = Date.parse(params[:start_date]) %>
