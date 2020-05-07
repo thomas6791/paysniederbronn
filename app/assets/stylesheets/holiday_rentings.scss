@@ -72,6 +72,15 @@
     div { display: flex; padding: 5px 0px; }
   }
 }
+#send-renting {
+  .input {
+    display: flex;
+    padding: 10px 0px;
+    line-height: 1.5em;
+  }
+  label { min-width: 10em; font-weight: bold; }
+  input, select, textarea { width: 100%; }
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
