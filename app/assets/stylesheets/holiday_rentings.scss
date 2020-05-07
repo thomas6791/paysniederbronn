@@ -12,6 +12,7 @@
   margin-bottom: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: minmax(210px, 200px);
   //grid-auto-rows: minmax(100px, auto);
   grid-template-rows: max-content;
   &.description {
