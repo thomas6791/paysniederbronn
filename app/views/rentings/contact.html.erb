@@ -30,8 +30,8 @@
         <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true, input_html: { value: end_date } %>
       </div>
       <div class="contact long">
-        <%= f.input :adult, as: :integer, label: "Nombre Adultes" %>
-        <%= f.input :kids, as: :integer, label: "Nombre Enfants (-18 ans)" %>
+        <%= f.input :adult, as: :integer, label: "Nombre d'adultes" %>
+        <%= f.input :kids, as: :integer, label: "Nbre d'enfants (-18 ans)" %>
       </div>
       <div class="contact">
         <%= f.input :message, as: :text, label: "Message",:input_html => {:rows => 5} %>

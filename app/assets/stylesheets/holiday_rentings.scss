@@ -99,9 +99,7 @@
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
-  .calendars {
-    grid-template-columns: 1fr;
-  }
+  .calendars { grid-template-columns: 1fr; }
   .holiday {
     grid-template-columns: 1fr;
     //margin-bottom: 10px;
@@ -124,6 +122,7 @@
       margin-bottom: 2em;
     }
   }
+  .simple_form.contact { font-size: 0.8em; }
 }
 @media (min-width: 576px) {}
 
