@@ -8,19 +8,34 @@
     <% !params[:contact][:end].blank? ? end_date = params[:contact][:end] : end_date = "" %>
 
     <%= simple_form_for :contact, {url: contact_rentings_path, method: "get"} do |f| %>
-      <%= f.input :civil, prompt: [ "Mlle" ], collection: [ "Mlle", "Mme", "Mr"], label: "Civilité" %>
-      <%= f.input :first_name, as: :string, label: "Prénom" %>
-      <%= f.input :last_name, as: :string, label: "Nom" %>
-      <%= f.input :email, as: :email, label: "Email" %>
-      <%= f.input :tel, as: :tel, label: "Tel" %>
-      <%= f.input :address, as: :string, label: "Adresse" %>
-      <%= f.input :CP, as: :string, label: "Code Postal" %>
-      <%= f.input :town, as: :string, label: "Ville" %>
-      <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true, input_html: { value: start_date } %>
-      <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true, input_html: { value: end_date } %>
-      <%= f.input :adult, as: :integer, label: "Nbre Adultes" %>
-      <%= f.input :kids, as: :integer, label: "Nbre Enfants" %>
-      <%= f.input :message, as: :text, label: "Message" %>
+
+      <div class="contact long">
+        <%= f.input :first_name, as: :string, label: "Prénom" %>
+        <%= f.input :last_name, as: :string, label: "Nom" %>
+      </div>
+
+      <div class="contact long">
+        <%= f.input :email, as: :email, label: "Email" %>
+        <%= f.input :tel, as: :tel, label: "Tel" %>
+      </div>
+      <div class="contact">
+        <%= f.input :address, as: :string, label: "Adresse" %>
+      </div>
+      <div class="contact long">
+        <%= f.input :CP, as: :string, label: "Code Postal" %>
+        <%= f.input :town, as: :string, label: "Ville" %>
+      </div>
+      <div class="contact long">
+        <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true, input_html: { value: start_date } %>
+        <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true, input_html: { value: end_date } %>
+      </div>
+      <div class="contact long">
+        <%= f.input :adult, as: :integer, label: "Nombre Adultes" %>
+        <%= f.input :kids, as: :integer, label: "Nombre Enfants (-18 ans)" %>
+      </div>
+      <div class="contact">
+        <%= f.input :message, as: :text, label: "Message",:input_html => {:rows => 5} %>
+      </div>
       <%= f.button :submit, "Envoyer la Demande", class: "btn btn-green" %>
     <% end %>
   </article>
