@@ -2,6 +2,23 @@ class PagesController < ApplicationController
   before_action :set_seo
   require 'yaml'
   def home
+    if locale == :fr
+      set_meta_tags title: "Pays de Niederbronn-les-Bains, la porte d'entree des vosges du nord d'Alsace",
+              description: "",
+              canonical: "https://www.paysniederbronn.fr/fr/"
+    elsif locale == :en
+      set_meta_tags title: "Pays de Niederbronn-les-Bains, the gateway to the Vosges mountains in northern Alsace",
+              description: "",
+              canonical: "https://www.paysniederbronn.fr/en/"
+    elsif  locale == :de
+    set_meta_tags title: "Pays de Niederbronn-les-Bains, das Tor zu den Vogesen im nördlichen Elsass",
+              description: "",
+              canonical: "https://www.paysniederbronn.fr/de/"
+    else
+      set_meta_tags title: "Pays de Niederbronn-les-Bains, la porte d'entree des vosges du nord d'Alsace",
+              description: "",
+              canonical: "https://www.paysniederbronn.fr/fr/"
+    end
   end
   def alentours
     @page_title = 'Aux alentours : les curiosités en Alsace'
