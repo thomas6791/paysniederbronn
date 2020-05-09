@@ -11,6 +11,11 @@ class LigneMaginotsController < ApplicationController
   end
 
   def four_a_chaux
+    set_meta_tags noindex: false,
+    title: "Four à Chaux de Lembach | Ouvrage de la Ligne Maginot d'Alsace",
+    description: "Visite du four à chaux de lembach, un des plus imposants ouvrage de la ligne maginot avec un musée au programme et de nombreux éléments datant de l'époque. Horaires, contact et informations",
+    canonical: "http://www.paysniederbronn.fr/fr/ligne-maginot/alsace/four-a-chaux-de-lembach",
+    alternate: { "#{locale.to_s}" => "http://www.paysniederbronn.fr/#{locale.to_s}/ligne-maginot-alsace/four-a-chaux-lembach" }
   end
 
   def dambach
