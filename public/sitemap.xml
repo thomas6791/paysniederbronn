@@ -62,8 +62,7 @@
     <priority>0.64</priority>
   </url>
   <url>
-    <loc>
-    https://www.paysniederbronn.fr/blog/taxe-de-sejour-2019-dans-l-ensemble-de-l-alsace
+    <loc>https://www.paysniederbronn.fr/blog/taxe-de-sejour-2019-dans-l-ensemble-de-l-alsace
     </loc>
     <lastmod>2019-08-25T20:31:27+00:00</lastmod>
     <priority>0.64</priority>
@@ -84,22 +83,16 @@
     <priority>0.64</priority>
   </url>
   <url>
-    <loc>
-    https://www.paysniederbronn.fr/blog/cure-thermale-morsbronn-les-bains
-    </loc>
+    <loc>https://www.paysniederbronn.fr/blog/cure-thermale-morsbronn-les-bains</loc>
     <lastmod>2020-04-12T20:31:27+00:00</lastmod>
     <priority>0.80</priority>
   </url>
-    <loc>
-    https://www.paysniederbronn.fr/cures-thermales
-    </loc>
+    <loc>https://www.paysniederbronn.fr/cures-thermales</loc>
     <lastmod>2020-04-12T20:31:27+00:00</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>
-    https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-morsbronn
-    </loc>
+    <loc>https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-morsbronn</loc>
     <lastmod>2020-04-12T20:31:27+00:00</lastmod>
     <priority>0.80</priority>
   </url>
