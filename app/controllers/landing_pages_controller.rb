@@ -52,6 +52,7 @@ class LandingPagesController < ApplicationController
               description: "Les locations pour curistes à Niederbronn-les-Bains",
               canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-niederbronn/location-cure-niederbronn",
               noindex: true
+    @annonces = Renting.all.where(category:"renting")
   end
 
   def location_cure_morsbronn
