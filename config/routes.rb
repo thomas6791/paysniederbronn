@@ -67,7 +67,9 @@ Rails.application.routes.draw do
         get '/cures-thermales', to: 'landing_pages#cures_thermales'
         scope :"cures-thermales" do
           get '/station-thermale-niederbronn', to: 'landing_pages#station_niederbronn'
+          get '/station-thermale-niederbronn/location-cure-niederbronn', to: 'landing_pages#location_cure_niederbronn', as: :location_niederbronn
           get 'station-thermale-morsbronn', to: 'landing_pages#station_morsbronn'
+          get '/station-thermale-morsbronn/location-cure-morsbronn', to: 'landing_pages#location_cure_morsbronn', as: :location_morsbronn
         end
         get '/ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
         get '/randonnees', to: 'landing_pages#randonnees'
