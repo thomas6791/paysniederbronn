@@ -50,13 +50,15 @@ class LandingPagesController < ApplicationController
   def location_cure_niederbronn
     set_meta_tags title: "Les locations pour cure thermale à Niederbronn-les-bains | Pays de Niederbronn",
               description: "Les locations pour curistes à Niederbronn-les-Bains",
-              canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-niederbronn/location-cure-niederbronn"
+              canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-niederbronn/location-cure-niederbronn",
+              noindex: true
   end
 
   def location_cure_morsbronn
     set_meta_tags title: "Les locations pour cure thermale à Morsbronn-les-bains | Pays de Niederbronn",
               description: "Les locations pour curistes à Morsbronn-les-Bains",
-              canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-morsbronn/location-cure-morsbronn"
+              canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-morsbronn/location-cure-morsbronn",
+              noindex: true
   end
 
   private
