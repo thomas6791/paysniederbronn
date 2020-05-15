@@ -7,7 +7,7 @@ class RentingsController < ApplicationController
 
   def show
     @dates_renting = helpers.airbnb_dates(@annonce.airbnb) if !@annonce.airbnb.blank?
-    set_meta_tags nofollow: true, noindex: true
+    #set_meta_tags nofollow: true, noindex: true
   end
 
   def new
