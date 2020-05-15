@@ -34,11 +34,11 @@
       <% nexto = date.next_month().beginning_of_month.strftime('%Y-%m-%d') %>
     <% end %>
     <aside id="calendar-links">
-      <%= link_to renting_path(@annonce, start_date: prev, anchor: "calendar-links") do %>
+      <%= link_to renting_path(@annonce, start_date: prev, anchor: "calendar-links", rel: 'nofollow') do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
       <h2 id="dispos">Disponibilités</h2>
-      <%= link_to renting_path(@annonce, start_date: nexto, anchor: "calendar-links") do %>
+      <%= link_to renting_path(@annonce, start_date: nexto, anchor: "calendar-links", rel: 'nofollow') do %>
         <i class="fas fa-chevron-right"></i>
       <% end %>
     </aside>
