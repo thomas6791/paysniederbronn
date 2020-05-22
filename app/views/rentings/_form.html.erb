@@ -11,6 +11,10 @@
         <%= f.rich_text_area :description %>
       </div>
       <div class="second">
+        <%= f.input :tel, label: "N° de telephone" %>
+        <%= f.input :email, label: "Email" %>
+      </div>
+      <div class="second">
         <%= f.input :address, label: "Adresse de la location" %>
         <div class="city">
           <%= f.input :city, label: "Ville" %>
