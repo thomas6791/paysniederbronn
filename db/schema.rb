@@ -147,7 +147,6 @@ ActiveRecord::Schema.define(version: 2020_05_22_135032) do
   create_table "rentings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "thomas"
   end
 
   create_table "restaurants", force: :cascade do |t|
