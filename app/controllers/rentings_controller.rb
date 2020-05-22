@@ -52,7 +52,7 @@ class RentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website, :category, :airbnb, :booking, photos: [])
+    params.require(:renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website, :email, :tel, :category, :airbnb, :booking, photos: [])
   end
 
   def set_seo
