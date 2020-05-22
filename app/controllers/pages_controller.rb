@@ -49,6 +49,7 @@ class PagesController < ApplicationController
   end
 
   def simulator
+    set_meta_tags nofollow: true
     if params[:results].present?
       @taxes_sejour = params[:results].first[:prices]
       @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
@@ -66,6 +67,7 @@ class PagesController < ApplicationController
   end
 
   def result
+    set_meta_tags nofollow: true
     amount = params[:taxe_sejour][:amount].to_f
     days = params[:taxe_sejour][:days].to_f
     people = params[:taxe_sejour][:people].to_f
@@ -76,6 +78,7 @@ class PagesController < ApplicationController
   end
 
   def taxe_invoice
+    set_meta_tags nofollow: true
     if params[:result_invoice].present?
       datas = params[:result_invoice][0]
       @people = datas[:people]
@@ -98,6 +101,7 @@ class PagesController < ApplicationController
   end
 
   def result_invoice
+    set_meta_tags nofollow: true
     #@taxe_sejour = TaxeSejour.new(amount, days, people, minors, town)
     @taxes = YAML.load(File.read("config/taxes.yml"))[:taxes]
     datas = params[:taxe_sejour]
