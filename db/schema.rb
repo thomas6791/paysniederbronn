@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_27_120805) do
+ActiveRecord::Schema.define(version: 2020_05_22_135032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2020_03_27_120805) do
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
-    t.integer "position", default: 0
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -127,6 +126,8 @@ ActiveRecord::Schema.define(version: 2020_03_27_120805) do
     t.string "category"
     t.string "airbnb"
     t.string "booking"
+    t.string "tel"
+    t.string "email"
   end
 
   create_table "marche_noels", force: :cascade do |t|
@@ -146,6 +147,7 @@ ActiveRecord::Schema.define(version: 2020_03_27_120805) do
   create_table "rentings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "thomas"
   end
 
   create_table "restaurants", force: :cascade do |t|
