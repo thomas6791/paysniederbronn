@@ -29,11 +29,10 @@ module RentingsHelper
 
     end
 
-    loc_urls.each do |url|
-      html_file = open(url).read
-      html_doc = Nokogiri::HTML(html_file)
-
-    end
+    #loc_urls.each do |url|
+    #  html_file = open(url).read
+    #  html_doc = Nokogiri::HTML(html_file)
+    #end
 
     puts loc_urls
     puts loc_urls.size
