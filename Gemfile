@@ -40,6 +40,8 @@ gem 'simple_form'
 
 gem 'meta-tags'
 
+gem 'geocoder'
+
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem "simple_calendar", "~> 2.0"
