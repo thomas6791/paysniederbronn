@@ -44,7 +44,8 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :rentings do
       collection do
-        get "contact", to: "rentings#contact"                  # collection => no restaurant id in URL
+        get "contact", to: "rentings#contact"
+        get "locations-chasse", to: "rentings#chasse"                # collection => no restaurant id in URL
         get 'gites-heidelbeere'
         get 'meuble-heidelbeere', to: 'rentings#meuble_heidelbeere', as: :meuble_heidelbeere
         get 'studio-heidelbeere', to: 'rentings#studio_heidelbeere', as: :studio_heidelbeere

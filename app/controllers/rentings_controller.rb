@@ -3,15 +3,6 @@ class RentingsController < ApplicationController
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
     @annonces = Renting.all.where(category:"renting")
-    @flats = @annonces.geocoded
-
-    @markers = @flats.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
-      }
-    end
   end
 
   def show
@@ -56,6 +47,19 @@ class RentingsController < ApplicationController
   end
 
   def contact
+  end
+
+  def chasse
+    @annonces = Renting.all.where(category:"renting")
+    @flats = @annonces.geocoded
+
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+      }
+    end
   end
 
   private
