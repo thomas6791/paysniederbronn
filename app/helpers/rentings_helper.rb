@@ -9,9 +9,13 @@ module RentingsHelper
       "https://www.niederbronn.com/se-loger/meubles-de-tourisme-chambres.html?a=1&calctot=1&start=60",
       "https://www.niederbronn.com/se-loger/meubles-de-tourisme-chambres.html?a=1&calctot=1&start=80"
     ]
+    puts "bonjour"
 
     loc_urls = []
 
+    urls.each do |url|
+      puts url
+    end
 
     urls.each do |url|
 
