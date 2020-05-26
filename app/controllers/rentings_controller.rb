@@ -56,8 +56,7 @@ class RentingsController < ApplicationController
     @markers = @flats.map do |flat|
       {
         lat: flat.latitude,
-        lng: flat.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat })
+        lng: flat.longitude
       }
     end
   end
