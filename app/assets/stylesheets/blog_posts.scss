@@ -40,12 +40,16 @@ footer {
     width: 100%;
     grid-template-areas:  "titre"
                           "breadcrumb"
+                          "entete"
                           "text"
                           "category"
                           "author"
                           "date"
                           "links";
     h1 { grid-area: titre; }
+    .entete { grid-area: entete; color: grey; font-style: italic; margin-bottom: 15px;
+      a { color: grey; text-decoration: none; }
+    }
     .breadcrumb { grid-area: breadcrumb; }
     .content { grid-area: text;
       min-height: 80vh;

@@ -73,7 +73,7 @@ class BlogPostsController < ApplicationController
     set_meta_tags noindex: true
     @categorie = "ligne maginot"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
-    @text = 'text'
+    @text = ''
     @color = "beige"
   end
   def tourisme
@@ -81,7 +81,7 @@ class BlogPostsController < ApplicationController
     set_meta_tags noindex: true
     @categorie = "tourisme"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
-    @text = 'text'
+    @text = ''
     @color = "green"
   end
   def thermalisme
@@ -89,7 +89,7 @@ class BlogPostsController < ApplicationController
     set_meta_tags noindex: true
     @categorie = "thermalisme"
     @posts = BlogPost.joins(:blog_categories).where('blog_categories.name' => @categorie.capitalize).order('custom_date DESC')
-    @text = 'text'
+    @text = "Les dernières actualités dans le <a href='https://www.paysniederbronn.fr/blog/qu-est-ce-que-le-thermalisme' >thermalisme</a>, dans les bienfaits de l'utilisation des eaux thermales mais également dans l'activité des différentes stations thermales en France"
     @color = "blue"
   end
 
