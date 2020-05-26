@@ -6,6 +6,9 @@ class HolidayRenting < ApplicationRecord
   has_rich_text :description
   has_many_attached :photos
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   def to_param
     "#{id}-#{slug}"
   end
