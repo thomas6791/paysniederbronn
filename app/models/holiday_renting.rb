@@ -6,7 +6,7 @@ class HolidayRenting < ApplicationRecord
   has_rich_text :description
   has_many_attached :photos
 
-  geocoded_by :address
+  geocoded_by :full_address
   after_validation :geocode, if: :will_save_change_to_address?
 
   def to_param
@@ -17,5 +17,9 @@ class HolidayRenting < ApplicationRecord
 
   def set_slug
     self.slug = titre.to_s.parameterize
+  end
+
+  def full_address
+    [address, zip_code, city].compact.join(', ')
   end
 end
