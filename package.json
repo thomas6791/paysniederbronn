@@ -3,7 +3,8 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.7",
-    "actiontext": "https://github.com/kobaltz/actiontext"
+    "actiontext": "https://github.com/kobaltz/actiontext",
+    "mapbox-gl": "^1.10.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.7.2"

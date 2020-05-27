@@ -49,6 +49,18 @@ class RentingsController < ApplicationController
   def contact
   end
 
+  def chasse
+    @annonces = Renting.all.where(category:"renting")
+    @flats = @annonces.geocoded
+
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
+  end
+
   private
 
   def renting_params
