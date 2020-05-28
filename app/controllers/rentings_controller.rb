@@ -61,6 +61,11 @@ class RentingsController < ApplicationController
     end
   end
 
+  def select
+    #render js: "alert('The number is: bonjour')"
+    render js: { render: 'hello.js.erb' }
+  end
+
   private
 
   def renting_params

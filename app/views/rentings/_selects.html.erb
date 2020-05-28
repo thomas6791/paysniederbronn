@@ -3,4 +3,7 @@
   <a href="#">pour familles</a>
   <a href="#">acceptent les animaux</a>
   <a href="#">pour chasseurs</a>
+  <a href="#" onclick="this.style.backgroundColor='#990000'">Paint it red</a>
+  <%= link_to "Test", select_rentings_path(:rent => "chasse"), remote: true %>
+  <%= link_to "Test 2", select_rentings_path, remote: true %>
 </aside>
