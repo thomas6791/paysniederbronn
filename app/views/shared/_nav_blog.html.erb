@@ -1,7 +1,13 @@
-<nav class="nav">
+<nav class="nav blog-links">
   <div>
     <ul>
       <li><%= link_to t('Le Blog'), blog_posts_path, rel: "follow" %></li>
+      <li class="mob"><%= link_to 'Actualités', actualites_blog_posts_path %></li>
+      <li class="mob"><%= link_to 'Thermalisme', thermalisme_blog_posts_path %></li>
+      <li class="mob"><%= link_to 'Tourisme', tourisme_blog_posts_path %></li>
+      <li class="mob"><%= link_to 'Ligne Maginot', ligne_maginot_blog_posts_path %></li>
+      <li class="mob"><hr></li>
+      <li class=""><%= link_to 'Pays Niederbronn', root_path %></li>
     </ul>
   </div>
 </nav>

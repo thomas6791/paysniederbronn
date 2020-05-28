@@ -5,6 +5,7 @@
     <li><%= link_to t('links.se_loger'), rentings_path %></li>
     <li><%= link_to t('links.alentours'), alentours_path %></li>
     <li><%= link_to t('links.contact'), contact_path %></li>
+    <li><%= link_to t('Blog'), blog_posts_path, rel: "follow" %></li>
     <li><%= link_to "Poster une annonce",new_renting_path, class: "button create", rel: "nofollow" %></li>
     </ul>
   </div>

@@ -93,6 +93,9 @@ nav {
   }
   border-right: solid 1px #ECEBEB;
 }
+.blog-links {
+  .mob { visibility: hidden; }
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -128,6 +131,9 @@ nav {
     div { flex-direction: column; }
   }
   #nav-blog { display: none; }
+  .blog-links {
+    .mob { visibility: visible; }
+  }
 }
 
 // Small devices (landscape phones, 576px and up)
