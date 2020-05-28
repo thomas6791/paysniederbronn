@@ -1,5 +1,6 @@
 <main id="alentours">
   <h1>Se loger</h1>
+  <%= render partial: 'rentings/selects' %>
   <%= render partial: 'rentings/rentings', locals: {rents: @annonces } %>
 <%= link_to 'ligne maginot', ligne_maginots_path %>
 <ul>
