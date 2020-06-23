@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
   get "/fr/blog/", to: redirect("/blog/")
   get "/fr/blog/:id", to: redirect("/blog/%{id}")
-  scope '(:locale)', locale: /fr|en|de/ do
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
     root to: 'pages#home'
     get 'about', to: 'pages#about', as: :about
     get 'contact', to: 'pages#contact', as: :contact
