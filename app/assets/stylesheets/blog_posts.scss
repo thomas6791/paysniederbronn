@@ -53,6 +53,7 @@ footer {
     .breadcrumb { grid-area: breadcrumb; }
     .content { grid-area: text;
       min-height: 80vh;
+      overflow: hidden;
     }
     .post-categories { grid-area: category; }
     .author { grid-area: author; }
