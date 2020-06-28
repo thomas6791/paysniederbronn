@@ -59,12 +59,15 @@ class RentingsController < ApplicationController
         lng: flat.longitude
       }
     end
-    flash[:notice] = "Post successfully created"
   end
 
   def select
     #render js: "alert('The number is: bonjour')"
-    render js: { render: 'hello.js.erb' }
+    #render js: { render: 'select.js.erb' }
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: root_path) }
+      format.js
+    end
   end
 
   private
