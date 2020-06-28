@@ -59,6 +59,7 @@ class RentingsController < ApplicationController
         lng: flat.longitude
       }
     end
+    flash[:notice] = "Post successfully created"
   end
 
   def select
