@@ -62,6 +62,7 @@ class RentingsController < ApplicationController
   end
 
   def select
+    @annonces = Renting.all.where(category:"chasse")
     #render js: "alert('The number is: bonjour')"
     #render js: { render: 'select.js.erb' }
     respond_to do |format|

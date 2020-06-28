@@ -1,3 +1,10 @@
 alert("Hello! I am an alert box!!");
 console.log("test");
 
+function addTest(innerHTML) {
+  const x = document.getElementById("alentours");
+  x.insertAdjacentHTML('beforeend', innerHTML);
+}
+
+addTest("<h1>TEST</h1>");
+
