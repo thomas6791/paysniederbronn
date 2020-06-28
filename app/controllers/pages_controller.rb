@@ -21,7 +21,10 @@ class PagesController < ApplicationController
     end
   end
   def alentours
-    @page_title = 'Aux alentours : les curiosités en Alsace'
+    #@page_title = 'Aux alentours : les curiosités en Alsace'
+    set_meta_tags title: "Aux alentours : les curiosités en Alsace",
+              description: "",
+              noindex: true
     #set_meta_tags canonical: "http://yoursite.com/canonical/url"
 
     @cards = YAML.load(File.read("config/cards.yml"))[:cards][locale.to_s]

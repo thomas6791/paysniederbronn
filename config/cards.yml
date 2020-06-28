@@ -27,11 +27,11 @@
   - :name: Marchés de Noël en Alsace
     :photo: https://github.com/thomas6791/photos-pays/blob/master/marche%CC%81_noel-min.jpg?raw=true
     :description: Les marchés de Noël en Alsace du Nord et dans le reste de la région
-    :link: /marches-noel
+    :link: /fr/marches-noel
   - :name: Parcs d'attractions & aquatiques
     :photo: https://github.com/thomas6791/photos-pays/blob/master/europapark.jpg?raw=true
     :description: Les parcs d'attractions et aquatiques dans et proche de la région
-    :link: /parcs-attractions
+    :link: /fr/parcs-attractions
 
   en:
   - :name: Chemin des châteaux forts d'Alsace
