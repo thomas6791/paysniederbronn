@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_190008) do
+ActiveRecord::Schema.define(version: 2020_06_30_180755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -165,6 +165,8 @@ ActiveRecord::Schema.define(version: 2020_06_29_190008) do
     t.string "booking"
     t.string "tel"
     t.string "email"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_rentings_on_user_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -189,4 +191,5 @@ ActiveRecord::Schema.define(version: 2020_06_29_190008) do
   add_foreign_key "blog_post_categories", "blog_categories"
   add_foreign_key "blog_post_categories", "blog_posts"
   add_foreign_key "blog_posts", "author_blogs"
+  add_foreign_key "rentings", "users"
 end
