@@ -18,6 +18,13 @@ main {
   max-width: 1024px; margin: auto;
   min-height: 100vh;
 }
+.notice, .alert {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+.notice { background-color: lightseagreen; }
+.alert { background-color: $red; }
 .breadcrumb {
   display: flex;
   font-size: 0.85em;

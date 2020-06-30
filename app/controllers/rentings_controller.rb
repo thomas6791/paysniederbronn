@@ -16,6 +16,7 @@ class RentingsController < ApplicationController
 
   def create
     @annonce  = Renting.new(renting_params)
+    @annonce.user_id = 1
     @annonce.save
   end
 
