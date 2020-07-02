@@ -5,3 +5,4 @@
  Disallow: /en
  Disallow: /*/rentings/*&start_date
  Disallow: /rentings/*&start_date
+ Disallow: */rentings/*?start_date
