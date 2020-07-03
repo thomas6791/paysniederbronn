@@ -17,6 +17,11 @@ fr:
       boulangerie: "boulangerie et dépôt de pain"
       supermarches: "petites et grandes surfaces"
 
+  devise:
+    sessions:
+      signed_in: "Connecté"
+      signed_out: "Déconnecté"
+      already_signed_out: "Signed out successfully."
   date:
     abbr_day_names:
     - dim

@@ -3,3 +3,6 @@
  Disallow:  /www.paysniederbronn.fr/fr/
  Disallow: /de
  Disallow: /en
+ Disallow: /*/rentings/*&start_date
+ Disallow: /rentings/*&start_date
+ Disallow: */rentings/*?start_date

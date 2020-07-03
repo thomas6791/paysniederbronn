@@ -26,6 +26,12 @@ Rails.application.routes.draw do
   #get "/fr/blog/", to: redirect("/blog/")
   #get "/fr/blog/:id", to: redirect("/blog/%{id}")
   scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/ do
+
+    devise_for :users
+    devise_scope :user do
+      get '/users/sign_out' => 'devise/sessions#destroy'
+    end
+
     root to: 'pages#home'
 
     get 'about', to: 'pages#about', as: :about
