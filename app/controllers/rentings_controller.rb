@@ -62,6 +62,20 @@ class RentingsController < ApplicationController
     end
   end
 
+  def select
+    if params[:rent] == "great"
+      @annonces = Renting.all.where("capacity >= ?", 10)
+    else
+      @annonces = Renting.all
+    end
+    #render js: "alert('The number is: bonjour')"
+    #render js: { render: 'select.js.erb' }
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: root_path) }
+      format.js
+    end
+  end
+
   private
 
   def renting_params

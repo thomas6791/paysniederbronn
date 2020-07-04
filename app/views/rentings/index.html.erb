@@ -1,15 +1,11 @@
 <main id="alentours">
   <h1>Se loger</h1>
-  <%= render partial: 'rentings/rentings', locals: {rents: @annonces } %>
+  <%= render partial: 'rentings/selects' %>
+  <section class="cards">
+    <%= render partial: 'rentings/rentings', locals: {annonces: @annonces } %>
+  </section>
 <%= link_to 'ligne maginot', ligne_maginots_path %>
-<ul>
-<% @annonces.each do |annonce| %>
-  <li>
-    <%= annonce.titre %>
-    <%= link_to "voir annonce", holiday_renting_path(annonce) %>
-  </li>
-<% end %>
-</ul>
+
 <%= link_to 'Gîte Lindauer', sub_lindauer_url %>
 <%= link_to 'Meublés Heidelbeere', sub_hunckler_url %>
 </main>
