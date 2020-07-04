@@ -6,6 +6,5 @@ class AddCapacityToRenting < ActiveRecord::Migration[5.2]
     add_column :rentings, :cure, :boolean, :default => false
     add_column :rentings, :niederbronn_dist, :float, :default => ""
     add_column :rentings, :morsbronn_dist, :float, :default => ""
-    remove_column :rentings, :thomas, :string
   end
 end
