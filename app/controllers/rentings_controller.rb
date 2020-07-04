@@ -63,7 +63,11 @@ class RentingsController < ApplicationController
   end
 
   def select
-    @annonces = Renting.all
+    if params[:rent] == "great"
+      @annonces = Renting.all.where("capacity >= ?", 10)
+    else
+      @annonces = Renting.all
+    end
     #render js: "alert('The number is: bonjour')"
     #render js: { render: 'select.js.erb' }
     respond_to do |format|
