@@ -1,18 +1,10 @@
 console.log("test");
-
 function addTest(innerHTML) {
-  const x = document.getElementById("alentours");
+  let x = document.querySelector(".cards");
+  x.innerHTML = "";
   x.insertAdjacentHTML('beforeend', innerHTML);
 }
 
-addTest("<h1>TEST</h1>");
+addTest('<%= j render "rentings/rentings", annonces: @annonces %>');
 
-// function addItem(innerHTML) {
-//  const listItems = document.querySelector('.place_items');
-//  listItems.insertAdjacentHTML('beforeend', innerHTML);
-// }
-// <% if @place_item.errors.any? %>
-// <% else %>
-//  addItem('<%= j render "emplacements/item-list", place_item: @place_item %>');
-// <% end %>
 
