@@ -75,6 +75,11 @@
             </ul>
           </div>
         <% end %>
+        <% if !params[:result_invoice][0][:start_date].blank? && !params[:result_invoice][0][:end_date].blank? %>
+          <div>
+            <p>Séjour du :<%= Date.parse(params[:result_invoice][0][:start_date]).strftime("%d/%m/%Y") %> au: <%= Date.parse(params[:result_invoice][0][:end_date]).strftime("%d/%m/%Y") %></p>
+          </div>
+        <% end %>
         <div>
           <p>Nombre de nuitées :</p><p><%= @days %></p>
         </div>
