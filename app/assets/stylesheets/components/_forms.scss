@@ -19,6 +19,18 @@
     line-height: 2em;
     border: solid 1px lightgray;
   }
+
+  .third.options span label {
+    //align-items: center;
+    //align-content: center;
+    //display: flex;
+    //flex-direction: row-reverse;
+    //justify-content: flex-end;
+    label { width: 100%; }
+  }
+
+
+
   label { font-weight: bold; }
   input[type="submit"]{}
   .input.string.optional {
