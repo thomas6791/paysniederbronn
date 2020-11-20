@@ -1,3 +1,4 @@
 class RentingCategory < ApplicationRecord
-  has_and_belongs_to_many :rentings
+  has_many :renting_cats
+  has_many :rentings, through: :renting_cats
 end
