@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_04_132018) do
+ActiveRecord::Schema.define(version: 2020_11_20_215306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,6 +144,21 @@ ActiveRecord::Schema.define(version: 2020_07_04_132018) do
     t.index ["category_id"], name: "index_post_categories_on_category_id"
   end
 
+  create_table "renting_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "renting_cats", force: :cascade do |t|
+    t.bigint "renting_id"
+    t.bigint "renting_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["renting_category_id"], name: "index_renting_cats_on_renting_category_id"
+    t.index ["renting_id"], name: "index_renting_cats_on_renting_id"
+  end
+
   create_table "rentings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -196,5 +211,7 @@ ActiveRecord::Schema.define(version: 2020_07_04_132018) do
   add_foreign_key "blog_post_categories", "blog_categories"
   add_foreign_key "blog_post_categories", "blog_posts"
   add_foreign_key "blog_posts", "author_blogs"
+  add_foreign_key "renting_cats", "renting_categories"
+  add_foreign_key "renting_cats", "rentings"
   add_foreign_key "rentings", "users"
 end
