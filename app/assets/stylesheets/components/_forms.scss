@@ -19,12 +19,18 @@
     line-height: 2em;
     border: solid 1px lightgray;
   }
-
-  .third.options span label {
+  .third.options { display: flex; }
+  .third.options span > label {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
     line-height: 2.5em;
+    align-items: center;
+    width: fit-content;
+    border: solid 1px lightgray;
+    padding: 2px 5px;
+    margin: 2px;
+    border-radius: 3px;
     input { display: block; width: auto; }
   }
 
