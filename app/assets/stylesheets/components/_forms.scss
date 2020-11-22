@@ -21,6 +21,7 @@
   }
   .input.check_boxes.optional.renting_renting_categories {
     display: flex;
+    flex-wrap: wrap;
     .check_boxes.optional {
       display: none;
     }
