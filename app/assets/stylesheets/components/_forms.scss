@@ -33,9 +33,11 @@
     align-items: center;
     width: fit-content;
     border: solid 1px lightgray;
-    padding: 2px 5px;
+    padding: 0px;
+    padding: 0px 20px;
     margin: 2px;
     border-radius: 3px;
+    text-transform: capitalize;
     &label:hover { cursor: pointer; }
     &.active { background-color: lightseagreen; border: solid 1px lightseagreen; color: white; }
     input { display: block; width: auto; }
