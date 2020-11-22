@@ -21,11 +21,13 @@ class RentingsController < ApplicationController
   end
 
   def edit
-
+    @annonce = Renting.find(params[:id])
   end
 
   def update
+    @annonce = Renting.find(params[:id])
     @annonce.update(renting_params)
+    redirect_to renting_path(@annonce)
   end
 
   def destroy
@@ -64,8 +66,16 @@ class RentingsController < ApplicationController
   end
 
   def select
-    if params[:rent] == "great"
-      @annonces = Renting.all.where("capacity >= ?", 10)
+    if params[:rent] == "capacite"
+      @annonces = Renting.all.where("capacity >= ?", 10) && Renting.joins(:renting_categories).where('renting_categories.name' => "grande capacité")
+    elsif params[:rent] == "cure thermale"
+      @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "cure thermale")
+    elsif params[:rent] == "familles"
+      @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "famille")
+    elsif params[:rent] == "animaux"
+      @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "accepte les animaux")
+    elsif params[:rent] == "chasseur"
+      @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "chasseurs")
     else
       @annonces = Renting.all
     end

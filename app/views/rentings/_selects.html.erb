@@ -1,8 +1,8 @@
 <aside class="selects-rentings">
-  <%= link_to "Pour curistes - cure thermale", select_rentings_path, remote: true %>
-  <a href="#">Pour les familles</a>
-  <a href="#">Acceptent les animaux</a>
-  <%= link_to "Grande capacité", select_rentings_path(:rent => "great"), remote: true %>
+  <%= link_to "Pour curistes", select_rentings_path(:rent => "cure thermale"), remote: true %>
+  <%= link_to "Pour les familles", select_rentings_path(:rent => "familles"), remote: true %>
+  <%= link_to "Acceptent les animaux", select_rentings_path(:rent => "animaux"), remote: true %>
+  <%= link_to "Grande capacité", select_rentings_path(:rent => "capacite"), remote: true %>
+  <%= link_to "Pour les chasseurs", select_rentings_path(:rent => "chasseur"), remote: true %>
   <a href="#" onclick="this.style.backgroundColor='#990000'">Paint it red</a>
-  <%= link_to "Test", select_rentings_path(:rent => "chasse"), remote: true %>
 </aside>
