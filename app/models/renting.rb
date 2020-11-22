@@ -1,5 +1,7 @@
 class Renting < ApplicationRecord
   belongs_to :user
+  has_many :renting_cats
+  has_many :renting_categories, through: :renting_cats
   validates :titre, uniqueness: { message: "ce titre est déjà pris" }
   validates :slug, uniqueness: { message: "slug déjà prise" }
   after_validation :set_slug, only: [:create]

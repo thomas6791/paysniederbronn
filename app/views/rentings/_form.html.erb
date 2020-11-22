@@ -27,6 +27,11 @@
       <div class="third">
         <%= f.input :website %>
       </div>
+      <div class="third options">
+        <label>Hébergement prévu pour :</label>
+        <%= f.association :renting_categories, as: :check_boxes %>
+      </div>
+
       <div class="third">
         <%= f.input :airbnb %>
       </div>
@@ -34,3 +39,17 @@
     <% end %>
   </section>
 </main>
+<script type="text/javascript">
+let buttons = document.querySelectorAll(".checkbox > label");
+  buttons.forEach((element) => {
+    element.addEventListener("change", (event) => {
+      if ( event.target.checked ) {
+        event.currentTarget.parentElement.classList.add("active");
+      }
+      else {
+        event.currentTarget.parentElement.classList.remove("active");
+      }
+    });
+  });
+
+</script>

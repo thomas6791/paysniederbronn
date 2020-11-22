@@ -21,6 +21,7 @@ class RentingsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
@@ -79,7 +80,7 @@ class RentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website, :email, :tel, :category, :airbnb, :booking, photos: [])
+    params.require(:renting).permit(:titre, :description, :summary, :city, :zip_code, :address, :latitude, :longitude, :website, :email, :tel, :category, :airbnb, :booking, photos: [], renting_category_ids: [])
   end
 
   def set_seo
