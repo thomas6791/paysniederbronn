@@ -40,3 +40,17 @@
     <% end %>
   </section>
 </main>
+<script type="text/javascript">
+let buttons = document.querySelectorAll(".checkbox > label");
+  buttons.forEach((element) => {
+    element.addEventListener("change", (event) => {
+      if ( event.target.checked ) {
+        event.currentTarget.parentElement.classList.add("active");
+      }
+      else {
+        event.currentTarget.parentElement.classList.remove("active");
+      }
+    });
+  });
+
+</script>
