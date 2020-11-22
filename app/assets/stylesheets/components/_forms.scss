@@ -29,16 +29,18 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    line-height: 2.5em;
+    line-height: 2em;
     align-items: center;
     width: fit-content;
+    color: lightgray;
     border: solid 1px lightgray;
     padding: 0px;
     padding: 0px 20px;
     margin: 2px;
     border-radius: 3px;
     text-transform: capitalize;
-    &label:hover { cursor: pointer; }
+    cursor: pointer;
+    & span:hover, label:hover { cursor: pointer; }
     &.active { background-color: lightseagreen; border: solid 1px lightseagreen; color: white; }
     input { display: block; width: auto; }
   }
