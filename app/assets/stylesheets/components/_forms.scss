@@ -23,7 +23,9 @@
     display: flex;
     flex-wrap: wrap;
     .check_boxes.optional {
-      display: none;
+      visibility: hidden;
+      height: 0px;
+      width: 0px;
     }
   }
   .third.options .checkbox {
