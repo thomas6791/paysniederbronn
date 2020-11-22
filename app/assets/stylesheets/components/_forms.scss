@@ -25,7 +25,7 @@
       display: none;
     }
   }
-  .third.options span > label {
+  .third.options .checkbox {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
@@ -36,8 +36,10 @@
     padding: 2px 5px;
     margin: 2px;
     border-radius: 3px;
+    &.active { background-color: lightseagreen; border: solid 1px lightseagreen; color: white; }
     input { display: block; width: auto; }
-    .active { background-color: red; }
+  }
+  .third.options {
   }
 
 
