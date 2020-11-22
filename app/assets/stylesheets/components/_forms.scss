@@ -19,7 +19,12 @@
     line-height: 2em;
     border: solid 1px lightgray;
   }
-  .third.options { display: flex; }
+  .input.check_boxes.optional.renting_renting_categories {
+    display: flex;
+    .check_boxes.optional {
+      display: none;
+    }
+  }
   .third.options span > label {
     display: flex;
     flex-direction: row-reverse;
