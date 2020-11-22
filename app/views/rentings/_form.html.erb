@@ -28,7 +28,7 @@
         <%= f.input :website %>
       </div>
       <div class="third options">
-        <%= f.collection_check_boxes :renting_cats, RentingCategory.all, :id, :name %>
+        <%= f.collection_check_boxes :renting_categories, RentingCategory.all, :id, :name %>
       </div>
       <div class="third">
         <%= f.input :airbnb %>

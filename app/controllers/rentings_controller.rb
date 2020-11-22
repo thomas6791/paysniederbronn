@@ -16,6 +16,11 @@ class RentingsController < ApplicationController
 
   def create
     @annonce  = Renting.new(renting_params)
+    params[:renting][:renting_categories].each do |cat|
+      if !cat.blank?
+        @annonce.renting_categories << RentingCategory.find(cat.to_i)
+      end
+    end
     @annonce.user_id = 1
     @annonce.save
   end
