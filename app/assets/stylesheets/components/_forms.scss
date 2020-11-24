@@ -59,6 +59,13 @@
 // sign in sign up
 .sign-form {
   display: flex;
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: blue;
+    }
+  }
   article {
     width: 400px;
     margin: auto;
