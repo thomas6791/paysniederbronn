@@ -13,12 +13,13 @@
     justify-content: space-between;
     .input.string.optional { width: 45%; }
   }
-  input, textarea {
+  input, textarea, select {
     width: 100%;
     font-size: 1em;
     line-height: 2em;
     border: solid 1px lightgray;
   }
+  select { width: auto; }
   .input.check_boxes.optional.renting_renting_categories {
     display: flex;
     flex-wrap: wrap;
