@@ -24,7 +24,9 @@ class Renting < ApplicationRecord
   private
 
   def set_category
-    self.category = "renting"
+    if self.category.nil? || self.category.blank?
+      self.category = "renting"
+    end
   end
 
   def set_slug
