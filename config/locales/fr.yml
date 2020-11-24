@@ -19,8 +19,15 @@ fr:
 
   devise:
     sessions:
+      sign_in: "Se Connecter"
+      sign_up: "S'inscrire"
+      log_in: "Se Connecter"
+      sign_out: "Se déconnecter"
       signed_in: "Connecté"
       signed_out: "Déconnecté"
+      forgot_password: "Mot de passe oublié ?"
+      reset_password: "Réinitialier mon mot de passe"
+      remember: "se souvenir de moi"
       already_signed_out: "Signed out successfully."
   date:
     abbr_day_names:

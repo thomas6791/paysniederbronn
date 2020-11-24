@@ -1,6 +1,6 @@
 <main class="sign-form">
   <article>
-    <h1>Sign up</h1>
+    <h1><%= t('devise.sessions.sign_up') %></h1>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn-green" %>
+        <%= f.button :submit, t('devise.sessions.sign_up') , class: "btn-green" %>
       </div>
     <% end %>
 
