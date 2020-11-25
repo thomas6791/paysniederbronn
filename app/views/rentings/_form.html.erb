@@ -28,6 +28,9 @@
         <%= f.input :website %>
       </div>
       <div class="third options">
+        <label for="">Catégorie d'hébergement</label>
+        <%= f.input :category, :collection => ["Gîte","Appartement","Studio", "Camping", "Hébergement insolite", "Chambre d'hôte", "Chambre chez l'habitant"], :prompt => "Choisir une catégorie d'hébergement", label: false %>
+        <br>
         <label>Hébergement prévu pour :</label>
         <%= f.association :renting_categories, as: :check_boxes %>
       </div>
