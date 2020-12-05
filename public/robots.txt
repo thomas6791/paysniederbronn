@@ -6,3 +6,7 @@
  Disallow: /*/rentings/*&start_date
  Disallow: /rentings/*&start_date
  Disallow: */rentings/*?start_date
+ Disallow */rentings/new
+ Disallow: */users/sign_in
+ Disallow */users/sign_up
+ Disallow */users/sign_out
