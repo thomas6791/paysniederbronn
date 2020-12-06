@@ -76,6 +76,8 @@ class RentingsController < ApplicationController
       @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "accepte les animaux")
     elsif params[:rent] == "chasseur"
       @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "chasseurs")
+    elsif params[:rent] == "all"
+      @annonces = Renting.all
     else
       @annonces = Renting.all
     end

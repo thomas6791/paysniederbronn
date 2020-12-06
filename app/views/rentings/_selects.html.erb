@@ -1,4 +1,5 @@
 <aside class="selects-rentings">
+  <%= link_to "Tous", select_rentings_path(:rent => "all"), remote: true %>
   <%= link_to "Pour curistes", select_rentings_path(:rent => "cure thermale"), remote: true %>
   <%= link_to "Pour les familles", select_rentings_path(:rent => "familles"), remote: true %>
   <%= link_to "Acceptent les animaux", select_rentings_path(:rent => "animaux"), remote: true %>
