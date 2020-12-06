@@ -10,10 +10,12 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  //static targets = [ "output" ]
+  static targets = ['content']
 
   connect() {
-    //this.outputTarget.textContent = 'Hello, Stimulus!'
-    console.log('Crimes');
+    console.log(this.contentTarget)
+  }
+  sayHello() {
+    this.contentTarget.innerHTML = "HELLO !"
   }
 }
