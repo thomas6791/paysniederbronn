@@ -144,7 +144,7 @@ class PagesController < ApplicationController
       start_date: datas[:start_date],
       end_date: datas[:end_date],
       reglement: datas[:reglement]
-    ])
+    ], anchor: "taxe-invoice")
   end
 
   def set_seo
