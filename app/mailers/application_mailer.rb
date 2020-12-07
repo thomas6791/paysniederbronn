@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'contact@paysniederbronn.fr'
+  default from: 'hunckler.thomas@hotmail.fr'
   layout 'mailer'
 end
