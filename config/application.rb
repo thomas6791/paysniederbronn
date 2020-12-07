@@ -33,5 +33,11 @@ module Paysniederbronn
 
     config.i18n.available_locales = [:en, :fr, :de]
     config.i18n.default_locale = :fr
+
+    config.action_mailer.delivery_method = :postmark
+
+    config.action_mailer.postmark_settings = {
+      api_token: Rails.application.env.postmark_api_token
+    }
   end
 end
