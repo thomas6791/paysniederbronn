@@ -52,7 +52,8 @@ class RentingsController < ApplicationController
 
   def contact
     annonce = Renting.find(params[:contact][:renting_id].to_i)
-    RentingMailer.with(annonce: annonce).rentingask.deliver_now
+    annonce_email = annonce.email
+    RentingMailer.with(annonce_email: annonce_email).rentingask.deliver_now
   end
 
   def chasse
