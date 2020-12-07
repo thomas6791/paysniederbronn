@@ -7,7 +7,7 @@
     <% !params[:contact][:start].blank? ?  start_date = params[:contact][:start] : start_date = "" %>
     <% !params[:contact][:end].blank? ? end_date = params[:contact][:end] : end_date = "" %>
 
-    <%= simple_form_for :contact, {url: contact_rentings_path, method: "get"} do |f| %>
+    <%= simple_form_for :contact, { url: contact_rentings_path, method: "get" } do |f| %>
 
       <div class="contact long">
         <%= f.input :first_name, as: :string, label: "Prénom" %>
