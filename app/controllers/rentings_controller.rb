@@ -51,6 +51,9 @@ class RentingsController < ApplicationController
   end
 
   def contact
+  end
+
+  def contact_send
     annonce = Renting.find(params[:contact][:renting_id].to_i)
     annonce_email = annonce.email
     RentingMailer.with(annonce_email: annonce_email).rentingask.deliver_now
