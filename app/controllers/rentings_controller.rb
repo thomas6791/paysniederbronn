@@ -2,8 +2,7 @@ class RentingsController < ApplicationController
   before_action :set_seo
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
-    #@annonces = Renting.all.where(category:"renting")
-    @annonces = Renting.all
+    @annonces = Renting.all.where(category:"renting")
   end
 
   def show
@@ -61,7 +60,7 @@ class RentingsController < ApplicationController
   end
 
   def chasse
-    @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "chasseurs")
+    @annonces = Renting.all.where(category:"renting")
     @flats = @annonces.geocoded
 
     @markers = @flats.map do |flat|
@@ -70,51 +69,23 @@ class RentingsController < ApplicationController
         lng: flat.longitude
       }
     end
-     respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
-      format.js
-    end
-  end
-
-  def all
-    @annonces = Renting.all
-  end
-  def cure
-    @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "cure thermale")
-    respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
-      format.js
-    end
-  end
-  def capacity
-    @annonces = Renting.all.where("capacity >= ?", 10) && Renting.joins(:renting_categories).where('renting_categories.name' => "grande capacité")
-    respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
-      format.js
-    end
-  end
-  def animals
-    @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "accepte les animaux")
-    respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
-      format.js
-    end
-  end
-  def family
-    @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "famille")
-    respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
-      format.js
-    end
   end
 
   def select
-    #if params[:rent] == "chasseur"
-    #  @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "chasseurs")
-    if params[:rent] == "all"
+    if params[:rent] == "capacite"
+      @annonces = Renting.all.where("capacity >= ?", 10) && Renting.joins(:renting_categories).where('renting_categories.name' => "grande capacité")
+    elsif params[:rent] == "cure thermale"
+      @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "cure thermale")
+    elsif params[:rent] == "familles"
+      @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "famille")
+    elsif params[:rent] == "animaux"
+      @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "accepte les animaux")
+    elsif params[:rent] == "chasseur"
+      @annonces = Renting.joins(:renting_categories).where('renting_categories.name' => "chasseurs")
+    elsif params[:rent] == "all"
       @annonces = Renting.all
-    #else
-    #  @annonces = Renting.all
+    else
+      @annonces = Renting.all
     end
     #render js: "alert('The number is: bonjour')"
     #render js: { render: 'select.js.erb' }

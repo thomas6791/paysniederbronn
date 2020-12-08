@@ -1,8 +1,0 @@
-console.log("test cure");
-function addTest(innerHTML) {
-  let x = document.querySelector(".cards");
-  x.innerHTML = "";
-  x.insertAdjacentHTML('beforeend', innerHTML);
-}
-
-addTest('<%= j render "rentings/rentings", annonces: @annonces %>');
