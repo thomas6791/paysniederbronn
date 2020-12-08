@@ -71,6 +71,17 @@ class RentingsController < ApplicationController
     end
   end
 
+  def all
+  end
+  def cure
+  end
+  def capacity
+  end
+  def animals
+  end
+  def family
+  end
+
   def select
     if params[:rent] == "capacite"
       @annonces = Renting.all.where("capacity >= ?", 10) && Renting.joins(:renting_categories).where('renting_categories.name' => "grande capacité")
