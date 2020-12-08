@@ -11,20 +11,19 @@
   position: relative;
   //box-shadow: 0 0 15px rgba(0,0,0,0.2);
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  border-radius: 5px;
   img {
     width: 100%; height: 100%;
     background-size: cover !important;
     object-fit: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    border-radius: 5px;
   }
   .footer {
     position: absolute;
     background: linear-gradient(to top, rgba(0, 0, 0, 2), rgba(0, 0, 0, 0));
     bottom: 0px;
     width: 100%;
+    border-radius: 0 5px;
     h2 {
       font-family: 'Avenir';
       width: 100%;
