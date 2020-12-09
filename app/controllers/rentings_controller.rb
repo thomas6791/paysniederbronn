@@ -40,12 +40,13 @@ class RentingsController < ApplicationController
   end
 
   def destroy
+    @annonce = Renting.find(params[:id])
   end
 
   def remove_photo
     @annonce = Renting.find(params[:annonce])
     @annonce.photos.find(params[:photo]).purge
-    redirect_to edit_renting_path(@annonce)
+    redirect_to edit_renting_path(@annonce,anchor: "photos")
   end
 
   def gites_heidelbeere
