@@ -24,6 +24,19 @@
       <div class="third">
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       </div>
+
+      <div class="third photos">
+      <% if params[:action] == "edit" %>
+        <ul>
+          <% @annonce.photos.each do |photo| %>
+            <li>
+              <%= image_tag(photo) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+      </div>
+
       <div class="third">
         <%= f.input :website %>
       </div>

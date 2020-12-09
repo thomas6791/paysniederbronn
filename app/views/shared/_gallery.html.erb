@@ -1,7 +1,8 @@
 <div class="gg-container">
   <div class="gg-box dark" id="heightWidth">
     <% @annonce.photos[0..4].each do |photo| %>
-      <%= cl_image_tag photo.key, class: "visible" %>
+      <%= image_tag photo, class: "visible" %>
+      <!--cl_image_tag photo.key, class: "visible"-->
     <% end %>
     <% @annonce.photos.drop(3).each do |photo| %>
       <%= cl_image_tag photo.key, class: "" %>
