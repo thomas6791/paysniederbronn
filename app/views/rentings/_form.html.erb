@@ -31,7 +31,7 @@
           <% @annonce.photos.each do |photo| %>
             <li>
               <%= image_tag(photo) %>
-              <button class="btn btn-green">Supprimer</button>
+              <%= link_to "supprimer", remove_photo_rentings_path(annonce: @annonce.id, photo: photo.id) %>
             </li>
           <% end %>
         </ul>

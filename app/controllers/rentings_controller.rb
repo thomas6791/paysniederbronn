@@ -42,6 +42,12 @@ class RentingsController < ApplicationController
   def destroy
   end
 
+  def remove_photo
+    @annonce = Renting.find(params[:annonce])
+    @annonce.photos.find(params[:photo]).purge
+    redirect_to edit_renting_path(@annonce)
+  end
+
   def gites_heidelbeere
     require 'yaml'
     if locale == :fr
