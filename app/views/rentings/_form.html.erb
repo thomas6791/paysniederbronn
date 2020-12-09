@@ -31,6 +31,7 @@
           <% @annonce.photos.each do |photo| %>
             <li>
               <%= image_tag(photo) %>
+              <button class="btn btn-green">Supprimer</button>
             </li>
           <% end %>
         </ul>
