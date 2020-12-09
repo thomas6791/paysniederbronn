@@ -24,6 +24,20 @@
       <div class="third">
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       </div>
+
+      <div class="third photos">
+      <% if params[:action] == "edit" %>
+        <ul>
+          <% @annonce.photos.each do |photo| %>
+            <li>
+              <%= image_tag(photo) %>
+              <%= link_to "supprimer", remove_photo_rentings_path(annonce: @annonce.id, photo: photo.id) %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+      </div>
+
       <div class="third">
         <%= f.input :website %>
       </div>

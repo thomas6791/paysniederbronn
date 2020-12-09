@@ -48,6 +48,14 @@
     &.active { background-color: lightseagreen; border: solid 1px lightseagreen; color: white; }
     input { display: block; width: auto; }
   }
+  .third.photos {
+    ul { display: flex; list-style-type: none; }
+    li {
+      flex: 1;
+      border: solid 1px;
+      margin:0; padding:0; box-sizing:border-box;
+    }
+  }
 
 
 

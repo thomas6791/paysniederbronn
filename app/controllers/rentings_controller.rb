@@ -2,7 +2,16 @@ class RentingsController < ApplicationController
   before_action :set_seo
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
-    @annonces = Renting.all.where(category:"renting")
+    #@annonces = Renting.all.where(category:"renting")
+    @annonces = Renting.all
+    @flats = @annonces.geocoded
+
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
@@ -31,6 +40,12 @@ class RentingsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def remove_photo
+    @annonce = Renting.find(params[:annonce])
+    @annonce.photos.find(params[:photo]).purge
+    redirect_to edit_renting_path(@annonce)
   end
 
   def gites_heidelbeere
