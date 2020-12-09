@@ -4,9 +4,18 @@
   <section class="cards">
     <%= render partial: 'rentings/rentings', locals: {annonces: @annonces } %>
   </section>
+  <section>
+    <div id="map"
+     style="width: 80%; height: 600px; margin: auto;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+     </div>
+  </section>
+
 <%= link_to 'ligne maginot', ligne_maginots_path %>
 
 <%= link_to 'Gîte Lindauer', sub_lindauer_url %>
 <%= link_to 'Meublés Heidelbeere', sub_hunckler_url %>
+<%= javascript_pack_tag "map" %>
 </main>
 
