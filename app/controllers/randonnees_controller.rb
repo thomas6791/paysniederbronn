@@ -1,2 +1,0 @@
-class RandonneesController < ApplicationController
-end
