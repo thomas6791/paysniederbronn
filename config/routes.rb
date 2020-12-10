@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'randonnees/index'
+  get 'randonnees/show'
+  get 'randonnees/new'
+  get 'randonnees/create'
+  get 'randonnees/edit'
+  get 'randonnees/update'
+  get 'randonnees/destroy'
   constraints(subdomain: 'heidelbeere') do
     root to: 'subdomain_rentings#index', as: :sub_hunckler
     #get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
