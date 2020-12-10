@@ -25,7 +25,24 @@ const cellToday = () => {
  console.log(today);
 }
 let datesSelect = () => {
+
   console.log("date Select");
+  const calendar = document.querySelector(".calendars");
+  let days = calendar.querySelectorAll(".day");
+  days.forEach((day) => {
+    day.addEventListener("click", (event) => {
+      //const dayselected = { dateString: "", dateNumber: 0}
+
+      function dayselected(date) {
+        this.date = date;
+        this.number = Date.parse(date);
+      }
+      let y = "";
+      console.log(event.currentTarget);
+      let x = new dayselected(event.currentTarget.firstElementChild.dataset.day);
+      debugger;
+    });
+  });
 }
 
 export { dateCalendar };
