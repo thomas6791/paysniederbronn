@@ -21,6 +21,7 @@ module PagesHelper
     #    array.delete(date)
     #  else
     #end
+    #https://www.airbnb.fr/calendar/ical/3518040.ics?s=ebdedb349a9e728f6ea0a11c903e2532
   end
 
   def clean_dates_month(dates_array)
@@ -29,7 +30,7 @@ module PagesHelper
   end
 
 
-  def airbnb_dates(url)
+  def airbnb_dates(url) # dates bloquées sur airbnb pour calendrier
     require 'open-uri'
     airbnb = open(url).read
 
@@ -61,7 +62,7 @@ module PagesHelper
     return clean_array
   end
 
-  def booking_dates(url)
+  def booking_dates(url) # dates bloquées sur booking pour calendrier
     require 'open-uri'
     booking = open(url).read
     list = booking.scan(/DTSTART;([^abc]+)/).flatten
