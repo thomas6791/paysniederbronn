@@ -13,6 +13,8 @@ class CreateRandonnees < ActiveRecord::Migration[5.2]
       t.string :zip_code
       t.string :city
       t.string :metadescription
+      t.float :longitude
+      t.float :latitude
 
       t.timestamps
     end
