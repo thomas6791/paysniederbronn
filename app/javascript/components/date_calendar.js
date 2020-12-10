@@ -24,7 +24,11 @@ const cellToday = () => {
  });
  console.log(today);
 }
+let datesSelect = () => {
+  console.log("date Select");
+}
 
 export { dateCalendar };
 export { blockedDates };
 export { cellToday };
+export { datesSelect };
