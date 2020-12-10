@@ -1,0 +1,2 @@
+class Randonnee < ApplicationRecord
+end

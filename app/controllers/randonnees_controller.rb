@@ -1,0 +1,2 @@
+class RandonneesController < ApplicationController
+end
