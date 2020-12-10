@@ -31,6 +31,7 @@ let datesSelect = () => {
   let days = calendar.querySelectorAll(".day");
   days.forEach((day) => {
     day.addEventListener("click", (event) => {
+      let array = [];
       //const dayselected = { dateString: "", dateNumber: 0}
 
       function dayselected(date) {
