@@ -26,20 +26,6 @@ const cellToday = () => {
 }
 let datesSelect = () => {
 
-  class dayselect {
-    constructor(date_select) {
-      this.date1 = {
-        date : date_select,
-        number : Date.parse(date_select)
-      };
-      this.date2 = {
-        date : date_select,
-        number : 0
-        //number = Date.parse(date_select);
-      }
-    }
-  }
-
   console.log("date Select");
   const calendar = document.querySelector(".calendars");
   let days = calendar.querySelectorAll(".day");
@@ -66,6 +52,9 @@ let datesSelect = () => {
       else {
         console.log(dates);
       }
+      document.getElementById("contact_start").value = dates[0].date;
+      document.getElementById("contact_end").value = dates[1].date;
+
       let array = [];
       let t = new dayselect(event.currentTarget.firstElementChild.dataset.day);
     });
