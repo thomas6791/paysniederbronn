@@ -59,6 +59,13 @@ let getDateArray = function(start, end) {
   return arr;
 }
 
+let styleArray = function(array) {
+  array.forEach((date) => {
+    //document.querySelector('[data-day="${date}"]')[0];
+    document.querySelector(`[data-day="${date}"]`).style.backgroundColor = "red";
+  });
+}
+
 
 let datesSelect = () => {
 
@@ -84,8 +91,8 @@ let datesSelect = () => {
         dates[1].number = numberInput;
         console.log(dates);
 
-        let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
-        console.log(dateArr);
+        //let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
+        //styleArray(dateArr);
       }
       //else if(dates[0].date !== "" && numberInput < dates[0].number) {
       //  dates[0].date = dateInput;
@@ -98,22 +105,22 @@ let datesSelect = () => {
           //debugger;
           dates[0].date = dateInput;
           dates[0].number = numberInput;
-          let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
-          console.log(dateArr);
+          //let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
+          //styleArray(dateArr);
         }
         else {
           //debugger;
           dates[1].date = dateInput;
           dates[1].number = numberInput;
-          let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
-          console.log(dateArr);
+          //let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
+          //styleArray(dateArr);
         }
       }
       else {
-        let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
-        console.log(dateArr);
+        //let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
+        //styleArray(dateArr);
       }
-      document.querySelector('[data-day="${date}"]')[0];
+      //document.querySelector('[data-day="${date}"]')[0];
       document.getElementById("contact_start").value = dates[0].date;
       document.getElementById("contact_end").value = dates[1].date;
 
