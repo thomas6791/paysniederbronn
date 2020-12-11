@@ -25,7 +25,39 @@ const cellToday = () => {
  console.log(today);
 }
 
+let nextUntil = function (elem, selector, filter) {
+  // Setup siblings array
+  let siblings = [];
+  // Get the next sibling element
+  elem = elem.nextElementSibling;
+  // As long as a sibling exists
+  while (elem) {
+    // If we've reached our match, bail
+    if (elem.matches(selector)) break;
+    // If filtering by a selector, check if the sibling matches
+    if (filter && !elem.matches(filter)) {
+      elem = elem.nextElementSibling;
+      continue;
+    }
+    // Otherwise, push it to the siblings array
+    siblings.push(elem);
+    // Get the next sibling element
+    elem = elem.nextElementSibling;
+  }
+  return siblings;
+};
 
+
+let getDateArray = function(start, end) {
+  let arr = new Array();
+  let dt = new Date(start);
+  while (dt <= end) {
+    arr.push(new Date(dt));
+    dt.setDate(dt.getDate() + 1);
+  }
+  arr = arr.map(x => x.toISOString().split('T')[0]);
+  return arr;
+}
 
 
 let datesSelect = () => {
@@ -51,6 +83,9 @@ let datesSelect = () => {
         dates[1].date = dateInput;
         dates[1].number = numberInput;
         console.log(dates);
+
+        let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
+        console.log(dateArr);
       }
       //else if(dates[0].date !== "" && numberInput < dates[0].number) {
       //  dates[0].date = dateInput;
@@ -63,18 +98,32 @@ let datesSelect = () => {
           //debugger;
           dates[0].date = dateInput;
           dates[0].number = numberInput;
+          let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
+          console.log(dateArr);
         }
         else {
           //debugger;
           dates[1].date = dateInput;
           dates[1].number = numberInput;
+          let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
+          console.log(dateArr);
         }
       }
       else {
-        console.log(dates);
+        let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
+        console.log(dateArr);
       }
+      //document.querySelectorAll('[data-day="2020-12-18"]')[0];
       document.getElementById("contact_start").value = dates[0].date;
       document.getElementById("contact_end").value = dates[1].date;
+
+
+      let startDate = new Date("2017-10-01"); //YYYY-MM-DD
+      let endDate = new Date("2017-10-07"); //YYYY-MM-DD
+
+      //let dateArr = getDateArray(startDate, endDate);
+
+
     });
   });
 }
