@@ -26,9 +26,17 @@ const cellToday = () => {
 }
 let datesSelect = () => {
 
-  class day1 {
-    constructor(date) {
-
+  class dayselect {
+    constructor(date_select) {
+      this.date1 = {
+        date : date_select,
+        number : Date.parse(date_select)
+      };
+      this.date2 = {
+        date : date_select,
+        number : Date.parse(date_select)
+        //number = Date.parse(date_select);
+      }
     }
   }
 
@@ -38,8 +46,8 @@ let datesSelect = () => {
   days.forEach((day) => {
     day.addEventListener("click", (event) => {
       let array = [];
-
-
+      let t = new dayselect(event.currentTarget.firstElementChild.dataset.day);
+      debugger;
 
       //const dayselected = { dateString: "", dateNumber: 0}
 
