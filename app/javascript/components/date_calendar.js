@@ -47,7 +47,7 @@ let nextUntil = function (elem, selector, filter) {
   return siblings;
 };
 
-
+// get all dates between two dates
 let getDateArray = function(start, end) {
   let arr = new Array();
   let dt = new Date(start);
@@ -113,13 +113,9 @@ let datesSelect = () => {
         let dateArr = getDateArray(new Date(dates[0].date), new Date(dates[1].date));
         console.log(dateArr);
       }
-      //document.querySelectorAll('[data-day="2020-12-18"]')[0];
+      document.querySelector('[data-day="${date}"]')[0];
       document.getElementById("contact_start").value = dates[0].date;
       document.getElementById("contact_end").value = dates[1].date;
-
-
-      let startDate = new Date("2017-10-01"); //YYYY-MM-DD
-      let endDate = new Date("2017-10-07"); //YYYY-MM-DD
 
       //let dateArr = getDateArray(startDate, endDate);
 
