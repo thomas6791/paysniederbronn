@@ -34,7 +34,7 @@ let datesSelect = () => {
       };
       this.date2 = {
         date : date_select,
-        number : Date.parse(date_select)
+        number : 0
         //number = Date.parse(date_select);
       }
     }
@@ -43,22 +43,31 @@ let datesSelect = () => {
   console.log("date Select");
   const calendar = document.querySelector(".calendars");
   let days = calendar.querySelectorAll(".day");
+  let dates = [{ "date": "", "number": "" }, { "date": "", "number": 0}];
   days.forEach((day) => {
     day.addEventListener("click", (event) => {
+      let dateInput = event.currentTarget.firstElementChild.dataset.day;
+      let numberInput = Date.parse(dateInput);
+      if ( dates[0].date === "" ) {
+        dates[0].date = dateInput;
+        dates[0].number = Date.parse(dates[0].date);
+        console.log(dates);
+      }
+      else if(dates[0].date !== "" && numberInput > dates[0].number) {
+        dates[1].date = dateInput;
+        dates[1].number = numberInput;
+        console.log(dates);
+      }
+      else if(dates[0].date !== "" && numberInput < dates[0].number) {
+        dates[0].date = dateInput;
+        dates[0].number = numberInput;
+        console.log(dates);
+      }
+      else {
+        console.log(dates);
+      }
       let array = [];
       let t = new dayselect(event.currentTarget.firstElementChild.dataset.day);
-      debugger;
-
-      //const dayselected = { dateString: "", dateNumber: 0}
-
-      function dayselected(date) {
-        this.date = date;
-        this.number = Date.parse(date);
-      }
-      let y = "";
-      console.log(event.currentTarget);
-      let x = new dayselected(event.currentTarget.firstElementChild.dataset.day);
-      debugger;
     });
   });
 }
