@@ -24,6 +24,10 @@ const cellToday = () => {
  });
  console.log(today);
 }
+
+
+
+
 let datesSelect = () => {
 
   console.log("date Select");
@@ -34,6 +38,9 @@ let datesSelect = () => {
     day.addEventListener("click", (event) => {
       let dateInput = event.currentTarget.firstElementChild.dataset.day;
       let numberInput = Date.parse(dateInput);
+      let start = document.getElementById("contact_start").value;
+      let end = document.getElementById("contact_end").value;
+      document.getElementById("contact_end").value = dates[1].date;
       if ( dates[0].date === "" ) {
         dates[0].date = dateInput;
         dates[0].number = Date.parse(dates[0].date);
@@ -54,9 +61,6 @@ let datesSelect = () => {
       }
       document.getElementById("contact_start").value = dates[0].date;
       document.getElementById("contact_end").value = dates[1].date;
-
-      let array = [];
-      let t = new dayselect(event.currentTarget.firstElementChild.dataset.day);
     });
   });
 }
