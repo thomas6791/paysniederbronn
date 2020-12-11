@@ -26,12 +26,21 @@ const cellToday = () => {
 }
 let datesSelect = () => {
 
+  class day1 {
+    constructor(date) {
+
+    }
+  }
+
   console.log("date Select");
   const calendar = document.querySelector(".calendars");
   let days = calendar.querySelectorAll(".day");
   days.forEach((day) => {
     day.addEventListener("click", (event) => {
       let array = [];
+
+
+
       //const dayselected = { dateString: "", dateNumber: 0}
 
       function dayselected(date) {
