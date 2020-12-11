@@ -40,21 +40,35 @@ let datesSelect = () => {
       let numberInput = Date.parse(dateInput);
       let start = document.getElementById("contact_start").value;
       let end = document.getElementById("contact_end").value;
-      document.getElementById("contact_end").value = dates[1].date;
+
       if ( dates[0].date === "" ) {
         dates[0].date = dateInput;
         dates[0].number = Date.parse(dates[0].date);
         console.log(dates);
       }
-      else if(dates[0].date !== "" && numberInput > dates[0].number) {
+      else if(dates[0].date !== "" && dates[1].date === "" && numberInput > dates[0].number) {
+        //debugger;
         dates[1].date = dateInput;
         dates[1].number = numberInput;
         console.log(dates);
       }
-      else if(dates[0].date !== "" && numberInput < dates[0].number) {
-        dates[0].date = dateInput;
-        dates[0].number = numberInput;
-        console.log(dates);
+      //else if(dates[0].date !== "" && numberInput < dates[0].number) {
+      //  dates[0].date = dateInput;
+      //  dates[0].number = numberInput;
+      //  console.log(dates);
+      //}
+      else if (dates[0].date !== "" && dates[1].date !== "") {
+        // Si la date entrée est plus proche de dates[0] que dates[1]
+        if(numberInput - dates[0].number < dates[1].number - numberInput) {
+          //debugger;
+          dates[0].date = dateInput;
+          dates[0].number = numberInput;
+        }
+        else {
+          //debugger;
+          dates[1].date = dateInput;
+          dates[1].number = numberInput;
+        }
       }
       else {
         console.log(dates);
