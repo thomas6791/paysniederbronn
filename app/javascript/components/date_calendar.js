@@ -64,11 +64,11 @@ let styleArray = function(array) {
     date.classList.remove("date-selected");
   });
   array.forEach((date) => {
-    //document.querySelector('[data-day="${date}"]')[0];
-    if(document.querySelector(`[data-day="${date}"]`).nextElementSibling.classList.value !== "blocked") {
-      document.querySelector(`[data-day="${date}"]`).classList.add("date-selected");
-    }
-    else {}
+    document.querySelector(`[data-day="${date}"]`).classList.add("date-selected");
+    //document.querySelector(`[data-day="${date}"]`).nextElementSibling.classList.value !== "blocked"
+  });
+  document.querySelectorAll(".blocked").forEach((element) =>{
+    element.previousElementSibling.classList.remove("date-selected");
   });
 }
 
