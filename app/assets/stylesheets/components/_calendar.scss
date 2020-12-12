@@ -21,14 +21,11 @@
     text-decoration: line-through;
     opacity: 0.5;
     color: grey;
+    &:hover { pointer-events: none; }
   }
   .today { border: solid 2px $red; }
   .date {
 
-  }
-  .date.date-selected {
-    background-color: lightseagreen;
-    color: white;
   }
   th {
     //background-color: #333333;
@@ -60,6 +57,11 @@
         border: solid 1px whitesmoke;
         background-color: whitesmoke;
       }
+    }
+    .date.date-selected {
+      background-color: #333333;
+      color: white;
+      border: solid 1px #333333;
     }
   }
 }
