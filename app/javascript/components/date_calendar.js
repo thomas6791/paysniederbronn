@@ -65,7 +65,10 @@ let styleArray = function(array) {
   });
   array.forEach((date) => {
     //document.querySelector('[data-day="${date}"]')[0];
-    document.querySelector(`[data-day="${date}"]`).classList.add("date-selected");
+    if(document.querySelector(`[data-day="${date}"]`).nextElementSibling.classList.value !== "blocked") {
+      document.querySelector(`[data-day="${date}"]`).classList.add("date-selected");
+    }
+    else {}
   });
 }
 
