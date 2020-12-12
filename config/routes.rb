@@ -63,6 +63,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :randonnees
+
     scope 'ligne-maginot-alsace' do
       get '/', to: 'ligne_maginots#index', as: :ligne_maginots
       get 'four-a-chaux-lembach', to: 'ligne_maginots#four_a_chaux'
@@ -84,7 +86,7 @@ Rails.application.routes.draw do
           get '/station-thermale-morsbronn/location-cure-morsbronn', to: 'landing_pages#location_cure_morsbronn', as: :location_morsbronn
         end
         get '/ligne-maginot-alsace', to: 'landing_pages#ligne_maginot_alsace'
-        get '/randonnees', to: 'landing_pages#randonnees'
+        #get '/randonnees', to: 'landing_pages#randonnees'
         get '/strasbourg', to: 'landing_pages#strasbourg'
         get '/parcs-attractions', to: 'landing_pages#attraction'
         #get '/marches-noel', to: 'landing_pages#marches_noel'
