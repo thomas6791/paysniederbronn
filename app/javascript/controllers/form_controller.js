@@ -8,7 +8,15 @@ export default class extends Controller {
     console.log("Alien");
   }
   submitForm() {
-    //this.contentTarget.innerHTML = "HELLO !"
-
+    let inputs = document.querySelectorAll('input[data-form-target="content"]');
+    inputs.forEach((input) => {
+      if (input.value === "") {
+        input.classList.add("error");
+        event.preventDefault();
+      }
+      else {}
+      console.log("aliens ///");
+      //border: solid 1px red;
+    });
   }
 }

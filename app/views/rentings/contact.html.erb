@@ -16,12 +16,12 @@
 
       <div class="contact long">
         <%= f.input :first_name, as: :string, label: "Prénom", input_html: { "data-form-target" => "content" }  %>
-        <%= f.input :last_name, as: :string, label: "Nom" %>
+        <%= f.input :last_name, as: :string, label: "Nom", input_html: { "data-form-target" => "content" } %>
       </div>
 
       <div class="contact long">
-        <%= f.input :email, as: :email, label: "Email" %>
-        <%= f.input :tel, as: :tel, label: "Tel" %>
+        <%= f.input :email, as: :email, label: "Email", input_html: { "data-form-target" => "content" } %>
+        <%= f.input :tel, as: :tel, label: "Tel", input_html: { "data-form-target" => "content" } %>
       </div>
       <div class="contact">
         <%= f.input :address, as: :string, label: "Adresse" %>
