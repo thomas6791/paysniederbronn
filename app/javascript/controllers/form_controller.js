@@ -1,12 +1,14 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = ['content']
+  static targets = [ "content" ]
 
   connect() {
-    console.log(this.contentTarget)
+    console.log(this.contentTarget);
+    console.log("Alien");
   }
-  sayHello() {
-    this.contentTarget.innerHTML = "HELLO !"
+  submitForm() {
+    //this.contentTarget.innerHTML = "HELLO !"
+
   }
 }

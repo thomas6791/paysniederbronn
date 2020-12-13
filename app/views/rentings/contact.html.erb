@@ -1,5 +1,5 @@
 <main>
-  <article id="send-renting">
+  <article id="send-renting" data-controller="form">
     <h1>Demande de Réservation</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
@@ -15,7 +15,7 @@
       </div>
 
       <div class="contact long">
-        <%= f.input :first_name, as: :string, label: "Prénom" %>
+        <%= f.input :first_name, as: :string, label: "Prénom", input_html: { "data-form-target" => "content" }  %>
         <%= f.input :last_name, as: :string, label: "Nom" %>
       </div>
 
@@ -41,7 +41,7 @@
       <div class="contact">
         <%= f.input :message, as: :text, label: "Message",:input_html => {:rows => 5} %>
       </div>
-      <%= f.button :submit, "Envoyer la Demande", class: "btn btn-green" %>
+      <%= f.button :submit, "Envoyer la Demande", class: "btn btn-green", data: {action: "form#submitForm"} %>
     <% end %>
   </article>
 </main>
