@@ -108,7 +108,9 @@
 .simple_form {
   &.contact {
     .boolean.optional.checkbox {
-
+      display: flex;
+      display: flex;
+      align-items: baseline;
     }
   }
 }
