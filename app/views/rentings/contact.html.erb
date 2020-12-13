@@ -11,6 +11,10 @@
       <%= f.hidden_field :renting_id, :value => params[:contact][:renting_id].to_i %>
 
       <div class="contact long">
+        <%= f.input :rgpd, as: :boolean, label: "J'accepte que mes coordonnées soient transmises dans le cadre de ma demande",:input_html => { :checked => "" } %>
+      </div>
+
+      <div class="contact long">
         <%= f.input :first_name, as: :string, label: "Prénom" %>
         <%= f.input :last_name, as: :string, label: "Nom" %>
       </div>
