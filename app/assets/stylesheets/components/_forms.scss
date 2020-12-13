@@ -107,10 +107,15 @@
 // general form
 .simple_form {
   &.contact {
-    .boolean.optional.checkbox {
-      display: flex;
+    .input.boolean.required.contact_rgpd {}
+    .boolean.required.checkbox {
       display: flex;
       align-items: baseline;
+      .boolean.required {
+        display: block;
+        width: auto !important;
+        margin-right: 0.5em;
+      }
     }
   }
 }
