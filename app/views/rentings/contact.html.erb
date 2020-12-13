@@ -31,8 +31,8 @@
         <%= f.input :town, as: :string, label: "Ville" %>
       </div>
       <div class="contact long">
-        <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true, input_html: { value: start_date } %>
-        <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true, input_html: { value: end_date } %>
+        <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true, input_html: { value: start_date }, input_html: { "data-form-target" => "content" } %>
+        <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true, input_html: { value: end_date }, input_html: { "data-form-target" => "content" } %>
       </div>
       <div class="contact long">
         <%= f.input :adult, as: :integer, label: "Nombre d'adultes" %>
