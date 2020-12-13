@@ -104,3 +104,19 @@
   }
   label {}
 }
+// general form
+.simple_form {
+  &.contact {
+    .input.boolean.required.contact_rgpd {}
+    .boolean.required.checkbox {
+      display: flex;
+      align-items: baseline;
+      .boolean.required {
+        display: block;
+        width: auto !important;
+        margin-right: 0.5em;
+      }
+    }
+    .error { border: solid 1px red !important; }
+  }
+}
