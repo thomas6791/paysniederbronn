@@ -104,3 +104,11 @@
   }
   label {}
 }
+// general form
+.simple_form {
+  &.contact {
+    .boolean.optional.checkbox {
+
+    }
+  }
+}
