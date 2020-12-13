@@ -11,7 +11,7 @@
       <%= f.hidden_field :renting_id, :value => params[:contact][:renting_id].to_i %>
 
       <div class="contact long">
-        <%= f.input :rgpd, as: :boolean, label: "J'accepte que mes coordonnées soient transmises dans le cadre de ma demande. Ces informations ne seront pas conservées et ne serviront qu'à répondre à votre demande.",:input_html => { :checked => "" }, :required => true %>
+        <%= f.input :rgpd, as: :boolean, label: "J'accepte que mes coordonnées soient transmises dans le cadre de ma demande. Ces informations ne seront pas conservées et ne serviront qu'à répondre à votre demande.",:input_html => { :checked => "" }, required:true %>
       </div>
 
       <div class="contact long">
