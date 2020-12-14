@@ -63,7 +63,7 @@
 
     <%= yield %>
     <%= render "shared/footer" %>
-    <%= render 'shared/consent_banner' %>
+    <%= render 'shared/consent_banner', link: '/cookies' %>
   </body>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag "navbar" %>
