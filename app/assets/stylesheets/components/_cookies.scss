@@ -7,4 +7,17 @@
   margin: auto;
   width: 60vh;
   height: 60vh;
+  background-color: white !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 5px;
 }
+.cookies-eu-content-holder  /* content holder */
+.cookies-eu-button-holder, button, a {
+  color: red !important;
+  display: flex;
+  flex: 1;
+}  /* button holder */
+.cookies-eu-ok {
+  //color: red;
+}             /* button */
+.cookies-eu-link {}
