@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     get 'alentours', to: 'pages#alentours', as: :alentours
     get 'simulateur', to: 'pages#simulator', as: :simulateur
     get 'tarifs', to: 'pages#tarifs', as: :tarifs
+    get 'cookies', to: 'pages#cookies_infos'
     get 'calendar', to: 'subdomain_rentings#calendar', as: :calendar
 
     get 'taxe-invoice', to: 'pages#taxe_invoice'
