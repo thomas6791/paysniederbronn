@@ -1,4 +1,9 @@
-.cookies-eu {
+.cookies-eu.fullscreen {
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+.cookies-eu.js-cookies-eu {
   position: absolute;
   top:0;
   bottom: 0;
@@ -10,14 +15,26 @@
   background-color: white !important;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   border-radius: 5px;
-}
-.cookies-eu-content-holder  /* content holder */
-.cookies-eu-button-holder, button, a {
-  color: red !important;
+  font-family: 'Avenir','Source Sans Pro', 'Muli', sans-serif;
   display: flex;
-  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cookies-eu-content-holder  {
+  padding: 0px;
+} /* content holder */
+.cookies-eu-button-holder {
+  display: flex !important;
+  a, button {
+    //color: red !important;
+    display: flex;
+    flex: 1;
+    background-color: lightseagreen !important;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1em !important;
+  }
 }  /* button holder */
-.cookies-eu-ok {
-  //color: red;
-}             /* button */
-.cookies-eu-link {}

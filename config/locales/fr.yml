@@ -1,4 +1,7 @@
 fr:
+  cookies_eu:
+    ok: "Accepter"
+    cookies_text: "Les cookies assurent le bon fonctionnement de nos services. En utilisant ces derniers, vous acceptez l'utilisation des cookies."
   links:
     home: "Accueil"
     se_loger: "Se loger"
