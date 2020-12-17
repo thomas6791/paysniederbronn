@@ -43,7 +43,8 @@
       <% end %>
     </aside>
     <section class="calendars">
-      <% if !@annonce.airbnb.blank? %>
+      <% if !@dates_renting.nil? %>
+
         <%= render "shared/calendar" %>
 
 
