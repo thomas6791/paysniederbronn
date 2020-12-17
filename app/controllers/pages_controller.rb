@@ -51,6 +51,9 @@ class PagesController < ApplicationController
   def tarifs
   end
 
+  def cookies_infos
+  end
+
   def simulator
     set_meta_tags nofollow: true
     if params[:results].present?
@@ -149,4 +152,5 @@ class PagesController < ApplicationController
 
   def set_seo
   end
+
 end

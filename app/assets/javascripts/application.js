@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require trix
 //= require_tree .
+//= require cookies_eu
