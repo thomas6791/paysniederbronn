@@ -20,7 +20,7 @@ class RentingsController < ApplicationController
       @dates_renting = helpers.airbnb_dates(@annonce.airbnb)
     elsif !@annonce.booking.blank? && @annonce.airbnb.blank?
       @dates_renting = helpers.booking_dates(@annonce.booking)
-    elsif !@annonce.booking.blank? && !@annonce.airbnb.blank?
+    elsif !@annonce.booking.blank? && !@annonce.airbnb.blank? # priorité au calendrier Airbnb
       @dates_renting = helpers.airbnb_dates(@annonce.airbnb)
     else
       @dates_renting = []
