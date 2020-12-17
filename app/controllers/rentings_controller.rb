@@ -15,8 +15,17 @@ class RentingsController < ApplicationController
   end
 
   def show
-    @dates_renting = helpers.airbnb_dates(@annonce.airbnb) if !@annonce.airbnb.blank?
-    #set_meta_tags nofollow: true, noindex: true
+
+    if !@annonce.airbnb.blank? && @annonce.booking.blank?
+      @dates_renting = helpers.airbnb_dates(@annonce.airbnb)
+    elsif !@annonce.booking.blank? && @annonce.airbnb.blank?
+      @dates_renting = helpers.booking_dates(@annonce.booking)
+    elsif !@annonce.booking.blank? && !@annonce.airbnb.blank? # priorité au calendrier Airbnb
+      @dates_renting = helpers.airbnb_dates(@annonce.airbnb)
+    else
+      @dates_renting = []
+    end
+
   end
 
   def new

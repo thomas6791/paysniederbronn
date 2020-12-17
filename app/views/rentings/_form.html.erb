@@ -52,7 +52,8 @@
       </div>
 
       <div class="third">
-        <%= f.input :airbnb %>
+        <%= f.input :airbnb ,label: ('Synchroniser son calendrier avec Airbnb <i class="far fa-question-circle"></i>').html_safe %>
+        <%= f.input :booking ,label: ('Synchroniser son calendrier avec Booking <i class="far fa-question-circle"></i>').html_safe %>
       </div>
       <%= f.button :submit, value: "Confirmer", class: "btn-green large" %>
     <% end %>
