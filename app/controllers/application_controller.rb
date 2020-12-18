@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
       title:    'Pays de Niederbronn-les-Bains',
       type:     'website',
       url:      'https://wwww.paysniederbronn.fr',
-      image:    '../assets/images/opengraph.png'
+      image:    'https://www.paysniederbronn.fr/fr/assets/images/opengraph.png'
     }
   end
 end
