@@ -1,5 +1,5 @@
 meta_product_name: "Pays de Niederbronn-les-Bains"
 meta_title: "Pays de Niederbronn-les-Bains"
-meta_description: "Relevant description"
+meta_description: "Pays de Niederbronn-les-Bains, portail touristique des Vosges du Nord et alentours"
 meta_image: "opengraph.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+twitter_account: ""   # required for Twitter Cards
