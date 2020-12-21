@@ -17,6 +17,7 @@ body {
 main {
   max-width: 1024px; margin: auto;
   min-height: 100vh;
+  content-visibility: auto;
 }
 .notice, .alert {
   text-align: center;
@@ -135,6 +136,7 @@ span {
   main {
     padding: 0px 10px;
     padding-top: 55px;
+    content-visibility: auto;
   }
   .cards {
     grid-template-columns: 1fr;
