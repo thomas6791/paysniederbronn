@@ -1,5 +1,5 @@
 <% if cookies.kind_of? ActionDispatch::Cookies::CookieJar %>
-  <% if cookies && cookies['cookie_eu_consented'] != 'true' %>
+  <% if cookies && cookies['cookie_eu_consented'] != 'true' && params[:action] != "cookies_infos" %>
     <div class="cookies-eu fullscreen">
     </div>
     <div class="cookies-eu js-cookies-eu" <%= "dir=rtl" if I18n.exists?('cookies_eu.direction', I18n.locale) && I18n.t("cookies_eu.direction") == "rtl"  %>>
