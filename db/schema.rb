@@ -205,9 +205,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_205823) do
     t.float "niederbronn_dist"
     t.float "morsbronn_dist"
     t.integer "price_day_cents", default: 0, null: false
-    t.string "price_day_currency", default: "USD", null: false
     t.integer "price_week_cents", default: 0, null: false
-    t.string "price_week_currency", default: "USD", null: false
     t.index ["user_id"], name: "index_rentings_on_user_id"
   end
 
