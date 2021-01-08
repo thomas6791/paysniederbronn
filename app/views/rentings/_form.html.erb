@@ -51,6 +51,11 @@
         <%= f.association :renting_categories, as: :check_boxes %>
       </div>
 
+      <div class="second city">
+        <%= f.input :price_day, label: "Prix/nuit" %>
+        <%= f.input :price_week, label: "Prix/semaine" %>
+      </div>
+
       <div class="third">
         <%= f.input :airbnb ,label: ('Synchroniser son calendrier avec Airbnb <i class="far fa-question-circle"></i>').html_safe %>
         <%= f.input :booking ,label: ('Synchroniser son calendrier avec Booking <i class="far fa-question-circle"></i>').html_safe %>

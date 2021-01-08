@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_163540) do
+ActiveRecord::Schema.define(version: 2021_01_07_205823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -204,6 +204,8 @@ ActiveRecord::Schema.define(version: 2020_12_10_163540) do
     t.boolean "cure", default: false
     t.float "niederbronn_dist"
     t.float "morsbronn_dist"
+    t.integer "price_day_cents", default: 0, null: false
+    t.integer "price_week_cents", default: 0, null: false
     t.index ["user_id"], name: "index_rentings_on_user_id"
   end
 
