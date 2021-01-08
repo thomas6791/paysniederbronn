@@ -13,6 +13,10 @@ class Renting < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
   after_validation :set_category, only: [:create]
 
+  register_currency :eur
+  monetize :price_day_cents, as: "price_day", with_currency: :eur
+  monetize :price_weekend_cents, as: "price_weekend", with_currency: :eur
+
   def to_param
     "#{id}-#{slug}"
   end
