@@ -48,6 +48,9 @@ class PagesController < ApplicationController
     set_meta_tags noindex: true
   end
 
+  def faq
+  end
+
   def tarifs
   end
 
