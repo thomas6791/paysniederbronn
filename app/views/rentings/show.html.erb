@@ -7,8 +7,8 @@
         <%= @annonce.description %>
       </div>
       <aside class="holiday form">
-        <p>Tarif semaine: ....€</p>
-        <p>Tarif nuit: ....€</p>
+        <p>Tarif / Semaine : <%= humanized_money @annonce.price_week %> <%= @annonce.price_week.currency.symbol %></p>
+        <p>Tarif / Nuit : <%= humanized_money @annonce.price_day %> <%= @annonce.price_week.currency.symbol %></p>
         <%= simple_form_for :contact, {url: contact_rentings_path, method: "get"} do |f| %>
           <%= f.hidden_field :renting_id, :value => @annonce.id %>
           <div class="dates">
@@ -19,8 +19,8 @@
         <% end %>
       </aside>
       <aside class="holiday coordinates">
-        <div><%= image_tag "icons/mob_icon.png"%><p>06XXXXXXXX</p></div>
-        <div><%= image_tag "icons/mail_icon.png"%><p>...@gmail.com</p></div>
+        <div><%= image_tag "icons/mob_icon.png"%><p><%= @annonce.tel %></p></div>
+        <div><%= image_tag "icons/mail_icon.png"%><p><%= @annonce.email %></p></div>
         <div><%= image_tag "icons/world_icon.png"%><p>www.siteinternet.fr</p></div>
       </aside>
     </section>

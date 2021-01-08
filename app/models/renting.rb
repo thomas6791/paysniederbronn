@@ -15,7 +15,7 @@ class Renting < ApplicationRecord
 
   register_currency :eur
   monetize :price_day_cents, as: "price_day", with_currency: :eur
-  monetize :price_weekend_cents, as: "price_weekend", with_currency: :eur
+  monetize :price_week_cents, as: "price_week", with_currency: :eur
 
   def to_param
     "#{id}-#{slug}"
