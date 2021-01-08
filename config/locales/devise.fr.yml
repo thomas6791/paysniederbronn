@@ -61,3 +61,23 @@ fr:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  activerecord:
+    attributes:
+      user:
+        current_password:
+        email: Email
+        password: Mot de passe
+        password_confirmation: Confirmer mot de passe
+        remember_me: Se Souvenir de Moi ?
+  shared:
+    links:
+      back: Back
+      didn_t_receive_confirmation_instructions: Didn't receive confirmation instructions?
+      didn_t_receive_unlock_instructions: Didn't receive unlock instructions?
+      forgot_your_password: Forgot your password?
+      sign_in: Log in
+      sign_in_with_provider: Sign in with %{provider}
+      sign_up: Sign up
+    minimum_password_length:
+        one: "(%{count} character minimum)"
+        other: "(%{count} characters minimum)"
