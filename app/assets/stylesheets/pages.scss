@@ -143,6 +143,9 @@ summary {
     font-weight: bold;
     margin: -.5em -.5em 0;
     padding: .5em;
+    &:focus {
+      outline:none;
+    }
 }
 details summary::-webkit-details-marker {
   display:none;
