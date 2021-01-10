@@ -131,6 +131,23 @@ span {
   &.beige { box-shadow: inset 0 -8px 0 white, inset 0 -15px 0 $beige; }
 }
 
+details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+    margin-bottom: 0.5em;
+    p { padding: .5em 0em; }
+}
+
+summary {
+    font-weight: bold;
+    margin: -.5em -.5em 0;
+    padding: .5em;
+}
+details summary::-webkit-details-marker {
+  display:none;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   main {
