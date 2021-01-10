@@ -48,6 +48,11 @@ class PagesController < ApplicationController
     set_meta_tags noindex: true
   end
 
+  def faq
+    set_meta_tags title: "FAQ | Pays de Niederbronn-les-Bains",
+        noindex: true
+  end
+
   def tarifs
   end
 
