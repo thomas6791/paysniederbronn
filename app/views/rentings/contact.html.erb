@@ -1,11 +1,19 @@
 <main>
   <article id="send-renting" data-controller="form">
     <h1>Demande de Réservation</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <div class="sending-annonce shadow">
+      <% annonce = Renting.find(params[:contact][:renting_id].to_i) %>
+      <%= image_tag annonce.photos[0], crop: :fill %>
+      <div>
+        <h2><%= annonce.titre %></h2>
+        <p><%= annonce.capacity %></p>
+      </div>
+    </div>
 
 
     <% !params[:contact][:start].blank? ?  start_date = params[:contact][:start] : start_date = "" %>
     <% !params[:contact][:end].blank? ? end_date = params[:contact][:end] : end_date = "" %>
+
 
     <%= simple_form_for :contact, { url: contact_send_rentings_path, method: "get" } do |f| %>
       <%= f.hidden_field :renting_id, :value => params[:contact][:renting_id].to_i %>
@@ -31,8 +39,8 @@
         <%= f.input :town, as: :string, label: "Ville" %>
       </div>
       <div class="contact long">
-        <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true, input_html: { value: start_date }, input_html: { "data-form-target" => "content" } %>
-        <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true, input_html: { value: end_date }, input_html: { "data-form-target" => "content" } %>
+        <%= f.input :start, as: :date, placeholder: "Ajouter une date", label: 'Arrivée', required: false, html5: true, input_html: { value: start_date, "data-form-target" => "content" } %>
+        <%= f.input :end, as: :date, placeholder: "Ajouter une date", label: 'Départ', required: false, html5: true, input_html: { value: end_date, "data-form-target" => "content" } %>
       </div>
       <div class="contact long">
         <%= f.input :adult, as: :integer, label: "Nombre d'adultes" %>
