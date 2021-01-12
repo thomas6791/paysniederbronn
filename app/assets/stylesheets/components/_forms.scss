@@ -120,3 +120,38 @@
     .error { border: solid 1px red !important; }
   }
 }
+
+#send-renting {
+  h1 { font-weight: 400; }
+  p { padding: 10px; }
+  .input {
+    //display: flex;
+    padding: 10px 10px;
+    line-height: 1.5em;
+  }
+  label { min-width: 10em; font-weight: bold; }
+  input, select, textarea { width: 100%; border: solid 1px lightgrey; border-radius: 3px;
+    font-size: 1em; line-height: 2em;
+  }
+  textarea:focus, input:focus{
+    outline: none;
+  }
+  form {
+    padding: 3px;
+  }
+}
+.contact {
+  input, textarea { padding: 5px; }
+}
+.contact.long {
+  display: flex;
+  justify-content: space-between;
+  div { width: 100%; }
+  div:first-child {}
+  div:last-child {}
+}
+.sending-annonce {
+  display: flex;
+  flex-wrap: wrap;
+  img { display: block; width: auto; height: 30vh; }
+}
