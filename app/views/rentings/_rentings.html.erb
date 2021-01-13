@@ -1,6 +1,6 @@
 <% @annonces.each do |annonce| %>
   <%= link_to annonce do %>
-    <div class="card">
+    <div class="card map shadow">
       <%= image_tag annonce.photos[0], crop: :fill %>
       <div class="footer">
         <h2><%= annonce.titre %></h2>

@@ -9,18 +9,27 @@
     width: 100%;
     .cards {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
       gap: 0px 0px;
     }
-    section:first-of-type { width: 50%; }
     section { width: 50%; }
+    section:first-of-type { width: 100%; }
     #map {
       height: 100vh !important;
       position: sticky;
       top: 0;
       //display: flex;
       width: 100% !important;
+    }
+    .card.map {
+      //border: solid 1px lightgrey;
+      border-radius: 3px;
+      margin: 0px 1em;
+      margin-bottom: 1em;
+      display: flex;
+      img { width: 30%; height: auto; }
+      .footer { all: unset; }
     }
   }
 }
