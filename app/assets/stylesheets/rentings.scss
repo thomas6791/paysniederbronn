@@ -8,10 +8,15 @@
     display: flex;
     width: 100%;
     .cards {
+      all: unset;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-rows: 10em;
       gap: 0px 0px;
+      a {
+        border: solid;
+        margin-bottom: 10px;
+      }
     }
     section { width: 50%; }
     section:first-of-type { width: 100%; }
@@ -23,12 +28,14 @@
       width: 100% !important;
     }
     .card.map {
-      //border: solid 1px lightgrey;
-      border-radius: 3px;
-      margin: 0px 1em;
-      margin-bottom: 1em;
-      display: flex;
-      img { width: 30%; height: auto; }
+      //border: solid 1px red;
+      //height: 200px;
+      //width: 100%;
+      //border-radius: 3px;
+      //margin: 0px 1em;
+      //margin-bottom: 1em;
+      //display: flex;
+      img { height: 50px; width: auto; }
       .footer { all: unset; }
     }
   }
