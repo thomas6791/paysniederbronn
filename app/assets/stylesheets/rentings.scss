@@ -5,18 +5,8 @@
 #rentings {
   max-width: 100%;
   #renting-map {
-    display: flex;
-    width: 100%;
-    .cards {
-      all: unset;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 10em;
-      gap: 0px 0px;
-      a {
-        border: solid;
-        margin-bottom: 10px;
-      }
+      display: flex;
+      width: 100%;
     }
     section { width: 50%; }
     section:first-of-type { width: 100%; }
@@ -27,19 +17,18 @@
       //display: flex;
       width: 100% !important;
     }
-    .card.map {
-      //border: solid 1px red;
-      //height: 200px;
-      //width: 100%;
-      //border-radius: 3px;
-      //margin: 0px 1em;
-      //margin-bottom: 1em;
-      //display: flex;
-      img { height: 50px; width: auto; }
-      .footer { all: unset; }
-    }
+  .cards-renting {
+
+  }
+  .card-map { border: solid 1px lightgrey; height: 33.3vh;
+    display: flex;
+    margin: 0 1em;
+    margin-bottom: 1em;
+    border-radius: 3px;
+  img { height: 100%; width: auto; }
   }
 }
+
 .selects-rentings {
   height: fit-content;
   padding: 1.5em 0px;

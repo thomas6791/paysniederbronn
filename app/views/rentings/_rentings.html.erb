@@ -1,20 +1,8 @@
 <% @annonces.each do |annonce| %>
   <%= link_to annonce do %>
-    <div class="card map shadow">
+    <div class="card-map shadow">
       <%= image_tag annonce.photos[0], crop: :fill %>
-      <div class="footer">
-        <h2><%= annonce.titre %></h2>
-        <div class="hide-content">
-          <p class="more">En savoir plus</p>
-          <div class="content">
-            <p><%= annonce.description.to_plain_text.truncate(75) %></p>
-            <!--
-            <span class="link-website"><p>Voir site internet</p></span>
-            -->
-          </div>
-        </div>
-
-      </div>
+      <h2><%= annonce.titre %></h2>
     </div>
   <% end %>
 <% end %>
