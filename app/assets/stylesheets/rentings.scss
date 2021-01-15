@@ -1,10 +1,39 @@
 // Place all the styles related to the Rentings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#rentings {
+  max-width: 100%;
+  #renting-map {
+      display: flex;
+      width: 100%;
+    }
+    section { width: 50%; }
+    section:first-of-type { width: 100%; }
+    #map {
+      height: 100vh !important;
+      position: sticky;
+      top: 0;
+      //display: flex;
+      width: 100% !important;
+    }
+  .cards-renting {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    margin: 0px 0.5em;
+    a { text-decoration: none; color: black; }
+  }
+}
+
 .selects-rentings {
+  height: fit-content;
   padding: 1.5em 0px;
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
+  //display: block;
+  width: fit-content;
   a {
     width: auto;
     color: black;
@@ -13,5 +42,49 @@
     border-radius: 3px;
     padding: 5px 15px;
     &:hover { background-color: whitesmoke; }
+  }
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  main {
+    padding: 0px 10px;
+    padding-top: 55px;
+    content-visibility: auto;
+  }
+  #renting-map {
+    section { width: 0%; }
+    section:first-of-type { width: 100%; }
+    #map { display: none; }
+    .cards-renting {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards-renting {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards-renting {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards-renting {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards-renting {
+    grid-template-columns: 1fr 1fr;
   }
 }
