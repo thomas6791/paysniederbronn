@@ -5,7 +5,7 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= annonce.titre %></h2>
-          <p><%= annonce.description %></p>
+          <p><%= annonce.description.truncate(50) %>...</p>
         </div>
         <p class="card-trip-pricing">£99.99</p>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
