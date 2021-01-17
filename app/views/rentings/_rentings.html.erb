@@ -5,10 +5,10 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= annonce.titre %></h2>
-          <p><%= annonce.description.to_plain_text.truncate(75)...%></p>
+          <p><%= annonce.description.to_plain_text.truncate(100)...%></p>
         </div>
-        <p class="card-trip-pricing"><%= humanized_money annonce.price_day %> <%= annonce.price_week.currency.symbol %>/nuit
-          <br><%= humanized_money annonce.price_week %> <%= annonce.price_week.currency.symbol %>/sem.
+        <p class="card-trip-pricing"><%= humanized_money annonce.price_day %> <%= annonce.price_week.currency.symbol %>/nuit<br>
+          <%= humanized_money annonce.price_week %> <%= annonce.price_week.currency.symbol %>/sem.
         </p>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
       </div>
