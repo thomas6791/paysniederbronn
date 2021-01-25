@@ -2,12 +2,12 @@
   <%= render "shared/gallery", collection: @annonce.photos %>
   <article>
     <h1><%= @annonce.titre %></h1>
-    <nav id="sub-nav">
+    <div id="sub-nav">
       <ul>
         <li><a href="#description-renting">Description</a></li>
         <li><a href="#calendar-links">Calendrier</a></li>
       </ul>
-    </nav>
+    </div>
     <section class="holiday">
       <div class="holiday description" id="description-renting">
         <%= @annonce.description %>
