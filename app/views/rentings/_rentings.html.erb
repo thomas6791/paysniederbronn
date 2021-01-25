@@ -13,9 +13,9 @@
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
       </div>
       <% if params[:action].include?("location_cure_niederbronn") %>
-        <p class="dist-cure"><strong>distance de la cure : <%= annonce.niederbronn_dist.round %>km</strong></p>
+        <p class="dist-cure"><strong>Distance des thermes : <%= annonce.niederbronn_dist.round %>km</strong></p>
       <% elsif params[:action].include?("location_cure_morsbronn") %>
-        <p class="dist-cure"><strong>distance de la cure : <%= annonce.morsbronn_dist.round %>km</strong></p>
+        <p class="dist-cure"><strong>Distance des thermes : <%= annonce.morsbronn_dist.round %>km</strong></p>
       <% end %>
     </div>
   <% end %>
