@@ -37,4 +37,10 @@ module RentingsHelper
     puts loc_urls
     puts loc_urls.size
   end
+
+  def geocode_cure(annonce)
+    annonce.morsbronn_dist = annonce.distance_to(Renting::CURE_MORSBRONN).round(2)
+    annonce.niederbronn_dist = annonce.distance_to(Renting::CURE_NIEDERBRONN).round(2)
+    annonce.save!
+  end
 end

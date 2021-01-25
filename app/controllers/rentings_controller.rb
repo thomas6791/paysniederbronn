@@ -36,6 +36,7 @@ class RentingsController < ApplicationController
     @annonce  = Renting.new(renting_params)
     @annonce.user_id = 1
     @annonce.save
+    helpers.geocode_cure(@annonce)
   end
 
   def edit
@@ -45,6 +46,7 @@ class RentingsController < ApplicationController
   def update
     @annonce = Renting.find(params[:id])
     @annonce.update(renting_params)
+    helpers.geocode_cure(@annonce)
     redirect_to renting_path(@annonce)
   end
 

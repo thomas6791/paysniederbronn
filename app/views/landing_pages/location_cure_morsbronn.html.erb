@@ -1,5 +1,22 @@
-<main>
-  <article class="article">
+<main id="rentings">
+  <article>
+    <% @markers.push({:lat=>Renting::CURE_MORSBRONN[0], :lng=>Renting::CURE_MORSBRONN[1]}) %>
     <h1>Locations pour cure thermale à Morsbronn-les-Bains</h1>
+    <p></p>
+    <br>
+    <%= render partial: 'rentings/selects' %>
+    <div id="renting-map">
+      <section class="cards-renting">
+        <%= render partial: 'rentings/rentings', locals: {annonces: @annonces } %>
+      </section>
+      <section>
+        <div id="map"
+         style="width: 80%; height: 600px; margin: auto;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+         </div>
+      </section>
+    </div>
   </article>
 </main>
+<%= javascript_pack_tag "map" %>
