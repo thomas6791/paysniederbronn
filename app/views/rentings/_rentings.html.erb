@@ -12,8 +12,10 @@
         </p>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
       </div>
-      <% if params[:action].include?("location_cure") %>
-        <p><strong>distance de la cure : ....km</strong></p>
+      <% if params[:action].include?("location_cure_niederbronn") %>
+        <p class="dist-cure"><strong>distance de la cure : <%= annonce.niederbronn_dist.round %>km</strong></p>
+      <% else %>
+        <p class="dist-cure"><strong>distance de la cure : <%= annonce.morsbronn_dist.round %>km</strong></p>
       <% end %>
     </div>
   <% end %>
