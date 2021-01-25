@@ -14,7 +14,7 @@
       </div>
       <% if params[:action].include?("location_cure_niederbronn") %>
         <p class="dist-cure"><strong>distance de la cure : <%= annonce.niederbronn_dist.round %>km</strong></p>
-      <% else %>
+      <% elsif params[:action].include?("location_cure_morsbronn") %>
         <p class="dist-cure"><strong>distance de la cure : <%= annonce.morsbronn_dist.round %>km</strong></p>
       <% end %>
     </div>
