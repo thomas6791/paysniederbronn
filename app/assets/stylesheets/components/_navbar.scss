@@ -97,6 +97,25 @@ nav {
   .mob { visibility: hidden; }
 }
 
+#sub-nav {
+  //all: initial;
+  background-color: white;
+  color: $black;
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  ul {
+    display: inline-flex;
+    list-style: none;
+    li {
+      margin: 0;
+      padding: 0;
+      padding: 0 0.5em;
+      a { color: black; text-decoration: none; }
+    }
+  }
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   #mobile { height: 55px; }
