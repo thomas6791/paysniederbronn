@@ -12,6 +12,9 @@
         </p>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
       </div>
+      <% if params[:action].include?("location_cure") %>
+        <p><strong>distance de la cure : ....km</strong></p>
+      <% end %>
     </div>
   <% end %>
 <% end %>
