@@ -104,14 +104,20 @@ nav {
   display: flex;
   justify-content: flex-end;
   border: none;
+  padding: 0;
+  margin-bottom: 1em;
   ul {
     display: inline-flex;
     list-style: none;
     li {
       margin: 0;
       padding: 0;
-      padding: 0 0.5em;
-      a { color: black; text-decoration: none; }
+      font-weight: bolder;
+      a {
+        color: black; text-decoration: none;
+        padding: 0 2em;
+        margin: 0.5em 0;
+      }
     }
   }
 }
