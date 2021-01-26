@@ -28,12 +28,15 @@
 
 .selects-rentings {
   height: fit-content;
+  max-width: 1024px;
   padding: 1.5em 0px;
   display: flex;
   flex-wrap: wrap;
-  margin: auto;
   //display: block;
-  width: fit-content;
+  //width: fit-content;
+  max-width: 1024px;
+  margin: auto;
+  text-align: left;
   a {
     width: auto;
     color: black;
