@@ -89,6 +89,10 @@ iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
       }
     }
   }
+  .header-landing {
+    flex-direction: column;
+    img { width: 100%; }
+  }
 }
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
