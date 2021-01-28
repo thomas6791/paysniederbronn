@@ -48,6 +48,7 @@ nav {
     .flag { width: 30px; height: auto; max-width: 30px; max-height: 30px; }
   }
 }
+nav > div { max-width: 1260px; margin: auto; }
 #mobile {
   display: flex;
   justify-content: flex-end;
