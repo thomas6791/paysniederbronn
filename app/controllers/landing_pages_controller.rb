@@ -50,8 +50,7 @@ class LandingPagesController < ApplicationController
   def location_cure_niederbronn
     set_meta_tags title: "Locations pour cure thermale à Niederbronn-les-bains | Pays de Niederbronn",
               description: "Les locations pour curistes à Niederbronn-les-Bains",
-              canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-niederbronn/location-cure-niederbronn",
-              noindex: true
+              canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-niederbronn/location-cure-niederbronn"
     #@annonces = Renting.all.where(category:"renting")
 
     @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
