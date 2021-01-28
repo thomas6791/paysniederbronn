@@ -110,6 +110,11 @@
   width: 30%;
   margin-left: 10px;
   text-align: right;
+  align-self: baseline;
+}
+.card-trip-infos > div {
+  align-self: baseline;
+  width: 75%;
 }
 
 .card-trip-infos .card-trip-user {

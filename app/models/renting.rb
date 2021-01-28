@@ -16,6 +16,7 @@ class Renting < ApplicationRecord
   register_currency :eur
   monetize :price_day_cents, as: "price_day", with_currency: :eur
   monetize :price_week_cents, as: "price_week", with_currency: :eur
+  monetize :price_cure_cents, as: "price_cure", with_currency: :eur
   # Lat, Lng
   CURE_NIEDERBRONN = [48.950530, 7.643330].freeze
   CURE_MORSBRONN = [48.906250, 7.746870].freeze

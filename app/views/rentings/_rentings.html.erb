@@ -9,6 +9,9 @@
         </div>
         <p class="card-trip-pricing"><%= humanized_money annonce.price_day %> <%= annonce.price_week.currency.symbol %>/nuit<br>
           <%= humanized_money annonce.price_week %> <%= annonce.price_week.currency.symbol %>/sem.
+          <% if params[:action].include?("location_cure") %>
+          <br><%= humanized_money annonce.price_cure %> <%= annonce.price_cure.currency.symbol %>/3 sem.
+          <% end %>
         </p>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
         <p class="annonce-category shadow"><%= annonce.category %></p>
