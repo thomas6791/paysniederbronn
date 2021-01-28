@@ -14,7 +14,7 @@
           <% end %>
         </p>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
-        <p class="annonce-category shadow"><%= annonce.category %></p>
+        <p class="annonce-category shadow"><%= annonce.category %> pour <%= annonce.capacity %> pers.</p>
       </div>
       <% if params[:action].include?("location_cure_niederbronn") %>
         <p class="dist-cure"><strong>Distance des thermes : <%= annonce.niederbronn_dist.round(1) %>km</strong></p>
