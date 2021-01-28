@@ -15,10 +15,11 @@ ul > li { margin-left: 20px; }
 body {
 }
 main {
-  max-width: 1024px; margin: auto;
+  max-width: 1260px; margin: auto;
   min-height: 100vh;
   content-visibility: auto;
 }
+article { max-width: 1260px; margin: auto;}
 .notice, .alert {
   text-align: center;
   font-weight: bold;
