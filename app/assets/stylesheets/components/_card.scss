@@ -75,6 +75,7 @@
   overflow: hidden;
   background: white;
   border-radius: 2px;
+  height: 100%;
   //box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -99,10 +100,16 @@
 
 .card-trip .card-trip-infos {
   padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  //display: flex;
+  //justify-content: space-between;
+  //align-items: flex-end;
   position: relative;
+  .description {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    & > p { max-width: 70%; }
+  }
 }
 
 .card-trip-pricing {
