@@ -5,7 +5,7 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= annonce.titre %></h2>
-          <p><%= annonce.description.to_plain_text.truncate(100, omission:'...')%></p>
+          <p><%= annonce.description.to_plain_text.truncate(120, omission:'...')%></p>
         </div>
         <p class="card-trip-pricing"><%= humanized_money annonce.price_day %> <%= annonce.price_week.currency.symbol %>/nuit<br>
           <%= humanized_money annonce.price_week %> <%= annonce.price_week.currency.symbol %>/sem.
