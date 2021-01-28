@@ -11,6 +11,7 @@
           <%= humanized_money annonce.price_week %> <%= annonce.price_week.currency.symbol %>/sem.
         </p>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
+        <p class="annonce-category shadow"><%= annonce.category %></p>
       </div>
       <% if params[:action].include?("location_cure_niederbronn") %>
         <p class="dist-cure"><strong>Distance des thermes : <%= annonce.niederbronn_dist.round(1) %>km</strong></p>

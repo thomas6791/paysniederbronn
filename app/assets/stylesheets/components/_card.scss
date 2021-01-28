@@ -121,3 +121,18 @@
   border: solid 1px white;
 }
 .dist-cure { text-align: right; padding: 10px 16px;}
+.card-trip {
+  .annonce-category {
+    //border: solid 1px black;
+    display: inline-block;
+    border-radius: 50px;
+    padding: 2px 15px;
+    background-color: white;
+    position: absolute;
+    left: 16px;
+    top: -16px;
+    width: auto;
+    text-align: center;
+    opacity: 1;
+  }
+}
