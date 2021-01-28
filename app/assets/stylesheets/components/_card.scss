@@ -76,6 +76,7 @@
   background: white;
   border-radius: 2px;
   height: 100%;
+  position: relative;
   //box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -132,7 +133,12 @@
   border-radius: 50%;
   border: solid 1px white;
 }
-.dist-cure { text-align: right; padding: 0px 16px 10px; }
+.dist-cure {
+  text-align: right; padding: 0px 16px 10px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
 .card-trip {
   .annonce-category {
     //border: solid 1px black;
