@@ -89,7 +89,7 @@
   box-sizing: border-box;
   padding-left: 2px;
   position: fixed;
-  bottom: 10px;
+  top: 10px;
 }
 
 .gg-btn:hover {
@@ -98,15 +98,15 @@
 
 .gg-close {
   top: 10px;
-}
-
-.gg-close,
-.gg-next {
   right: 10px;
 }
 
+.gg-next {
+  right: 60px;
+}
+
 .gg-prev {
-  right: 50px;
+  right: 100px;
 }
 
 .gg-prev,
