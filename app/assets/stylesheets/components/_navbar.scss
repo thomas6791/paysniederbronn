@@ -151,6 +151,7 @@ nav > div { max-width: 1260px; margin: auto; align-items: center; }
       width: 70%;
       visibility: visible;
       z-index: 10;
+      & > div { flex-direction: column; }
     }
     #langs { flex-direction: initial; }
   }

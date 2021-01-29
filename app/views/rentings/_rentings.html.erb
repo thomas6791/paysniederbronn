@@ -16,7 +16,10 @@
               <%= humanized_money annonce.price_week %> <%= annonce.price_week.currency.symbol %>/sem.
             <% end %>
           </p>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered shadow" />
+          <% if annonce.avatar.attached? %>
+            <%= image_tag annonce.avatar, class: "card-trip-user avatar-bordered shadow" %>
+          <% else %>
+          <% end %>
           <p class="annonce-category shadow"><%= annonce.category %> pour <%= annonce.capacity %> pers.</p>
         </div>
       </div>

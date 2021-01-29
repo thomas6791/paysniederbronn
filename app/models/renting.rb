@@ -8,6 +8,7 @@ class Renting < ApplicationRecord
 
   has_rich_text :description
   has_many_attached :photos
+  has_one_attached :avatar
 
   geocoded_by :full_address
   after_validation :geocode, if: :will_save_change_to_address?
