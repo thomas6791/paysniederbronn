@@ -12,10 +12,10 @@
 
     <aside class="selects-rentings">
       <%= link_to "Tous", location_niederbronn_landing_pages_path(:rent => "all") %>
-      <%= simple_form_for :user, url: location_niederbronn_landing_pages_path do |form| %>
-        <%= form.input :start_date, as: :date, html5: true %>
-        <%= form.input :end_date, as: :date, html5: true %>
-        <%= form.button :submit, "Envoyer" %>
+      <%= simple_form_for :cure_date, { url: location_niederbronn_landing_pages_path, method: "get" } do |f| %>
+        <%= f.input :start_date, as: :date, html5: true, label: false %>
+        <%= f.input :end_date, as: :date, html5: true, label: false %>
+        <%= f.button :submit, "Envoyer" %>
       <% end %>
 
     </aside>
