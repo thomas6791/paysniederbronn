@@ -55,6 +55,7 @@ class LandingPagesController < ApplicationController
 
     @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
     @flats = @annonces.geocoded
+
     @markers = @flats.map do |flat|
       {
         lat: flat.latitude,
