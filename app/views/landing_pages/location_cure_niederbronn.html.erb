@@ -10,6 +10,15 @@
       <%= image_tag "home/thermes.jpg", alt: "établissement de cure thermale de Niederbronn-les-bains en Alsace", crop: :fill %>
     </section>
 
+    <aside class="selects-rentings">
+      <%= link_to "Tous", location_niederbronn_landing_pages_path(:rent => "all") %>
+      <%= simple_form_for :cure_date, { url: location_niederbronn_landing_pages_path } do |f| %>
+        <%= f.input :start_date, as: :date, html5: true %>
+        <%= f.input :end_date, as: :date, html5: true %>
+        <%= f.button :submit, "Envoyer" %>
+      <% end %>
+    </aside>
+
     <div id="renting-map">
       <section class="cards-renting">
         <%= render partial: 'rentings/rentings', locals: {annonces: @annonces } %>
