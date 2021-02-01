@@ -63,10 +63,21 @@ class LandingPagesController < ApplicationController
       }
     end
     if params.include?("cure_dates")
+      annonces_valid = []
+      @annonces = @annonces.where.not(airbnb: '')
       @annonces.each do |rent|
         rent.dates_rented = helpers.airbnb_dates(rent.airbnb)
-        fail
+        dates = (params[:cure_dates][:start_date]...params[:cure_dates][:end_date]).to_a # dates -1
+
+        if dates.any? {|date| rent.dates_rented.include?(date) } # check si les dates entrées sont dans les dates airbbn
+          #contient
+        else
+          #ne contient pas
+          annonces_valid << rent
+        end
       end
+      @annonces = Renting.where(id: annonces_valid.map(&:id))
+      redirect_back(fallback_location: root_path)
     end
   end
 
