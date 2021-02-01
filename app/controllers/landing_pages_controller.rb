@@ -77,7 +77,14 @@ class LandingPagesController < ApplicationController
         end
       end
       @annonces = Renting.where(id: annonces_valid.map(&:id))
-      redirect_back(fallback_location: root_path)
+      @flats = @annonces.geocoded
+
+      @markers = @flats.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude
+        }
+      end
     end
   end
 
