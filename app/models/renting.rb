@@ -22,6 +22,8 @@ class Renting < ApplicationRecord
   CURE_NIEDERBRONN = [48.950530, 7.643330].freeze
   CURE_MORSBRONN = [48.906250, 7.746870].freeze
 
+  attr_accessor :dates_rented
+
   def to_param
     "#{id}-#{slug}"
   end

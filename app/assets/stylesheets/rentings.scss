@@ -48,6 +48,9 @@
     margin: 0 3px;
     &:hover { background-color: whitesmoke; }
   }
+  .simple_form.cure_dates {
+    display: flex;
+  }
 }
 
 @media (min-width: 100px) and (max-width: 575px) {

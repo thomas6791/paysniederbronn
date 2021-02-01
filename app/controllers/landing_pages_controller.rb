@@ -62,6 +62,12 @@ class LandingPagesController < ApplicationController
         lng: flat.longitude
       }
     end
+    if params.include?("cure_dates")
+      @annonces.each do |rent|
+        rent.dates_rented = []
+        fail
+      end
+    end
   end
 
   def location_cure_morsbronn
