@@ -62,6 +62,7 @@ class LandingPagesController < ApplicationController
         lng: flat.longitude
       }
     end
+
     if params.include?("cure_dates")
       annonces_valid = []
       @annonces = @annonces.where.not(airbnb: '')
@@ -85,6 +86,7 @@ class LandingPagesController < ApplicationController
           lng: flat.longitude
         }
       end
+      #request.fullpath
     end
   end
 
