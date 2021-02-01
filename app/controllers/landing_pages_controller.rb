@@ -64,7 +64,7 @@ class LandingPagesController < ApplicationController
     end
     if params.include?("cure_dates")
       @annonces.each do |rent|
-        rent.dates_rented = []
+        rent.dates_rented = helpers.airbnb_dates(rent.airbnb)
         fail
       end
     end
