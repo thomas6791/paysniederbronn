@@ -66,7 +66,8 @@ class LandingPagesController < ApplicationController
     if params.include?("cure_options")
       params_keys = [:start_date, :end_date, :capacity, :tarif]
       if params_keys.all? {|k| params[:cure_options].has_key? k}
-        fail
+        values = params[:cure_options].values.delete_if { |i| i == "" }
+        #fail
       else
         #...
       end
