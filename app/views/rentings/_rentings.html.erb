@@ -10,10 +10,10 @@
           <p><%= annonce.description.to_plain_text.truncate(120, omission:'...')%></p>
           <p class="card-trip-pricing">
             <% if params[:action].include?("location_cure") %>
-              à partir de <%= humanized_money annonce.price_cure %><%= annonce.price_cure.currency.symbol %>/3 sem.
+              à partir de<br><%= humanized_money annonce.price_cure %><%= annonce.price_cure.currency.symbol %>/3 sem.
             <% else %>
-              à partir de <%= humanized_money annonce.price_day %><%= annonce.price_week.currency.symbol %>/nuit<br>
-              à partir de <%= humanized_money annonce.price_week %><%= annonce.price_week.currency.symbol %>/sem.
+              à partir de<br><%= humanized_money annonce.price_day %><%= annonce.price_week.currency.symbol %>/nuit<br>
+              à partir de<br><%= humanized_money annonce.price_week %><%= annonce.price_week.currency.symbol %>/sem.
             <% end %>
           </p>
           <% if annonce.avatar.attached? %>
