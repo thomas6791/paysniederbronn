@@ -69,22 +69,27 @@ class LandingPagesController < ApplicationController
         cure_options = params[:cure_options].permit(params[:cure_options].keys).to_h
         cure_options.delete_if {|key, value| value == "" }
         #Book.where("title = ? AND out_of_print = ?", params[:title], false)
+        if cure_options.include?("start_date" && "end_date")
+          annonces_dates_ok = helpers.check_calendar(@annonces, cure_options["start_date"], cure_options["end_date"])
+          annonces_dates_ok = Renting.where(id: annonces_dates_ok.map(&:id))
+          fail
+        end
       else
         #...
       end
-      annonces_valid = []
-      @annonces = @annonces.where.not(airbnb: '')
-      @annonces.each do |rent|
-        rent.dates_rented = helpers.airbnb_dates(rent.airbnb)
-        dates = (params[:cure_options][:start_date]...params[:cure_dates][:end_date]).to_a # dates -1
+      #annonces_valid = []
+      #@annonces = @annonces.where.not(airbnb: '')
+      #@annonces.each do |rent|
+      #  rent.dates_rented = helpers.airbnb_dates(rent.airbnb)
+      #  dates = (params[:cure_options][:start_date]...params[:cure_dates][:end_date]).to_a # dates -1
 
-        if dates.any? {|date| rent.dates_rented.include?(date) } # check si les dates entrées sont dans les dates airbbn
+      #  if dates.any? {|date| rent.dates_rented.include?(date) } # check si les dates entrées sont dans les dates airbbn
           #contient
-        else
+      #  else
           #ne contient pas
-          annonces_valid << rent
-        end
-      end
+      #    annonces_valid << rent
+      #  end
+      #end
       @annonces = Renting.where(id: annonces_valid.map(&:id))
       @flats = @annonces.geocoded
 

@@ -91,4 +91,15 @@ module PagesHelper
     return clean_array
   end
 
+  def check_calendar(annonces, start_date, end_date)
+    annonces_ok = []
+    annonces.each do |rent|
+      rent.dates_rented = airbnb_dates(rent.airbnb) if !rent.airbnb.blank?
+      dates = (start_date...end_date).to_a
+      if (rent.dates_rented & dates).empty?
+        annonces_ok << rent
+      end
+    end
+  end
+
 end
