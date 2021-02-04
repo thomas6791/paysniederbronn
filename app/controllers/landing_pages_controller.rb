@@ -69,9 +69,14 @@ class LandingPagesController < ApplicationController
         cure_options = params[:cure_options].permit(params[:cure_options].keys).to_h
         cure_options.delete_if {|key, value| value == "" }
         #Book.where("title = ? AND out_of_print = ?", params[:title], false)
+        #if cure_options autres options
+        if cure_options.include?("capacity" || "tarif")
+          annonces = Renting.where("capacity >= ? AND price_cure_cents <= ?", cure_options[:capacity], (cure_options[:tarif].to_i * 100).to_s)
+        end
+        #end
         if cure_options.include?("start_date" && "end_date")
           annonces_dates_ok = helpers.check_calendar(@annonces, cure_options["start_date"], cure_options["end_date"])
-          annonces_dates_ok = Renting.where(id: annonces_dates_ok.map(&:id))
+          annonces = Renting.where(id: annonces_dates_ok.map(&:id))
         end
       else
         #...
@@ -89,7 +94,7 @@ class LandingPagesController < ApplicationController
       #    annonces_valid << rent
       #  end
       #end
-      @annonces = annonces_dates_ok
+      @annonces = annonces
       @flats = @annonces.geocoded
 
       @markers = @flats.map do |flat|
