@@ -98,8 +98,10 @@ module PagesHelper
       dates = (start_date...end_date).to_a
       if (rent.dates_rented & dates).empty?
         annonces_ok << rent
+      else
       end
     end
+    return annonces_ok
   end
 
 end

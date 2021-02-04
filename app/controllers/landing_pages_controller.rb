@@ -72,7 +72,6 @@ class LandingPagesController < ApplicationController
         if cure_options.include?("start_date" && "end_date")
           annonces_dates_ok = helpers.check_calendar(@annonces, cure_options["start_date"], cure_options["end_date"])
           annonces_dates_ok = Renting.where(id: annonces_dates_ok.map(&:id))
-          fail
         end
       else
         #...
@@ -90,7 +89,7 @@ class LandingPagesController < ApplicationController
       #    annonces_valid << rent
       #  end
       #end
-      @annonces = Renting.where(id: annonces_valid.map(&:id))
+      @annonces = annonces_dates_ok
       @flats = @annonces.geocoded
 
       @markers = @flats.map do |flat|
