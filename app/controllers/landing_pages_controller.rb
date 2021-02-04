@@ -67,8 +67,8 @@ class LandingPagesController < ApplicationController
       params_keys = [:start_date, :end_date, :capacity, :tarif]
       if params_keys.all? {|k| params[:cure_options].has_key? k}
         cure_options = params[:cure_options].permit(params[:cure_options].keys).to_h
-        cure_options = cure_options.values.delete_if { |i| i == "" }
-        fail
+        cure_options.delete_if {|key, value| value == "" }
+        #Book.where("title = ? AND out_of_print = ?", params[:title], false)
       else
         #...
       end
