@@ -10,13 +10,31 @@
       <%= image_tag "home/thermes.jpg", alt: "établissement de cure thermale de Niederbronn-les-bains en Alsace", crop: :fill %>
     </section>
 
-    <aside class="selects-rentings">
-      <%= link_to "Tous", location_niederbronn_landing_pages_path(:rent => "all") %>
+    <aside class="selects-rentings cure">
       <%= simple_form_for :cure_options, { url: location_niederbronn_landing_pages_path, method: "get" } do |f| %>
-        <%= f.input :start_date, as: :date, html5: true, label: false %>
-        <%= f.input :end_date, as: :date, html5: true, label: false %>
-        <%= f.input :capacity, min_max: true, label: false, placeholder: "Nombre de personne" %>
-        <%= f.input :tarif, as: :integer, label: false, placeholder: "Tarif max" %>
+      <%= f.button :submit, "Tous les hébergements", :name => "reset" %>
+        <% if !params[:cure_options].nil? && params[:cure_options][:start_date] != "" %>
+          <%= f.input :start_date, as: :date, html5: true, label: false, input_html: { class: 'occuped',
+            value: params[:cure_options][:start_date] }  %>
+        <% else %>
+          <%= f.input :start_date, as: :date, html5: true, label: false %>
+        <% end %>
+        <% if !params[:cure_options].nil? && params[:cure_options][:end_date] != "" %>
+          <%= f.input :end_date, as: :date, html5: true, label: false, input_html: { class: 'occuped',
+            value: params[:cure_options][:end_date] }  %>
+        <% else %>
+          <%= f.input :start_date, as: :date, html5: true, label: false %>
+        <% end %>
+        <% if !params[:cure_options].nil? && params[:cure_options][:capacity] != "" %>
+          <%= f.input :capacity, min_max: true, label: false, placeholder: "Nombre de personne", input_html: { class: 'occuped', value: params[:cure_options][:capacity] } %>
+        <% else %>
+          <%= f.input :capacity, min_max: true, label: false, placeholder: "Nombre de personne" %>
+        <% end %>
+        <% if !params[:cure_options].nil? && params[:cure_options][:tarif] != "" %>
+          <%= f.input :tarif, as: :integer, label: false, placeholder: "Tarif max", input_html: { class: 'occuped', value: params[:cure_options][:tarif] } %>
+        <% else %>
+          <%= f.input :tarif, as: :integer, label: false, placeholder: "Tarif max" %>
+        <% end %>
         <%= f.button :submit, "Envoyer" %>
       <% end %>
 

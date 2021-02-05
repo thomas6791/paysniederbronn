@@ -53,33 +53,30 @@ class LandingPagesController < ApplicationController
               canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-niederbronn/location-cure-niederbronn"
     #@annonces = Renting.all.where(category:"renting")
 
-    @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
-    @flats = @annonces.geocoded
-
-    @markers = @flats.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
 
     if params.include?("cure_options")
+      annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
       params_keys = [:start_date, :end_date, :capacity, :tarif]
       if params_keys.all? {|k| params[:cure_options].has_key? k}
         cure_options = params[:cure_options].permit(params[:cure_options].keys).to_h
         cure_options.delete_if {|key, value| value == "" }
 
-        @annonces = @annonces.where("capacity >= ?", cure_options[:capacity]) if cure_options.include?("capacity")
-        @annonces = @annonces.where("price_cure_cents <= ?", (cure_options[:tarif].to_i * 100).to_s) if cure_options.include?("tarif")
+        annonces = annonces.where("capacity >= ?", cure_options[:capacity]) if cure_options.include?("capacity")
+        annonces = annonces.where("price_cure_cents <= ?", (cure_options[:tarif].to_i * 100).to_s) if cure_options.include?("tarif")
         if cure_options.include?("start_date" && "end_date")
-          annonces_dates_ok = helpers.check_calendar(@annonces, cure_options["start_date"], cure_options["end_date"])
-          @annonces = @annonces.where(id: annonces_dates_ok.map(&:id))
+          annonces_dates_ok = helpers.check_calendar(annonces, cure_options["start_date"], cure_options["end_date"])
+          annonces = annonces.where(id: annonces_dates_ok.map(&:id))
         end
-      else
-        #...
       end
-
-      @annonces = @annonces
+      @annonces = annonces
+    else
+      @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
+    end
+      #if params[:reset].present?
+      #  fail
+      #  @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
+      #  params.delete :cure_options
+      #end
       @flats = @annonces.geocoded
 
       @markers = @flats.map do |flat|
@@ -88,8 +85,6 @@ class LandingPagesController < ApplicationController
           lng: flat.longitude
         }
       end
-      #request.fullpath
-    end
   end
 
   def location_cure_morsbronn
