@@ -94,7 +94,7 @@ class LandingPagesController < ApplicationController
       #    annonces_valid << rent
       #  end
       #end
-      @annonces = annonces
+      @annonces = annonces if !annonces.nil?
       @flats = @annonces.geocoded
 
       @markers = @flats.map do |flat|
