@@ -12,7 +12,6 @@
 
     <aside class="selects-rentings cure">
       <%= simple_form_for :cure_options, { url: location_niederbronn_landing_pages_path, method: "get" } do |f| %>
-      <%= f.button :submit, "Tous les hébergements", :name => "reset" %>
         <% if !params[:cure_options].nil? && params[:cure_options][:start_date] != "" %>
           <%= f.input :start_date, as: :date, html5: true, label: false, input_html: { class: 'occuped',
             value: params[:cure_options][:start_date] }  %>
