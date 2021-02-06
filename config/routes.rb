@@ -58,7 +58,8 @@ Rails.application.routes.draw do
         get "contact", to: "rentings#contact"
         get "contact_send", to: "rentings#contact_send"
         get "locations-chasse", to: "rentings#chasse"
-        get "select", to: "rentings#select"          # collection => no restaurant id in URL
+        get "select", to: "rentings#select"
+        get "renting-filters", to: "rentings#renting_filters"         # collection => no restaurant id in URL
         get 'gites-heidelbeere'
         get 'meuble-heidelbeere', to: 'rentings#meuble_heidelbeere', as: :meuble_heidelbeere
         get 'studio-heidelbeere', to: 'rentings#studio_heidelbeere', as: :studio_heidelbeere

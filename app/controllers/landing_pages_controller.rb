@@ -54,28 +54,7 @@ class LandingPagesController < ApplicationController
     #@annonces = Renting.all.where(category:"renting")
     @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
     #if params.include?("cure_options")
-    params_keys = [:start_date, :end_date, :capacity, :tarif]
-    if params_keys.all? {|k| params[:cure_options].has_key? k}
-      cure_options = params[:cure_options].permit(params[:cure_options].keys).to_h
-      cure_options.delete_if {|key, value| value == "" }
-      annonces = @annonces
-      if !cure_options.empty?
-        #fail
-        annonces = annonces.where("capacity >= ?", cure_options[:capacity]) if cure_options.include?("capacity")
-        annonces = annonces.where("price_cure_cents <= ?", (cure_options[:tarif].to_i * 100).to_s) if cure_options.include?("tarif")
 
-        if cure_options.include?("start_date" && "end_date")
-          annonces_dates_ok = helpers.check_calendar(annonces, cure_options["start_date"], cure_options["end_date"])
-          annonces = annonces.where(id: annonces_dates_ok.map(&:id))
-        end
-        @annonces = annonces
-      else
-        @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
-      end
-
-      #annonces = annonces.where("capacity >= ?", cure_options[:capacity]) if cure_options.include?("capacity")
-      #annonces = annonces.where("price_cure_cents <= ?", (cure_options[:tarif].to_i * 100).to_s) if cure_options.include?("tarif")
-    end
       #@annonces = annonces
     #else
       #@annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")

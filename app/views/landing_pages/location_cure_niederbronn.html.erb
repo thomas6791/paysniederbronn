@@ -12,7 +12,8 @@
 
     <aside class="selects-rentings cure">
 
-      <%= form_for :cure_options, { url: location_niederbronn_landing_pages_path, method: "get", :html =>{:id => 'my_form'} } do |f| %>
+      <%= form_for :cure_options, { url: renting_filters_rentings_path, method: "get", :html =>{:id => 'my_form'} } do |f| %>
+        <%= hidden_field_tag(:url_from, params[:action]) %>
         <% if !params[:cure_options].nil? && params[:cure_options][:start_date] != "" %>
           <%= f.date_field :start_date, as: :date, html5: true, label: false, input_html: { class: 'occuped',
             value: params[:cure_options][:start_date] }  %>
@@ -23,7 +24,7 @@
           <%= f.date_field :end_date, as: :date, html5: true, label: false, input_html: { class: 'occuped',
             value: params[:cure_options][:end_date] }  %>
         <% else %>
-          <%= f.date_field :start_date, as: :date, html5: true, label: false %>
+          <%= f.date_field :end_date, as: :date, html5: true, label: false %>
         <% end %>
         <% if !params[:cure_options].nil? && params[:cure_options][:capacity] != "" %>
           <%= f.number_field :capacity, min_max: true, label: false, placeholder: "Nombre de personne", input_html: { class: 'occuped', value: params[:cure_options][:capacity] } %>
