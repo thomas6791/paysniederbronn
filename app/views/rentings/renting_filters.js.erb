@@ -5,4 +5,4 @@ function addTest(innerHTML) {
   x.insertAdjacentHTML('beforeend', innerHTML);
 }
 
-addTest('<%= j render "rentings/loc_niederbronn", annonces: @annonces %>');
+addTest('<%= j render "rentings/loc_niederbronn", annonces: @annonces, markers: @markers %>');
