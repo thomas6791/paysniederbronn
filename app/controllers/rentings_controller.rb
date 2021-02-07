@@ -149,6 +149,15 @@ class RentingsController < ApplicationController
       @annonces = annonces
     end
 
+    @flats = @annonces.geocoded
+
+      @markers = @flats.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude
+        }
+      end
+
     respond_to do |format|
       format.html { redirect_back(fallback_location: root_path) }
       format.js

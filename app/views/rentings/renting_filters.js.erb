@@ -3,6 +3,8 @@ function addTest(innerHTML) {
   let x = document.querySelector(".cards-renting");
   x.innerHTML = "";
   x.insertAdjacentHTML('beforeend', innerHTML);
+  let map = document.getElementById("map");
+  console.log(map.dataset.markers);
 }
 
 addTest('<%= j render "rentings/loc_niederbronn", annonces: @annonces, markers: @markers %>');
