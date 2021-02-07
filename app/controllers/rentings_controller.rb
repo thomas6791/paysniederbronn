@@ -130,44 +130,6 @@ class RentingsController < ApplicationController
     end
   end
 
-  def renting_filters
-    params_keys = [:start_date, :end_date, :capacity, :tarif]
-    params_keys.all? {|k| params[:cure_options].has_key? k}
-    cure_options = params[:cure_options].permit(params[:cure_options].keys).to_h
-    cure_options.delete_if {|key, value| value == "" }
-    annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
-    if !cure_options.empty?
-      annonces = annonces.where("capacity >= ?", cure_options[:capacity]) if cure_options.include?("capacity")
-      annonces = annonces.where("price_cure_cents <= ?", (cure_options[:tarif].to_i * 100).to_s) if cure_options.include?("tarif")
-
-      if cure_options.include?("start_date" && "end_date")
-        annonces_dates_ok = helpers.check_calendar(annonces, cure_options["start_date"], cure_options["end_date"])
-        annonces = annonces.where(id: annonces_dates_ok.map(&:id))
-      end
-      @annonces = annonces
-    elsif cure_options.empty?
-      @annonces = annonces
-    end
-
-    @flats = @annonces.geocoded
-
-      @markers = @flats.map do |flat|
-        {
-          lat: flat.latitude,
-          lng: flat.longitude
-        }
-      end
-
-    respond_to do |format|
-      format.html { redirect_back(fallback_location: root_path) }
-      format.js
-    end
-    #redirect_to location_niederbronn_landing_pages_path(:annonces => @annonces, param_2: 'value_2')
-    #redirect_back(fallback_location: root_path, params: @annonces)
-    #annonces = annonces.where("capacity >= ?", cure_options[:capacity]) if cure_options.include?("capacity")
-    #annonces = annonces.where("price_cure_cents <= ?", (cure_options[:tarif].to_i * 100).to_s) if cure_options.include?("tarif")
-  end
-
   private
 
   def renting_params
