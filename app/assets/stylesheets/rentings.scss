@@ -38,7 +38,7 @@
   max-width: 1260px;
   margin: auto;
   text-align: left;
-  a {
+  a, input {
     width: auto;
     color: black;
     text-decoration: none;
@@ -47,6 +47,9 @@
     padding: 5px 18px;
     margin: 0 3px;
     &:hover { background-color: whitesmoke; }
+  }
+  .simple_form.cure_options {
+    display: flex;
   }
 }
 

@@ -155,3 +155,16 @@
   flex-wrap: wrap;
   img { display: block; width: auto; height: 30vh; }
 }
+.selects-rentings.cure {
+  a {
+    border: solid 1px #333333; cursor: pointer;
+    display: flex; text-align: center; align-items: center;
+  }
+  form {
+    input { border: solid 1px #333333; line-height: 2em; cursor: pointer; }
+    input.occuped {
+    }
+  }
+  input[type="submit"], .dark-link { background-color: #333333; color: white; font-weight: bolder; }
+
+}

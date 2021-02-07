@@ -1,0 +1,24 @@
+<% @annonces.each do |annonce| %>
+  <%= link_to annonce do %>
+    <div class="card-trip shadow">
+      <%= image_tag annonce.photos[0] %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= annonce.titre.truncate(45, omission: '') %></h2>
+        </div>
+        <div class="description">
+          <p><%= annonce.description.to_plain_text.truncate(120, omission:'...')%></p>
+          <p class="card-trip-pricing">
+            <%= humanized_money annonce.price_cure %> <%= annonce.price_cure.currency.symbol %>/3 sem.
+          </p>
+          <% if annonce.avatar.attached? %>
+            <%= image_tag annonce.avatar, class: "card-trip-user avatar-bordered shadow" %>
+          <% else %>
+          <% end %>
+          <p class="annonce-category shadow"><%= annonce.category %> pour <%= annonce.capacity %> pers.</p>
+        </div>
+      </div>
+      <p class="dist-cure"><strong>Distance des thermes : <%= annonce.niederbronn_dist.round(1) %>km</strong></p>
+    </div>
+  <% end %>
+<% end %>

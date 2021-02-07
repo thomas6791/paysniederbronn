@@ -43,4 +43,6 @@ module RentingsHelper
     annonce.niederbronn_dist = annonce.distance_to(Renting::CURE_NIEDERBRONN).round(2)
     annonce.save!
   end
+
+
 end
