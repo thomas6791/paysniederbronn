@@ -293,13 +293,26 @@
                       <td>
                         <h1>Demande de Location</h1>
                         <p>Bonjour <%= @annonce_email %></p>
-                        <p>Quelqu'un vient de faire une demande de location concernant votre hébergement.</p>
+                        <br>
+                        <p><%= @user_name %> vient de faire une demande de location concernant votre hébergement.</p>
                         <h2>Informations relatives à la demande :</h2>
                         <ul>
                           <li>Annonce : <%= @annonce_titre %></li>
                           <li>Date d'arrivée: <%= @start_rent %></li>
                           <li>Date de départ: <%= @end_rent %></li>
+                          <li>Date de départ: <%= @end_rent %></li>
+                          <li>Nombre d'adultes: <%= @adults %></li>
+                          <li>Nombre d'enfants: <%= @kids %></li>
                         </ul>
+                        <h3>Ses coordonnées</h3>
+                        <ul>
+                          <li>Nom: <%= @user_name %></li>
+                          <li>Adresse postale: <%= @address %></li>
+                          <li>Email: <%= @email %></li>
+                          <li>Tel: <%= @tel %></li>
+                        </ul>
+                        <h3>Son message</h3>
+                        <p><%= @message %></p>
                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
                             <tr>
@@ -307,7 +320,7 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="http://htmlemail.io" target="_blank">Email Call To Action</a> </td>
+                                      <!-- <td> <a href="http://htmlemail.io" target="_blank">Email Call To Action</a> </td> -->
                                     </tr>
                                   </tbody>
                                 </table>
@@ -315,8 +328,8 @@
                             </tr>
                           </tbody>
                         </table>
-                        <p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
-                        <p>Good luck! Hope it works.</p>
+                        <p></p>
+                        <p></p>
                       </td>
                     </tr>
                   </table>
