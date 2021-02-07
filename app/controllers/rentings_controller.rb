@@ -82,15 +82,15 @@ class RentingsController < ApplicationController
 
   def contact_send
     annonce = Renting.find(params[:contact][:renting_id].to_i)
-    start = params[:contact][:start]
-    end_rent = params[:contact][:end]
+    start_rent = Date.parse(params[:contact][:start]).strftime('%d/%m/%y')
+    end_rent = Date.parse(params[:contact][:end]).strftime('%d/%m/%y')
     if params[:contact][:rgpd] == "0"
       redirect_back fallback_location: root_path
       #redirect_to contact_rentings_path(params[:contact][:start] => start, params[:contact][:end] => end_rent)
       #param_1: 'value_1', param_2: 'value_2'
     else
       annonce_email = annonce.email
-      RentingMailer.with(annonce_email: annonce_email).rentingask.deliver_now
+      RentingMailer.with(annonce_email: annonce_email, annonce: annonce.titre, start_rent: start_rent, end_rent: end_rent).rentingask.deliver_now
     end
   end
 

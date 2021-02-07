@@ -6,7 +6,11 @@ class RentingMailer < ApplicationMailer
   #   en.renting_mailer.rentingask.subject
   #
   def rentingask
-    @annonce_email = params[:annonce_email] # Instance variable => available in view
+    @annonce_email = params[:annonce_email]
+    @annonce_titre = params[:annonce]
+    @start_rent = params[:start_rent]
+    @end_rent = params[:end_rent]
+    # Instance variable => available in view
     mail(to: @annonce_email, subject: 'Demande de location')
     # This will render a view in `app/views/user_mailer`!
   end
