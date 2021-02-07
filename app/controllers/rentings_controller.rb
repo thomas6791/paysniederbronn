@@ -82,15 +82,22 @@ class RentingsController < ApplicationController
 
   def contact_send
     annonce = Renting.find(params[:contact][:renting_id].to_i)
-    start = params[:contact][:start]
-    end_rent = params[:contact][:end]
+    start_rent = Date.parse(params[:contact][:start]).strftime('%d/%m/%y')
+    end_rent = Date.parse(params[:contact][:end]).strftime('%d/%m/%y')
+    params[:contact][:message].present? ? message = params[:contact][:message] : message = "/"
+    params[:contact][:adult].present? ? adults = params[:contact][:adult] : adults = "/"
+    params[:contact][:kids].present? ? kids = params[:contact][:kids] : kids = "/"
+    user_name = "#{params[:contact][:first_name]} #{params[:contact][:last_name]}"
+    params[:contact][:email].present? ? email = params[:contact][:email] : email = "/"
+    params[:contact][:tel].present? ? tel = params[:contact][:tel] : tel = "/"
+    params[:contact][:address].present? ? address = "#{params[:contact][:address]} #{params[:contact][:CP]} #{params[:contact][:town]}" : address = "/"
     if params[:contact][:rgpd] == "0"
       redirect_back fallback_location: root_path
       #redirect_to contact_rentings_path(params[:contact][:start] => start, params[:contact][:end] => end_rent)
       #param_1: 'value_1', param_2: 'value_2'
     else
       annonce_email = annonce.email
-      RentingMailer.with(annonce_email: annonce_email).rentingask.deliver_now
+      RentingMailer.with(annonce_email: annonce_email, annonce: annonce.titre, start_rent: start_rent, end_rent: end_rent, message: message, adults: adults, kids: kids, user_name: user_name, tel: tel, email: email, address: address).rentingask.deliver_now
     end
   end
 
