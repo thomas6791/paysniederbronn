@@ -52,18 +52,19 @@ class LandingPagesController < ApplicationController
               description: "Les locations pour curistes à Niederbronn-les-Bains",
               canonical: "https://www.paysniederbronn.fr/fr/cures-thermales/station-thermale-niederbronn/location-cure-niederbronn"
     #@annonces = Renting.all.where(category:"renting")
-    @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
-    #if params.include?("cure_options")
-
-      #@annonces = annonces
-    #else
-      #@annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
-    #end
-      #if params[:reset].present?
-      #  fail
-      #  @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
-      #  params.delete :cure_options
+    if request.url.include?("commit")
+    else
+      @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
+      #if params.include?("cure_options")
+        #@annonces = annonces
+      #else
+        #@annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
       #end
+        #if params[:reset].present?
+        #  fail
+        #  @annonces = Renting.all.where( "niederbronn_dist <= morsbronn_dist")
+        #  params.delete :cure_options
+        #end
       @flats = @annonces.geocoded
 
       @markers = @flats.map do |flat|
@@ -72,6 +73,7 @@ class LandingPagesController < ApplicationController
           lng: flat.longitude
         }
       end
+    end
   end
 
   def location_cure_morsbronn
