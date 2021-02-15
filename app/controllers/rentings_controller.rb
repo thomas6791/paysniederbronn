@@ -16,7 +16,6 @@ class RentingsController < ApplicationController
   end
 
   def show
-    set_meta_tags canonical: request.original_url[/[^?]+/]
     if !@annonce.airbnb.blank? && @annonce.booking.blank?
       @dates_renting = helpers.airbnb_dates(@annonce.airbnb)
     elsif !@annonce.booking.blank? && @annonce.airbnb.blank?
@@ -188,6 +187,7 @@ class RentingsController < ApplicationController
 
   def set_seo
     #set_meta_tags noindex: true
+    set_meta_tags canonical: request.original_url[/[^?]+/]
   end
 
   def set_data
