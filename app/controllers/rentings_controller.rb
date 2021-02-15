@@ -29,6 +29,7 @@ class RentingsController < ApplicationController
   end
 
   def new
+    set_meta_tags noindex: true
     @annonce  = Renting.new
   end
 
@@ -40,10 +41,12 @@ class RentingsController < ApplicationController
   end
 
   def edit
+    set_meta_tags noindex: true
     @annonce = Renting.find(params[:id])
   end
 
   def update
+    set_meta_tags noindex: true
     @annonce = Renting.find(params[:id])
     @annonce.update(renting_params)
     helpers.geocode_cure(@annonce)
@@ -102,6 +105,7 @@ class RentingsController < ApplicationController
   end
 
   def chasse
+    set_meta_tags noindex: true
     @annonces = Renting.all.where(category:"renting")
     @flats = @annonces.geocoded
 
@@ -182,7 +186,7 @@ class RentingsController < ApplicationController
   end
 
   def set_seo
-    set_meta_tags noindex: true
+    #set_meta_tags noindex: true
   end
 
   def set_data
