@@ -52,7 +52,7 @@ Rails.application.routes.draw do
 
     resources :holiday_rentings
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    resources :rentings do
+    resources :rentings, :path => 'location-vacances' do
       collection do
         get "remove-photo", to: "rentings#remove_photo"
         get "contact", to: "rentings#contact"
