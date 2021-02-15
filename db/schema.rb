@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(version: 2021_02_15_203550) do
     t.string "frequentasked_type"
     t.bigint "frequentasked_id"
     t.boolean "public", default: true, null: false
+    t.string "question", default: "", null: false
+    t.text "answer", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["frequentasked_type", "frequentasked_id"], name: "index_frequent_asks_on_frequentasked_type_and_frequentasked_id"
