@@ -65,6 +65,18 @@
         <%= f.input :airbnb ,label: ('Synchroniser son calendrier avec Airbnb <i class="far fa-question-circle"></i>').html_safe %>
         <%= f.input :booking ,label: ('Synchroniser son calendrier avec Booking <i class="far fa-question-circle"></i>').html_safe %>
       </div>
+
+      <div class="third">
+
+          <%= f.simple_fields_for :frequent_asks do |ask| %>
+            <%= ask.input :question %>
+            <%= ask.input :answer %>
+            <%= ask.input :public %>
+            <%= ask.button :submit %>
+          <% end %>
+
+      </div>
+
       <%= f.button :submit, value: "Confirmer", class: "btn-green large" %>
     <% end %>
   </section>

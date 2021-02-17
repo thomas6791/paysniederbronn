@@ -66,6 +66,7 @@ Rails.application.routes.draw do
     end
 
     resources :randonnees
+    resources :frequent_asks
 
     scope 'ligne-maginot-alsace' do
       get '/', to: 'ligne_maginots#index', as: :ligne_maginots
