@@ -56,6 +56,7 @@ class RentingsController < ApplicationController
     @annonce = Renting.find(params[:id])
     @annonce.update(renting_params)
     helpers.geocode_cure(@annonce)
+    fail
     redirect_to renting_path(@annonce)
   end
 
@@ -189,6 +190,7 @@ class RentingsController < ApplicationController
 
   def renting_params
     params.require(:renting).permit(:titre, :description, :summary, :avatar, :capacity, :city, :zip_code, :address, :latitude, :longitude, :website, :email, :tel, :category, :airbnb, :booking, :price_day, :price_week, :price_cure, photos: [], renting_category_ids: [])
+    params.require(:frequent_asks).permit(:question, :answer, :public)
   end
 
   def set_seo

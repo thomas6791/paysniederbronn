@@ -3,6 +3,7 @@ class FrequentAsksController < ApplicationController
   end
 
   def show
+    fail
   end
 
   def edit
@@ -19,8 +20,14 @@ class FrequentAsksController < ApplicationController
   end
 
   def update
+    fail
   end
 
   def destroy
+  end
+
+  private
+  def polymorph_params
+    params.require(:frequent_asks).permit(:question, :answer, :public)
   end
 end
