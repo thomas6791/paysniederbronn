@@ -2,7 +2,8 @@ class RentingsController < ApplicationController
   before_action :set_seo
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
-    set_meta_tags canonical: request.original_url[/[^?]+/]
+    set_meta_tags canonical: request.original_url[/[^?]+/],
+    title: "Locations de vacances dans les Vosges du Nord d'Alsace"
     #@annonces = Renting.all.where(category:"renting")
     @annonces = Renting.all
     @flats = @annonces.geocoded
@@ -16,6 +17,7 @@ class RentingsController < ApplicationController
   end
 
   def show
+    set_meta_tags title: "#{@annonce.titre} | Location de vacances dans les Vosges du Nord"
     if !@annonce.airbnb.blank? && @annonce.booking.blank?
       @dates_renting = helpers.airbnb_dates(@annonce.airbnb)
     elsif !@annonce.booking.blank? && @annonce.airbnb.blank?
