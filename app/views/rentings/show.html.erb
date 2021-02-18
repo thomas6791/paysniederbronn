@@ -81,6 +81,12 @@
         <% end %>
       </ul>
     </section>
+    <section>
+      <% @annonce.frequent_asks.each do |ask| %>
+        <p>Question:<%= ask.question %></p>
+        <p>Réponse:<%= ask.answer %></p>
+      <% end %>
+    </section>
   </article>
 
 </main>

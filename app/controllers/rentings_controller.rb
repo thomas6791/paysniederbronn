@@ -34,7 +34,6 @@ class RentingsController < ApplicationController
     set_meta_tags noindex: true
     @annonce  = Renting.new
     @annonce.frequent_asks.build
-    @frequentask = FrequentAsk.new
   end
 
   def create
@@ -188,7 +187,7 @@ class RentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:renting).permit(:titre, :description, :summary, :avatar, :capacity, :city, :zip_code, :address, :latitude, :longitude, :website, :email, :tel, :category, :airbnb, :booking, :price_day, :price_week, :price_cure, photos: [], renting_category_ids: [])
+    params.require(:renting).permit(:titre, :description, :summary, :avatar, :capacity, :city, :zip_code, :address, :latitude, :longitude, :website, :email, :tel, :category, :airbnb, :booking, :price_day, :price_week, :price_cure, photos: [], renting_category_ids: [], frequent_asks_attributes: [:question, :answer, :public])
   end
 
   def set_seo
