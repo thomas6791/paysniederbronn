@@ -28,6 +28,6 @@ class FrequentAsksController < ApplicationController
 
   private
   def polymorph_params
-    params.require(:frequent_asks).permit(:question, :answer, :public)
+    #params.require(:frequent_asks).permit(:question, :answer, :public)
   end
 end

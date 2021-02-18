@@ -23,8 +23,6 @@ class Renting < ApplicationRecord
   CURE_NIEDERBRONN = [48.950530, 7.643330].freeze
   CURE_MORSBRONN = [48.906250, 7.746870].freeze
 
-  accepts_nested_attributes_for :frequent_asks
-
   attr_accessor :dates_rented
 
   def to_param
