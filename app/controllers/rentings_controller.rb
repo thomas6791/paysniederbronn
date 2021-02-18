@@ -46,8 +46,6 @@ class RentingsController < ApplicationController
   def edit
     set_meta_tags noindex: true
     @annonce = Renting.find(params[:id])
-    @frequentask = FrequentAsk.new
-    @annonce.frequent_asks.build
   end
 
   def update
