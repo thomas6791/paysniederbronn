@@ -2,7 +2,8 @@ class RentingsController < ApplicationController
   before_action :set_seo
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
-    set_meta_tags canonical: request.original_url[/[^?]+/]
+    set_meta_tags canonical: request.original_url[/[^?]+/],
+    title: "Locations de vacances en Alsace et Vosges du Nord"
     #@annonces = Renting.all.where(category:"renting")
     @annonces = Renting.all
     @flats = @annonces.geocoded
@@ -16,6 +17,7 @@ class RentingsController < ApplicationController
   end
 
   def show
+    set_meta_tags title: "#{@annonce.titre} | Location de vacances dans les Vosges du Nord"
     if !@annonce.airbnb.blank? && @annonce.booking.blank?
       @dates_renting = helpers.airbnb_dates(@annonce.airbnb)
     elsif !@annonce.booking.blank? && @annonce.airbnb.blank?
@@ -31,25 +33,29 @@ class RentingsController < ApplicationController
   def new
     set_meta_tags noindex: true
     @annonce  = Renting.new
+    @annonce.frequent_asks.build
+    @annonce.frequent_asks.where(question:"").destroy_all
   end
 
   def create
     @annonce  = Renting.new(renting_params)
     @annonce.user_id = 1
     @annonce.save
-    helpers.geocode_cure(@annonce)
+    helpers.geocode_cure(@annonce) if !@annonce.longitude.nil? && !@annonce.latitude.nil?
   end
 
   def edit
     set_meta_tags noindex: true
     @annonce = Renting.find(params[:id])
+    @annonce.frequent_asks.build
   end
 
   def update
     set_meta_tags noindex: true
     @annonce = Renting.find(params[:id])
     @annonce.update(renting_params)
-    helpers.geocode_cure(@annonce)
+    helpers.geocode_cure(@annonce) if !@annonce.longitude.nil? && !@annonce.latitude.nil?
+    @annonce.frequent_asks.where(question:"").destroy_all
     redirect_to renting_path(@annonce)
   end
 
@@ -182,7 +188,7 @@ class RentingsController < ApplicationController
   private
 
   def renting_params
-    params.require(:renting).permit(:titre, :description, :summary, :avatar, :capacity, :city, :zip_code, :address, :latitude, :longitude, :website, :email, :tel, :category, :airbnb, :booking, :price_day, :price_week, :price_cure, photos: [], renting_category_ids: [])
+    params.require(:renting).permit(:titre, :description, :summary, :avatar, :capacity, :city, :zip_code, :address, :latitude, :longitude, :website, :email, :tel, :category, :airbnb, :booking, :price_day, :price_week, :price_cure, photos: [], renting_category_ids: [], frequent_asks_attributes: [:id, :question, :answer, :public])
   end
 
   def set_seo

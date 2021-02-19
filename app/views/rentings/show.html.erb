@@ -6,6 +6,7 @@
       <ul>
         <li><a href="#description-renting">Description</a></li>
         <li><a href="#calendar-links">Calendrier</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
       </ul>
     </div>
     <section class="holiday">
@@ -72,6 +73,15 @@
             <% end %>
           <% end %>
         <% end %>
+      <% end %>
+    </section>
+    <section id="faq">
+      <h2>Questions fréquentes</h2>
+      <% @annonce.frequent_asks.each do |ask| %>
+        <details>
+          <summary><%= ask.question %></summary>
+          <p><%= ask.answer %></p>
+        </details>
       <% end %>
     </section>
     <section>
