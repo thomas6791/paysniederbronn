@@ -34,6 +34,7 @@ class RentingsController < ApplicationController
     set_meta_tags noindex: true
     @annonce  = Renting.new
     @annonce.frequent_asks.build
+    @annonce.frequent_asks.where(question:"").destroy_all
   end
 
   def create
@@ -54,6 +55,7 @@ class RentingsController < ApplicationController
     @annonce = Renting.find(params[:id])
     @annonce.update(renting_params)
     helpers.geocode_cure(@annonce)
+    @annonce.frequent_asks.where(question:"").destroy_all
     redirect_to renting_path(@annonce)
   end
 
