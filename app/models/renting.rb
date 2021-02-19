@@ -4,17 +4,9 @@ class Renting < ApplicationRecord
   has_many :renting_categories, through: :renting_cats
   has_many :frequent_asks, as: :frequentasked, :dependent => :destroy
   accepts_nested_attributes_for :frequent_asks
-  validates :titre, uniqueness: { message: "ce titre est déjà pris" }
-  validates :slug, uniqueness: { message: "slug déjà prise" }
-  after_validation :set_slug, only: [:create]
-
   has_rich_text :description
   has_many_attached :photos
   has_one_attached :avatar
-
-  geocoded_by :full_address
-  after_validation :geocode, if: :will_save_change_to_address?
-  after_validation :set_category, only: [:create]
 
   register_currency :eur
   monetize :price_day_cents, as: "price_day", with_currency: :eur
@@ -23,6 +15,21 @@ class Renting < ApplicationRecord
   # Lat, Lng
   CURE_NIEDERBRONN = [48.950530, 7.643330].freeze
   CURE_MORSBRONN = [48.906250, 7.746870].freeze
+
+  validates :titre, uniqueness: { message: "ce titre est déjà pris" }
+  validates :slug, uniqueness: { message: "slug déjà prise" }
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :zip_code, presence: true
+
+  validates :photos, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg']
+
+
+
+  after_validation :set_slug, only: [:create]
+  geocoded_by :full_address
+  after_validation :geocode, if: :will_save_change_to_address?
+  after_validation :set_category, only: [:create]
 
   attr_accessor :dates_rented
 

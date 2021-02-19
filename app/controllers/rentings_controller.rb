@@ -3,7 +3,7 @@ class RentingsController < ApplicationController
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
     set_meta_tags canonical: request.original_url[/[^?]+/],
-    title: "Locations de vacances dans les Vosges du Nord d'Alsace"
+    title: "Locations de vacances en Alsace et Vosges du Nord"
     #@annonces = Renting.all.where(category:"renting")
     @annonces = Renting.all
     @flats = @annonces.geocoded
@@ -41,7 +41,7 @@ class RentingsController < ApplicationController
     @annonce  = Renting.new(renting_params)
     @annonce.user_id = 1
     @annonce.save
-    helpers.geocode_cure(@annonce)
+    helpers.geocode_cure(@annonce) if !@annonce.longitude.nil? && !@annonce.latitude.nil?
   end
 
   def edit
@@ -54,7 +54,7 @@ class RentingsController < ApplicationController
     set_meta_tags noindex: true
     @annonce = Renting.find(params[:id])
     @annonce.update(renting_params)
-    helpers.geocode_cure(@annonce)
+    helpers.geocode_cure(@annonce) if !@annonce.longitude.nil? && !@annonce.latitude.nil?
     @annonce.frequent_asks.where(question:"").destroy_all
     redirect_to renting_path(@annonce)
   end
