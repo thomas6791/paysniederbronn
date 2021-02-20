@@ -79,6 +79,7 @@ iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
     text-align: left;
   }
   img { width: 35%; height: 250px; border-radius: 2px; }
+  a { color: black; text-decoration: none; }
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
