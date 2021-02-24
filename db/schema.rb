@@ -119,17 +119,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_203550) do
     t.index ["frequentasked_type", "frequentasked_id"], name: "index_frequent_asks_on_frequentasked_type_and_frequentasked_id"
   end
 
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string "slug", null: false
-    t.integer "sluggable_id", null: false
-    t.string "sluggable_type", limit: 50
-    t.string "scope"
-    t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
-  end
-
   create_table "holiday_rentings", force: :cascade do |t|
     t.string "titre"
     t.text "description"
@@ -224,8 +213,8 @@ ActiveRecord::Schema.define(version: 2021_02_15_203550) do
     t.boolean "animals", default: false
     t.boolean "family", default: false
     t.boolean "cure", default: false
-    t.float "niederbronn_dist", default: 0.0
-    t.float "morsbronn_dist", default: 0.0
+    t.float "niederbronn_dist"
+    t.float "morsbronn_dist"
     t.integer "price_day_cents", default: 0, null: false
     t.integer "price_week_cents", default: 0, null: false
     t.integer "price_cure_cents", default: 0, null: false
