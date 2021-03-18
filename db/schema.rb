@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_17_195501) do
+ActiveRecord::Schema.define(version: 2021_03_18_201838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -177,6 +177,18 @@ ActiveRecord::Schema.define(version: 2021_03_17_195501) do
     t.index ["category_id"], name: "index_post_categories_on_category_id"
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "commerce_id"
+    t.integer "price_cents"
+    t.integer "quantity_max"
+    t.jsonb "availability", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commerce_id"], name: "index_products_on_commerce_id"
+  end
+
   create_table "randonnees", force: :cascade do |t|
     t.string "titre"
     t.text "description"
@@ -266,6 +278,7 @@ ActiveRecord::Schema.define(version: 2021_03_17_195501) do
   add_foreign_key "blog_post_categories", "blog_posts"
   add_foreign_key "blog_posts", "author_blogs"
   add_foreign_key "commerces", "users"
+  add_foreign_key "products", "commerces"
   add_foreign_key "renting_cats", "renting_categories"
   add_foreign_key "renting_cats", "rentings"
   add_foreign_key "rentings", "users"
