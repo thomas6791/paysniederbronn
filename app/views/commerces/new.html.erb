@@ -1,2 +1,9 @@
 <h1>Commerces#new</h1>
 <p>Find me in app/views/commerces/new.html.erb</p>
+<%= form_for(@commerce) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.submit %>
+<% end %>

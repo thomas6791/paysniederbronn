@@ -4,6 +4,7 @@ class CommercesController < ApplicationController
   end
 
   def show
+    @commerce = Commerce.find(params[:id])
   end
 
   def new
@@ -12,6 +13,7 @@ class CommercesController < ApplicationController
 
   def create
     @commerce = Commerce.new(commerce_params)
+    @commerce.user = current_user if current_user.present?
     @commerce.save
 
     redirect_to commerce_path(@commerce)
