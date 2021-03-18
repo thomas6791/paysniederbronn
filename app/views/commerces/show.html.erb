@@ -1,3 +1,9 @@
 <h1>Commerces#show</h1>
 <p>Find me in app/views/commerces/show.html.erb</p>
 <%= @commerce.name %>
+
+<ul class="list-group">
+  <% @commerce.products.each do |product| %>
+    <li class="list-group-item"><%= product.name %></li>
+  <% end %>
+</ul>
