@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'orders/new'
+  get 'orders/create'
+  get 'orders/edit'
+  get 'orders/update'
+  get 'orders/destroy'
   constraints(subdomain: 'heidelbeere') do
     root to: 'subdomain_rentings#index', as: :sub_hunckler
     #get 'simulateur', to: 'subdomain_rentings#simulator', as: :sub_simulateur
