@@ -3,7 +3,11 @@
 <%= @commerce.name %>
 
 <ul class="list-group">
+
   <% @commerce.products.each do |product| %>
     <li class="list-group-item"><%= product.name %></li>
+    <%= simple_form_for(@order_item) do |f| %>
+      <%= f.submit %>
+    <% end %>
   <% end %>
 </ul>
