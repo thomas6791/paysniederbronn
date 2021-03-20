@@ -6,6 +6,8 @@ class CommercesController < ApplicationController
   def show
     @commerce = Commerce.find(params[:id])
     @products = @commerce.products
+    #@order = Order.new
+    @cart_item = CartItem.new
   end
 
   def new

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_205543) do
+ActiveRecord::Schema.define(version: 2021_03_20_200053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,16 @@ ActiveRecord::Schema.define(version: 2021_03_19_205543) do
     t.string "link_left"
     t.string "link_right"
     t.index ["author_blog_id"], name: "index_blog_posts_on_author_blog_id"
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.bigint "product_id"
+    t.integer "quantity"
+    t.integer "subtotal_cents", default: 0, null: false
+    t.string "subtotal_currency", default: "EUR", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -298,6 +308,7 @@ ActiveRecord::Schema.define(version: 2021_03_19_205543) do
   add_foreign_key "blog_post_categories", "blog_categories"
   add_foreign_key "blog_post_categories", "blog_posts"
   add_foreign_key "blog_posts", "author_blogs"
+  add_foreign_key "cart_items", "products"
   add_foreign_key "commerces", "users"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
