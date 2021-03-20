@@ -6,8 +6,15 @@
 
   <% @commerce.products.each do |product| %>
     <li class="list-group-item"><%= product.name %></li>
-    <%= simple_form_for([@commerce, product, @cart_item]) do |f| %>
+    <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
+      <%= f.input :quantity %>
       <%= f.submit %>
     <% end %>
   <% end %>
+</ul>
+
+<h2>Cart Items</h2>
+<ul>
+  <% fail %>
+
 </ul>

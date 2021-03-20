@@ -15,6 +15,7 @@ class CommercesController < ApplicationController
   end
 
   def create
+    fail
     @commerce = Commerce.new(commerce_params)
     @commerce.user = current_user if current_user.present?
     @commerce.save
