@@ -1,4 +1,5 @@
 class CommercesController < ApplicationController
+  before_action :cart
   def index
     @commerces = Commerce.all
   end
@@ -34,5 +35,9 @@ class CommercesController < ApplicationController
 
   def commerce_params
     params.require(:commerce).permit(:name, :address)
+  end
+
+  def cart
+    session[:cart] ||= []
   end
 end
