@@ -1,4 +1,5 @@
 class CartItemsController < ApplicationController
+  before_action :set_cart
   def index
   end
 
@@ -15,6 +16,7 @@ class CartItemsController < ApplicationController
     @product = @commerce.products.find(params[:product_id])
     @cart_item.product = @product
     @cart_item.save
+    session[:cart][@commerce.id.to_s][@product.id.to_s] = @cart_item.attributes
     redirect_to commerce_path(@commerce)
   end
 
@@ -29,6 +31,10 @@ class CartItemsController < ApplicationController
 
   def cart_item_params
     params.require(:cart_item).permit(:quantity, :product_id, :commerce_id)
+  end
+
+  def set_cart
+    session[:cart][params[:commerce_id]] = ""
   end
 
 end
