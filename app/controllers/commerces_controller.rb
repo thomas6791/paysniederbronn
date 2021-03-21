@@ -10,6 +10,17 @@ class CommercesController < ApplicationController
     @products = @commerce.products
     #@order = Order.new
     @cart_item = CartItem.new
+    #fail
+    session[:cart][@commerce.id.to_s] = {}
+    arr = []
+    keys = ["name", "quantity", "sub_total"]
+    @products.each do |pdt|
+      values = [pdt[:name], 0, 0.00]
+      x = [keys, values].transpose.to_h
+      arr << x
+    end
+    session[:cart][@commerce.id.to_s] = arr
+    #session[:cart]["1"].find {|x| x["name"] == "gâteau à la cannelle"}
   end
 
   def new

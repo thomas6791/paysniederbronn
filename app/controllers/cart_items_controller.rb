@@ -16,7 +16,9 @@ class CartItemsController < ApplicationController
     @product = @commerce.products.find(params[:product_id])
     @cart_item.product = @product
     @cart_item.save
-    session[:cart][@commerce.id.to_s][@product.id.to_s] = @cart_item.attributes
+    #fail
+    session[:cart][@commerce.id.to_s][@product.id.to_s] ={}
+    #session[:cart][@commerce.id.to_s][@product.id.to_s].merge!(key: "bar")
     redirect_to commerce_path(@commerce)
   end
 
@@ -34,7 +36,7 @@ class CartItemsController < ApplicationController
   end
 
   def set_cart
-    session[:cart][params[:commerce_id]] = ""
+    session[:cart][params[:commerce_id]] = {}
   end
 
 end
