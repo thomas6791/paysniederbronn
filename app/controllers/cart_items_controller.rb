@@ -7,7 +7,12 @@ class CartItemsController < ApplicationController
   end
 
   def create
-    cookies[:cart_user] = { :value => 123, :expires => Time.now + 1.hour}
+    #cookies[:cart_user] = { :value => 123, :expires => Time.now + 1.hour, :cart =>{}}
+    session[:cart_user] = {
+      test: "XJ-122",
+      xcv: "dfg",
+      expires: 1.hour.from_now
+    }
     #cookies[:user] = { :value => "XJ12", :expires => Time.now + 3600}
     @cart_item = CartItem.new(cart_item_params)
     # we need `restaurant_id` to associate cart_item with corresponding restaurant
