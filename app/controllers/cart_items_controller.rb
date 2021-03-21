@@ -15,7 +15,6 @@ class CartItemsController < ApplicationController
     @product = @commerce.products.find(params[:product_id])
     @cart_item.product = @product
     @cart_item.save
-    session[:cart] << @cart_item
     redirect_to commerce_path(@commerce)
   end
 

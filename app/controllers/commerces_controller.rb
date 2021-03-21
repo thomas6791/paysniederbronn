@@ -5,6 +5,7 @@ class CommercesController < ApplicationController
   end
 
   def show
+    session.delete(cart)
     @commerce = Commerce.find(params[:id])
     @products = @commerce.products
     #@order = Order.new
@@ -37,6 +38,7 @@ class CommercesController < ApplicationController
   end
 
   def cart
-    session[:cart] ||= []
+    session[:cart] ||= {}
+    #session[:cart] = session[:cart].inject(:merge)
   end
 end
