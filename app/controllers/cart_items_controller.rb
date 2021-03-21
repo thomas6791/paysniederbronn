@@ -1,5 +1,5 @@
 class CartItemsController < ApplicationController
-  before_action :set_cart
+  #before_action :set_cart
   def index
   end
 
@@ -15,9 +15,12 @@ class CartItemsController < ApplicationController
     @commerce = Commerce.find(params[:commerce_id])
     @product = @commerce.products.find(params[:product_id])
     @cart_item.product = @product
-    @cart_item.save
+    y = session[:cart][@commerce.id.to_s].find {|x| x["name"] == @cart_item.product.name}
+    y["quantity"] = @cart_item.quantity
     #fail
-    session[:cart][@commerce.id.to_s][@product.id.to_s] ={}
+    #@cart_item.save
+    #fail
+    #session[:cart][@commerce.id.to_s][@product.id.to_s] ={}
     #session[:cart][@commerce.id.to_s][@product.id.to_s].merge!(key: "bar")
     redirect_to commerce_path(@commerce)
   end
