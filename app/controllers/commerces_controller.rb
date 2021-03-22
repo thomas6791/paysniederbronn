@@ -41,7 +41,7 @@ class CommercesController < ApplicationController
   def cart
     session[:cart] ||= {}
     #session[:cart][@commerce.id.to_s] = {}
-    if session[:cart][params[:id]].nil? || session[:cart][params[:id]].empty?
+    if session[:cart][params[:id]].nil? || session[:cart][params[:id]].empty? || session[:cart][params[:id]].size != Commerce.find(params[:id]).products.size
       session[:cart][params[:id]]= {}
       arr = []
       keys = ["name", "quantity", "sub_total"]
