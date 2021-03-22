@@ -6,23 +6,25 @@
 <ul class="list-group">
 
   <% @commerce.products.each do |product| %>
-    <li class="list-group-item"><%= product.name %></li>
-    <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
-      <%= f.input :quantity %>
-      <%= f.submit %>
-    <% end %>
+    <li class="list-group-item"><%= product.name %>
+      <%= image_tag product.photo, width:150 if product.photo.attached? %>
+      <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
+        <%= f.input :quantity %>
+        <%= f.submit %>
+      <% end %>
+    </li>
   <% end %>
-  <li class="list-group-item">
-    <%= image_tag @commerce.products.last.photo, width:150 %>
-    <%= @commerce.products.last.name %>
-    <%= simple_form_for [@commerce, @commerce.products.last, @cart_item] do |f| %>
-      <%= f.input :quantity %>
-      <%= f.submit "Ajouter", class: "btn btn-green" %>
-    <% end %>
-  </li>
 </ul>
 
 <h2>Cart Items</h2>
 <ul>
   <%= session[:cart] %>
+</ul>
+<ul>
+  <li>
+    <% session[:cart][params[:id]].each do |item| %>
+    <p><%= item["quantity"] %> x <%= item["name"] %></p>
+    <p><%= item["sub_total"] %></p>
+    <% end %>
+  </li>
 </ul>
