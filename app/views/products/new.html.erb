@@ -2,5 +2,6 @@
 <p>Find me in app/views/products/new.html.erb</p>
 <%= simple_form_for [ @commerce, @product ] do |f| %>
   <%= f.input :name %>
+  <%= f.input :photo, as: :file, label:"Photo du produit" %>
   <%= f.submit "Submit product", class: "btn btn-primary" %>
 <% end %>

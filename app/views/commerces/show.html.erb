@@ -12,6 +12,14 @@
       <%= f.submit %>
     <% end %>
   <% end %>
+  <li class="list-group-item">
+    <%= image_tag @commerce.products.last.photo, width:150 %>
+    <%= @commerce.products.last.name %>
+    <%= simple_form_for [@commerce, @commerce.products.last, @cart_item] do |f| %>
+      <%= f.input :quantity %>
+      <%= f.submit "Ajouter", class: "btn btn-green" %>
+    <% end %>
+  </li>
 </ul>
 
 <h2>Cart Items</h2>
