@@ -30,6 +30,7 @@
 </ul>
 
 <%= form_tag orders_path do %>
+  <%= hidden_field_tag 'commerce_id', @commerce.id %>
 
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <%= submit_tag 'Purchase', class: 'btn btn-green auto' %>
 <% end %>
