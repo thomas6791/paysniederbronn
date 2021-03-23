@@ -17,7 +17,9 @@ class CartItemsController < ApplicationController
     @cart_item.product = @product
     y = session[:cart][@commerce.id.to_s].find {|x| x["name"] == @cart_item.product.name}
     y["quantity"] = @cart_item.quantity
+    y["sub_total"] = Money.new(@cart_item.product.price * @cart_item.quantity)
     #fail
+    #y["sub_total"] = Money.new(y["sub_total"]["cents"])
     #@cart_item.save
     #fail
     #session[:cart][@commerce.id.to_s][@product.id.to_s] ={}
