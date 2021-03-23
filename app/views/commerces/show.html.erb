@@ -10,7 +10,7 @@
       <%= image_tag product.photo, width:150 if product.photo.attached? %>
       <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
         <%= f.input :quantity %>
-        <%= f.submit %>
+        <%= f.submit class: "btn btn-green auto", value: "Ajouter au panier" %>
       <% end %>
     </li>
   <% end %>
