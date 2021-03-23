@@ -10,6 +10,7 @@ class CommercesController < ApplicationController
     @products = @commerce.products
     #@order = Order.new
     @cart_item = CartItem.new
+    @order = Order.new
     #session[:cart]["1"].find {|x| x["name"] == "gâteau à la cannelle"}
   end
 
@@ -51,6 +52,9 @@ class CommercesController < ApplicationController
         arr << x
       end
       session[:cart][params[:id]] = arr
+      session[:cart][params[:id]].each do |item|
+        item["sub_total"] = {"cents"=>0, "currency_iso"=>"EUR"}
+      end
     end
     #session[:cart] = session[:cart].inject(:merge)
   end

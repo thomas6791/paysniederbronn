@@ -23,14 +23,16 @@
 <ul>
   <li>
     <% session[:cart][params[:id]].each do |item| %>
-    <p><%= item["quantity"] %> x <%= item["name"] %></p>
-    <p><%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
+    <% if item["sub_total"]["cents"] != 0 %>
+      <p><%= item["quantity"] %> x <%= item["name"] %></p>
+      <p><%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
+    <% end %>
     <% end %>
   </li>
 </ul>
 
-<%= form_tag orders_path do %>
+<%= simple_form_for @order do |f| %>
   <%= hidden_field_tag 'commerce_id', @commerce.id %>
-
-  <%= submit_tag 'Purchase', class: 'btn btn-green auto' %>
+  <%= f.date_field :delivery_date %>
+  <%= f.submit 'Purchase', class: 'btn btn-green auto' %>
 <% end %>

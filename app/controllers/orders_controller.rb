@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  def new
+  end
+
   def create
     @cart = session[:cart][params[:commerce_id]]
     fail
