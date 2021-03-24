@@ -28,6 +28,7 @@
             <% session[:cart][params[:id]].each do |item| %>
               <% if item["sub_total"]["cents"] != 0 %>
                 <li class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</li>
+                <%= link_to "ajouter", add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) %>
                 <%= link_to "supprimer", remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) %>
               <% end %>
             <% end %>
