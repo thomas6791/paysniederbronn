@@ -48,6 +48,11 @@ class CartItemsController < ApplicationController
   end
 
   def remove_to_cart
+    @commerce = Commerce.find(params[:commerce_id])
+    commerce_items = session[:cart][params[:commerce_id]]
+    remove_item = session[:cart][params[:commerce_id]].find {|x| x["name"] == params["name"]}
+    remove_item["sub_total"]["cents"] = 0
+    redirect_to commerce_path(@commerce)
   end
 
 end

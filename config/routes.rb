@@ -53,7 +53,12 @@ Rails.application.routes.draw do
     resources :holiday_rentings
     resources :commerces do
       resources :products, only: [ :new, :create, :edit, :update, :destroy ] do
-        resources :cart_items
+        resources :cart_items do
+          collection do
+            get :add_to_cart
+            get :remove_to_cart
+          end
+        end
       end
     end
     resources :orders, only: [:show, :new, :create]
