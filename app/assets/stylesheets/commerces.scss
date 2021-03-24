@@ -1,3 +1,37 @@
 // Place all the styles related to the commerces controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#commerce {
+  font-family: 'Avenir','Source Sans Pro', 'Muli', sans-serif;
+  section:first-of-type {
+    display: flex;
+    .cart {
+      min-width: 30%;
+      border: solid 1px lightgrey;
+      margin: 0px 10px;
+      border-radius: 3px;
+      padding: 1em;
+    }
+  }
+  .list-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    li {
+      border: solid 1px lightgrey;
+      border-radius: 3px;
+      list-style: none;
+      margin: 0px;
+      display: flex;
+      justify-content: space-between;
+      .description, .price { font-weight: lighter; color: grey; font-size: 0.8em; }
+      .price { font-weight: bolder; font-size: 0.9em; }
+      .input { padding: 0px; }
+      div { padding: 1em; }
+      img { width: 150px; height: auto; object-fit: cover; align-self: center; }
+      &:hover { border: solid 1px black; }
+      h2 { font-weight: 200; }
+    }
+  }
+}

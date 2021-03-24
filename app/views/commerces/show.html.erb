@@ -1,38 +1,43 @@
-<h1>Commerces#show</h1>
-<%= link_to "Commerces", commerces_path %>
-<p>Find me in app/views/commerces/show.html.erb</p>
-<%= @commerce.name %>
+<main id="commerce">
+  <article>
+    <h1><%= @commerce.name %></h1>
+    <%= link_to "Commerces", commerces_path %>
+    <p>Find me in app/views/commerces/show.html.erb</p>
+    <section>
+      <ul class="list-group">
 
-<ul class="list-group">
+        <% @commerce.products.each do |product| %>
+          <li class="list-group-item">
+            <div>
+              <h2><%= product.name.capitalize %></h2>
+              <p class="description">ezfnejzgoezbgjzbgjbzghbh jgbejkzbgjkbzjkgbezakjbg bgezbgbzekjgbakzb</p>
+              <p class="price"><%= humanized_money product.price %><label for=""><%= product.price.currency.symbol %></label></p>
+              <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
+                <%= f.input :quantity, label: false, input_html: {value: '0'} %>
+                <%= f.submit class: "btn btn-green auto", value: "Ajouter au panier" %>
+              <% end %>
+            </div>
+            <%= image_tag product.photo, width:150 if product.photo.attached? %>
+          </li>
+        <% end %>
 
-  <% @commerce.products.each do |product| %>
-    <li class="list-group-item"><%= product.name %>
-      <%= image_tag product.photo, width:150 if product.photo.attached? %>
-      <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
-        <%= f.input :quantity %>
-        <%= f.submit class: "btn btn-green auto", value: "Ajouter au panier" %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-<h2>Cart Items</h2>
-<ul>
-  <%= session[:cart] %>
-</ul>
-<ul>
-  <li>
-    <% session[:cart][params[:id]].each do |item| %>
-    <% if item["sub_total"]["cents"] != 0 %>
-      <p><%= item["quantity"] %> x <%= item["name"] %></p>
-      <p><%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
-    <% end %>
-    <% end %>
-  </li>
-</ul>
-
-<%= simple_form_for @order do |f| %>
-  <%= hidden_field_tag 'commerce_id', @commerce.id %>
-  <%= f.date_field :delivery_date %>
-  <%= f.submit 'Purchase', class: 'btn btn-green auto' %>
-<% end %>
+      </ul>
+      <aside class="cart">
+        <h2>Panier</h2>
+        <ul>
+            <% session[:cart][params[:id]].each do |item| %>
+              <% if item["sub_total"]["cents"] != 0 %>
+                <li class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</li>
+              <% end %>
+            <% end %>
+        </ul>
+        <p>Total : </p>
+        <%= simple_form_for @order do |f| %>
+          <%= hidden_field_tag 'commerce_id', @commerce.id %>
+          <%= f.date_field :delivery_date %><br>
+          <%= f.submit 'Envoyer la commande', class: 'btn btn-green auto' %>
+        <% end %>
+      </aside>
+    </section>
+  </article>
+</main>

@@ -44,4 +44,10 @@ class CartItemsController < ApplicationController
     session[:cart][params[:commerce_id]] = {}
   end
 
+  def add_to_cart
+  end
+
+  def remove_to_cart
+  end
+
 end
