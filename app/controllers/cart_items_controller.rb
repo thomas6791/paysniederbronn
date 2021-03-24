@@ -45,13 +45,24 @@ class CartItemsController < ApplicationController
   end
 
   def add_to_cart
+    @commerce = Commerce.find(params[:commerce_id])
+    commerce_items = session[:cart][params[:commerce_id]]
+    remove_item = session[:cart][params[:commerce_id]].find {|x| x["name"] == params["name"]}
+    remove_item["quantity"] +=1
+    @commerce.products.find_by(name:remove_item["name"]).price
+    remove_item["sub_total"]["cents"] += @commerce.products.find_by(name:remove_item["name"]).price.cents
+    #remove_item["sub_total"]["cents"] = 0
+    redirect_to commerce_path(@commerce)
   end
 
   def remove_to_cart
     @commerce = Commerce.find(params[:commerce_id])
     commerce_items = session[:cart][params[:commerce_id]]
     remove_item = session[:cart][params[:commerce_id]].find {|x| x["name"] == params["name"]}
-    remove_item["sub_total"]["cents"] = 0
+    remove_item["quantity"] -=1
+    @commerce.products.find_by(name:remove_item["name"]).price
+    remove_item["sub_total"]["cents"] -= @commerce.products.find_by(name:remove_item["name"]).price.cents
+    #remove_item["sub_total"]["cents"] = 0
     redirect_to commerce_path(@commerce)
   end
 
