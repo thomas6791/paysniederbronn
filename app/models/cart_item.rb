@@ -1,5 +1,6 @@
 class CartItem < ApplicationRecord
   belongs_to :product
+  has_one :order
   register_currency :eur
-  monetize :sub_total_cents, as: "sub_total", with_currency: :eur
+  monetize :subtotal_cents, as: "subtotal", with_currency: :eur
 end

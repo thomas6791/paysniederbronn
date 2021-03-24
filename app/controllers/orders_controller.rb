@@ -14,6 +14,12 @@ class OrdersController < ApplicationController
     end
     amount = 0
     order_arr.each do |item|
+      x = CartItem.new
+      x.product_id = commerce.products.find_by(name: item["name"]).id
+      x.quantity = item["quantity"]
+      x.subtotal_cents = item["sub_total"]["cents"]
+      fail
+      x.product_id =
       amount += item["sub_total"]["cents"]
     end
     @order.amount_cents = amount
