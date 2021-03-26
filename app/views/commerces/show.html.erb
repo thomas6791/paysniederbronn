@@ -1,6 +1,7 @@
 <main id="commerce">
   <article>
     <h1><%= @commerce.name %></h1>
+    <%= session[:cart] %>
     <%= link_to "Commerces", commerces_path %>
     <p>Find me in app/views/commerces/show.html.erb</p>
     <section>
