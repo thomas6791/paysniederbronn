@@ -47,12 +47,12 @@
         <p>Total : </p>
         <%= simple_form_for @order do |f| %>
           <%= hidden_field_tag 'commerce_id', @commerce.id %>
-          <%= f.date_field :delivery_date, input_html: { "data-form-target" => "content" } %>
-          <%= f.input :first_name, placeholder: "Prénom", input_html: { "data-form-target" => "content" } %>
-          <%= f.input :last_name, placeholder: "Nom", input_html: { "data-form-target" => "content" } %>
-          <%= f.input :tel, placeholder: "Tel", input_html: { "data-form-target" => "content" } %>
-          <%= f.input :email, placeholder: "Email", input_html: { "data-form-target" => "content" } %>
-          <%= f.input :rgpd, label:"J'accepte que mes coordonnées soient utilisées dans le cadre de ma commande. Ces informations ne seront pas conservées et ne serviront qu'à répondre à votre demande.",input_html: { "data-form-target" => "content" } %>
+          <%= f.date_field :delivery_date, input_html: { "data-form-target" => "content" }, required:true %>
+          <%= f.input :first_name, placeholder: "Prénom", input_html: { "data-form-target" => "content" }, required:true %>
+          <%= f.input :last_name, placeholder: "Nom", input_html: { "data-form-target" => "content" }, required:true %>
+          <%= f.input :tel, placeholder: "Tel", input_html: { "data-form-target" => "content" }, required:true %>
+          <%= f.input :email, placeholder: "Email", input_html: {} %>
+          <%= f.input :rgpd, label:"J'accepte que mes coordonnées soient utilisées dans le cadre de ma commande. Ces informations ne seront pas conservées et ne serviront qu'à répondre à votre demande.",:input_html => { :checked => "" }, required:true %>
           <br>
           <%= f.submit 'Envoyer la commande', class: 'btn btn-green auto', data: { action: "form#submitForm" } %>
         <% end %>

@@ -18,9 +18,9 @@ class OrdersController < ApplicationController
       x.product_id = commerce.products.find_by(name: item["name"]).id
       x.quantity = item["quantity"]
       x.subtotal_cents = item["sub_total"]["cents"]
-      fail
-      x.product_id =
       amount += item["sub_total"]["cents"]
+      x.save!
+      fail
     end
     @order.amount_cents = amount
     @order.delivery_date = params[:order][:delivery_date]
