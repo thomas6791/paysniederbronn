@@ -14,7 +14,11 @@
               <p class="description">ezfnejzgoezbgjzbgjbzghbh jgbejkzbgjkbzjkgbezakjbg bgezbgbzekjgbakzb</p>
               <p class="price"><%= humanized_money product.price %><label for=""><%= product.price.currency.symbol %></label></p>
               <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
-                <%= f.input :quantity, label: false, input_html: {value: '0'} %>
+                <div>
+                  <a href="" id="plus"><i class="fas fa-plus-circle"></i></a>
+                  <%= f.input :quantity, label: false, input_html: {value: '0'} %>
+                  <a href="" id="minus"><i class="fas fa-minus-circle"></i></a>
+                </div>
                 <%= f.submit class: "btn btn-green auto", value: "Ajouter au panier" %>
               <% end %>
 

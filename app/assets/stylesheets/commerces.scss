@@ -35,4 +35,13 @@
       h2 { font-weight: 200; }
     }
   }
+  .list-group-item {
+    form > div {
+      padding: 0px;
+      display: flex;
+      a {
+
+      }
+    }
+  }
 }
