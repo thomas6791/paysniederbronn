@@ -21,12 +21,13 @@ class OrdersController < ApplicationController
       x.subtotal_cents = item["sub_total"]["cents"]
       amount += item["sub_total"]["cents"]
       x.save!
-      @order.cart_items << x
+      #@order.cart_items << x
     end
     @order.amount_cents = amount
     @order.delivery_date = params[:order][:delivery_date]
 
     @order.save!
+    fail
     if @order.save?
       session[:cart][params[:commerce_id]] = []
     else
