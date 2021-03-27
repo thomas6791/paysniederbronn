@@ -2,6 +2,9 @@
   <article>
     <h1><%= @commerce.name %></h1>
     <%= session[:cart] %>
+    <% Order.last.cart_items.each do |item| %>
+    <p><%= item.product.name %> <%= item.quantity %></p>
+    <% end %>
     <%= link_to "Commerces", commerces_path %>
     <p>Find me in app/views/commerces/show.html.erb</p>
     <section>
