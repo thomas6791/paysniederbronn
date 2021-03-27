@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_26_202718) do
+ActiveRecord::Schema.define(version: 2021_03_27_183051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,8 @@ ActiveRecord::Schema.define(version: 2021_03_26_202718) do
     t.string "subtotal_currency", default: "EUR", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "order_id"
+    t.index ["order_id"], name: "index_cart_items_on_order_id"
     t.index ["product_id"], name: "index_cart_items_on_product_id"
   end
 
@@ -191,6 +193,8 @@ ActiveRecord::Schema.define(version: 2021_03_26_202718) do
     t.string "first_name"
     t.string "last_name"
     t.boolean "rgpd", default: false
+    t.bigint "commerce_id"
+    t.index ["commerce_id"], name: "index_orders_on_commerce_id"
   end
 
   create_table "post_categories", force: :cascade do |t|
@@ -302,8 +306,10 @@ ActiveRecord::Schema.define(version: 2021_03_26_202718) do
   add_foreign_key "blog_post_categories", "blog_categories"
   add_foreign_key "blog_post_categories", "blog_posts"
   add_foreign_key "blog_posts", "author_blogs"
+  add_foreign_key "cart_items", "orders"
   add_foreign_key "cart_items", "products"
   add_foreign_key "commerces", "users"
+  add_foreign_key "orders", "commerces"
   add_foreign_key "products", "commerces"
   add_foreign_key "renting_cats", "renting_categories"
   add_foreign_key "renting_cats", "rentings"
