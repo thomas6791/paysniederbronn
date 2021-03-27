@@ -19,7 +19,7 @@
               <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
                 <div>
                   <a href="" id="plus"><i class="fas fa-plus-circle"></i></a>
-                  <%= f.input :quantity, label: false, input_html: {value: '0'} %>
+                  <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
                   <a href="" id="minus"><i class="fas fa-minus-circle"></i></a>
                 </div>
                 <%= f.submit class: "btn btn-green auto", value: "Ajouter au panier" %>
@@ -36,18 +36,21 @@
         <ul>
             <% session[:cart][params[:id]].each do |item| %>
               <% if item["sub_total"]["cents"] != 0 %>
-                <li class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</li>
-
+              <li>
                 <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                  <i class="fas fa-plus-circle"></i>
+                    <i class="fas fa-plus-circle"></i>
+                  <% end %>
+                  <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
+                  <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+                    <i class="fas fa-minus-circle"></i>
+                  <% end %>
                 <% end %>
-                <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                  <i class="fas fa-minus-circle"></i>
-                <% end %>
-              <% end %>
+              </li>
             <% end %>
         </ul>
         <p>Total : </p>
+        <hr>
+        <h2>Mes coordonnées</h2>
         <%= simple_form_for @order do |f| %>
           <%= hidden_field_tag 'commerce_id', @commerce.id %>
           <%= f.date_field :delivery_date, input_html: { "data-form-target" => "content" }, required:true %>

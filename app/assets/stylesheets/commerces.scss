@@ -11,6 +11,7 @@
       margin: 0px 10px;
       border-radius: 3px;
       padding: 1em;
+      height: fit-content;
       a { text-decoration: none; color: black; }
     }
   }
@@ -47,5 +48,34 @@
   .input.boolean.required.order_rgpd {
     font-size: 0.75em;
     color: darkslategrey;
+    margin: 1.5em 0;
+  }
+  .fas { color: lightseagreen; font-size: 1.2em; }
+  .cart {
+    h2 { margin-bottom: 0.8em; font-weight: 500; }
+    hr {
+      margin: 10px 0px;
+      color: darkgrey;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        display: flex;
+        margin: 0;
+        p{padding: 0px 5px; font-size: 0.9em; color: grey; }
+      }
+    }
+    .btn {
+      display: block;
+      width: 100%;
+    }
+    form input {
+      display: flex;
+      flex-wrap: wrap;
+      line-height: 2em;
+      border: none;
+      border-bottom: solid 1px lightgrey;
+      width: 100%;
+    }
   }
 }
