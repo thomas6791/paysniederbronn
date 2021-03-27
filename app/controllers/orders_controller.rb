@@ -14,25 +14,13 @@ class OrdersController < ApplicationController
       order_arr << item if item["sub_total"]["cents"] != 0
     end
     amount = 0
-    order_arr.each do |item|
-      x = CartItem.new
-      x.product_id = commerce.products.find_by(name: item["name"]).id
-      x.quantity = item["quantity"]
-      x.subtotal_cents = item["sub_total"]["cents"]
-      amount += item["sub_total"]["cents"]
-      x.save!
-      #@order.cart_items << x
-    end
+
     @order.amount_cents = amount
     @order.delivery_date = params[:order][:delivery_date]
 
     @order.save!
-    fail
-    if @order.save?
-      session[:cart][params[:commerce_id]] = []
-    else
-    end
+    session[:cart][params[:commerce_id]] = []
 
-    #redirect_to new_order_payment_path(order)
+    redirect_to commerce_path(commerce), notice: "Votre commande a été envoyée"
   end
 end
