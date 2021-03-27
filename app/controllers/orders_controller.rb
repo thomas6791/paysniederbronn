@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   def new
+    #@order = Order.new
   end
 
   def create
@@ -20,13 +21,16 @@ class OrdersController < ApplicationController
       x.subtotal_cents = item["sub_total"]["cents"]
       amount += item["sub_total"]["cents"]
       x.save!
-      fail
+      @order.cart_items << x
     end
     @order.amount_cents = amount
     @order.delivery_date = params[:order][:delivery_date]
 
-    fail
-    @order.save
+    @order.save!
+    if @order.save?
+      session[:cart][params[:commerce_id]] = []
+    else
+    end
 
     #redirect_to new_order_payment_path(order)
   end
