@@ -32,7 +32,7 @@
 
       </ul>
       <aside class="cart" data-controller="form">
-        <h2>Panier</h2>
+        <h2>Mon panier</h2>
         <ul>
             <% session[:cart][params[:id]].each do |item| %>
               <% if item["sub_total"]["cents"] != 0 %>
