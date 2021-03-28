@@ -20,7 +20,7 @@
             <div data-controller="form">
               <h2><%= product.name.capitalize %></h2>
               <p class="description">ezfnejzgoezbgjzbgjbzghbh jgbejkzbgjkbzjkgbezakjbg bgezbgbzekjgbakzb</p>
-              <p class="price"><%= humanized_money product.price %><label for=""><%= product.price.currency.symbol %></label></p>
+              <p class="price" data-price="<%= product.price.cents.to_i/100.0 %>"><%= humanized_money product.price %><label for=""><%= product.price.currency.symbol %></label></p>
               <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
                 <div>
                   <a href="#" id="plus" data-action="click->form#linkDisabled"><i class="fas fa-plus-circle"></i></a>
