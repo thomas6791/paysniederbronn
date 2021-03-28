@@ -17,15 +17,15 @@
         </div>
         <% @commerce.products.each do |product| %>
           <li class="list-group-item">
-            <div>
+            <div data-controller="form">
               <h2><%= product.name.capitalize %></h2>
               <p class="description">ezfnejzgoezbgjzbgjbzghbh jgbejkzbgjkbzjkgbezakjbg bgezbgbzekjgbakzb</p>
               <p class="price"><%= humanized_money product.price %><label for=""><%= product.price.currency.symbol %></label></p>
               <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
                 <div>
-                  <a href="" id="plus"><i class="fas fa-plus-circle"></i></a>
+                  <a href="#" id="plus" data-action="click->form#linkDisabled"><i class="fas fa-plus-circle"></i></a>
                   <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
-                  <a href="" id="minus"><i class="fas fa-minus-circle"></i></a>
+                  <a href="#" id="minus" data-action="click->form#linkDisabled"><i class="fas fa-minus-circle"></i></a>
                 </div>
                 <h3>Le produit est disponible le :</h3>
                 <ul>

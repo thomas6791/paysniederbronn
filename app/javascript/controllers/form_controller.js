@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "content", "dateinput" ]
+  static targets = [ "content", "dateinput", "link" ]
   static classes = [ "hiddendate" ]
 
 
@@ -30,12 +30,23 @@ export default class extends Controller {
     });
   }
   dateInput() {
-    console.log("Malcom");
+    //console.log("Malcom");
     let datevalue = this.dateinputTarget.value;
     console.log(datevalue);
     document.querySelectorAll("#delivery_date")[0].value = datevalue;
     //console.log(datehidden.value);
     //datehiddenTarget.value = datevalue;
     //this.datehiddenTarget.value = datevalue;
+  }
+  linkDisabled(event) {
+    event.preventDefault();
+    console.log("Capital");
+    debugger;
+    if (event.currentTarget.id === "plus") {
+      event.currentTarget.nextElementSibling.querySelector("input").value ++
+    }
+    if (event.currentTarget.id === "minus") {
+      event.currentTarget.previousElementSibling.querySelector("input").value --
+    }
   }
 }

@@ -15,6 +15,7 @@
       a { text-decoration: none; color: black; }
     }
   }
+  .numeric.integer.optional { width: 3em; text-align: right; margin: 0 0.5em; }
   .list-group {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
