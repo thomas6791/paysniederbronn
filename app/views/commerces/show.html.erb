@@ -6,6 +6,7 @@
     <p><%= item.product.name %> <%= item.quantity %></p>
     <% end %>
     <%= link_to "Commerces", commerces_path %>
+    <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
     <p>Find me in app/views/commerces/show.html.erb</p>
     <section>
 
@@ -26,7 +27,9 @@
                   <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
                   <a href="" id="minus"><i class="fas fa-minus-circle"></i></a>
                 </div>
+                <% fail %>
                 <%= f.submit class: "btn btn-green beige auto", value: "Ajouter au panier" %>
+                <%= link_to "edit", edit_commerce_product_path(@commerce, product) %>
               <% end %>
 
             </div>
@@ -39,19 +42,19 @@
         <div>
           <h2>Mon panier</h2>
           <ul>
-              <% session[:cart][params[:id]].each do |item| %>
-                <% if item["sub_total"]["cents"] != 0 %>
-                <li>
-                  <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                      <i class="fas fa-plus-circle"></i>
-                    <% end %>
-                    <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
-                    <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                      <i class="fas fa-minus-circle"></i>
-                    <% end %>
+            <% session[:cart][params[:id]].each do |item| %>
+              <% if item["sub_total"]["cents"] != 0 %>
+              <li>
+                <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+                    <i class="fas fa-plus-circle"></i>
                   <% end %>
-                </li>
-              <% end %>
+                  <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
+                  <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+                    <i class="fas fa-minus-circle"></i>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
           <p>Total : </p>
           <hr>
