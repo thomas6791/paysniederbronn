@@ -12,7 +12,7 @@
       <ul class="list-group">
         <div>
           <h2>Chosir une date :</h2>
-          <input id="date" type="date" value="" required="required">
+          <input data-controller="form" data-action="input->form#dateInput" data-form-target="dateinput" id="date" type="date" value="" required="required" >
         </div>
         <% @commerce.products.each do |product| %>
           <li class="list-group-item">
@@ -59,7 +59,6 @@
           <%= simple_form_for @order do |f| %>
             <%= hidden_field_tag 'commerce_id', @commerce.id %>
             <%= hidden_field_tag :delivery_date %>
-            <%= f.date_field :delivery_date, input_html: { "data-form-target" => "content" }, required:true %>
             <%= f.input :first_name, placeholder: "Prénom", label: false, input_html: { "data-form-target" => "content" }, required:true %>
             <%= f.input :last_name, placeholder: "Nom", label: false, input_html: { "data-form-target" => "content" }, required:true %>
             <%= f.input :tel, placeholder: "Tel", label: false, input_html: { "data-form-target" => "content" }, required:true %>

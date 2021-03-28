@@ -1,7 +1,8 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "content" ]
+  static targets = [ "content", "dateinput" ]
+  static classes = [ "hiddendate" ]
 
 
   connect() {
@@ -27,5 +28,14 @@ export default class extends Controller {
       console.log("aliens ///");
       //border: solid 1px red;
     });
+  }
+  dateInput() {
+    console.log("Malcom");
+    let datevalue = this.dateinputTarget.value;
+    console.log(datevalue);
+    document.querySelectorAll("#delivery_date")[0].value = datevalue;
+    //console.log(datehidden.value);
+    //datehiddenTarget.value = datevalue;
+    //this.datehiddenTarget.value = datevalue;
   }
 }
