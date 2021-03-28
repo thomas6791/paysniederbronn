@@ -32,36 +32,38 @@
 
       </ul>
       <aside class="cart" data-controller="form">
-        <h2>Mon panier</h2>
-        <ul>
-            <% session[:cart][params[:id]].each do |item| %>
-              <% if item["sub_total"]["cents"] != 0 %>
-              <li>
-                <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                    <i class="fas fa-plus-circle"></i>
+        <div>
+          <h2>Mon panier</h2>
+          <ul>
+              <% session[:cart][params[:id]].each do |item| %>
+                <% if item["sub_total"]["cents"] != 0 %>
+                <li>
+                  <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+                      <i class="fas fa-plus-circle"></i>
+                    <% end %>
+                    <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
+                    <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+                      <i class="fas fa-minus-circle"></i>
+                    <% end %>
                   <% end %>
-                  <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
-                  <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                    <i class="fas fa-minus-circle"></i>
-                  <% end %>
-                <% end %>
-              </li>
-            <% end %>
-        </ul>
-        <p>Total : </p>
-        <hr>
-        <h2>Mes coordonnées</h2>
-        <%= simple_form_for @order do |f| %>
-          <%= hidden_field_tag 'commerce_id', @commerce.id %>
-          <%= f.date_field :delivery_date, input_html: { "data-form-target" => "content" }, required:true %>
-          <%= f.input :first_name, placeholder: "Prénom", label: false, input_html: { "data-form-target" => "content" }, required:true %>
-          <%= f.input :last_name, placeholder: "Nom", label: false, input_html: { "data-form-target" => "content" }, required:true %>
-          <%= f.input :tel, placeholder: "Tel", label: false, input_html: { "data-form-target" => "content" }, required:true %>
-          <%= f.input :email, placeholder: "Email", label: false, input_html: {} %>
-          <%= f.input :rgpd, label:"J'accepte que mes coordonnées soient utilisées dans le cadre de ma commande. Ces informations ne seront pas conservées et ne serviront qu'à répondre à votre demande.",:input_html => { :checked => "" }, required:true %>
-          <br>
-          <%= f.submit 'Envoyer la commande', class: 'btn btn-green auto', data: { action: "form#submitForm" } %>
-        <% end %>
+                </li>
+              <% end %>
+          </ul>
+          <p>Total : </p>
+          <hr>
+          <h2>Mes coordonnées</h2>
+          <%= simple_form_for @order do |f| %>
+            <%= hidden_field_tag 'commerce_id', @commerce.id %>
+            <%= f.date_field :delivery_date, input_html: { "data-form-target" => "content" }, required:true %>
+            <%= f.input :first_name, placeholder: "Prénom", label: false, input_html: { "data-form-target" => "content" }, required:true %>
+            <%= f.input :last_name, placeholder: "Nom", label: false, input_html: { "data-form-target" => "content" }, required:true %>
+            <%= f.input :tel, placeholder: "Tel", label: false, input_html: { "data-form-target" => "content" }, required:true %>
+            <%= f.input :email, placeholder: "Email", label: false, input_html: {} %>
+            <%= f.input :rgpd, label:"J'accepte que mes coordonnées soient utilisées dans le cadre de ma commande. Ces informations ne seront pas conservées et ne serviront qu'à répondre à votre demande.",:input_html => { :checked => "" }, required:true %>
+            <br>
+            <%= f.submit 'Envoyer la commande', class: 'btn btn-green auto', data: { action: "form#submitForm" } %>
+          <% end %>
+        </div>
       </aside>
     </section>
   </article>

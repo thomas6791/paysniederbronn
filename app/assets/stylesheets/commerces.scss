@@ -20,6 +20,8 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
+    //grid-template-rows: auto 1fr;
+    height: fit-content;
     li {
       border: solid 1px lightgrey;
       border-radius: 3px;
