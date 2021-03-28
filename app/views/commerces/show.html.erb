@@ -8,8 +8,12 @@
     <%= link_to "Commerces", commerces_path %>
     <p>Find me in app/views/commerces/show.html.erb</p>
     <section>
-      <ul class="list-group">
 
+      <ul class="list-group">
+        <div>
+          <h2>Chosir une date :</h2>
+          <input id="date" type="date" value="2017-06-01">
+        </div>
         <% @commerce.products.each do |product| %>
           <li class="list-group-item">
             <div>
