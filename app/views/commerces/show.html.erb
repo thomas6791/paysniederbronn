@@ -27,6 +27,7 @@
                   <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
                   <a href="#" id="minus" data-action="click->form#linkDisabled"><i class="fas fa-minus-circle"></i></a>
                 </div>
+                <p class="sumproduct price" data-form-target="sumproduct">0.00<label for=""><%= product.price.currency.symbol %></label></p>
                 <h3>Le produit est disponible le :</h3>
                 <ul>
                   <% ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ].each do |day| %>
