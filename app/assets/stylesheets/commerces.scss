@@ -29,6 +29,7 @@
       padding: 1em;
       h2 {font-weight: 300;}
     }
+    h3 { font-weight: 200; }
     li {
       border: solid 1px lightgrey;
       border-radius: 3px;
@@ -43,6 +44,20 @@
       img { width: 150px; height: auto; object-fit: cover; align-self: center; }
       &:hover { border: solid 1px black; }
       h2 { font-weight: 200; }
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0.5em 0px;
+      .available-day {
+        border: solid 1px;
+        padding: 0px 10px;
+        border-radius: 20px;
+        font-weight: bolder;
+        margin: 0.2em;
+        &.true { color: #333333; border: solid 2px #fccb07; background-color: #fccb07; }
+        &.false { color: lightgrey; border: solid 2px lightgrey; opacity: 0.5; }
+      }
     }
   }
   .list-group-item {

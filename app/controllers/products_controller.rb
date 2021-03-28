@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
       @product.availability[day.downcase] = true
     end
     @product.commerce = @commerce
-    @product.save
+    @product.save!
     redirect_to commerce_path(@commerce)
   end
 
@@ -33,6 +33,7 @@ class ProductsController < ApplicationController
     params[:product][:availability].each do |day|
       @product.availability[day.downcase] = true
     end
+    @product.save!
     redirect_to commerce_path(@commerce)
   end
 

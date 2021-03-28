@@ -27,7 +27,13 @@
                   <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
                   <a href="" id="minus"><i class="fas fa-minus-circle"></i></a>
                 </div>
-                <% fail %>
+                <h3>Les produits sont disponibles le :</h3>
+                <ul>
+                  <% ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ].each do |day| %>
+                    <li class="available-day <%= product.availability[day] %>"><%= day%></li>
+                  <% end %>
+                </ul>
+
                 <%= f.submit class: "btn btn-green beige auto", value: "Ajouter au panier" %>
                 <%= link_to "edit", edit_commerce_product_path(@commerce, product) %>
               <% end %>
