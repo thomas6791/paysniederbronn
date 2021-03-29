@@ -16,7 +16,7 @@
           <input data-controller="form" data-action="input->form#dateInput" data-form-target="dateinput" id="date" type="date" value=<%= DateTime.now.next_day.strftime("%Y-%m-%d") %> required="required" >
         </div>
         <% @commerce.products.each do |product| %>
-          <li class="list-group-item" data-available=[]>
+          <li class="list-group-item" data-available=<%=product.availability.select {|k,v| v == true}.keys.to_json %> >
             <div data-controller="form">
               <h2><%= product.name.capitalize %></h2>
               <p class="description">ezfnejzgoezbgjzbgjbzghbh jgbejkzbgjkbzjkgbezakjbg bgezbgbzekjgbakzb</p>
