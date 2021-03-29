@@ -34,6 +34,9 @@ export default class extends Controller {
     let datevalue = this.dateinputTarget.value;
     console.log(datevalue);
     document.querySelectorAll("#delivery_date")[0].value = datevalue;
+
+    let dayName = new Date(datevalue).toLocaleString('fr-fr', {weekday:'long'})
+    console.log(dayName);
     //console.log(datehidden.value);
     //datehiddenTarget.value = datevalue;
     //this.datehiddenTarget.value = datevalue;
@@ -41,7 +44,6 @@ export default class extends Controller {
   linkDisabled(event) {
     event.preventDefault();
     console.log("Capital");
-    debugger;
     if (event.currentTarget.id === "plus") {
       event.currentTarget.nextElementSibling.querySelector("input").value ++
     }
