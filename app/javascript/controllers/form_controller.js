@@ -61,4 +61,8 @@ export default class extends Controller {
       event.currentTarget.nextElementSibling.querySelector("input").value --
     }
   }
+   daysonload() {
+    console.log("test");
+  }
+
 }

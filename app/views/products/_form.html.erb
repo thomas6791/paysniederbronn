@@ -1,7 +1,20 @@
-<%= simple_form_for [ @commerce, @product ] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :photo, as: :file, label:"Photo du produit" %>
-  <%= f.input :availability, as: :check_boxes, :collection => ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"], label: "Jour de disponibilité" %>
-  <%= f.submit "Submit product", class: "btn btn-primary" %>
-<% end %>
+<div>
+  <%= simple_form_for [ @commerce, @product ] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :photo, as: :file, label:"Photo du produit" %>
+    <span data-available=<%=@product.availability.select {|k,v| v == true}.keys.to_json %>></span>
+    <%= f.input :availability, as: :check_boxes, :collection => ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"], label: "Jour de disponibilité" %>
+    <%= f.submit "Submit product", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<script type="text/javascript">
+  let availabilities = document.querySelector("form").querySelector("span").dataset.available;
+  let checkboxes = document.querySelectorAll(".checkbox");
+  checkboxes.forEach((item)=>{
+    item.querySelector("input").value.toLowerCase();
+    if (availabilities.includes(item.querySelector("input").value.toLowerCase()) ) {
+      item.querySelector("input").checked = true;
+    }
+  });
+</script>
