@@ -6,7 +6,7 @@
   section:first-of-type {
     display: flex;
     .cart {
-      width: 30%;
+      width: 35%;
       border: solid 1px lightgrey;
       margin: 0px 10px;
       border-radius: 3px;
@@ -111,6 +111,8 @@
       list-style-type: none;
       li {
         display: flex;
+        width: 100%;
+        justify-content: space-between;
         margin: 0;
         p{padding: 0px 5px; font-size: 0.9em; color: grey; }
       }
