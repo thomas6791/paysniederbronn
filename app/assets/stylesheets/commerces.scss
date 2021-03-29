@@ -69,6 +69,12 @@
 
       }
     }
+    &.not-available {
+      opacity: 0.5;
+      //input:disabled;
+      //a:disabled;
+      pointer-events: none;
+    }
   }
   .input.boolean.required.order_rgpd {
     font-size: 0.75em;

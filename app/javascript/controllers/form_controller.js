@@ -37,6 +37,14 @@ export default class extends Controller {
 
     let dayName = new Date(datevalue).toLocaleString('fr-fr', {weekday:'long'})
     console.log(dayName);
+
+    let pdts = document.querySelectorAll(".list-group-item");
+    pdts.forEach((item)=>{
+      item.classList.remove("not-available");
+      if(!item.dataset.available.includes(dayName)) {
+        item.classList.add("not-available");
+      }
+    });
     //console.log(datehidden.value);
     //datehiddenTarget.value = datevalue;
     //this.datehiddenTarget.value = datevalue;
