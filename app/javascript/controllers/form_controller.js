@@ -41,8 +41,10 @@ export default class extends Controller {
     let pdts = document.querySelectorAll(".list-group-item");
     pdts.forEach((item)=>{
       item.classList.remove("not-available");
+      item.querySelector(".unavailable").classList.remove("visible");
       if(!item.dataset.available.includes(dayName)) {
         item.classList.add("not-available");
+        item.querySelector(".unavailable").classList.add("visible");
       }
     });
     //console.log(datehidden.value);

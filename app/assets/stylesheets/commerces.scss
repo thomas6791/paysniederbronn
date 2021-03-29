@@ -62,6 +62,7 @@
     }
   }
   .list-group-item {
+    position: relative;
     form > div {
       padding: 0px;
       display: flex;
@@ -74,6 +75,20 @@
       //input:disabled;
       //a:disabled;
       pointer-events: none;
+    }
+    .unavailable {
+      color: #debcb3;
+      border: solid 2px;
+      padding: 0px 10px;
+      border-radius: 20px;
+      font-weight: bolder;
+      position: absolute;
+      right: 0.7em;
+      top: 0.7em;
+      visibility: hidden;
+      &.visible {
+        visibility: visible;
+      }
     }
   }
   .input.boolean.required.order_rgpd {
