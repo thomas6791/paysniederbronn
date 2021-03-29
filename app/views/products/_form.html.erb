@@ -9,12 +9,15 @@
   <% end %>
 </div>
 <script type="text/javascript">
-  let availabilities = document.querySelector("form").querySelector("span").dataset.available;
-  let checkboxes = document.querySelectorAll(".checkbox");
-  checkboxes.forEach((item)=>{
-    item.querySelector("input").value.toLowerCase();
-    if (availabilities.includes(item.querySelector("input").value.toLowerCase()) ) {
-      item.querySelector("input").checked = true;
-    }
-  });
+  setTimeout(function(){
+    //do what you need here
+    let availabilities = document.querySelector("form").querySelector("span").dataset.available;
+    let checkboxes = document.querySelectorAll(".checkbox");
+    checkboxes.forEach((item)=>{
+      item.querySelector("input").value.toLowerCase();
+      if (availabilities.includes(item.querySelector("input").value.toLowerCase()) ) {
+        item.querySelector("input").checked = true;
+      }
+    });
+  }, 300);
 </script>
