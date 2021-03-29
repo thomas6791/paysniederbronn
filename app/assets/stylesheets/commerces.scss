@@ -70,14 +70,18 @@
 
       }
     }
-    &.not-available {
-      opacity: 0.5;
+    &.not-available > div {
+      opacity: 0.3;
       //input:disabled;
       //a:disabled;
       pointer-events: none;
     }
+    &.not-available > img {
+      opacity: 0.3;
+      pointer-events: none;
+    }
     .unavailable {
-      color: #debcb3;
+      color: #debcb3; //#dd6545
       border: solid 2px;
       padding: 0px 10px;
       border-radius: 20px;
