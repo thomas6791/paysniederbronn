@@ -53,10 +53,10 @@ export default class extends Controller {
     event.preventDefault();
     console.log("Capital");
     if (event.currentTarget.id === "plus") {
-      event.currentTarget.nextElementSibling.querySelector("input").value ++
+      event.currentTarget.previousElementSibling.querySelector("input").value ++
     }
     if (event.currentTarget.id === "minus") {
-      event.currentTarget.previousElementSibling.querySelector("input").value --
+      event.currentTarget.nextElementSibling.querySelector("input").value --
     }
   }
 }

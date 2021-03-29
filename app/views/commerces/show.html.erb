@@ -23,9 +23,9 @@
               <p class="price" data-price="<%= product.price.cents.to_i/100.0 %>"><%= humanized_money product.price %><label for=""><%= product.price.currency.symbol %></label></p>
               <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
                 <div>
-                  <a href="#" id="plus" data-action="click->form#linkDisabled"><i class="fas fa-plus-circle"></i></a>
-                  <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
                   <a href="#" id="minus" data-action="click->form#linkDisabled"><i class="fas fa-minus-circle"></i></a>
+                  <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
+                  <a href="#" id="plus" data-action="click->form#linkDisabled"><i class="fas fa-plus-circle"></i></a>
                 </div>
                 <p class="sumproduct price" data-form-target="sumproduct">0.00<label for=""><%= product.price.currency.symbol %></label></p>
                 <h3>Le produit est disponible le :</h3>
@@ -52,12 +52,12 @@
             <% session[:cart][params[:id]].each do |item| %>
               <% if item["sub_total"]["cents"] != 0 %>
               <li>
-                <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                    <i class="fas fa-plus-circle"></i>
-                  <% end %>
-                  <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
                   <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
                     <i class="fas fa-minus-circle"></i>
+                  <% end %>
+                  <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
+                  <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+                    <i class="fas fa-plus-circle"></i>
                   <% end %>
                 <% end %>
               </li>
