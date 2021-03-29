@@ -114,6 +114,10 @@
         width: 100%;
         justify-content: space-between;
         margin: 0;
+        .price {
+          flex: 1;
+          padding: 0 1em;
+        }
         p{padding: 0px 5px; font-size: 0.9em; color: grey; }
       }
     }
