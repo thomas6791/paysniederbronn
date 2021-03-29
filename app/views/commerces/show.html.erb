@@ -12,7 +12,7 @@
 
       <ul class="list-group">
         <div>
-          <h2>Chosir une date :</h2>
+          <h2>Chosir une date de commande :</h2>
           <input data-controller="form" data-action="input->form#dateInput" data-form-target="dateinput" id="date" type="date" value=<%= DateTime.now.next_day.strftime("%Y-%m-%d") %> required="required" >
         </div>
         <% @commerce.products.each do |product| %>
