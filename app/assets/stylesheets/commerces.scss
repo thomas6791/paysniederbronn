@@ -23,13 +23,13 @@
     grid-auto-rows: minmax(100px, auto);
     //grid-template-rows: auto 1fr;
     height: fit-content;
-    & > div:first-child {
-      grid-column: span 2;
-      border: solid 1px lightgrey;
-      border-radius: 3px;
-      padding: 1em;
-      h2 {font-weight: 300;}
-    }
+    //& > div:first-child {
+    //  grid-column: span 2;
+    //  border: solid 1px lightgrey;
+    //  border-radius: 3px;
+    //  padding: 1em;
+    //  h2 {font-weight: 300;}
+    //}
     h3 { font-weight: 200; }
     li {
       border: solid 1px lightgrey;
@@ -135,4 +135,79 @@
     }
     input.boolean { width: auto; }
   }
+  .dates-select {
+    border: solid 1px lightgrey;
+    border-radius: 3px;
+    list-style: none;
+    padding: 1em;
+  }
+  /**
+ * Tabs
+ */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  ///border: solid 1px red; // make sure it wraps
 }
+.tabs label {
+  order: 1; // Put the labels first
+  display: block;
+  padding: 0.5em 0.5em;
+  margin-right: 0.5em;
+  cursor: pointer;
+  //background: #90CAF9;
+  border-bottom: solid 5px #d6c1a2;
+  font-weight: bold;
+  transition: background ease 0.2s;
+  margin-bottom: 0.3em;
+}
+.tabs .tab {
+  order: 99; // Put the tabs last
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  //padding: 1rem;
+  //background: #fff;
+}
+.tabs input[type="radio"] {
+  display: none;
+}
+.tabs input[type="radio"]:checked + label {
+  //background: #fff;
+  border-bottom: solid 5px #fccb07;
+}
+.tabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}
+
+/**
+ * Generic Styling
+*/
+//body {
+//  background: #eee;
+//  min-height: 100vh;
+//  box-sizing: border-box;
+//  padding-top: 10vh;
+//  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+//  font-weight: 300;
+//  line-height: 1.5;
+//  max-width: 60rem;
+//  margin: 0 auto;
+//  font-size: 112%;
+//}
+}
+
+
+

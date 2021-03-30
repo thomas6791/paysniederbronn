@@ -8,18 +8,45 @@
     <%= link_to "Commerces", commerces_path %>
     <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
     <p>Find me in app/views/commerces/show.html.erb</p>
-    <section>
 
-      <ul class="list-group">
+      <section class="flex">
         <div>
+          <div class="dates-select">
           <h2>Chosir une date de commande :</h2>
           <input data-controller="form" data-action="input->form#dateInput" data-form-target="dateinput" id="date" type="date" value=<%= DateTime.now.next_day.strftime("%Y-%m-%d") %> required="required" >
-        </div>
-        <%= render partial: "commerce_content", locals: {products: @commerce.products} %>
+          </div>
+          <div>
+            <div class="tabs">
+            <input type="radio" name="tabs" id="tabone" checked="checked">
+            <label for="tabone">Pains</label>
+            <div class="tab">
+              <ul class="list-group">
+                <%= render partial: "commerce_content", locals: {products: @commerce.products} %>
+              </ul>
+            </div>
 
-      </ul>
-      <aside class="cart" data-controller="form">
-        <div>
+            <input type="radio" name="tabs" id="tabtwo">
+            <label for="tabtwo">Viennoiseries</label>
+            <div class="tab">
+              <ul class="list-group">
+                <%= render partial: "commerce_content", locals: {products: @commerce.products} %>
+              </ul>
+            </div>
+
+            <input type="radio" name="tabs" id="tabthree">
+            <label for="tabthree">Pâtisseries</label>
+            <div class="tab">
+              <ul class="list-group">
+                <%= render partial: "commerce_content", locals: {products: @commerce.products} %>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="cart">
+        <aside class="" data-controller="form">
+          <div>
           <h2>Mon panier</h2>
           <ul>
             <% session[:cart][params[:id]].each do |item| %>
@@ -51,8 +78,10 @@
             <br>
             <%= f.submit 'Envoyer la commande', class: 'btn btn-green beige auto', data: { action: "form#submitForm" } %>
           <% end %>
+          </div>
+        </aside>
         </div>
-      </aside>
-    </section>
+
+      </section>
   </article>
 </main>
