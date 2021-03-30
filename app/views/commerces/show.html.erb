@@ -73,7 +73,7 @@
             <% end %>
           </ul>
 
-          <p>Total : </p>
+          <p class="price">Total : <%= humanized_money @subtotal %><span><%= @subtotal.currency.symbol %></span></p>
           <hr>
           <h2>Mes coordonnées</h2>
           <%= simple_form_for @order do |f| %>
