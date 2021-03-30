@@ -17,27 +17,36 @@
           </div>
           <div>
             <div class="tabs">
-            <input type="radio" name="tabs" id="tabone" checked="checked">
-            <label for="tabone">Pains</label>
+
+            <input type="radio" name="tabs" id="tab" checked="checked">
+            <label for="tab">Tous</label>
             <div class="tab">
               <ul class="list-group">
                 <%= render partial: "commerce_content", locals: {products: @commerce.products} %>
+              </ul>
+            </div>
+
+            <input type="radio" name="tabs" id="tabone" checked="checked">
+            <label for="tabone">Pain</label>
+            <div class="tab">
+              <ul class="list-group">
+                <%= render partial: "commerce_content", locals: {products: @commerce.products.where(category:"pain")} %>
               </ul>
             </div>
 
             <input type="radio" name="tabs" id="tabtwo">
-            <label for="tabtwo">Viennoiseries</label>
+            <label for="tabtwo">Viennoiserie</label>
             <div class="tab">
               <ul class="list-group">
-                <%= render partial: "commerce_content", locals: {products: @commerce.products} %>
+                <%= render partial: "commerce_content", locals: {products: @commerce.products.where(category:"viennoiserie")} %>
               </ul>
             </div>
 
             <input type="radio" name="tabs" id="tabthree">
-            <label for="tabthree">Pâtisseries</label>
+            <label for="tabthree">Pâtisserie</label>
             <div class="tab">
               <ul class="list-group">
-                <%= render partial: "commerce_content", locals: {products: @commerce.products} %>
+                <%= render partial: "commerce_content", locals: {products: @commerce.products.where(category:"pâtisserie")} %>
               </ul>
             </div>
           </div>
