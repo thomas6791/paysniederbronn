@@ -34,6 +34,7 @@ export default class extends Controller {
     let datevalue = this.dateinputTarget.value;
     console.log(datevalue);
     document.querySelectorAll("#delivery_date")[0].value = datevalue;
+    document.getElementById("deliverydate").innerText = `Date de commande : ${datevalue}`;
 
     let dayName = new Date(datevalue).toLocaleString('fr-fr', {weekday:'long'})
     console.log(dayName);

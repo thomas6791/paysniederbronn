@@ -76,6 +76,7 @@
           <p class="price">Total : <%= humanized_money @subtotal %><span><%= @subtotal.currency.symbol %></span></p>
           <hr>
           <h2>Mes coordonnées</h2>
+          <p id="deliverydate"></p>
           <%= simple_form_for @order do |f| %>
             <%= hidden_field_tag 'commerce_id', @commerce.id %>
             <%= hidden_field_tag :delivery_date %>
