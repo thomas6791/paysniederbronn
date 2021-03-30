@@ -1,0 +1,29 @@
+<% products.each do |product| %>
+<li class="list-group-item" data-available=<%=product.availability.select {|k,v| v == true}.keys.to_json %> >
+  <div data-controller="form">
+    <h2><%= product.name.capitalize %></h2>
+    <p class="description">ezfnejzgoezbgjzbgjbzghbh jgbejkzbgjkbzjkgbezakjbg bgezbgbzekjgbakzb</p>
+    <p class="price" data-price="<%= product.price.cents.to_i/100.0 %>"><%= humanized_money product.price %><label for=""><%= product.price.currency.symbol %></label></p>
+    <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
+      <div>
+        <a href="#" id="minus" data-action="click->form#linkDisabled"><i class="fas fa-minus-circle"></i></a>
+        <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
+        <a href="#" id="plus" data-action="click->form#linkDisabled"><i class="fas fa-plus-circle"></i></a>
+      </div>
+      <p class="price"><span class="sumproduct" data-form-target="sumproduct">0.00</span><label for=""><%= product.price.currency.symbol %></label></p>
+      <h3>Le produit est disponible le :</h3>
+      <ul>
+        <% ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" ].each do |day| %>
+          <li class="available-day <%= product.availability[day] %>"><%= day%></li>
+        <% end %>
+      </ul>
+
+      <%= f.submit class: "btn btn-green beige auto", value: "Ajouter au panier" %>
+      <%= link_to "edit", edit_commerce_product_path(@commerce, product) %>
+    <% end %>
+
+  </div>
+  <%= image_tag product.photo, width:150 if product.photo.attached? %>
+  <span class="unavailable">produit indisponible</span>
+</li>
+<% end %>
