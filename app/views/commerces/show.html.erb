@@ -1,13 +1,10 @@
 <main id="commerce">
   <article>
-    <h1><%= @commerce.name %></h1>
-    <%= session[:cart] %>
-    <% Order.last.cart_items.each do |item| %>
-    <p><%= item.product.name %> <%= item.quantity %></p>
-    <% end %>
+    <header>
+      <h1><%= @commerce.name %></h1>
+    </header>
     <%= link_to "Commerces", commerces_path %>
-    <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
-    <p>Find me in app/views/commerces/show.html.erb</p>
+      <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
 
       <section class="flex">
         <div>
