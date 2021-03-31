@@ -2,6 +2,10 @@
   <article>
     <header>
       <h1><%= @commerce.name %></h1>
+      <div>
+        <a href=""><i class="fas fa-phone"></i></a>
+        <a href=""><i class="fas fa-map-marker-alt"></i></a>
+      </div>
     </header>
     <%= link_to "Commerces", commerces_path %>
       <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
