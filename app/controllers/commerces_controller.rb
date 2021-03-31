@@ -32,9 +32,12 @@ class CommercesController < ApplicationController
   end
 
   def edit
+    @commerce = Commerce.find(params[:id])
   end
 
   def update
+    @commerce = Commerce.find(params[:id])
+    @commerce.update(commerce_params)
   end
 
   def destroy
