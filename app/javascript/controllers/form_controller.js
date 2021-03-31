@@ -65,7 +65,7 @@ export default class extends Controller {
     if (event.currentTarget.id === "minus") {
       event.currentTarget.nextElementSibling.querySelector("input").value --;
       let price = Number(event.currentTarget.parentElement.parentElement.parentElement.querySelector(".price").dataset.price);
-      let quantity = Number(event.currentTarget.previousElementSibling.querySelector("input").value);
+      let quantity = Number(event.currentTarget.nextElementSibling.querySelector("input").value);
       let sum = price * quantity;
       event.currentTarget.parentElement.parentElement.querySelector(".sumproduct").innerText = sum.toFixed(2);
     }

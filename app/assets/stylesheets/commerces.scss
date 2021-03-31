@@ -79,6 +79,20 @@
 
       }
     }
+    .availabilities {
+      display: block;
+    }
+    .visuel {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      .price { text-align: center; padding: 1em 0; }
+    }
+    .qty-control { display: flex; padding: 0em 1em;
+      input { text-align: center; }
+    }
     &.not-available > div {
       opacity: 0.3;
       //input:disabled;
