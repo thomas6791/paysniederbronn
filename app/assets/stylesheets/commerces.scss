@@ -163,6 +163,12 @@
       width: 100%;
     }
     input.boolean { width: auto; }
+    #deliverydate { font-size: 0.9em; margin-bottom: 1em; }
+    .price {
+      padding: 0.3em 0;
+      font-weight: 500;
+      color: dimgrey;
+    }
   }
   .dates-select {
     border: solid 1px lightgrey;
