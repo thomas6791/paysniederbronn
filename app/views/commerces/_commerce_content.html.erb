@@ -2,7 +2,7 @@
 <li class="list-group-item" data-controller="form" data-available=<%=product.availability.select {|k,v| v == true}.keys.to_json %> >
   <div>
     <h2><%= product.name.capitalize %></h2>
-    <p class="price" data-price="<%= product.price.cents.to_i/100.0 %>"><%= humanized_money product.price %><span><%= product.price.currency.symbol %></span></p>
+    <p class="price" data-price="<%= product.price.cents.to_i/100.0 %>">Prix : <%= humanized_money product.price %><span><%= product.price.currency.symbol %></span></p>
     <p class="description">ezfnejzgoezbgjzbgjbzghbh jgbejkzbgjkbzjkgbezakjbg bgezbgbzekjgbakzb</p>
     <%= simple_form_for [@commerce, product, @cart_item] do |f| %>
 

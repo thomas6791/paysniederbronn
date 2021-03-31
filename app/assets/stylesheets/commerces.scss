@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #commerce {
-  font-family: 'Avenir','Source Sans Pro', 'Muli', sans-serif;
+  //font-family: 'Avenir','Source Sans Pro', 'Muli', sans-serif;
+  font-family: 'Comfortaa', 'Avenir', 'Source Sans Pro', 'Muli', sans-serif;
   header {
     display: flex;
     h1 {
@@ -91,6 +92,11 @@
       .price { text-align: center; padding: 1em 0; }
     }
     .qty-control { display: flex; padding: 0em 1em;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
       input { text-align: center; }
     }
     &.not-available > div {
@@ -183,6 +189,7 @@
   font-weight: bold;
   transition: background ease 0.2s;
   margin-bottom: 0.3em;
+  //font-family: 'Comfortaa';
 }
 .tabs .tab {
   order: 99; // Put the tabs last
