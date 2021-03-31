@@ -31,10 +31,13 @@ export default class extends Controller {
   }
   dateInput() {
     //console.log("Malcom");
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     let datevalue = this.dateinputTarget.value;
     console.log(datevalue);
     document.querySelectorAll("#delivery_date")[0].value = datevalue;
-    document.getElementById("deliverydate").innerText = `Date de commande : ${datevalue}`;
+    let deliverydateDisplay = new Date(datevalue).toLocaleString('fr-FR', options);
+    console.log(deliverydateDisplay);
+    document.getElementById("deliverydate").innerText = `Date de commande : ${ deliverydateDisplay }`;
 
     let dayName = new Date(datevalue).toLocaleString('fr-fr', {weekday:'long'})
     console.log(dayName);
