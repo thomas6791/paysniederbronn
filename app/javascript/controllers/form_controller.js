@@ -60,14 +60,14 @@ export default class extends Controller {
     console.log("Capital");
     if (event.currentTarget.id === "plus") {
       event.currentTarget.previousElementSibling.querySelector("input").value ++;
-      let price = Number(event.currentTarget.parentElement.parentElement.parentElement.querySelector(".price").dataset.price);
+      let price = Number(event.currentTarget.parentElement.parentElement.parentElement.querySelector(".pricing").dataset.price);
       let quantity = Number(event.currentTarget.previousElementSibling.querySelector("input").value);
       let sum = price * quantity;
       event.currentTarget.parentElement.parentElement.querySelector(".sumproduct").innerText = sum.toFixed(2);
     }
     if (event.currentTarget.id === "minus") {
       event.currentTarget.nextElementSibling.querySelector("input").value --;
-      let price = Number(event.currentTarget.parentElement.parentElement.parentElement.querySelector(".price").dataset.price);
+      let price = Number(event.currentTarget.parentElement.parentElement.parentElement.querySelector(".pricing").dataset.price);
       let quantity = Number(event.currentTarget.nextElementSibling.querySelector("input").value);
       let sum = price * quantity;
       event.currentTarget.parentElement.parentElement.querySelector(".sumproduct").innerText = sum.toFixed(2);
