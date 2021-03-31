@@ -6,10 +6,18 @@
   font-family: 'Comfortaa', 'Avenir', 'Source Sans Pro', 'Muli', sans-serif;
   header {
     display: flex;
-    h1 {
-      border-left: solid 10px #d6c1a2;
-      font-size: 1.5em;
-      padding-left: 0.5em;
+    justify-content: space-between;
+    border-left: solid 10px #d6c1a2;
+    margin: 1em 0em;
+    & > div {
+      padding-left: 1em;
+      h1, p { font-family: 'Comfortaa'; }
+      div {
+        display: flex;
+        div { display: block; border: solid 1px; width: 100%; }
+      }
+      //font-size: 1.5em;
+      //padding-left: 0.5em;
     }
   }
   section:first-of-type {
