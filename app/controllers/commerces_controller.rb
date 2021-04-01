@@ -12,7 +12,7 @@ class CommercesController < ApplicationController
     @cart_item = CartItem.new
     @order = Order.new
     @subtotal = 0
-    session[:cart][@commerce.id.to_s].each do |item|
+    session[:cart][@commerce.slug].each do |item|
       @subtotal += item["sub_total"]["cents"]
     end
     @subtotal = Money.new(@subtotal)

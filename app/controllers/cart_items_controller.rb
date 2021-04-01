@@ -15,7 +15,7 @@ class CartItemsController < ApplicationController
     @commerce = Commerce.friendly.find(params[:commerce_id])
     @product = @commerce.products.find(params[:product_id])
     @cart_item.product = @product
-    y = session[:cart][@commerce.id.to_s].find {|x| x["name"] == @cart_item.product.name}
+    y = session[:cart][@commerce.slug].find {|x| x["name"] == @cart_item.product.name}
     y["quantity"] = @cart_item.quantity
     y["sub_total"] = Money.new(@cart_item.product.price * @cart_item.quantity)
     #fail
