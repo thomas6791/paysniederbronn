@@ -39,9 +39,11 @@
   -moz-appearance: none;
   appearance: none;
   margin-top: 20px;
+  &.auto { width: auto; display: inline-block; }
   &.large {
     line-height: 2em;
   }
   &:hover { opacity: 0.7; }
+  &.beige { background-color: #d6c1a2; border: solid #d6c1a2; }
 }
 

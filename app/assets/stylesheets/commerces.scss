@@ -1,0 +1,313 @@
+// Place all the styles related to the commerces controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#commerce {
+  //font-family: 'Avenir','Source Sans Pro', 'Muli', sans-serif;
+  font-family: 'Comfortaa', 'Avenir', 'Source Sans Pro', 'Muli', sans-serif;
+  header {
+    display: flex;
+    justify-content: space-between;
+    border-left: solid 10px #d6c1a2;
+    margin: 1em 0em;
+    & > div {
+      padding-left: 1em;
+      h1, p { font-family: 'Comfortaa'; }
+      div {
+        display: flex;
+        div { display: block; border: solid 1px; width: 100%; }
+      }
+      //font-size: 1.5em;
+      //padding-left: 0.5em;
+    }
+  }
+  section:first-of-type {
+    display: flex;
+    .cart {
+      width: 30%;
+      border: solid 1px lightgrey;
+      margin: 0px 10px;
+      border-radius: 3px;
+      padding: 1em;
+      height: fit-content;
+      a { text-decoration: none; color: black; }
+    }
+  }
+  .numeric.integer.optional { width: 3em; text-align: right; margin: 0 0.5em; }
+  .flex > div:first-of-type { width: 100%; }
+  .list-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    //grid-template-rows: auto 1fr;
+    height: fit-content;
+    //& > div:first-child {
+    //  grid-column: span 2;
+    //  border: solid 1px lightgrey;
+    //  border-radius: 3px;
+    //  padding: 1em;
+    //  h2 {font-weight: 300;}
+    //}
+    h3 { font-weight: 200; }
+    li {
+      border: solid 1px lightgrey;
+      border-radius: 3px;
+      list-style: none;
+      margin: 0px;
+      display: flex;
+      justify-content: space-between;
+      .description, .price { font-weight: lighter; color: grey; font-size: 0.8em; }
+      .price { font-weight: bolder; font-size: 0.9em; }
+      .input { padding: 0px; }
+      div { padding: 1em; }
+      img { width: 150px; height: auto; object-fit: cover; align-self: center; }
+      &:hover { border: solid 1px black; }
+      h2 { font-weight: 200; }
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0.5em 0px;
+      .available-day {
+        border: solid 1px;
+        padding: 0px 10px;
+        border-radius: 20px;
+        font-weight: bolder;
+        margin: 0.2em;
+        &.true { color: #333333; border: solid 2px #fccb07; background-color: #fccb07; }
+        &.false { color: lightgrey; border: solid 2px lightgrey; opacity: 0.5; }
+      }
+    }
+  }
+  .list-group-item {
+    position: relative;
+    flex-direction: column;
+    & > div:first-of-type { display: flex; padding-bottom: 0; }
+    form {
+      //padding: 0px;
+      //display: flex;
+      a {
+
+      }
+    }
+    .send-product {
+      padding: 0 2em;
+      padding-bottom: 1em;
+      display: flex;
+      justify-content: flex-end;
+      .btn.btn-green.beige.auto {
+        //margin: 0px !important;
+        //margin: 2em;
+      margin: 0px !important;
+      margin-left: 1em;
+      }
+    }
+    .availabilities {
+      display: block;
+      padding: 1em 0;
+    }
+    .visuel {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      .price { text-align: center; padding: 1em 0; }
+    }
+    .qty-control { display: flex; padding: 0em 1em;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+      }
+      input { text-align: center; }
+    }
+    &.not-available > div {
+      opacity: 0.3;
+      //input:disabled;
+      //a:disabled;
+      pointer-events: none;
+    }
+    &.not-available > img {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .unavailable {
+      color: #e96745;
+      border: solid 2px;
+      padding: 0px 10px;
+      border-radius: 20px;
+      font-weight: bolder;
+      position: absolute;
+      right: 0.7em;
+      top: 0.7em;
+      visibility: hidden;
+      &.visible {
+        visibility: visible;
+      }
+    }
+  }
+  .input.boolean.required.order_rgpd {
+    font-size: 0.75em;
+    color: darkslategrey;
+    margin: 1.5em 0;
+  }
+  .fas { color: #d6c1a2; font-size: 1.2em; }
+  .cart {
+    h2 { margin-bottom: 0.8em; font-weight: 500; }
+    hr {
+      margin: 10px 0px;
+      color: darkgrey;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 0;
+        .price {
+          flex: 1;
+          padding: 0 1em;
+        }
+        p{padding: 0px 5px; font-size: 0.9em; color: grey; }
+      }
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      background-color: #333333;
+    }
+    form input {
+      display: flex;
+      flex-wrap: wrap;
+      line-height: 2em;
+      border: none;
+      border-bottom: solid 1px lightgrey;
+      width: 100%;
+    }
+    input.boolean { width: auto; }
+    #deliverydate { font-size: 0.9em; margin-bottom: 1em; }
+    .price {
+      padding: 0.3em 0;
+      font-weight: 500;
+      color: dimgrey;
+    }
+  }
+  .dates-select {
+    border: solid 1px lightgrey;
+    border-radius: 3px;
+    list-style: none;
+    padding: 1em;
+  }
+  /**
+ * Tabs
+ */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  ///border: solid 1px red; // make sure it wraps
+}
+.tabs label {
+  order: 1; // Put the labels first
+  display: block;
+  padding: 0.5em 0.5em;
+  margin-right: 0.5em;
+  cursor: pointer;
+  //background: #90CAF9;
+  border-bottom: solid 5px #d6c1a2;
+  font-weight: bold;
+  transition: background ease 0.2s;
+  margin-bottom: 0.3em;
+  //font-family: 'Comfortaa';
+}
+.tabs .tab {
+  order: 99; // Put the tabs last
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  //padding: 1rem;
+  //background: #fff;
+}
+.tabs input[type="radio"] {
+  display: none;
+}
+.tabs input[type="radio"]:checked + label {
+  //background: #fff;
+  border-bottom: solid 5px #fccb07;
+}
+.tabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}
+
+/**
+ * Generic Styling
+*/
+//body {
+//  background: #eee;
+//  min-height: 100vh;
+//  box-sizing: border-box;
+//  padding-top: 10vh;
+//  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+//  font-weight: 300;
+//  line-height: 1.5;
+//  max-width: 60rem;
+//  margin: 0 auto;
+//  font-size: 112%;
+//}
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  #commerce {
+    .flex {
+      flex-direction: column;
+    }
+    .list-group {
+      grid-template-columns: repeat(1, 1fr);
+      grid-auto-rows: minmax(100px, auto);
+    }
+    section:first-of-type {
+      .cart { width: 90%; margin: auto; }
+    }
+    .list-group-item {
+      & > div:first-of-type { flex-direction: column; }
+      .visuel { width: 100%; }
+      .qty-control { justify-content: center; }
+      .send-product {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        .btn { width: 100%; }
+      }
+    }
+  }
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+
+

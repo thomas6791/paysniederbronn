@@ -1,7 +1,8 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "content" ]
+  static targets = [ "content", "dateinput", "link", "sumproduct" ]
+  static classes = [ "hiddendate" ]
 
 
   connect() {
@@ -28,4 +29,52 @@ export default class extends Controller {
       //border: solid 1px red;
     });
   }
+  dateInput() {
+    //console.log("Malcom");
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let datevalue = this.dateinputTarget.value;
+    console.log(datevalue);
+    document.querySelectorAll("#delivery_date")[0].value = datevalue;
+    let deliverydateDisplay = new Date(datevalue).toLocaleString('fr-FR', options);
+    console.log(deliverydateDisplay);
+    document.getElementById("deliverydate").innerText = `Commande pour : ${ deliverydateDisplay }`;
+
+    let dayName = new Date(datevalue).toLocaleString('fr-fr', {weekday:'long'})
+    console.log(dayName);
+
+    let pdts = document.querySelectorAll(".list-group-item");
+    pdts.forEach((item)=>{
+      item.classList.remove("not-available");
+      item.querySelector(".unavailable").classList.remove("visible");
+      if(!item.dataset.available.includes(dayName)) {
+        item.classList.add("not-available");
+        item.querySelector(".unavailable").classList.add("visible");
+      }
+    });
+    //console.log(datehidden.value);
+    //datehiddenTarget.value = datevalue;
+    //this.datehiddenTarget.value = datevalue;
+  }
+  linkDisabled(event) {
+    event.preventDefault();
+    console.log("Capital");
+    if (event.currentTarget.id === "plus") {
+      event.currentTarget.previousElementSibling.querySelector("input").value ++;
+      let price = Number(event.currentTarget.parentElement.parentElement.parentElement.querySelector(".pricing").dataset.price);
+      let quantity = Number(event.currentTarget.previousElementSibling.querySelector("input").value);
+      let sum = price * quantity;
+      event.currentTarget.parentElement.parentElement.querySelector(".sumproduct").innerText = sum.toFixed(2);
+    }
+    if (event.currentTarget.id === "minus") {
+      event.currentTarget.nextElementSibling.querySelector("input").value --;
+      let price = Number(event.currentTarget.parentElement.parentElement.parentElement.querySelector(".pricing").dataset.price);
+      let quantity = Number(event.currentTarget.nextElementSibling.querySelector("input").value);
+      let sum = price * quantity;
+      event.currentTarget.parentElement.parentElement.querySelector(".sumproduct").innerText = sum.toFixed(2);
+    }
+  }
+   daysonload() {
+    console.log("test");
+  }
+
 }

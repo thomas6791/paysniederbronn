@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_203550) do
+ActiveRecord::Schema.define(version: 2021_04_01_104609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,10 +102,45 @@ ActiveRecord::Schema.define(version: 2021_02_15_203550) do
     t.index ["author_blog_id"], name: "index_blog_posts_on_author_blog_id"
   end
 
+  create_table "cart_items", force: :cascade do |t|
+    t.bigint "product_id"
+    t.integer "quantity"
+    t.integer "subtotal_cents", default: 0, null: false
+    t.string "subtotal_currency", default: "EUR", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "order_id"
+    t.index ["order_id"], name: "index_cart_items_on_order_id"
+    t.index ["product_id"], name: "index_cart_items_on_product_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "commerces", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "summary"
+    t.string "address"
+    t.string "city"
+    t.string "zip_code"
+    t.float "latitude"
+    t.float "longitude"
+    t.boolean "published"
+    t.string "title"
+    t.string "category"
+    t.string "tel"
+    t.string "email"
+    t.string "website"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_commerces_on_slug", unique: true
+    t.index ["user_id"], name: "index_commerces_on_user_id"
   end
 
   create_table "frequent_asks", force: :cascade do |t|
@@ -157,6 +192,23 @@ ActiveRecord::Schema.define(version: 2021_02_15_203550) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
+    t.string "checkout_session_id"
+    t.date "delivery_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "tel"
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "rgpd", default: false
+    t.bigint "commerce_id"
+    t.index ["commerce_id"], name: "index_orders_on_commerce_id"
+  end
+
   create_table "post_categories", force: :cascade do |t|
     t.bigint "category_id"
     t.bigint "article_id"
@@ -164,6 +216,19 @@ ActiveRecord::Schema.define(version: 2021_02_15_203550) do
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_post_categories_on_article_id"
     t.index ["category_id"], name: "index_post_categories_on_category_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.bigint "commerce_id"
+    t.integer "price_cents"
+    t.integer "quantity_max"
+    t.jsonb "availability", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "category"
+    t.index ["commerce_id"], name: "index_products_on_commerce_id"
   end
 
   create_table "randonnees", force: :cascade do |t|
@@ -224,8 +289,8 @@ ActiveRecord::Schema.define(version: 2021_02_15_203550) do
     t.boolean "animals", default: false
     t.boolean "family", default: false
     t.boolean "cure", default: false
-    t.float "niederbronn_dist", default: 0.0
-    t.float "morsbronn_dist", default: 0.0
+    t.float "niederbronn_dist"
+    t.float "morsbronn_dist"
     t.integer "price_day_cents", default: 0, null: false
     t.integer "price_week_cents", default: 0, null: false
     t.integer "price_cure_cents", default: 0, null: false
@@ -254,6 +319,11 @@ ActiveRecord::Schema.define(version: 2021_02_15_203550) do
   add_foreign_key "blog_post_categories", "blog_categories"
   add_foreign_key "blog_post_categories", "blog_posts"
   add_foreign_key "blog_posts", "author_blogs"
+  add_foreign_key "cart_items", "orders"
+  add_foreign_key "cart_items", "products"
+  add_foreign_key "commerces", "users"
+  add_foreign_key "orders", "commerces"
+  add_foreign_key "products", "commerces"
   add_foreign_key "renting_cats", "renting_categories"
   add_foreign_key "renting_cats", "rentings"
   add_foreign_key "rentings", "users"

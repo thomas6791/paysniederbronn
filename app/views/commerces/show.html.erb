@@ -1,0 +1,105 @@
+<main id="commerce">
+  <article>
+    <header>
+      <div>
+        <h1><%= @commerce.name %></h1>
+        <div>
+          <div>
+            <a href=""><i class="fas fa-phone"><p>Appeler</p></i></a>
+          </div>
+          <div>
+            <a href=""><i class="fas fa-map-marker-alt"><p>Lancer l'itinéraire</p></i></a>
+          </div>
+        </div>
+      </div>
+      <%= image_tag "https://thumbs.dreamstime.com/b/basket-full-bread-hand-drawn-vector-illustration-60288570.jpg", width: 250 %>
+    </header>
+    <%= link_to "Commerces", commerces_path %>
+      <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
+
+      <section class="flex">
+        <div>
+          <div class="dates-select">
+          <h2>Chosir une date de commande :</h2>
+          <input data-controller="form" data-action="input->form#dateInput" data-form-target="dateinput" id="date" type="date" value=<%= DateTime.now.next_day.strftime("%Y-%m-%d") %> required="required" >
+          </div>
+          <div>
+            <div class="tabs">
+
+            <input type="radio" name="tabs" id="tab1" checked="checked">
+            <label for="tab1">Tous</label>
+            <div class="tab">
+              <ul class="list-group">
+                <%= render partial: "commerce_content", locals: {products: @commerce.products} %>
+              </ul>
+            </div>
+
+            <input type="radio" name="tabs" id="tab2">
+            <label for="tab2">Pain</label>
+            <div class="tab">
+              <ul class="list-group">
+                <%= render partial: "commerce_content", locals: {products: @commerce.products.where(category:"pain")} %>
+              </ul>
+            </div>
+
+            <input type="radio" name="tabs" id="tab3">
+            <label for="tab3">Viennoiserie</label>
+            <div class="tab">
+              <ul class="list-group">
+                <%= render partial: "commerce_content", locals: {products: @commerce.products.where(category:"viennoiserie")} %>
+              </ul>
+            </div>
+
+            <input type="radio" name="tabs" id="tab4">
+            <label for="tab4">Pâtisserie</label>
+            <div class="tab">
+              <ul class="list-group">
+                <%= render partial: "commerce_content", locals: {products: @commerce.products.where(category:"pâtisserie")} %>
+              </ul>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="cart">
+        <aside class="" data-controller="form">
+          <div>
+          <h2>Mon panier</h2>
+          <ul>
+            <% session[:cart][@commerce.id.to_s].each do |item| %>
+              <% if item["sub_total"]["cents"] != 0 %>
+              <li>
+                  <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+                    <i class="fas fa-minus-circle"></i>
+                  <% end %>
+                  <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
+                  <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+                    <i class="fas fa-plus-circle"></i>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+
+          <p class="price">Total : <%= humanized_money @subtotal %><span><%= @subtotal.currency.symbol %></span></p>
+          <hr>
+          <h2>Mes coordonnées</h2>
+          <p id="deliverydate"></p>
+          <%= simple_form_for @order do |f| %>
+            <%= hidden_field_tag 'commerce_id', @commerce.id %>
+            <%= hidden_field_tag :delivery_date %>
+            <%= f.input :last_name, placeholder: "Nom*", label: false, input_html: { "data-form-target" => "content" }, required:true %>
+             <%= f.input :first_name, placeholder: "Prénom*", label: false, input_html: { "data-form-target" => "content" }, required:true %>
+            <%= f.input :tel, placeholder: "Tel*", label: false, input_html: { "data-form-target" => "content" }, required:true %>
+            <%= f.input :email, placeholder: "Email", label: false, input_html: {} %>
+            <%= f.input :rgpd, label:"J'accepte que mes coordonnées soient utilisées dans le cadre de ma commande. Ces informations ne seront pas conservées et ne serviront qu'à répondre à votre demande.",:input_html => { :checked => "" }, required:true %>
+            <br>
+            <%= f.submit 'Envoyer la commande', class: 'btn btn-green beige auto', data: { action: "form#submitForm" } %>
+          <% end %>
+          </div>
+        </aside>
+        </div>
+
+      </section>
+  </article>
+</main>

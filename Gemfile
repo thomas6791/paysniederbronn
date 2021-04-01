@@ -60,6 +60,7 @@ gem 'postmark-rails'
 gem 'cookies_eu'
 gem 'money-rails', '~>1.12'
 gem 'active_storage_validations'
+gem 'friendly_id', '~> 5.4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

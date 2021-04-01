@@ -51,6 +51,19 @@ Rails.application.routes.draw do
     post 'taxe-facture', to: 'pages#result_invoice'
 
     resources :holiday_rentings
+    resources :commerces do
+      resources :products, only: [ :new, :create, :edit, :update, :destroy ] do
+        resources :cart_items do
+          collection do
+            get :add_to_cart
+            get :remove_to_cart
+          end
+        end
+      end
+    end
+    resources :orders, only: [:show, :new, :create]
+
+    get 'order_items/destroy'
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     resources :rentings, :path => 'location-vacances' do
       collection do
