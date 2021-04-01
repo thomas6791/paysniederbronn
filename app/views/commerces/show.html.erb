@@ -66,7 +66,7 @@
           <div>
           <h2>Mon panier</h2>
           <ul>
-            <% session[:cart][params[:id]].each do |item| %>
+            <% session[:cart][@commerce.id.to_s].each do |item| %>
               <% if item["sub_total"]["cents"] != 0 %>
               <li>
                   <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
