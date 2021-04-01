@@ -12,7 +12,7 @@ class CartItemsController < ApplicationController
     #cookies[:user] = { :value => "XJ12", :expires => Time.now + 3600}
     @cart_item = CartItem.new(cart_item_params)
     # we need `restaurant_id` to associate cart_item with corresponding restaurant
-    @commerce = Commerce.find(params[:commerce_id])
+    @commerce = Commerce.friendly.find(params[:commerce_id])
     @product = @commerce.products.find(params[:product_id])
     @cart_item.product = @product
     y = session[:cart][@commerce.id.to_s].find {|x| x["name"] == @cart_item.product.name}
@@ -45,7 +45,7 @@ class CartItemsController < ApplicationController
   end
 
   def add_to_cart
-    @commerce = Commerce.find(params[:commerce_id])
+    @commerce = Commerce.friendly.find(params[:commerce_id])
     commerce_items = session[:cart][params[:commerce_id]]
     remove_item = session[:cart][params[:commerce_id]].find {|x| x["name"] == params["name"]}
     #remove_item = session[:cart][params[:commerce_id]].find {|x| x["name"] == Product.find(params[:product_id]).name}
@@ -57,7 +57,7 @@ class CartItemsController < ApplicationController
   end
 
   def remove_to_cart
-    @commerce = Commerce.find(params[:commerce_id])
+    @commerce = Commerce.friendly.find(params[:commerce_id])
     commerce_items = session[:cart][params[:commerce_id]]
     remove_item = session[:cart][params[:commerce_id]].find {|x| x["name"] == params["name"]}
     #remove_item = session[:cart][params[:commerce_id]].find {|x| x["name"] == Product.find(params[:product_id]).name}

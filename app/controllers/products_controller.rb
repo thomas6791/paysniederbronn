@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def new
-    @commerce = Commerce.find(params[:commerce_id])
+    @commerce = Commerce.friendly.find(params[:commerce_id])
     @product = Product.new
     @product.availability = {:lundi=>false, :mardi=>false, :mercredi=>false, :jeudi=>false, :vendredi=>:false, :samedi=>false, :dimanche=>false}
   end
@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     # we need `commerce_id` to associate product with corresponding commerce
-    @commerce = Commerce.find(params[:commerce_id])
+    @commerce = Commerce.friendly.find(params[:commerce_id])
     @product.availability = {:lundi=>false, :mardi=>false, :mercredi=>false, :jeudi=>false, :vendredi=>:false, :samedi=>false, :dimanche=>false}
     params[:product][:availability].shift
     params[:product][:availability].each do |day|
@@ -20,12 +20,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @commerce = Commerce.find(params[:commerce_id])
+    @commerce = Commerce.friendly.find(params[:commerce_id])
     @product = Product.find(params[:id])
   end
 
   def update
-    @commerce = Commerce.find(params[:commerce_id])
+    @commerce = Commerce.friendly.find(params[:commerce_id])
     @product =  @commerce.products.find(params[:id])
     @product.update(product_params)
     @product.availability = {:lundi=>false, :mardi=>false, :mercredi=>false, :jeudi=>false, :vendredi=>:false, :samedi=>false, :dimanche=>false}

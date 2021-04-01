@@ -6,7 +6,7 @@ class CommercesController < ApplicationController
 
   def show
     session.delete(cart)
-    @commerce = Commerce.find(params[:id])
+    @commerce = Commerce.friendly.find(params[:id])
     @products = @commerce.products
     #@order = Order.new
     @cart_item = CartItem.new
@@ -32,11 +32,11 @@ class CommercesController < ApplicationController
   end
 
   def edit
-    @commerce = Commerce.find(params[:id])
+    @commerce = Commerce.friendly.find(params[:id])
   end
 
   def update
-    @commerce = Commerce.find(params[:id])
+    @commerce = Commerce.friendly.find(params[:id])
     @commerce.update(commerce_params)
   end
 
@@ -50,11 +50,11 @@ class CommercesController < ApplicationController
   def cart
     session[:cart] ||= {}
     #session[:cart][@commerce.id.to_s] = {}
-    if session[:cart][params[:id]].nil? || session[:cart][params[:id]].empty? || session[:cart][params[:id]].size != Commerce.find(params[:id]).products.size
+    if session[:cart][params[:id]].nil? || session[:cart][params[:id]].empty? || session[:cart][params[:id]].size != Commerce.friendly.find(params[:id]).products.size
       session[:cart][params[:id]]= {}
       arr = []
       keys = ["name", "quantity", "sub_total"]
-      Commerce.find(params[:id]).products.each do |pdt|
+      Commerce.friendly.find(params[:id]).products.each do |pdt|
         values = [pdt[:name], 0, 0.00]
         x = [keys, values].transpose.to_h
         arr << x
