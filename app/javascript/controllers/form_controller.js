@@ -80,11 +80,13 @@ export default class extends Controller {
   }
   addItem(event) {
     console.log("Yugi");
-    fetch('*/commerces/*', { headers: { accept: "application/json" } })
-      .then(response => response.json())
-      .then((data) => {
-        console.log(data);
-      });
+    const [data, status, xhr] = event.detail;
+    //this.messagesTarget.innerHTML += xhr.response;
+    console.log(event.detail);
+    //this.inputTarget.value = '';
+  }
+  showError() {
+    console.log("yugi erreur");
   }
 
 }
