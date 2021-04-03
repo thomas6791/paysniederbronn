@@ -78,5 +78,13 @@ export default class extends Controller {
    daysonload() {
     console.log("test");
   }
+  addItem(event) {
+    console.log("Yugi");
+    fetch('*/commerces/*', { headers: { accept: "application/json" } })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
 
 }

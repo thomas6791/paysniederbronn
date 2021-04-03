@@ -14,7 +14,7 @@
         <% end %>
       </ul>
     </div>
-    <%= simple_form_for([@commerce, product, @cart_item]) do |f| %>
+    <%= simple_form_for([@commerce, product, @cart_item], remote: true) do |f| %>
 
 
   </div>
@@ -30,7 +30,7 @@
   </div>
   </div>
   <div class="send-product">
-    <%= f.submit class: "btn btn-green beige auto", value: "Ajouter au panier" %>
+    <%= f.submit class: "btn btn-green beige auto", value: "Ajouter au panier", data: { action: "form#addItem" } %>
   </div>
 
     <% end %>
