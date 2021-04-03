@@ -25,6 +25,7 @@ class CartItemsController < ApplicationController
     #session[:cart][@commerce.id.to_s][@product.id.to_s] ={}
     #session[:cart][@commerce.id.to_s][@product.id.to_s].merge!(key: "bar")
     redirect_to commerce_path(@commerce)
+
   end
 
   def edit
