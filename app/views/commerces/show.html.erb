@@ -65,21 +65,9 @@
         <aside class="" data-controller="form">
           <div>
           <h2>Mon panier</h2>
-          <ul data-target="form.cart">
-            <% session[:cart][@commerce.slug].each do |item| %>
-              <% if item["sub_total"]["cents"] != 0 %>
-              <li>
-                  <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                    <i class="fas fa-minus-circle"></i>
-                  <% end %>
-                  <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
-                  <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                    <i class="fas fa-plus-circle"></i>
-                  <% end %>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
+          <div id="cart-inser">
+            <%= render partial: "cart", locals: {items: session[:cart][@commerce.slug]} %>
+          </div>
 
           <p class="price">Total : <%= humanized_money @subtotal %><span><%= @subtotal.currency.symbol %></span></p>
           <hr>

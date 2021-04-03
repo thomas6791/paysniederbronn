@@ -5,6 +5,7 @@ class CartItemsController < ApplicationController
 
   def new
     @cart_item = CartItem.new
+    @cart = session[:cart][@commerce.slug]
   end
 
   def create
@@ -23,6 +24,7 @@ class CartItemsController < ApplicationController
     #@cart_item.save
     #fail
     #fail
+    @cart = session[:cart][@commerce.slug]
     respond_to do |f|
       f.html { redirect_to @commerce }
       f.js
