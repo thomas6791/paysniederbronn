@@ -3,7 +3,7 @@ import { Controller } from "stimulus";
 
 
 export default class extends Controller {
-  static targets = [ "content", "dateinput", "link", "sumproduct" ]
+  static targets = [ "content", "dateinput", "link", "sumproduct", "cart" ]
   static classes = [ "hiddendate" ]
 
 
@@ -80,10 +80,21 @@ export default class extends Controller {
   }
   addItem() {
     console.log("Yugi");
-    const [data, status, xhr] = event.detail;
+     fetch('/fr/commerces/depot-de-pain-neunhoffen', { headers: { accept: "application/json" }})
+      .then(response => response.json())
+      .then((data) => {
+        debugger;
+        this.countTarget.innerText = data.restaurants.length;
+      });
+    //const [data, status, xhr] = event.detail;
     //this.messagesTarget.innerHTML += xhr.response;
-    console.log(event.detail);
-    console.log(xhr.response);
+    //console.log(event.detail);
+    //console.log(xhr.response);
+    //
+    //const url = `${window.location.pathname}?${this.params}`;
+
+    //Turbolinks.clearCache();
+    //Turbolinks.visit(url);
     //this.inputTarget.value = '';
   }
   showError() {

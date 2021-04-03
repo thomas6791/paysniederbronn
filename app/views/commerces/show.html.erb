@@ -17,7 +17,7 @@
     <%= link_to "Commerces", commerces_path %>
       <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
 
-      <section class="flex">
+      <section class="flex" data-controller="form" data-content-loader-url="<%= request.path %>" >
         <div>
           <div class="dates-select">
           <h2>Chosir une date de commande :</h2>
@@ -65,7 +65,7 @@
         <aside class="" data-controller="form">
           <div>
           <h2>Mon panier</h2>
-          <ul>
+          <ul data-target="form.cart">
             <% session[:cart][@commerce.slug].each do |item| %>
               <% if item["sub_total"]["cents"] != 0 %>
               <li>

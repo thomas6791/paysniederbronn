@@ -22,9 +22,14 @@ class CartItemsController < ApplicationController
     #y["sub_total"] = Money.new(y["sub_total"]["cents"])
     #@cart_item.save
     #fail
+    #fail
+    respond_to do |f|
+      f.html { redirect_to @commerce }
+      f.js
+    end
     #session[:cart][@commerce.id.to_s][@product.id.to_s] ={}
     #session[:cart][@commerce.id.to_s][@product.id.to_s].merge!(key: "bar")
-    redirect_to commerce_path(@commerce)
+    #redirect_to commerce_path(@commerce)
 
   end
 
