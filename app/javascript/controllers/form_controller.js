@@ -78,11 +78,12 @@ export default class extends Controller {
    daysonload() {
     console.log("test");
   }
-  addItem(event) {
+  addItem() {
     console.log("Yugi");
     const [data, status, xhr] = event.detail;
     //this.messagesTarget.innerHTML += xhr.response;
     console.log(event.detail);
+    console.log(xhr.response);
     //this.inputTarget.value = '';
   }
   showError() {
