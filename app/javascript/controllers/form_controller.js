@@ -1,7 +1,9 @@
-import { Controller } from "stimulus"
+import { Controller } from "stimulus";
+//import Rails from "@rails/ujs";
+
 
 export default class extends Controller {
-  static targets = [ "content", "dateinput", "link", "sumproduct" ]
+  static targets = [ "content", "dateinput", "link", "sumproduct", "cart" ]
   static classes = [ "hiddendate" ]
 
 
@@ -72,9 +74,6 @@ export default class extends Controller {
       let sum = price * quantity;
       event.currentTarget.parentElement.parentElement.querySelector(".sumproduct").innerText = sum.toFixed(2);
     }
-  }
-   daysonload() {
-    console.log("test");
   }
 
 }

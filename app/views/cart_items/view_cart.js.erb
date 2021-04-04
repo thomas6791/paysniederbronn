@@ -1,0 +1,13 @@
+console.log("call of");
+//let y = document.querySelector(".cart").querySelector("h2");
+
+function setCart(innerHTML) {
+  let x = document.querySelector("#insert-cart");
+  x.innerHTML = "";
+  x.insertAdjacentHTML('beforeend', innerHTML);
+}
+function setTotal(innerHTML) {
+  //let total = document.querySelector(".cart").querySelector("price");
+}
+setCart('<%= j render "commerces/cart", items: @cart, subtotal: @subtotal %>');
+console.log("adieu les cons");

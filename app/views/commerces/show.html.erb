@@ -17,7 +17,7 @@
     <%= link_to "Commerces", commerces_path %>
       <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
 
-      <section class="flex">
+      <section class="flex" data-controller="form" data-content-loader-url="<%= request.path %>" >
         <div>
           <div class="dates-select">
           <h2>Chosir une date de commande :</h2>
@@ -65,23 +65,9 @@
         <aside class="" data-controller="form">
           <div>
           <h2>Mon panier</h2>
-          <ul>
-            <% session[:cart][@commerce.slug].each do |item| %>
-              <% if item["sub_total"]["cents"] != 0 %>
-              <li>
-                  <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                    <i class="fas fa-minus-circle"></i>
-                  <% end %>
-                  <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
-                  <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
-                    <i class="fas fa-plus-circle"></i>
-                  <% end %>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-
-          <p class="price">Total : <%= humanized_money @subtotal %><span><%= @subtotal.currency.symbol %></span></p>
+          <div id="insert-cart">
+            <%= render partial: "cart", locals: {items: session[:cart][@commerce.slug], subtotal: @subtotal} %>
+          </div>
           <hr>
           <h2>Mes coordonnées</h2>
           <p id="deliverydate"></p>

@@ -1,0 +1,10 @@
+console.log("call of");
+let x = document.querySelector(".cart").querySelector("h2");
+
+function setCart(innerHTML) {
+  let x = document.querySelector("#insert-cart");
+  x.innerHTML = "";
+  x.insertAdjacentHTML('beforeend', innerHTML);
+}
+//setCart('<%= j render "commerces/cart", items: @cart %>');
+console.log("adieu les connards");

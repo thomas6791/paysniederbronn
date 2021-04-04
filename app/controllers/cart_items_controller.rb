@@ -5,6 +5,7 @@ class CartItemsController < ApplicationController
 
   def new
     @cart_item = CartItem.new
+    @cart = session[:cart][@commerce.slug]
   end
 
   def create
@@ -22,9 +23,16 @@ class CartItemsController < ApplicationController
     #y["sub_total"] = Money.new(y["sub_total"]["cents"])
     #@cart_item.save
     #fail
+    #fail
+    @cart = session[:cart][@commerce.slug]
+    respond_to do |f|
+      f.html { redirect_to @commerce }
+      f.js
+    end
     #session[:cart][@commerce.id.to_s][@product.id.to_s] ={}
     #session[:cart][@commerce.id.to_s][@product.id.to_s].merge!(key: "bar")
-    redirect_to commerce_path(@commerce)
+    #redirect_to commerce_path(@commerce)
+
   end
 
   def edit
@@ -42,6 +50,34 @@ class CartItemsController < ApplicationController
 
   def set_cart
     session[:cart][params[:commerce_id]] = {}
+  end
+
+  def view_cart
+    @commerce = Commerce.friendly.find(params[:commerce_id])
+    @product = @commerce.products.find(params[:product_id])
+    @cart = session[:cart][@commerce.slug]
+    item = @cart.find {|x| x["name"] == @product.name}
+    if params[:action_link].present? && params[:action_link] == "minus"
+      item["quantity"] -=1
+    elsif params[:action_link].present? && params[:action_link] == "plus"
+      item["quantity"] +=1
+    else
+      item["quantity"] = params[:cart_item][:quantity].to_i
+    end
+    x = @product.price * item["quantity"]
+    item["sub_total"]["cents"] = x.fractional
+    @subtotal = 0
+    @cart.each do |item|
+      @subtotal += item["sub_total"]["cents"]
+    end
+    @subtotal = Money.new(@subtotal)
+    #item["sub_total"] = @product.price_cents * item["quantity"]
+
+    #redirect_to commerce_path(@commerce)
+    respond_to do |f|
+      f.html { redirect_to commerce_path(@commerce) }
+      f.js
+    end
   end
 
   def add_to_cart
