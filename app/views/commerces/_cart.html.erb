@@ -2,11 +2,11 @@
   <% items.each do |item| %>
     <% if item["sub_total"]["cents"] != 0 %>
     <li>
-        <%= link_to remove_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+        <%= link_to view_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name: item["name"]), :action_link => "minus"), remote: true do %>
           <i class="fas fa-minus-circle"></i>
         <% end %>
         <p class="price"><%= item["quantity"] %> x <%= item["name"] %> : <%= humanized_money Money.new(item["sub_total"]["cents"]).round(2) %> €</p>
-        <%= link_to add_to_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name:item["name"]), item) do %>
+        <%= link_to view_cart_commerce_product_cart_items_path(@commerce, @commerce.products.find_by(name: item["name"]), :action_link => "plus"), remote: true do %>
           <i class="fas fa-plus-circle"></i>
         <% end %>
       <% end %>
