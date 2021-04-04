@@ -80,12 +80,7 @@ export default class extends Controller {
   }
   addItem() {
     console.log("Yugi");
-     fetch('/fr/commerces/depot-de-pain-neunhoffen', { headers: { accept: "application/json" }})
-      .then(response => response.json())
-      .then((data) => {
-        debugger;
-        this.countTarget.innerText = data.restaurants.length;
-      });
+
     //const [data, status, xhr] = event.detail;
     //this.messagesTarget.innerHTML += xhr.response;
     //console.log(event.detail);
@@ -97,8 +92,19 @@ export default class extends Controller {
     //Turbolinks.visit(url);
     //this.inputTarget.value = '';
   }
-  showError() {
-    console.log("yugi erreur");
+  createSuccess(event) {
+    // This might look a little magical but its just deconstructing the standard rails-ujs event detail
+    // Read more here: https://guides.rubyonrails.org/working_with_javascript_in_rails.html#rails-ujs-event-handlers
+    cRails.ajax({
+      type: "post",
+      dataType: 'json',
+      url: categoriesLoadPath,
+      data: `main_category_id=${mainCategoryId}`,
+      success: function(data) { categoriesTargetDiv.innerHTML = data.html; },
+      error: function(data) { alert('Error: no Category match this ID') }
+    })
+    //this.commentListTarget.innerHTML = xhr.response + this.commentListTarget.innerHTML
+    //this.commentBodyTarget.value = ''
   }
 
 }
