@@ -14,8 +14,7 @@
         <% end %>
       </ul>
     </div>
-    <%= simple_form_for([@commerce, product, @cart_item], data: { action: "ajax:success->form#createSuccess" },remote: true)do |f| %>
-
+    <%= simple_form_for( @cart_item, :url => view_cart_commerce_product_cart_items_path(@commerce, product), :method => :get, remote: true) do |f| %>
 
   </div>
 

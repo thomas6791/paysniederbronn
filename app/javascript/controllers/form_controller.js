@@ -95,7 +95,7 @@ export default class extends Controller {
   createSuccess(event) {
     // This might look a little magical but its just deconstructing the standard rails-ujs event detail
     // Read more here: https://guides.rubyonrails.org/working_with_javascript_in_rails.html#rails-ujs-event-handlers
-    cRails.ajax({
+    Rails.ajax({
       type: "post",
       dataType: 'json',
       url: categoriesLoadPath,

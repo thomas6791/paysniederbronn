@@ -52,6 +52,19 @@ class CartItemsController < ApplicationController
     session[:cart][params[:commerce_id]] = {}
   end
 
+  def view_cart
+    @commerce = Commerce.friendly.find(params[:commerce_id])
+    @product = @commerce.products.find(params[:product_id])
+    @cart = session[:cart][@commerce.slug]
+    item = @cart.find {|x| x["name"] == @product.name}
+    item["quantity"] = params[:cart_item][:quantity].to_i
+    #redirect_to commerce_path(@commerce)
+    respond_to do |f|
+      f.html { redirect_to commerce_path(@commerce) }
+      f.js
+    end
+  end
+
   def add_to_cart
     @commerce = Commerce.friendly.find(params[:commerce_id])
     commerce_items = session[:cart][params[:commerce_id]]
