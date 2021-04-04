@@ -58,6 +58,15 @@ class CartItemsController < ApplicationController
     @cart = session[:cart][@commerce.slug]
     item = @cart.find {|x| x["name"] == @product.name}
     item["quantity"] = params[:cart_item][:quantity].to_i
+    x = @product.price * item["quantity"]
+    item["sub_total"]["cents"] = x.fractional
+    @subtotal = 0
+    @cart.each do |item|
+      @subtotal += item["sub_total"]["cents"]
+    end
+    @subtotal = Money.new(@subtotal)
+    #item["sub_total"] = @product.price_cents * item["quantity"]
+
     #redirect_to commerce_path(@commerce)
     respond_to do |f|
       f.html { redirect_to commerce_path(@commerce) }

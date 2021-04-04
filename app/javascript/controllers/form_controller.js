@@ -75,36 +75,5 @@ export default class extends Controller {
       event.currentTarget.parentElement.parentElement.querySelector(".sumproduct").innerText = sum.toFixed(2);
     }
   }
-   daysonload() {
-    console.log("test");
-  }
-  addItem() {
-    console.log("Yugi");
-
-    //const [data, status, xhr] = event.detail;
-    //this.messagesTarget.innerHTML += xhr.response;
-    //console.log(event.detail);
-    //console.log(xhr.response);
-    //
-    //const url = `${window.location.pathname}?${this.params}`;
-
-    //Turbolinks.clearCache();
-    //Turbolinks.visit(url);
-    //this.inputTarget.value = '';
-  }
-  createSuccess(event) {
-    // This might look a little magical but its just deconstructing the standard rails-ujs event detail
-    // Read more here: https://guides.rubyonrails.org/working_with_javascript_in_rails.html#rails-ujs-event-handlers
-    Rails.ajax({
-      type: "post",
-      dataType: 'json',
-      url: categoriesLoadPath,
-      data: `main_category_id=${mainCategoryId}`,
-      success: function(data) { categoriesTargetDiv.innerHTML = data.html; },
-      error: function(data) { alert('Error: no Category match this ID') }
-    })
-    //this.commentListTarget.innerHTML = xhr.response + this.commentListTarget.innerHTML
-    //this.commentBodyTarget.value = ''
-  }
 
 }

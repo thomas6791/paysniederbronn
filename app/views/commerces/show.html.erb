@@ -66,10 +66,8 @@
           <div>
           <h2>Mon panier</h2>
           <div id="insert-cart">
-            <%= render partial: "cart", locals: {items: session[:cart][@commerce.slug]} %>
+            <%= render partial: "cart", locals: {items: session[:cart][@commerce.slug], subtotal: @subtotal} %>
           </div>
-
-          <p class="price">Total : <%= humanized_money @subtotal %><span><%= @subtotal.currency.symbol %></span></p>
           <hr>
           <h2>Mes coordonnées</h2>
           <p id="deliverydate"></p>

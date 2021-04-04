@@ -6,5 +6,8 @@ function setCart(innerHTML) {
   x.innerHTML = "";
   x.insertAdjacentHTML('beforeend', innerHTML);
 }
-setCart('<%= j render "commerces/cart", items: @cart %>');
+function setTotal(innerHTML) {
+  //let total = document.querySelector(".cart").querySelector("price");
+}
+setCart('<%= j render "commerces/cart", items: @cart, subtotal: @subtotal %>');
 console.log("adieu les cons");
