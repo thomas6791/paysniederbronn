@@ -4,7 +4,7 @@
   <div>
     <h2><%= product.name.capitalize %></h2>
     <p class="price pricing" data-price="<%= product.price.cents.to_i/100.0 %>">Prix : <%= humanized_money product.price %><span><%= product.price.currency.symbol %></span></p>
-    <p class="description">ezfnejzgoezbgjzbgjbzghbh jgbejkzbgjkbzjkgbezakjbg bgezbgbzekjgbakzb</p>
+    <p class="description"><%= product.description %></p>
 
     <div class="availabilities">
       <h3>Le produit est disponible le :</h3>

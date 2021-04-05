@@ -1,13 +1,5 @@
 <h1>Commerces#edit</h1>
 <p>Find me in app/views/commerces/edit.html.erb</p>
 
-<%= simple_form_for @commerce do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :category %>
-  <%= f.input :category, :collection => ["boulangerie", "restaurant"], :prompt => "Choisir une catégorie de commerce", label: false %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form' %>
 

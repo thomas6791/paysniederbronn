@@ -2,6 +2,7 @@
   <%= simple_form_for [ @commerce, @product ] do |f| %>
     <%= f.input :name %>
     <%= f.input :price %>
+    <%= f.input :description %>
     <%= f.input :category, :collection => ["pain","viennoiserie","pâtisserie","snacking","traîteur"], :prompt => "Choisir une catégorie de produit", label: false %>
     <%= f.input :photo, as: :file, label:"Photo du produit" %>
     <span data-available=<%=@product.availability.select {|k,v| v == true}.keys.to_json %>></span>
