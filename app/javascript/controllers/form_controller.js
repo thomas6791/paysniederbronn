@@ -16,10 +16,12 @@ export default class extends Controller {
         else {}
       });
     });
-    //let qties = Array.from(document.querySelectorAll(".qty-control[data-form-qty-value]"));
-    //qties.forEach(element => {
-    //  element.querySelector("input").value = element.dataset.formQtyValue
-    //});
+    let qties = Array.from(document.querySelectorAll(".qty-control[data-form-qty-value]"));
+    qties.forEach(element => {
+      element.querySelector("input").value = element.dataset.formQtyValue;
+      let price = element.parentElement.parentElement.parentElement.querySelector(".price.pricing").dataset.price;
+      element.nextElementSibling.querySelector(".sumproduct").innerText = Number(element.dataset.formQtyValue * price).toFixed(2);
+    });
   }
 
   submitForm() {
@@ -66,6 +68,7 @@ export default class extends Controller {
     console.log("Capital");
     if (event.currentTarget.id === "plus") {
       let qty = Number(event.currentTarget.parentElement.dataset.formQtyValue);
+      //debugger;
 
       event.currentTarget.previousElementSibling.querySelector("input").value ++;
       let price = Number(event.currentTarget.parentElement.parentElement.parentElement.querySelector(".pricing").dataset.price);
