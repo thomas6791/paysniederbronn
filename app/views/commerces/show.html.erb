@@ -3,16 +3,18 @@
     <header>
       <div>
         <h1><%= @commerce.name %></h1>
-        <div>
+        <!--
           <div>
-            <a href=""><i class="fas fa-phone"><p>Appeler</p></i></a>
+            <div>
+              <a href=""><i class="fas fa-phone"><p>Appeler</p></i></a>
+            </div>
+            <div>
+              <a href=""><i class="fas fa-map-marker-alt"><p>Lancer l'itinéraire</p></i></a>
+            </div>
           </div>
-          <div>
-            <a href=""><i class="fas fa-map-marker-alt"><p>Lancer l'itinéraire</p></i></a>
-          </div>
-        </div>
+        -->
       </div>
-      <%= image_tag "https://thumbs.dreamstime.com/b/basket-full-bread-hand-drawn-vector-illustration-60288570.jpg", width: 250 %>
+      <%= image_tag "https://thumbs.dreamstime.com/b/basket-full-bread-hand-drawn-vector-illustration-60288570.jpg", height: 250 %>
     </header>
     <%= link_to "Commerces", commerces_path %>
       <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
@@ -89,3 +91,18 @@
       </section>
   </article>
 </main>
+<script type="text/javascript">
+  (function()
+    {
+      if( window.localStorage )
+      {
+        if( !localStorage.getItem('firstLoad') )
+        {
+          localStorage['firstLoad'] = true;
+          window.location.reload();
+        }
+        else
+          localStorage.removeItem('firstLoad');
+      }
+    })();
+</script>

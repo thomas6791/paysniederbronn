@@ -20,9 +20,9 @@
 
   <div class="visuel">
     <%= image_tag product.photo, width:150 if product.photo.attached? %>
-    <div class="qty-control">
+    <div class="qty-control" data-form-qty-value=<%= session[:cart][@commerce.slug].find {|x| x["name"] == product.name}["quantity"] %> >
       <a href="#" id="minus" data-action="click->form#linkDisabled"><i class="fas fa-minus-circle"></i></a>
-      <%= f.input :quantity, label: false, input_html: {value: '0', size: 3} %>
+      <%= f.input :quantity, label: false, input_html: {value: 0, size: 3} %>
       <a href="#" id="plus" data-action="click->form#linkDisabled"><i class="fas fa-plus-circle"></i></a>
     </div>
     <p class="price"><span class="sumproduct" data-form-target="sumproduct">0.00</span><span><%= product.price.currency.symbol %></span></p>

@@ -44,7 +44,7 @@ class CommercesController < ApplicationController
   end
 
   def commerce_params
-    params.require(:commerce).permit(:name, :address)
+    params.require(:commerce).permit(:name, :address, :category)
   end
 
   def cart
