@@ -7,5 +7,4 @@ initSweetalert('#sweet-alert-demo', {
   icon: "success"
 }, (value) => {
   console.log(value);
-  console.log("fff");
 });
