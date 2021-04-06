@@ -170,7 +170,7 @@
           flex: 1;
           padding: 0 1em;
         }
-        p{padding: 0px 5px; font-size: 0.9em; color: grey; }
+        p { padding: 0px 5px; font-size: 0.9em; color: grey; }
       }
     }
     .btn {
@@ -181,7 +181,9 @@
     form input {
       display: flex;
       flex-wrap: wrap;
-      line-height: 2em;
+      line-height: 1em;
+      padding: 0.5em 0;
+      margin-bottom: 0.5em;
       border: none;
       border-bottom: solid 1px lightgrey;
       width: 100%;
