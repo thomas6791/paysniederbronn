@@ -4,6 +4,7 @@
 #commerce {
   //font-family: 'Avenir','Source Sans Pro', 'Muli', sans-serif;
   font-family: 'Comfortaa', 'Avenir', 'Source Sans Pro', 'Muli', sans-serif;
+  //position: relative;
   header {
     display: flex;
     justify-content: space-between;
@@ -205,6 +206,7 @@
     list-style: none;
     padding: 1em;
   }
+
   /**
  * Tabs
  */
@@ -243,6 +245,22 @@
 }
 .tabs input[type="radio"]:checked + label + .tab {
   display: block;
+}
+#footer-cart {
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+    border: solid 1px;
+    line-height: 3em;
+    text-align: center;
+    font-weight: 500;
+    font-weight: bold;
+    cursor: pointer;
+    & > p {
+      background-color: #333333;
+      color: white;
+    }
+    .cart { display: none; }
 }
 
 @media (max-width: 45em) {
