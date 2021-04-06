@@ -8,3 +8,9 @@ initSweetalert('#sweet-alert-demo', {
 }, (value) => {
   console.log(value);
 });
+
+Array.from(document.querySelectorAll(".sweet-alert-demo")).forEach( element => {
+  element.addEventListener('click', (event) => {
+    swal ( "" ,  "votre produit a été ajouté au panier !" ,  "success" );
+  });
+});

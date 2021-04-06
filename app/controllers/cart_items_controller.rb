@@ -59,10 +59,13 @@ class CartItemsController < ApplicationController
     item = @cart.find {|x| x["name"] == @product.name}
     if params[:action_link].present? && params[:action_link] == "minus"
       item["quantity"] -=1
+      @action = "minus"
     elsif params[:action_link].present? && params[:action_link] == "plus"
       item["quantity"] +=1
+      @action = "plus"
     else
       item["quantity"] = params[:cart_item][:quantity].to_i
+      @action = "none"
     end
     x = @product.price * item["quantity"]
     item["sub_total"]["cents"] = x.fractional
