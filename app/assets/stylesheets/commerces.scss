@@ -247,20 +247,17 @@
   display: block;
 }
 #footer-cart {
-    position: sticky;
-    bottom: 0px;
-    width: 100%;
-    border: solid 1px;
-    line-height: 3em;
-    text-align: center;
-    font-weight: 500;
-    font-weight: bold;
-    cursor: pointer;
-    & > p {
-      background-color: #333333;
-      color: white;
-    }
-    .cart { display: none; }
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+  border: solid 1px;
+  line-height: 3em;
+  text-align: center;
+  font-weight: 500;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #333333;
+  color: white;
 }
 
 @media (max-width: 45em) {
