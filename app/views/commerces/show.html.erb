@@ -62,10 +62,12 @@
           </div>
         </div>
 
+
         <div class="cart">
+          <h2 class="panier">Mon panier</h2>
           <aside class="" data-controller="form">
             <div>
-            <h2>Mon panier</h2>
+
             <div id="insert-cart">
               <%= render partial: "cart", locals: {items: session[:cart][@commerce.slug], subtotal: @subtotal} %>
             </div>

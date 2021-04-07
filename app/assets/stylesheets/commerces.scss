@@ -24,13 +24,15 @@
   section:first-of-type {
     display: flex;
     .cart {
-      width: 30%;
+      width: 35%;
       border: solid 1px lightgrey;
       margin: 0px 10px;
       border-radius: 3px;
-      padding: 1em;
+      //padding: 1em;
       height: fit-content;
       a { text-decoration: none; color: black; }
+      aside { margin: 0 1.2em 1.2em 1.2em; }
+      .panier { padding: 0.8em 0.8em 0.8em 0.8em; }
     }
   }
   .numeric.integer.optional { width: 3em; text-align: center; margin: 0 0.5em; font-size: 1em; }
@@ -156,6 +158,7 @@
   .fas { color: #d6c1a2; font-size: 1.2em; }
   .cart {
     h2 { margin-bottom: 0.8em; font-weight: 500; }
+    .panier { margin: 0; }
     hr {
       margin: 10px 0px;
       color: darkgrey;
@@ -299,7 +302,19 @@
       grid-auto-rows: minmax(100px, auto);
     }
     section:first-of-type {
-      .cart { width: 90%; margin: auto; }
+      position: relative;
+      .cart {
+        width: 100%; margin: auto;
+        //visibility: hidden;
+        //height: 0px;
+        position: sticky;
+        bottom: 0px;
+        background-color: white;
+        .panier { background-color: #333333; color: white; visibility: visible; padding: 0;
+          text-align: center; line-height: 2.5em; cursor: pointer;
+        }
+        aside { height: 0px; visibility: visible; margin-bottom: 0; }
+      }
     }
     .list-group-item {
       & > div:first-of-type { flex-direction: column; }
