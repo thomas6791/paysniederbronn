@@ -4,6 +4,7 @@
 #commerce {
   //font-family: 'Avenir','Source Sans Pro', 'Muli', sans-serif;
   font-family: 'Comfortaa', 'Avenir', 'Source Sans Pro', 'Muli', sans-serif;
+  //position: relative;
   header {
     display: flex;
     justify-content: space-between;
@@ -23,13 +24,15 @@
   section:first-of-type {
     display: flex;
     .cart {
-      width: 30%;
+      width: 35%;
       border: solid 1px lightgrey;
       margin: 0px 10px;
       border-radius: 3px;
-      padding: 1em;
+      //padding: 1em;
       height: fit-content;
       a { text-decoration: none; color: black; }
+      aside { margin: 0 1.2em 1.2em 1.2em; }
+      .panier { padding: 0.8em 0.8em 0.8em 0.8em; }
     }
   }
   .numeric.integer.optional { width: 3em; text-align: center; margin: 0 0.5em; font-size: 1em; }
@@ -155,6 +158,7 @@
   .fas { color: #d6c1a2; font-size: 1.2em; }
   .cart {
     h2 { margin-bottom: 0.8em; font-weight: 500; }
+    .panier { margin: 0; }
     hr {
       margin: 10px 0px;
       color: darkgrey;
@@ -186,6 +190,11 @@
       border-bottom: solid 1px lightgrey;
       width: 100%;
     }
+    .input.string > input {
+      line-height: 1em;
+      padding: 0.5em 0em;
+      margin-bottom: 0.5em;
+    }
     input.boolean { width: auto; }
     #deliverydate { font-size: 0.9em; margin-bottom: 1em; }
     .price {
@@ -200,6 +209,7 @@
     list-style: none;
     padding: 1em;
   }
+
   /**
  * Tabs
  */
@@ -238,6 +248,19 @@
 }
 .tabs input[type="radio"]:checked + label + .tab {
   display: block;
+}
+#footer-cart {
+  position: sticky;
+  bottom: 0px;
+  width: 100%;
+  border: solid 1px;
+  line-height: 3em;
+  text-align: center;
+  font-weight: 500;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #333333;
+  color: white;
 }
 
 @media (max-width: 45em) {
@@ -279,7 +302,31 @@
       grid-auto-rows: minmax(100px, auto);
     }
     section:first-of-type {
-      .cart { width: 90%; margin: auto; }
+      position: relative;
+      .cart {
+        width: 100%; margin: auto;
+        //visibility: hidden;
+        //height: 0px;
+        position: sticky;
+        transform: translateZ(0);
+        bottom: 0px;
+        background-color: white;
+        .panier { background-color: #333333; color: white; padding: 0;
+          text-align: center; line-height: 2em; cursor: pointer;
+        }
+        aside { height: 0; visibility: hidden; margin-bottom: 0;
+          transform: scaleY(0);
+          transform-origin: 50% 0;
+          transition:transform 1s ease;
+          &.deployed {
+            height: auto; visibility: visible;
+            margin-top: 1.5em;
+            transform: scaleY(1);
+            .input.boolean.required.order_rgpd {
+            }
+          }
+        }
+      }
     }
     .list-group-item {
       & > div:first-of-type { flex-direction: column; }
