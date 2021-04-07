@@ -3,7 +3,7 @@ import { Controller } from "stimulus";
 
 
 export default class extends Controller {
-  static targets = [ "content", "dateinput", "link", "sumproduct", "cart", "" ]
+  static targets = [ "content", "dateinput", "link", "sumproduct", "todeploy" ]
   static classes = [ "hiddendate" ]
 
 
@@ -83,6 +83,9 @@ export default class extends Controller {
       let sum = price * quantity;
       event.currentTarget.parentElement.parentElement.querySelector(".sumproduct").innerText = sum.toFixed(2);
     }
+  }
+  deploy() {
+    this.todeployTarget.classList.toggle("deployed");
   }
 
 }

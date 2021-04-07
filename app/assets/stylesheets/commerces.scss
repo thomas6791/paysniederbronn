@@ -308,12 +308,30 @@
         //visibility: hidden;
         //height: 0px;
         position: sticky;
+        transform: translateZ(0);
         bottom: 0px;
         background-color: white;
-        .panier { background-color: #333333; color: white; visibility: visible; padding: 0;
-          text-align: center; line-height: 2.5em; cursor: pointer;
+        .panier { background-color: #333333; color: white; padding: 0;
+          text-align: center; line-height: 2em; cursor: pointer;
         }
-        aside { height: 0px; visibility: visible; margin-bottom: 0; }
+        aside { max-height: 0px; visibility: hidden; margin-bottom: 0;
+           -webkit-transition: max-height 1s, visibility 1s, margin-top 1s;
+  -moz-transition: max-height 1s, visibility 1s, margin-top 1s;
+  -ms-transition: max-height 1s, visibility 1s, margin-top 1s ;
+  -o-transition: max-height 1s, visibility 1s, margin-top 1s;
+  transition: max-height 1s, visibility 1s, margin-top 1s;
+          &.deployed {
+            max-height: 100%; visibility: visible;
+            margin-top: 1.5em;
+            -webkit-transition: max-height 1s, visibility 1s, margin-top 1s;
+  -moz-transition: max-height 1s, visibility 1s, margin-top 1s;
+  -ms-transition: max-height 1s, visibility 1s, margin-top 1s;
+  -o-transition: max-height 1s, visibility 1s, margin-top 1s;
+  transition: max-height 1s, visibility 1s, margin-top 1s;
+            .input.boolean.required.order_rgpd {
+            }
+          }
+        }
       }
     }
     .list-group-item {

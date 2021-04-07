@@ -63,9 +63,9 @@
         </div>
 
 
-        <div class="cart">
-          <h2 class="panier">Mon panier</h2>
-          <aside class="" data-controller="form">
+        <div class="cart" data-controller="form">
+          <h2 class="panier" data-action="click->form#deploy">Mon panier</h2>
+          <aside class="" data-form-target="todeploy">
             <div>
 
             <div id="insert-cart">
