@@ -314,20 +314,14 @@
         .panier { background-color: #333333; color: white; padding: 0;
           text-align: center; line-height: 2em; cursor: pointer;
         }
-        aside { max-height: 0px; visibility: hidden; margin-bottom: 0;
-           -webkit-transition: max-height 1s, visibility 1s, margin-top 1s;
-  -moz-transition: max-height 1s, visibility 1s, margin-top 1s;
-  -ms-transition: max-height 1s, visibility 1s, margin-top 1s ;
-  -o-transition: max-height 1s, visibility 1s, margin-top 1s;
-  transition: max-height 1s, visibility 1s, margin-top 1s;
+        aside { height: 0; visibility: hidden; margin-bottom: 0;
+          transform: scaleY(0);
+          transform-origin: 50% 0;
+          transition:transform 1s ease;
           &.deployed {
-            max-height: 100%; visibility: visible;
+            height: auto; visibility: visible;
             margin-top: 1.5em;
-            -webkit-transition: max-height 1s, visibility 1s, margin-top 1s;
-  -moz-transition: max-height 1s, visibility 1s, margin-top 1s;
-  -ms-transition: max-height 1s, visibility 1s, margin-top 1s;
-  -o-transition: max-height 1s, visibility 1s, margin-top 1s;
-  transition: max-height 1s, visibility 1s, margin-top 1s;
+            transform: scaleY(1);
             .input.boolean.required.order_rgpd {
             }
           }
