@@ -308,6 +308,11 @@
         //visibility: hidden;
         //height: 0px;
         position: sticky;
+        position: -webkit-sticky;
+        position: -moz-sticky;
+        position: -o-sticky;
+        position: -ms-sticky;
+        position: sticky;
         transform: translateZ(0);
         bottom: 0px;
         background-color: white;
