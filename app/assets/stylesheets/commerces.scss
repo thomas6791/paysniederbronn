@@ -319,14 +319,19 @@
         .panier { background-color: #333333; color: white; padding: 0;
           text-align: center; line-height: 2em; cursor: pointer;
         }
-        aside { height: 0; visibility: hidden; margin-bottom: 0;
-          transform: scaleY(0);
-          transform-origin: 50% 0;
-          transition:transform 1s ease;
+        aside { height: 0px; visibility: hidden; margin-bottom: 0;
+          //transform: scaleY(0);
+          //transform-origin: 50% 0;
+          //transition:transform 1s ease;
+          overflow-y: hidden;
+          transition: height 1s linear;
           &.deployed {
-            height: auto; visibility: visible;
+            height: auto;
+            visibility: visible;
             margin-top: 1.5em;
-            transform: scaleY(1);
+            overflow-y: hidden;
+            transition: height 1s linear;
+            //transform: scaleY(1);
             .input.boolean.required.order_rgpd {
             }
           }
