@@ -75,7 +75,7 @@
             <h2>Mes coordonnées</h2>
             <p id="deliverydate"></p>
             <%= simple_form_for @order do |f| %>
-              <%= hidden_field_tag 'commerce_id', @commerce.id %>
+              <%= hidden_field_tag 'commerce_id', @commerce.slug %>
               <%= hidden_field_tag :delivery_date %>
               <%= f.input :last_name, placeholder: "Nom*", label: false, input_html: { "data-form-target" => "content" }, required:true %>
                <%= f.input :first_name, placeholder: "Prénom*", label: false, input_html: { "data-form-target" => "content" }, required:true %>
