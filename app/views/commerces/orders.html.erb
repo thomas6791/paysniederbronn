@@ -1,21 +1,38 @@
 <h1>Commandes</h1>
 <h2>Commerce : <%= @commerce.name %></h2>
+
 <table>
     <thead>
       <tr>
           <th colspan="">Date de livraison</th>
           <th colspan="">Date de commande</th>
+          <th colspan="">Commande</th>
           <th colspan="">Montant</th>
           <th colspan="">Nom</th>
           <th colspan="">Prénom</th>
           <th colspan="">Tel</th>
+          <th colspan="">Email</th>
       </tr>
     </thead>
     <tbody>
+      <% @orders.each do |order| %>
         <tr>
-            <td>The table body</td>
-            <td>with two columns</td>
+            <td><%= order.delivery_date %></td>
+            <td><%= order.created_at %></td>
+            <td>
+              <ul>
+                <% order.cart_items.each do |item| %>
+                  <li><%= item.quantity %> x <%= item.product.name %></li>
+                <% end %>
+              </ul>
+            </td>
+            <td><%= order.amount %></td>
+            <td><%= order.last_name %></td>
+            <td><%= order.first_name %></td>
+            <td><%= order.tel %></td>
+            <td><%= order.email %></td>
         </tr>
+      <% end %>
     </tbody>
 </table>
 
