@@ -52,6 +52,9 @@ Rails.application.routes.draw do
 
     resources :holiday_rentings
     resources :commerces do
+      member do
+        get :orders
+      end
       resources :products, only: [ :new, :create, :edit, :update, :destroy ] do
         resources :cart_items do
           collection do

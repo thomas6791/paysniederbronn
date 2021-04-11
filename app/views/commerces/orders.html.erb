@@ -1,0 +1,27 @@
+<h1>Commandes</h1>
+<h2>Commerce : <%= @commerce.name %></h2>
+<table>
+    <thead>
+      <tr>
+          <th colspan="">Date de livraison</th>
+          <th colspan="">Date de commande</th>
+          <th colspan="">Montant</th>
+          <th colspan="">Nom</th>
+          <th colspan="">Prénom</th>
+          <th colspan="">Tel</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>The table body</td>
+            <td>with two columns</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul>
+  <% @orders.each do |order| %>
+  <li><%= order.amount %></li>
+  <li><%= order.cart_items %></li>
+  <% end %>
+</ul>

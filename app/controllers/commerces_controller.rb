@@ -66,4 +66,9 @@ class CommercesController < ApplicationController
     end
     #session[:cart] = session[:cart].inject(:merge)
   end
+
+  def orders
+    @commerce = Commerce.friendly.find(params[:id])
+    @orders = @commerce.orders
+  end
 end

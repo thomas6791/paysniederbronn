@@ -16,7 +16,8 @@
       </div>
     </header>
     <%= link_to "Commerces", commerces_path %>
-      <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
+    <%= link_to "Nouveau Produit",new_commerce_product_path(@commerce) %>
+    <%= link_to "Commandes", orders_commerce_path(@commerce) %>
 
       <section class="flex" data-controller="form" data-content-loader-url="<%= request.path %>" >
         <div>
