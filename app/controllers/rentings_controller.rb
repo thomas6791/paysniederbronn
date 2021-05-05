@@ -39,7 +39,11 @@ class RentingsController < ApplicationController
 
   def create
     @annonce  = Renting.new(renting_params)
-    @annonce.user_id = 1
+    if current_user.present?
+      @annonce.user_id = current_user.id
+    else
+      @annonce.user_id = 1
+    end
     @annonce.save
     helpers.geocode_cure(@annonce) if !@annonce.longitude.nil? && !@annonce.latitude.nil?
   end
