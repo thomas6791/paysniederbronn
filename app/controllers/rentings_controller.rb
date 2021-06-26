@@ -3,7 +3,7 @@ class RentingsController < ApplicationController
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index
     set_meta_tags canonical: request.original_url[/[^?]+/],
-    title: "Locations de vacances en Alsace des Vosges du Nord"
+    title: "Locations de vacances dans les Vosges du Nord"
     #@annonces = Renting.all.where(category:"renting")
     @annonces = Renting.all
     @flats = @annonces.geocoded
