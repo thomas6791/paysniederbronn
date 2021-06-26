@@ -232,7 +232,7 @@ nav > div { max-width: 1260px; margin: auto; align-items: center; }
     background: $black;
     visibility: hidden;
     opacity: 0;
-    min-width: 12em;
+    min-width: 15em;
     position: absolute;
     transition: all 0.5s ease;
     margin-top: 0em;
@@ -262,7 +262,7 @@ nav > div { max-width: 1260px; margin: auto; align-items: center; }
       a {
         display: flex;
         justify-content: center;
-        line-height: 3em;
+        height: 3em;
         margin-left: 0.5em;
         margin-right: 0.5em;
       }

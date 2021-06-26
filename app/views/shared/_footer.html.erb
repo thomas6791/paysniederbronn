@@ -1,10 +1,5 @@
 <footer id="footer">
-  <%= link_to "simulateur taxe de sejour", simulateur_path, rel: "nofollow" %>
-  <%= link_to 'créer une facture', taxe_invoice_path(), rel: "nofollow" %>
   <%= link_to "mentions legales", mentions_path, rel: "nofollow" %>
-  <%= link_to "Sign in",  new_user_session_path, rel: "nofollow" %>
-  <%= link_to "Sign up",  new_user_registration_path, rel: "nofollow" %>
-  <%= link_to "Sign out", destroy_user_session_path, rel: "nofollow" %>
   <% if locale == :fr && params[:controller] != "blog_posts" %>
     <%= link_to "le blog", blog_posts_path %>
   <% else %>
