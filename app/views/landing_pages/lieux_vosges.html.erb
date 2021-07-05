@@ -1,14 +1,14 @@
 <main>
-  <article class="article lieux-vosges">
+  <article class="article lieux-vosges" data-controller="tabs">
     <h1>Top 20 des lieux à voir dans les Vosges du Nord</h1>
     <section class="lieu">
       <div>
         <div class="">
           <h2>Le Château du Wegelnburg</h2>
-            <ul class="tabs">
-              <li class="tab">Résumé</li>
-              <li class="tab">Localisation</li>
-              <li class="tab">Conseils</li>
+            <ul class="tabs" data-form-target="tabs">
+              <li class="tab" data-action="click->tabs#select">Résumé</li>
+              <li class="tab" data-action="click->tabs#select">Localisation</li>
+              <li class="tab" data-action="click->tabs#select">Conseils</li>
             </ul>
             <div class="tab-contents">
               <div class="tab-content">
