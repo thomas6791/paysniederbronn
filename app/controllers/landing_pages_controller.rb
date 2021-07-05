@@ -31,6 +31,9 @@ class LandingPagesController < ApplicationController
               canonical: "https://www.paysniederbronn.fr/fr/parcs-attractions"
   end
 
+  def lieux_vosges
+  end
+
   def cures_thermales
     set_meta_tags title: "Cure thermale en Alsace | les stations thermales",
               description: "Les établissements thermaux conventionnés proposant des cures en Alsace",
