@@ -84,16 +84,21 @@ iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
 
 
 .lieux-vosges {
+  h1, h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 2em;
+  }
   .lieu {
     display: flex;
     flex-direction: row-reverse;
+    margin-bottom: 2em;
     & > div {
       width: 100%;
       position: relative;
       & > div {
         display: block;
         position: absolute;
-        bottom: 2em;
+        bottom: 1.5em;
         left: -3em;
         background-color: white;
         border-radius: 5px;
