@@ -85,7 +85,24 @@ iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
 
 .lieux-vosges {
   .lieu {
-    border: solid 1px;
+    display: flex;
+    flex-direction: row-reverse;
+    & > div {
+      width: 100%;
+      position: relative;
+      & > div {
+        display: block;
+        position: absolute;
+        bottom: 2em;
+        left: -3em;
+        background-color: white;
+        border-radius: 5px;
+        padding: 1em;
+        width: 80%;
+        box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.24);
+      }
+    }
+    img { height: auto; width: 400px; }
   }
 }
 // Smallest device
