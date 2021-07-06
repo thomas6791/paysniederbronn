@@ -5,8 +5,11 @@ export default class extends Controller {
   connect() {
     console.log("Parasite");
   }
-  select() {
-    this.tabcontentTarget;
-    debugger;
+  select(event) {
+    event.preventDefault;
+    //this.tabcontentTarget;
+    let index = event.currentTarget.dataset.index;
+    index = parseInt(index);
+    this.tabcontentsTarget.children[index].style.visibility = 'hidden';
   }
 }
