@@ -10,6 +10,11 @@ export default class extends Controller {
     //this.tabcontentTarget;
     let index = event.currentTarget.dataset.index;
     index = parseInt(index);
-    this.tabcontentsTarget.children[index].style.visibility = 'hidden';
+    Array.from(this.tabcontentsTarget.children).forEach( (element) =>{
+      element.style.display = 'none';
+      element.style.zIndex = 0;
+    });
+    this.tabcontentsTarget.children[index].style.display = '';
+    this.tabcontentsTarget.children[index].style.zIndex = 1;
   }
 }
