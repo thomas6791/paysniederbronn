@@ -32,6 +32,8 @@ class LandingPagesController < ApplicationController
   end
 
   def lieux_vosges
+    set_meta_tags title: "Top 20 des lieux à voir dans les Vosges du Nord",
+    noindex: true
   end
 
   def cures_thermales
