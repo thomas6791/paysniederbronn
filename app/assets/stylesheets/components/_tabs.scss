@@ -9,6 +9,21 @@
     font-size: 0.8em;
   }
 }
+.tabcontents {
+  position: relative;
+  .tabcontent {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+  }
+  .tabcontent:first-of-type {
+    z-index: 1;
+    position: inherit;
+  }
+}
+
 .tabcontent > p {
-  //min-height: 100px;
+  min-height: 100px;
+  max-height: 100px;
 }
