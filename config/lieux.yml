@@ -1,0 +1,63 @@
+:lieux:
+  fr:
+  - :name: Alimentation, marchés & produits locaux
+    :photo: https://github.com/thomas6791/photos-pays/blob/master/marche-reicho.jpeg?raw=true
+    :resume: Trouver les commerces d'alimentation, boulangeries, supermarchés, marchés et produits du terroir aux alentours
+    :localisation: fff
+    :conseil: ddd
+    :link: aaa
+  - :name: Randonnées dans les Vosges du Nord d'Alsace
+    :photo: https://raw.githubusercontent.com/thomas6791/photos-pays/master/randonnees/randonne%CC%81e1-2-min.jpg
+    :description: Les randonnées pédestres dans le nord de l'Alsace et le Parc régional des Vosges du Nord
+    :link:
+  - :name: Chemin des châteaux forts d'Alsace
+    :photo: #wegelnburg.jpg
+    :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
+    :link:
+  - :name: Visiter Strasbourg
+    :photo: #strasbourg.jpg
+    :description: bonjour
+    :link:
+  - :name: Le château du Schoeneck
+    :photo: schoeneck.jpg
+    :description: ozfregergze
+    :link:
+  - :name: La Ligne Maginot d'Alsace
+    :photo: casemate_neunhoffen.jpg
+    :description: casemate neunhoffen
+    :link: /fr/ligne-maginot-alsace
+  - :name: Marchés de Noël en Alsace
+    :photo: https://github.com/thomas6791/photos-pays/blob/master/marche%CC%81_noel-min.jpg?raw=true
+    :description: Les marchés de Noël en Alsace du Nord et dans le reste de la région
+    :link: /fr/marches-noel
+  - :name: Parcs d'attractions & aquatiques
+    :photo: https://github.com/thomas6791/photos-pays/blob/master/europapark.jpg?raw=true
+    :description: Les parcs d'attractions et aquatiques dans et proche de la région
+    :link: /fr/parcs-attractions
+
+  en:
+  - :name: Chemin des châteaux forts d'Alsace
+    :photo: #wegelnburg.jpg
+    :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
+  - :name: Visit Strasbourg
+    :photo: #strasbourg.jpg
+    :description: bonjour
+  - :name: Schoeneck Castle
+    :photo: schoeneck.jpg
+    :description: ozfregergze
+  - :name: La Ligne Maginot d'Alsace
+    :photo: casemate_neunhoffen.jpg
+    :description: casemate neunhoffen
+  de:
+  - :name: Allemand forts d'Alsace
+    :photo: #wegelnburg.jpg
+    :description: fé"rngn"iégni" jgn"knrklanzlkgn ngjzng
+  - :name: Visit Strasbourg
+    :photo: #strasbourg.jpg
+    :description: bonjour
+  - :name: Schoeneck Castle
+    :photo: schoeneck.jpg
+    :description: ozfregergze
+  - :name: La Ligne Maginot d'Alsace
+    :photo: casemate_neunhoffen.jpg
+    :description: casemate neunhoffen
