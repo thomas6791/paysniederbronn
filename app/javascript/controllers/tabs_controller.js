@@ -16,5 +16,9 @@ export default class extends Controller {
     });
     this.tabcontentsTarget.children[index].style.position = 'inherit';
     this.tabcontentsTarget.children[index].style.zIndex = 1;
+    Array.from(this.tabsTarget.children).forEach( (element)=>{
+      element.classList.remove("active");
+    });
+    event.currentTarget.classList.add("active");
   }
 }

@@ -5,8 +5,8 @@
       <div>
         <div class="">
           <h2>Le Château du Wegelnburg</h2>
-            <ul class="tabs" data-form-target="tabs">
-              <li class="tab" data-index="0" data-action="click->tabs#select">Résumé</li>
+            <ul class="tabs" data-tabs-target="tabs">
+              <li class="tab active" data-index="0" data-action="click->tabs#select">Résumé</li>
               <li class="tab" data-index="1" data-action="click->tabs#select">Localisation</li>
               <li class="tab" data-index="2" data-action="click->tabs#select">Conseil</li>
             </ul>
@@ -29,7 +29,22 @@
       <div>
         <div class="">
           <h2>Altschlossfelssen</h2>
-          <p>Pour les motivé se levant avant l’aube, une ascencion de 30 - 40min depuis le château du Fleckenstein vers le château du Wegelnburg vous offrira une superbe vue sur la palatinat. Un petit conseil, vérifier la météo afin de vous lancer dans cette aventure.</p>
+            <ul class="tabs" data-tabs-target="tabs">
+              <li class="tab active" data-index="0" data-action="click->tabs#select">Résumé</li>
+              <li class="tab" data-index="1" data-action="click->tabs#select">Localisation</li>
+              <li class="tab" data-index="2" data-action="click->tabs#select">Conseil</li>
+            </ul>
+            <div class="tabcontents" data-tabs-target="tabcontents">
+              <div class="tabcontent" data-tabs-target="tabcontent">
+                <p>Pour les motivé se levant avant l’aube, une ascencion de 30 - 40min depuis le château du Fleckenstein vers le château du Wegelnburg vous offrira une superbe vue sur la palatinat. Un petit conseil, vérifier la météo afin de vous lancer dans cette aventure.</p>
+              </div>
+              <div class="tabcontent" data-tabs-target="tabcontent">
+                <p>PPPP</p>
+              </div>
+              <div class="tabcontent" data-tabs-target="tabcontent">
+                <p>ZZZ</p>
+              </div>
+            </div>
         </div>
       </div>
       <%= image_tag "top/altschlosfelssen.png", class: "", data: {}, width: 400 %>

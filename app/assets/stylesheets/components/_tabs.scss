@@ -3,10 +3,26 @@
   list-style: none;
   padding: 0px;
   margin: 0px;
+  cursor: pointer;
   .tab {
     padding: 0px;
     margin: 0px;
     font-size: 0.8em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-right: 1em;
+    font-weight: bold;
+    &:hover {
+      //text-decoration: underline;
+      color: #fccb07;
+    }
+    &.active {
+      //text-decoration: underline;
+      color: #fccb07;
+    }
+  }
+  .tab:first-of-type {
+
   }
 }
 .tabcontents {
@@ -24,6 +40,7 @@
 }
 
 .tabcontent > p {
-  min-height: 100px;
-  max-height: 100px;
+  min-height: 80px;
+  max-height: 80px;
+  font-size: 0.9em;
 }
