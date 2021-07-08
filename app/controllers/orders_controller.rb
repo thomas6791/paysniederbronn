@@ -32,7 +32,6 @@ class OrdersController < ApplicationController
     @order.tel = params[:order][:tel]
     @order.last_name = params[:order][:last_name]
     @order.first_name = params[:order][:first_name]
-    fail
     @order.save!
     session[:cart][params[:commerce_id]] = []
     flash[:notice] = "Votre commande a été envoyée"

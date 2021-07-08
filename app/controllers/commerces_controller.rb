@@ -70,5 +70,6 @@ class CommercesController < ApplicationController
   def orders
     @commerce = Commerce.friendly.find(params[:id])
     @orders = @commerce.orders
+    @order_by_delivery_date = @orders.group_by{|x| x.delivery_date}
   end
 end

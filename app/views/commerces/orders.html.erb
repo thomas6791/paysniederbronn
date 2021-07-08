@@ -37,5 +37,44 @@
           <% end %>
         </tbody>
     </table>
+
+    <br><br>
+
+    <table>
+        <thead>
+          <tr>
+              <th colspan="">Date de livraison</th>
+              <th colspan="">Date de commande</th>
+              <th colspan="">Commande</th>
+              <th colspan="">Montant</th>
+              <th colspan="">Nom</th>
+              <th colspan="">Prénom</th>
+              <th colspan="">Tel</th>
+              <th colspan="">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order_by_delivery_date.keys.each do |key| %>
+            <% @order_by_delivery_date[key].each do |order| %>
+              <tr>
+                  <td><%= order.delivery_date %></td>
+                  <td><%= order.created_at %></td>
+                  <td>
+                    <ul>
+                      <% order.cart_items.each do |item| %>
+                        <li><%= item.quantity %> x <%= item.product.name %></li>
+                      <% end %>
+                    </ul>
+                  </td>
+                  <td><%= order.amount %><%= order.amount.currency.symbol %></td>
+                  <td><%= order.last_name %></td>
+                  <td><%= order.first_name %></td>
+                  <td><%= order.tel %></td>
+                  <td><%= order.email %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </tbody>
+    </table>
   </article>
 </main>
