@@ -1,0 +1,32 @@
+<main>
+  <article class="article lieux-vosges">
+    <h1>Top 20 des lieux à voir dans les Vosges du Nord</h1>
+    <% @lieux.each do |lieu| %>
+      <section class="lieu" data-controller="tabs">
+        <div>
+          <div class="">
+            <h2><%= lieu[:name] %></h2>
+              <ul class="tabs" data-tabs-target="tabs">
+                <li class="tab active" data-index="0" data-action="click->tabs#select"><%= t('links.summary') %></li>
+                <li class="tab" data-index="1" data-action="click->tabs#select"><%= t('links.location') %></li>
+                <li class="tab" data-index="2" data-action="click->tabs#select"><%= t('links.tips') %></li>
+              </ul>
+              <div class="tabcontents" data-tabs-target="tabcontents">
+                <div class="tabcontent" data-tabs-target="tabcontent">
+                  <p><%= lieu[:summary] %></p>
+                </div>
+                <div class="tabcontent" data-tabs-target="tabcontent">
+                  <p><%= lieu[:location] %></p>
+                </div>
+                <div class="tabcontent" data-tabs-target="tabcontent">
+                  <p><%= lieu[:tips] %></p>
+                </div>
+              </div>
+          </div>
+        </div>
+        <%= image_tag lieu[:photo], class: "", data: {}, width: 400 %>
+      </section>
+    <% end %>
+
+  </article>
+</main>

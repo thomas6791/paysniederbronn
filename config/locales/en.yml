@@ -35,6 +35,9 @@ en:
     se_loger: "Holiday rentings"
     alentours: "In the surroundings"
     contact: "Contact"
+    summary: "Summary"
+    location: "Location"
+    tips: "Tips"
 
   hello: "Hello world"
   nav:
