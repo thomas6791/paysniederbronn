@@ -4,6 +4,9 @@ de:
     se_loger: "Ferien Wohnung"
     alentours: "alld"
     contact: "Contact"
+    summary: "Zusammenfassung"
+    location: "Standort"
+    tips: "Tipps"
 
   hello: "Hello world"
   nav:

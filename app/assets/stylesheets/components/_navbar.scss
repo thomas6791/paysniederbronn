@@ -110,6 +110,7 @@ nav > div { max-width: 1260px; margin: auto; align-items: center; }
   ul {
     display: inline-flex;
     list-style: none;
+    line-height: 2.5em;
     li {
       margin: 0;
       padding: 0;
@@ -122,6 +123,12 @@ nav > div { max-width: 1260px; margin: auto; align-items: center; }
       }
     }
   }
+}
+.scroll {
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
 // Smallest device

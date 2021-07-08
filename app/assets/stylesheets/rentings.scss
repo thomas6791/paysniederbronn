@@ -52,6 +52,19 @@
     display: flex;
   }
 }
+.article.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .contact-send {
+    padding: 1em;
+    .btn {
+      width: auto;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+}
 
 @media (min-width: 100px) and (max-width: 575px) {
   main {

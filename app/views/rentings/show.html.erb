@@ -1,16 +1,16 @@
-<main class="article">
+<main class="article" itemscope itemtype="https://schema.org/Hotel">
   <%= render "shared/gallery", collection: @annonce.photos %>
   <article>
-    <h1><%= @annonce.titre %></h1>
+    <h1 itemprop="name"><%= @annonce.titre %></h1>
     <div id="sub-nav">
-      <ul>
-        <li><a href="#description-renting">Description</a></li>
-        <li><a href="#calendar-links">Calendrier</a></li>
-        <li><a href="#faq">Questions fréquentes</a></li>
+      <ul class="scroll">
+        <li><a href="#description-renting" data-controller="scroll-to">Description</a></li>
+        <li><a href="#calendar-links" data-controller="scroll-to">Calendrier</a></li>
+        <li><a href="#faq" data-controller="scroll-to">Questions fréquentes</a></li>
       </ul>
     </div>
     <section class="holiday">
-      <div class="holiday description" id="description-renting">
+      <div class="holiday description" id="description-renting" itemprop="description">
         <%= @annonce.description %>
       </div>
       <aside class="holiday form">
@@ -26,8 +26,8 @@
         <% end %>
       </aside>
       <aside class="holiday coordinates">
-        <div><%= image_tag "icons/mob_icon.png"%><p><%= @annonce.tel %></p></div>
-        <div><%= image_tag "icons/mail_icon.png"%><p><%= @annonce.email %></p></div>
+        <div><%= image_tag "icons/mob_icon.png"%><p itemprop="telephone"><%= @annonce.tel %></p></div>
+        <div><%= image_tag "icons/mail_icon.png"%><p itemprop="email"><%= @annonce.email %></p></div>
         <div><%= image_tag "icons/world_icon.png"%><p>www.siteinternet.fr</p></div>
       </aside>
     </section>

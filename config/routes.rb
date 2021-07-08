@@ -98,6 +98,7 @@ Rails.application.routes.draw do
       collection do
         get '/alimentation', to: 'landing_pages#alimentation'
         get '/chateau-fort-alsace', to: 'landing_pages#chateaux_forts'
+        get '/lieux-voir-vosges-du-nord', to: 'landing_pages#lieux_vosges'
         get '/cures-thermales', to: 'landing_pages#cures_thermales'
         scope :"cures-thermales" do
           get '/station-thermale-niederbronn', to: 'landing_pages#station_niederbronn'
