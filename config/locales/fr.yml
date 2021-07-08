@@ -7,6 +7,10 @@ fr:
     se_loger: "Se loger"
     alentours: "A voir, à faire"
     contact: "Contact"
+    summary: "Résumé"
+    location: "Localisation"
+    tips: "Conseils"
+
 
   hello: "Bonjour"
   nav:

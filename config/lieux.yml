@@ -1,0 +1,95 @@
+:lieux:
+  fr:
+  - :name: Le château du Wegelnburg
+    :photo: top/wegelnburg.png
+    :summary: Faisant parti de la randonnée des 4 châteaux près du Fleckenstein, le château du Wegelnburg peut offrir pour les plus motivés se levant aux aurores un panorama spectaculaire sur la palatinat et les vosges du nord.
+    :location: français
+    :tips: Vous aurez plus de chance à voir une mer de nuage lorsqu'il a plus la veille ou qi'il a fait humide. Il faudra se lever aux aurores, monter pendant 30-40min jusqu'au château pour ensuite voir ce spectacle. L'automne, saison plus humidue peut également être une bonne période pour ce spectacle.
+    :link: aaa
+  - :name: Altschlossfelssen
+    :photo: top/altschlosfelssen.png
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: Sentier des cimes
+    :photo: https://www.chemindescimes-alsace.fr/bwp-wAssets/img/elsass/Pfad-und-Turm-vor-Eroeffnung/DSC00256.JPG
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: Le Fleckenstein
+    :photo: https://img2.oastatic.com/img2/57231788/max/fleckenstein-luftaufnahme.jpg
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: Le château du Falkenstein
+    :photo: https://www.chateauxfortsalsace.com/wp-content/uploads/2019/02/R.Falkenstein-vue-a%C3%A9rienne-CCPB-002.jpg
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: Le Fort de Schoenenbourg
+    :photo: https://media-cdn.tripadvisor.com/media/photo-s/10/fe/5e/30/entree-munitions.jpg
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: Hunspach
+    :photo: https://www.visit.alsace/wp-content/uploads/2019/02/village-hunspach-karl-heinz-haenel-1600x900.jpg
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: La Tour du Wintersberg (sommet des Vosges du Nord)
+    :photo: http://apps.tourisme-alsace.info/photos/niederbronn/photos/tour-wintersberg-1.JPG
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: La ville de Wissembourg
+    :photo: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/56/d0/75/just-around-the-corner.jpg?w=500&h=300&s=1
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: Wasigenstein
+    :photo: https://www.visit.alsace/wp-content/uploads/lei/pictures/219006244-chateau-de-wasigenstein-1-1600x900.jpg
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+  - :name: Schoeneck
+    :photo: https://media-cdn.tripadvisor.com/media/photo-s/07/4d/53/4f/chateau-du-schoeneck.jpg
+    :summary: alll
+    :location: français
+    :tips: fr
+    :link: fr-rr
+
+  en:
+  - :name: Wegelnburg Castle
+    :photo: top/wegelnburg.png
+    :summary: As part of the 4 castles hike near Fleckenstein, the Wegelnburg castle can offer a spectacular panorama of the Palatinate and the northern Vosges for the most motivated early risers.
+    :location: français
+    :tips: You are more likely to see a sea of clouds when it is warmer the day before or when it is humid. You will have to get up at the crack of dawn, climb for 30-40min to the castle to see this show. Autumn, a wetter season, can also be a good time for this show.
+    :link: aaa
+  - :name: Altschlossfelssen
+    :photo: top/altschlosfelssen.png
+    :summary: alll
+    :location: français
+    :tips: en
+    :link: en-rr
+  de:
+  - :name: Burg Wegelnburg
+    :photo: top/wegelnburg.png
+    :summary: Als Teil der 4-Burgen-Wanderung bei Fleckenstein bietet die Wegelnburg für besonders motivierte Aufsteher in der Morgendämmerung ein spektakuläres Panorama auf die Pfalz und die Nordvogesen.
+    :location: français
+    :tips: Sie haben mehr Chancen, ein Wolkenmeer zu sehen, wenn es am Vortag nass war. Sie müssen in aller Herrgottsfrühe aufstehen, 30-40min zur Burg klettern, um diese Show zu sehen. Der Herbst, eine feuchtere Jahreszeit, kann auch eine gute Zeit für diese Show sein.
+    :link: aaa
+  - :name: Altschlossfelssen
+    :photo: top/altschlosfelssen.png
+    :summary: alll
+    :location: français
+    :tips: de
+    :link: de-rr
