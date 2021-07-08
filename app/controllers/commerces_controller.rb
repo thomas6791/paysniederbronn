@@ -68,6 +68,7 @@ class CommercesController < ApplicationController
   end
 
   def orders
+    fail
     @commerce = Commerce.friendly.find(params[:id])
     @orders = @commerce.orders
   end
