@@ -34,7 +34,7 @@ class LandingPagesController < ApplicationController
   def lieux_vosges
     set_meta_tags title: "Top 20 des lieux à voir dans les Vosges du Nord",
     noindex: true
-    #@lieux = YAML.load(File.read("config/lieux.yml"))[:cards][locale.to_s]
+    @lieux = YAML.load(File.read("config/lieux.yml"))[:lieux][locale.to_s]
   end
 
   def cures_thermales
