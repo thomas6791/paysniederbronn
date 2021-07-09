@@ -54,7 +54,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @order_by_delivery_date.keys.each do |key| %>
+          <% @order_by_delivery_date.keys.compact.sort.each do |key| %>
             <% @order_by_delivery_date[key].each do |order| %>
               <tr>
                   <td><%= order.delivery_date %></td>
@@ -73,6 +73,8 @@
                   <td><%= order.email %></td>
               </tr>
             <% end %>
+            <tr style="height: 1em;">
+            </tr>
           <% end %>
         </tbody>
     </table>
