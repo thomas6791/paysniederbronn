@@ -6,66 +6,77 @@
     :location: français
     :tips: Vous aurez plus de chance à voir une mer de nuage lorsqu'il a plus la veille ou qi'il a fait humide. Il faudra se lever aux aurores, monter pendant 30-40min jusqu'au château pour ensuite voir ce spectacle. L'automne, saison plus humidue peut également être une bonne période pour ce spectacle.
     :link: aaa
+    :loc_summary: Fleckenstein, Lembach, 67510, Alsace
   - :name: Altschlossfelssen
     :photo: top/altschlosfelssen.png
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
-  - :name: Sentier des cimes
+    :loc_summary: Roppeviller, 57230, Lorraine
+  - :name: Chemin des cimes
     :photo: https://www.chemindescimes-alsace.fr/bwp-wAssets/img/elsass/Pfad-und-Turm-vor-Eroeffnung/DSC00256.JPG
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Drachenbronn-Birlenbach, 67160, Alsace
   - :name: Le Fleckenstein
     :photo: https://img2.oastatic.com/img2/57231788/max/fleckenstein-luftaufnahme.jpg
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Fleckenstein, Lembach, 67510, Alsace
   - :name: Le château du Falkenstein
     :photo: https://www.chateauxfortsalsace.com/wp-content/uploads/2019/02/R.Falkenstein-vue-a%C3%A9rienne-CCPB-002.jpg
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Falkenstein, Philippsbourg, 57230, Lorraine
   - :name: Le Fort de Schoenenbourg
     :photo: https://media-cdn.tripadvisor.com/media/photo-s/10/fe/5e/30/entree-munitions.jpg
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Hunspach, 67250, Alsace
   - :name: Hunspach
     :photo: https://www.visit.alsace/wp-content/uploads/2019/02/village-hunspach-karl-heinz-haenel-1600x900.jpg
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Hunspach, 67250, Alsace
   - :name: La Tour du Wintersberg (sommet des Vosges du Nord)
     :photo: http://apps.tourisme-alsace.info/photos/niederbronn/photos/tour-wintersberg-1.JPG
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Niederbronn-les-Bains, 67110, Alsace
   - :name: La ville de Wissembourg
     :photo: https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/56/d0/75/just-around-the-corner.jpg?w=500&h=300&s=1
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Wissembourg, 67160, Alsace
   - :name: Wasigenstein
     :photo: https://www.visit.alsace/wp-content/uploads/lei/pictures/219006244-chateau-de-wasigenstein-1-1600x900.jpg
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Niedersteinbach, 67510, Alsace
   - :name: Schoeneck
     :photo: https://media-cdn.tripadvisor.com/media/photo-s/07/4d/53/4f/chateau-du-schoeneck.jpg
     :summary: alll
     :location: français
     :tips: fr
     :link: fr-rr
+    :loc_summary: Dambach, 67110, Alsace
 
   en:
   - :name: Wegelnburg Castle
@@ -74,12 +85,14 @@
     :location: français
     :tips: You are more likely to see a sea of clouds when it is warmer the day before or when it is humid. You will have to get up at the crack of dawn, climb for 30-40min to the castle to see this show. Autumn, a wetter season, can also be a good time for this show.
     :link: aaa
+    :loc_summary: Lembach, Fleckenstein, 67510, Alsace
   - :name: Altschlossfelssen
     :photo: top/altschlosfelssen.png
     :summary: alll
     :location: français
     :tips: en
     :link: en-rr
+    :loc_summary: Lembach, Fleckenstein, 67510, Alsace
   de:
   - :name: Burg Wegelnburg
     :photo: top/wegelnburg.png
@@ -87,9 +100,11 @@
     :location: français
     :tips: Sie haben mehr Chancen, ein Wolkenmeer zu sehen, wenn es am Vortag nass war. Sie müssen in aller Herrgottsfrühe aufstehen, 30-40min zur Burg klettern, um diese Show zu sehen. Der Herbst, eine feuchtere Jahreszeit, kann auch eine gute Zeit für diese Show sein.
     :link: aaa
+    :loc_summary: Lembach, Fleckenstein, 67510, Alsace
   - :name: Altschlossfelssen
     :photo: top/altschlosfelssen.png
     :summary: alll
     :location: français
     :tips: de
     :link: de-rr
+    :loc_summary: Lembach, Fleckenstein, 67510, Alsace

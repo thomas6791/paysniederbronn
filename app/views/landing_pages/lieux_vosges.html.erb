@@ -13,7 +13,9 @@
               </ul>
               <div class="tabcontents" data-tabs-target="tabcontents">
                 <div class="tabcontent" data-tabs-target="tabcontent">
-                  <p><%= lieu[:summary] %></p>
+                  <p><%= lieu[:summary] %><br>
+                    <span><i class="fas fa-map-marker-alt"></i><%= lieu[:loc_summary] %></span>
+                  </p>
                 </div>
                 <div class="tabcontent" data-tabs-target="tabcontent">
                   <p><%= lieu[:location] %></p>
