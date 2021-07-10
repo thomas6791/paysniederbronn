@@ -66,4 +66,10 @@ class CommercesController < ApplicationController
     end
     #session[:cart] = session[:cart].inject(:merge)
   end
+
+  def orders
+    @commerce = Commerce.friendly.find(params[:id])
+    @orders = @commerce.orders
+    @order_by_delivery_date = @orders.group_by{|x| x.delivery_date}
+  end
 end
