@@ -27,11 +27,14 @@
 }
 .tabcontents {
   position: relative;
+  height: auto;
   .tabcontent {
     position: absolute;
     top: 0px;
     left: 0px;
     z-index: -1;
+    height: auto;
+    //padding-bottom: 0.5em;
   }
   .tabcontent:first-of-type {
     z-index: 1;
@@ -41,6 +44,6 @@
 
 .tabcontent > p {
   min-height: 85px;
-  max-height: 85px;
+  //max-height: 85px;
   font-size: 0.9em;
 }
