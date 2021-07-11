@@ -2,35 +2,35 @@
   fr:
   - :name: Le château du Wegelnburg
     :photo: top/wegelnburg.png
-    :summary: Faisant parti de la randonnée des 4 châteaux près du Fleckenstein, le château du Wegelnburg peut offrir pour les plus motivés se levant aux aurores un panorama spectaculaire sur la palatinat et les vosges du nord.
+    :summary: Faisant parti de la randonnée des 4 châteaux près du Fleckenstein, le château du Wegelnburg peut offrir pour ceux se levant aux aurores un panorama spectaculaire sur la palatinat et les vosges du nord.
     :location: français
     :tips: Vous aurez plus de chance à voir une mer de nuage lorsqu'il a plus la veille ou qi'il a fait humide. Il faudra se lever aux aurores, monter pendant 30-40min jusqu'au château pour ensuite voir ce spectacle. L'automne, saison plus humidue peut également être une bonne période pour ce spectacle.
     :link: aaa
     :loc_summary: Fleckenstein, Lembach, 67510, Alsace
   - :name: Altschlossfelssen
     :photo: top/altschlosfelssen.png
-    :summary: Surnommé le Colorado Lorrain, le rocher du Altschlossfelssen est une des plus grandes barres rocheuses en grès des vosges de la Palatinat offrant un superbe spectacle géologique aux promeneurs.
+    :summary: Surnommé le Colorado Lorrain, le rocher du Altschlossfelssen est une des plus grandes barres rocheuses en grès des vosges de la Palatinat offrant un superbe spectacle géologique.
     :location: français
     :tips: fr
     :link: fr-rr
     :loc_summary: Roppeviller, 57230, Lorraine
   - :name: Chemin des cimes
     :photo: https://www.chemindescimes-alsace.fr/bwp-wAssets/img/elsass/Pfad-und-Turm-vor-Eroeffnung/DSC00256.JPG
-    :summary: Long d'un kilomètre de long et d'une hauteur de 30m, le "chemin des cimes", structure unique en France vous donnera une vue dégagée sur les Vosges du Nord. On apercevra également la Forêt Noire, les Vosges et parfois même la cathédrale de Strasbourg.
+    :summary: Long d'un kilomètre de long et d'une hauteur de 30m, le "chemin des cimes", structure unique en France vous donnera une vue dégagée sur les Vosges du Nord. On y apercevra également par temps clair la Forêt Noire, les Vosges et parfois même la cathédrale de Strasbourg.
     :location: français
     :tips: fr
     :link: fr-rr
     :loc_summary: Drachenbronn-Birlenbach, 67160, Alsace
   - :name: Le Fleckenstein
     :photo: https://img2.oastatic.com/img2/57231788/max/fleckenstein-luftaufnahme.jpg
-    :summary: Château situé un piton rocheux, le château du Fleckenstein est le château le plus visité d'Alsace et le second derrière le château du Haut-Koenigsbourg. La visite de ce château peut s'accompagner de la visite de 3 autres pour une randonnée de 2h environ.
+    :summary: Château situé sur un piton rocheux, le château du Fleckenstein est le château le plus visité d'Alsace du Nord et le second derrière le château du Haut-Koenigsbourg. La visite de ce château peut s'accompagner de la visite de 3 autres pour une randonnée d'environ 2h.
     :location: français
     :tips: fr
     :link: fr-rr
     :loc_summary: Fleckenstein, Lembach, 67510, Alsace
   - :name: Le château du Falkenstein
     :photo: https://www.chateauxfortsalsace.com/wp-content/uploads/2019/02/R.Falkenstein-vue-a%C3%A9rienne-CCPB-002.jpg
-    :summary: Autre château emblématique des Vosges du Nord, le château troglodyte du Falkenstein vous donnera l'opportunité de découvrir les nombreux aspects de ce type de château.
+    :summary: Autre château emblématique des Vosges du Nord, le château troglodyte du Falkenstein vous donnera l'opportunité de découvrir les nombreux aspects de ce type de château et un panorama sur les Vosges du Nord.
     :location: français
     :tips: fr
     :link: fr-rr
@@ -44,14 +44,14 @@
     :loc_summary: Hunspach, 67250, Alsace
   - :name: Hunspach
     :photo: https://www.visit.alsace/wp-content/uploads/2019/02/village-hunspach-karl-heinz-haenel-1600x900.jpg
-    :summary: Faisant parti des "plus beaux villages de France", le village de Hunspach a également été élu "villge préféré des français 2020". Une des particularité de ce village est l'homogénéité de ses maisons à colombage blanches.
+    :summary: Faisant parti des "plus beaux villages de France", le village de Hunspach a également été élu "villge préféré des français 2020". Une des particularités de ce village est l'homogénéité de ses maisons à colombage blanches.
     :location: français
     :tips: fr
     :link: fr-rr
     :loc_summary: Hunspach, 67250, Alsace
-  - :name: La Tour du Wintersberg (sommet des Vosges du Nord)
+  - :name: La Tour du Wintersberg
     :photo: http://apps.tourisme-alsace.info/photos/niederbronn/photos/tour-wintersberg-1.JPG
-    :summary: Point culminant des Vosges du Nord, l'accès à la Tour du Wintersberg se fait par divers moyens. A son sommet on y voit donc un panorama sur toute l'étendue des Vosges du Nord
+    :summary: Point culminant des Vosges du Nord, l'accès à la Tour du Wintersberg se fait par divers moyens. A son sommet, un panorama vous est offert sur toute l'étendue des Vosges du Nord.
     :location: français
     :tips: fr
     :link: fr-rr
@@ -72,7 +72,7 @@
     :loc_summary: Niedersteinbach, 67510, Alsace
   - :name: Le château du Schoeneck
     :photo: https://media-cdn.tripadvisor.com/media/photo-s/07/4d/53/4f/chateau-du-schoeneck.jpg
-    :summary: Château souvent occulté par les autres, le château du Schoeneck est pourtant un des plus beaux des Vosges du Nord. Une association travaille activement à sa restauration et la vue à son sommet est une des plus plaisantes.
+    :summary: Château souvent moins connu que les autres, le château du Schoeneck est pourtant un des plus beaux des Vosges du Nord. Une association travaille activement à sa restauration. Par beau temps, son sommet offre une superbe vue.
     :location: français
     :tips: fr
     :link: fr-rr
