@@ -35,11 +35,13 @@
     left: 0px;
     z-index: -1;
     height: auto;
+    visibility: hidden;
     //padding-bottom: 0.5em;
   }
   .tabcontent:first-of-type {
     z-index: 1;
     position: inherit;
+    visibility: visible;
   }
 }
 
