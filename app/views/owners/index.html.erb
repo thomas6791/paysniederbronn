@@ -2,8 +2,10 @@
 <%= @user %>
 <ul>
  <% @annonces.each do |annonce| %>
- <% fail %>
- <li><%= annonce.name %></li>
+  <li><%= annonce.titre %></li>
  <% end %>
 </ul>
+<section class="cards-renting">
+  <%= render partial: 'rentings/rentings', locals: {annonces: @annonces } %>
+</section>
 
