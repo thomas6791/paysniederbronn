@@ -93,6 +93,10 @@ Rails.application.routes.draw do
 
     resources :marche_noels, :path => "marches-noel"
 
+    scope 'admin' do
+      get '/', to: 'owners#index', as: :owner
+    end
+
 
     resources :landing_pages, :path => '' do
       collection do

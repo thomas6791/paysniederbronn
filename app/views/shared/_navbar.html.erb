@@ -2,12 +2,22 @@
   <div>
     <div>
       <ul>
-      <li><%= link_to t('links.home'), root_path %></li>
-      <li><%= link_to t('links.se_loger'), rentings_path %></li>
-      <li><%= link_to t('links.alentours'), alentours_path %></li>
-      <li><%= link_to t('links.contact'), contact_path %></li>
-      <li><%= link_to t('Blog'), blog_posts_path, rel: "follow" %></li>
-      <li><%= link_to "Poster une annonce",new_renting_path, class: "button create", rel: "nofollow" %></li>
+        <li><%= link_to t('links.home'), root_path %></li>
+        <li><%= link_to t('links.se_loger'), rentings_path %></li>
+        <li><%= link_to t('links.alentours'), alentours_path %></li>
+        <li><%= link_to t('links.contact'), contact_path %></li>
+        <li><%= link_to t('Blog'), blog_posts_path, rel: "follow" %></li>
+        <li class=""><a href="#"><i class="fas fa-user-circle"></i></a>
+          <ul class="dropdown">
+            <li><%= link_to "Se connecter",  new_user_session_path, rel: "nofollow" %></li>
+            <li> <%= link_to "Se déconnecter", destroy_user_session_path, rel: "nofollow" %></li>
+            <li><%= link_to 'créer une facture', taxe_invoice_path(), rel: "nofollow" %></li>
+            <li><%= link_to "simulateur taxe de sejour", simulateur_path, rel: "nofollow" %></li>
+            <li><%= link_to "Poster une annonce",new_renting_path, class: "", rel: "nofollow" %></li>
+            <li><%= link_to "Créer un compte",  new_user_registration_path, rel: "nofollow" %></li>
+          </ul>
+
+        </li>
       </ul>
     </div>
     <% if params[:controller] != "blog_posts" %>
