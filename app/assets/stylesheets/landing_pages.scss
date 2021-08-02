@@ -81,6 +81,44 @@ iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
   img { width: 35%; height: 250px; border-radius: 2px; }
   a { color: black; text-decoration: none; }
 }
+
+
+.lieux-vosges {
+  h1, h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 2em;
+  }
+  .lieu {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 2em;
+    & > div {
+      width: 100%;
+      position: relative;
+      & > div {
+        display: block;
+        position: absolute;
+        bottom: -0.5em;
+        left: -3em;
+        background-color: white;
+        border-radius: 5px;
+        padding: 1em;
+        width: 80%;
+        box-shadow: 1px 1px 10px 0 rgba(0,0,0,0.24);
+      }
+      .tabcontent {
+        p > span {
+          display: flex;
+          font-size: 0.9em;
+          margin-top: 1em;
+          align-items: center;
+          i { margin-right: 0.5em; color: #fccb07; }
+        }
+      }
+    }
+    img { height: auto; width: 400px; }
+  }
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .landing {
@@ -98,6 +136,21 @@ iframe { width: 100%; min-height: 50vh; margin-top: 10px; margin-bottom: 10px; }
     flex-direction: column-reverse;
     div { width: 100%; max-width: 100%; }
     img { width: 100%; }
+  }
+  .lieux-vosges {
+    .lieu { flex-direction: column-reverse;
+      img { display: flex; margin: auto; width: 100%; }
+    & > div {
+      & > div {
+        position: inherit;
+        bottom: 0px;
+        left: 0px;
+        margin: auto;
+        width: 90%;
+        height: auto;
+      }
+    }
+    }
   }
 }
 // Small devices (landscape phones, 576px and up)

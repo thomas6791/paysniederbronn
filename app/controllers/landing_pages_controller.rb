@@ -31,6 +31,12 @@ class LandingPagesController < ApplicationController
               canonical: "https://www.paysniederbronn.fr/fr/parcs-attractions"
   end
 
+  def lieux_vosges
+    set_meta_tags title: "Top 20 des lieux à voir dans les Vosges du Nord",
+    noindex: true
+    @lieux = YAML.load(File.read("config/lieux.yml"))[:lieux][locale.to_s]
+  end
+
   def cures_thermales
     set_meta_tags title: "Cure thermale en Alsace | les stations thermales",
               description: "Les établissements thermaux conventionnés proposant des cures en Alsace",

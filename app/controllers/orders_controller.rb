@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
     @order.cart_items.each do |item|
       @order.amount_cents += item.subtotal_cents
     end
-    @order.delivery_date = params[:order][:delivery_date]
+    @order.delivery_date = params[:delivery_date]
     @order.rgpd = true if params[:order][:rgpd] == "1"
     @order.email = params[:order][:email]
     @order.tel = params[:order][:tel]
