@@ -9,19 +9,6 @@
     })(window,document,'script','dataLayer','GTM-TQZ85P4');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <% if cookies && cookies['cookie_eu_consented'] == 'true' %>
-      <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-      <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-HGY5YE4XT5&amp;l=dataLayer&amp;cx=c"></script>
-      <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-146085492-1"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-146085492-1');
-      </script>
-    <% end %>
 
     <!-- Clarity tracking code for https://paysniederbronn.fr/ -->
     <script>
@@ -98,8 +85,7 @@
     <noscript>
       <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQZ85P4"
       height="0" width="0" style="display:none;visibility:hidden">
-      </iframe>
-    </noscript>
+      </iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <header>
       <%= render "shared/navbar" %>
