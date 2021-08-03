@@ -109,6 +109,8 @@ class RentingsController < ApplicationController
       #redirect_to contact_rentings_path(params[:contact][:start] => start, params[:contact][:end] => end_rent)
       #param_1: 'value_1', param_2: 'value_2'
     else
+      @dates = "#{params[:contact][:start]} au #{params[:contact][:end]}"
+      @annonce = annonce
       annonce_email = annonce.email
       RentingMailer.with(annonce_email: annonce_email, annonce: annonce.titre, start_rent: start_rent, end_rent: end_rent, message: message, adults: adults, kids: kids, user_name: user_name, tel: tel, email: email, address: address).rentingask.deliver_now
     end
