@@ -8,10 +8,11 @@
   </article>
 </main>
 <script>
-  ga('send', {
-    hitType: 'event',
-    eventCategory: 'Demande de location',
-    eventAction: @annonce.titre,
-    eventLabel: @dates
-  });
+  ga('create', 'UA-146085492-1', 'auto');
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'Demande de location',
+        eventAction: @annonce.titre,
+        eventLabel: @dates
+      });
 </script>
