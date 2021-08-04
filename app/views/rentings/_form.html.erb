@@ -73,6 +73,9 @@
           <%= ask.input :answer, as: :text, label: "Réponse" %>
         <% end %>
       </div>
+      <div class="second contact long">
+        <%= f.input :cgv, as: :boolean, label: "J'accepte et certifie avoir pris connaissance des conditions générales d'utilisation",:input_html => { :checked => "" }, required:true %>
+      </div>
 
       <%= f.button :submit, value: "Confirmer", class: "btn-green large", data: {action: "form#submitForm"} %>
     <% end %>
