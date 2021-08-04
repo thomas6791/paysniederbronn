@@ -1,4 +1,5 @@
 class RentingsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :update]
   before_action :set_seo
   before_action :set_data, only: [:show, :edit, :update, :destroy]
   def index

@@ -52,6 +52,10 @@ class PagesController < ApplicationController
     set_meta_tags title: "FAQ | Pays de Niederbronn-les-Bains",
         noindex: true
   end
+  def cgv
+    set_meta_tags title: "CGV | Pays de Niederbronn-les-Bains",
+        noindex: true
+  end
 
   def tarifs
   end

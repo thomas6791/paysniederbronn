@@ -45,7 +45,7 @@
       <% end %>
 
       <div class="third">
-        <%= f.input :website %>
+        <%= f.input :website, label: 'Site internet' %>
       </div>
       <div class="third options">
         <label for="">Catégorie d'hébergement</label>
@@ -73,6 +73,10 @@
           <%= ask.input :answer, as: :text, label: "Réponse" %>
         <% end %>
       </div>
+      <div class="second contact long">
+        <%= f.input :cgv, as: :boolean, label: "J'accepte et certifie avoir pris connaissance des conditions générales d'utilisation",:input_html => { :checked => "" }, required:true %>
+      </div>
+      <%= link_to "voir les conditions générales d'utilisation", cgv_path, target: "_blank" %>
 
       <%= f.button :submit, value: "Confirmer", class: "btn-green large", data: {action: "form#submitForm"} %>
     <% end %>
