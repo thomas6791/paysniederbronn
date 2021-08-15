@@ -74,7 +74,7 @@
         <% end %>
       </div>
       <div class="second contact long">
-        <%= f.input :cgv, as: :boolean, label: "J'accepte et certifie avoir pris connaissance des conditions générales d'utilisation",:input_html => { :checked => "" }, required:true %>
+        <%= f.input :consent_cgv, as: :boolean, label: "J'accepte et certifie avoir pris connaissance des conditions générales d'utilisation",:input_html => { :checked => "" }, required:true %>
       </div>
       <%= link_to "voir les conditions générales d'utilisation", cgv_path, target: "_blank" %>
 
