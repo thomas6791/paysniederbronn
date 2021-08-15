@@ -25,6 +25,14 @@ article { max-width: 1260px; margin: auto;}
   font-weight: bold;
   color: white;
   line-height: 3em;
+  button {
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 .alert-info { background-color: lightseagreen; }
 .alert-warning { background-color: $red; }
