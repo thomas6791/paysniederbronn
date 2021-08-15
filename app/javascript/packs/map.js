@@ -1,5 +1,6 @@
 import { initMapbox } from '../plugins/init_mapbox';
-
-document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-})
+setTimeout(() => {  initMapbox();
+}, 1500);
+//document.addEventListener('turbolinks:load', () => {
+//  initMapbox();
+//})

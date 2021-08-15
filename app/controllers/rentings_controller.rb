@@ -8,7 +8,6 @@ class RentingsController < ApplicationController
     #@annonces = Renting.all.where(category:"renting")
     @annonces = Renting.all
     @flats = @annonces.geocoded
-
     @markers = @flats.map do |flat|
       {
         lat: flat.latitude,
