@@ -2,7 +2,6 @@
 <html lang="<%= locale.to_s %>">
   <head>
      <!-- Global site tag (gtag.js) - Google Analytics -->
-    <% if cookies && cookies['cookie_eu_consented'] == 'true' %>
       <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
       <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-HGY5YE4XT5&amp;l=dataLayer&amp;cx=c"></script>
       <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-146085492-1"></script>
@@ -13,7 +12,6 @@
 
         gtag('config', 'UA-146085492-1');
       </script>
-    <% end %>
 
     <!-- Clarity tracking code for https://paysniederbronn.fr/ -->
     <script>
@@ -105,7 +103,6 @@
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render "shared/footer" %>
-    <%= render 'shared/consent_banner', link: '/cookies' %>
   </body>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag "navbar" %>
