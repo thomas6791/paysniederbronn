@@ -56,5 +56,5 @@ const navAdmin = () => {
   }
 }
 export { navBar };
-export { cookieFullscreen };
+//export { cookieFullscreen };
 export { navAdmin };
