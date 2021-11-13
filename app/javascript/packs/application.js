@@ -24,3 +24,7 @@ import { definitionsFromContext } from "stimulus/webpack-helpers"
 const application = Application.start();
 const context = require.context("../controllers", true, /\.js$/);
 application.load(definitionsFromContext(context));
+
+$(document).on("turbolinks:load", function() {
+  gtag('config', 'UA-146085492-1', {'page_location': event.data.url});
+})
