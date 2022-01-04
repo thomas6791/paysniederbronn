@@ -18,7 +18,7 @@ class RentingMailer < ApplicationMailer
     @kids = params[:kids]
     @message = params[:message]
      # Instance variable => available in view
-    mail(to: @annonce_email, subject: 'Demande de location')
+    mail(to: @annonce_email, reply_to: @email, subject: 'Demande de location')
     # This will render a view in `app/views/user_mailer`!
   end
 end
