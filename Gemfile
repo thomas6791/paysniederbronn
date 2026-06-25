@@ -46,7 +46,7 @@ gem 'geocoder'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem "simple_calendar", "~> 2.0"
-gem'actiontext',github:'kobaltz/actiontext',branch:'archive',require:'action_text'
+#gem'actiontext',github:'kobaltz/actiontext',branch:'archive',require:'action_text'
 gem 'image_processing'
 gem 'trix-rails', require: 'trix'
 gem 'cloudinary', '~> 1.12.0'
